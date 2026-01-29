@@ -1,0 +1,47 @@
+<template name="38f077ba">
+    <view class="_view data-v-dcbf61d6">
+        <template is="92fc72d6" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view class="_view data-v-dcbf61d6 {{[ [true?'reader_catalog':'',shouldShow?'reader_catalog_Show':''] ]}}">
+            <view catchtouchend="handleProxy" catchtouchmove="handleProxy" catchtouchstart="handleProxy" class="_view data-v-dcbf61d6 reader_catalog_head" data-comkey="{{$k}}" data-eventid="{{'2_4'}}">
+                <view class="_view data-v-dcbf61d6 reader_catalog_head_top">
+                    <view bindtouchend="handleProxy" class="_view data-v-dcbf61d6 reader_catalog_head_top_title" data-comkey="{{$k}}" data-eventid="{{'4_1'}}" hoverClass="wr_commonActive">
+                        <view class="_view data-v-dcbf61d6 reader_catalog_head_top_title_text">{{book.title}}</view>
+                        <view class="_view data-v-dcbf61d6 reader_catalog_head_top_title_arrow"></view>
+                    </view>
+                    <view class="_view data-v-dcbf61d6 reader_catalog_head_top_desc" wx:if="{{book.bookStatus===2&&book.finished===0}}">更新于{{formattedUpdateTime}}</view>
+                    <view class="_view data-v-dcbf61d6 reader_catalog_head_top_desc" wx:elif="{{book.bookStatus===2}}">已完结</view>
+                </view>
+                <view class="_view data-v-dcbf61d6 reader_catalog_head_bottom">
+                    <view class="_view data-v-dcbf61d6 reader_catalog_head_author">{{book.author}}</view>
+                    <view ariaRole="button" catchtouchend="handleProxy" class="_view data-v-dcbf61d6 reader_catalog_head_cancelAutoPayButton" data-comkey="{{$k}}" data-eventid="{{'4_2'}}" hoverClass="wr_commonActive" wx:if="{{book.bookStatus===2&&book.isAutoPay}}">
+                        <text class="_text data-v-dcbf61d6 reader_catalog_head_cancelAutoPayButton_icon"></text>
+                        <text class="_text data-v-dcbf61d6 reader_catalog_head_cancelAutoPayButton_text">自动购买</text>
+                    </view>
+                    <view ariaRole="button" catchtouchend="handleProxy" class="_view data-v-dcbf61d6 reader_catalog_head_sort" data-comkey="{{$k}}" data-eventid="{{'4_3'}}" hoverClass="wr_commonActive" wx:if="{{book.payType&1<<1}}">
+                        <view class="_view data-v-dcbf61d6 {{[ [true?'reader_catalog_head_sort_icon':'',reader.isDescend?'reader_catalog_head_sort_icon_Positive':''] ]}}"></view>
+                        <text class="_text data-v-dcbf61d6 reader_catalog_head_sort_text" wx:if="{{reader.isDescend}}">正序</text>
+                        <text class="_text data-v-dcbf61d6 reader_catalog_head_sort_text" wx:else>倒序</text>
+                    </view>
+                </view>
+            </view>
+            <scroll-view bindscrolltolower="handleProxy" bindscrolltoupper="handleProxy" class="_scroll-view data-v-dcbf61d6 reader_catalog_list" data-comkey="{{$k}}" data-eventid="{{'2_6'}}" lowerThreshold="100" scrollY="true" upperThreshold="100">
+                <view class="_view data-v-dcbf61d6 reader_catalog_item" key="catalog_item_spinner_wrap_top" wx:if="{{shouldShowTopLoading}}">
+                    <template is="53e7b8f5" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+                </view>
+                <view class="_view data-v-dcbf61d6 {{[ [true?'reader_catalog_item':'',c.chapterUid===reader.chapter.chapterUid?'reader_catalog_item_Current':'',c.disabled?'reader_catalog_item_Disabled':''] ]}}" id="{{'catalog_item_'+c.chapterUid}}" key="{{i}}" wx:for="{{catalog}}" wx:for-index="i" wx:for-item="c" wx:key="i">
+                    <view catchtap="handleProxy" class="_view data-v-dcbf61d6 {{c.selector}}" data-comkey="{{$k}}" data-eventid="{{'4_5_'+i}}" hoverClass="wr_itemActive">
+                        <view class="_view data-v-dcbf61d6 reader_catalog_item_text" wx:if="{{book.format!=='epub'}}">
+                        第{{c.chapterIdx}}章 {{c.title}}
+                    </view>
+                        <view class="_view data-v-dcbf61d6 reader_catalog_item_text" wx:else>{{c.title}}</view>
+                    </view>
+                </view>
+                <view class="_view data-v-dcbf61d6 reader_catalog_item" key="catalog_item_spinner_wrap_bottom" wx:if="{{shouldShowBottomLoading}}">
+                    <template is="53e7b8f5" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</template>
+<import src="/components/Mask/Mask.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>

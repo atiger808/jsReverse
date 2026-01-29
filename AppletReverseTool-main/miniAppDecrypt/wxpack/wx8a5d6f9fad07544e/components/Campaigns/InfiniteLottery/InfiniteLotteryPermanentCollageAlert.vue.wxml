@@ -1,0 +1,5 @@
+<template name="707950dc">
+    <template is="f210dfbc" data="{{...$root[$kk+'1'],$root:$root,$for:{default:'data-v-63852a57-default-1'},$slotdefault:'data-v-63852a57-default-1'}}"></template>
+</template>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryAvatar.vue.wxml"></import>

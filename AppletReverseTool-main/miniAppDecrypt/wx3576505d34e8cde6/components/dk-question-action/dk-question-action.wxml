@@ -1,0 +1,6 @@
+<view class="question-action data-v-9c291b04">
+    <u-icon bind:__l="__l" bind:click="__e" class="data-v-9c291b04" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['del'] ] ] ] ]}}" label="删除" name="trash" vueId="c9ea77bc-1"></u-icon>
+    <u-icon bind:__l="__l" bind:click="__e" class="data-v-9c291b04" color="{{upColor}}" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['up'] ] ] ] ]}}" label="上移" labelColor="{{upColor}}" name="arrow-upward" vueId="c9ea77bc-2"></u-icon>
+    <u-icon bind:__l="__l" bind:click="__e" class="data-v-9c291b04" color="{{downColor}}" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['down'] ] ] ] ]}}" label="下移" labelColor="{{downColor}}" name="arrow-downward" vueId="c9ea77bc-3"></u-icon>
+    <u-icon bind:__l="__l" bind:click="__e" class="data-v-9c291b04" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['edit'] ] ] ] ]}}" label="编辑" name="edit-pen" vueId="c9ea77bc-4"></u-icon>
+</view>

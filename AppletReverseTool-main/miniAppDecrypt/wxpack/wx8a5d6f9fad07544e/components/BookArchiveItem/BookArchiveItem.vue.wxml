@@ -1,0 +1,9 @@
+<template name="7f6f372f">
+    <view bindtap="handleProxy" class="_div data-v-79442dec wr_BookArchiveItem" data-comkey="{{$k}}" data-eventid="{{'0_0'}}">
+        <view class="_view data-v-79442dec wr_BookArchiveItem_cover">
+            <template is="5db1e51a" data="{{...$root[$kk+'0_'+index],$root:$root}}" wx:for="{{topFourBooks}}" wx:for-item="book" wx:key="index"></template>
+        </view>
+        <view class="_view data-v-79442dec wr_BookArchiveItem_title" wx:if="{{archive.name}}">{{archive.name}}</view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

@@ -1,0 +1,3 @@
+<view class="compress data-v-52e4c1bd">
+    <canvas canvasId="myCanvas" class="data-v-52e4c1bd" style="{{'width:'+canvasSize.width+';'+'height:'+canvasSize.height+';'}}"></canvas>
+</view>

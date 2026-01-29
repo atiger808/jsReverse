@@ -1,0 +1,4 @@
+<view bindtap="__e" class="u-flex u-row-center u-col-center white-color data-v-5d7a7d58" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$event'] ] ] ] ]}}" hoverClass="btn-box-hover" style="{{'width:'+width+'rpx'+';'+'height:'+lineHeight+'rpx'+';'+'line-height:'+lineHeight+'rpx'+';'+'border-radius:'+radius+'rpx'+';'+'background-color:'+backgroundColor+';'+'border:'+border+';'+'color:'+color+';'}}">
+    <slot wx:if="{{$slots.default}}"></slot>
+    <block wx:else>确定</block>
+</view>

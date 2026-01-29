@@ -1,0 +1,19 @@
+<template name="a94c21b2">
+    <view class="_view data-v-12963b82 miniLecturePlayer" wx:if="{{isActive}}">
+        <view bindtap="handleProxy" class="_view data-v-12963b82 miniLecturePlayer_cover_container" data-comkey="{{$k}}" data-eventid="{{'1_0'}}">
+            <view class="_view data-v-12963b82 {{[ 'miniLecturePlayer_cover',[isPlaying?'miniLecturePlayer_cover_playing':''] ]}}">
+                <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+            </view>
+            <view class="_view data-v-12963b82 miniLecturePlayer_progress">
+                <template is="6665d902" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+            </view>
+        </view>
+        <view bindtap="handleProxy" class="_view data-v-12963b82 miniLecturePlayer_play" data-comkey="{{$k}}" data-eventid="{{'1_2'}}" wx:if="{{!isPlaying}}"></view>
+        <view bindtap="handleProxy" class="_view data-v-12963b82 miniLecturePlayer_pause" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" wx:else></view>
+        <view class="_view data-v-12963b82 miniLecturePlayer_close">
+            <view bindtap="handleProxy" class="_view data-v-12963b82 miniLecturePlayer_close_clickArea" data-comkey="{{$k}}" data-eventid="{{'2_3'}}"></view>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/PlayerProgress.vue.wxml"></import>

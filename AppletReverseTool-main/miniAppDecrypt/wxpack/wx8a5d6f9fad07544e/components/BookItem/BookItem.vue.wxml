@@ -1,0 +1,11 @@
+<template name="1e479515">
+    <view bindtap="handleProxy" class="_view data-v-90fe5ba0 {{['wr_BookItem',[layout==='horizontal'?'wr_BookItem_Horizontal':''],[layout==='vertical'?'wr_BookItem_Vertical':''],customSelector]}}" data-comkey="{{$k}}" data-eventid="{{'0_0'}}" hoverClass="wr_commonActive">
+        <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view class="_view data-v-90fe5ba0 wr_BookItem_title" wx:if="{{book.title}}">{{book.title}}</view>
+        <view class="_view data-v-90fe5ba0 wr_BookItem_subtitle" wx:if="{{showAuthor}}">{{book.author}}</view>
+        <view class="_view data-v-90fe5ba0 wr_BookItem_tagLine" wx:if="{{showCategory}}">{{book.category}}</view>
+        <view class="_view data-v-90fe5ba0 wr_BookItem_rating" wx:if="{{showRating}}">{{book.star}}分</view>
+        <view class="_view data-v-90fe5ba0 wr_BookItem_intro" wx:if="{{showIntro}}">{{book.intro}}</view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

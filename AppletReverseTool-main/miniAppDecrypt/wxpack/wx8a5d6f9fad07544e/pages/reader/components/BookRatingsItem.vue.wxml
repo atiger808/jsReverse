@@ -1,0 +1,18 @@
+<template name="14b6f64e">
+    <view ariaLabel="button" catchtap="handleProxy" class="_view data-v-9a20ce44 book_rating_item_container" data-comkey="{{$k}}" data-eventid="{{'0_0'}}" hoverClass="wr_commonActive" wx:if="{{newRatingDetail}}">
+        <view class="_view data-v-9a20ce44 book_rating_item_detail">
+            <template is="d34fb46a" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+            <view class="_view data-v-9a20ce44 book_rating_item_detail_count" wx:if="{{newRatingCount}}">
+                <text class="_text data-v-9a20ce44">{{newRatingCountNumber}}{{newRatingCount>9999?'万':''}}人点评</text>
+                <view class="_view data-v-9a20ce44 book_rating_item_detail_count_icon"></view>
+            </view>
+        </view>
+        <view class="_view data-v-9a20ce44 book_rating_item_bar_container">
+            <template is="9bb601ac" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+            <template is="9bb601ac" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+            <template is="9bb601ac" data="{{...$root[$kk+'3'],$root:$root}}"></template>
+        </view>
+    </view>
+</template>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemBar.vue.wxml"></import>

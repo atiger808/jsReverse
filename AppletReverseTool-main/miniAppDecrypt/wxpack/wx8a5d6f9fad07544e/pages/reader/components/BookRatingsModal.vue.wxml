@@ -1,0 +1,4 @@
+<template name="7afee852">
+    <template is="f210dfbc" data="{{...$root[$kk+'0'],$root:$root,$for:{default:'data-v-a2d00f1c-default-0'},$slotdefault:'data-v-a2d00f1c-default-0'}}"></template>
+</template>
+<import src="/components/Alert.vue.wxml"></import>

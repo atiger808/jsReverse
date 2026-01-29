@@ -1,0 +1,10 @@
+<view class="u-margin-top-20" style="width:100%;" wx:if="{{field==='banner'}}">
+    <image bindtap="__e" class="u-margin-bottom-20" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$0'],[ [ ['banner','id',item.id] ] ] ] ] ] ]}}" mode="widthFix" src="{{item.image}}" style="width:100%;" wx:for="{{banner}}" wx:for-index="__i0__" wx:key="id"></image>
+</view>
+<block wx:else>
+    <view class="ad-box" style="width:100%;" wx:if="{{vuex_activity_data.flow_group.ad_id8}}">
+        <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$0'],['current'] ] ] ] ]}}" hidden="{{!current}}" mode="scaleToFill" src="{{current.image}}" style="width:100%;height:190rpx;"></image>
+        <dk-ad bind:__l="__l" bind:onError="__e" data-custom-hidden="{{!(!current&&is_custom)}}" data-event-opts="{{[ [ '^onError',[ ['onError'] ] ] ]}}" is_custom="{{true}}" style="width:100%;" unitAd="{{vuex_activity_data.flow_group.ad_id8}}" vueId="37791de2-1"></dk-ad>
+        <dk-ad bind:__l="__l" data-custom-hidden="{{!(!current&&!is_custom)}}" is_custom="{{true}}" style="width:100%;" unitAd="{{vuex_activity_data.flow_group.ad_id4}}" vueId="37791de2-2" wx:if="{{vuex_activity_data.flow_group.ad_id4}}"></dk-ad>
+    </view>
+</block>

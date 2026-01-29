@@ -1,0 +1,13 @@
+<view class="data-v-3a6eec92" style="width:100%;transition:all .4s;padding:1rpx 30rpx;box-sizing:border-box;background-color:#ffffff;">
+    <view class="data-v-3a6eec92" style="{{'width:100%;position:relative;transition:all .4s;overflow:hidden;'+'height:'+(olShow?olHeight:height+'rpx')+';'}}">
+        <view class="data-v-3a6eec92" id="fold-view">
+            <view catchtap="__e" class="data-v-3a6eec92" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+                <slot name="title"></slot>
+            </view>
+            <slot></slot>
+        </view>
+        <view catchtap="__e" class="data-v-3a6eec92" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" style="{{'position:absolute;transform:translateY(-50%);'+'top:'+height/2+'rpx'+';'+'right:'+20+labelPs+'rpx'+';'}}">
+            <u-icon bind:__l="__l" class="data-v-3a6eec92" color="#909399" name="arrow-right" size="32" style="{{'transition:all .3s;'+'transform:'+(!olShow?'rotateZ(90deg)':'rotateZ(270deg)')+';'}}" vueId="d04f0f38-1"></u-icon>
+        </view>
+    </view>
+</view>

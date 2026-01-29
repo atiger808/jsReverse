@@ -1,0 +1,3 @@
+<template name="b112be16">
+    <view bindtap="handleProxy" checked="{{checked}}" class="_view data-v-40afde10 {{[ [true?'wr_checkbox':'',checked?'wr_checkbox_Checked':''],sizeSelector,customSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'0_0'}}" hoverClass="wr_commonActive"></view>
+</template>

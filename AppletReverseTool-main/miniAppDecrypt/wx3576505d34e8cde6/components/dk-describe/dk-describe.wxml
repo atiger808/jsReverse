@@ -1,0 +1,38 @@
+<view class="{{['wodiu',value[0]?'padding-tb-10':'']}}">
+    <view wx:for="{{$root.l1}}" wx:key="index">
+        <view class="u-font-30 padding-tb-10" style="white-space:pre-wrap;line-height:45rpx;" wx:if="{{item[$orig].type===WORDS}}">
+            <text>{{item[$orig].content}}</text>
+        </view>
+        <view class="big-img" wx:if="{{item[$orig].type===LARGE_IMG}}">
+            <u-image bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'preview',['$0'],[ [ ['value','',index,'content'] ] ] ] ] ] ]}}" lazyLoad="{{true}}" mode="widthFix" src="{{item[$orig].content+(vuex_file_handling.image_thumbnail==1?item.m0:'')}}" vueId="{{'db0aa944-1-'+index}}"></u-image>
+        </view>
+        <view style="height:398rpx;" wx:if="{{item[$orig].type===8}}">
+            <view class="u-font-30 padding-tb-10" style="white-space:pre-wrap;line-height:34rpx;" wx:if="{{item[$orig].content.duration}}">
+                <text>{{item[$orig].content.duration}}</text>
+            </view>
+            <view class="u-rela u-flex u-row-center" style="height:100%;" wx:if="{{!videoShow}}">
+                <image mode="aspectFill" src="{{item[$orig].content.cover||item[$orig].content.url+'?'+item[$orig].content.img||item[$orig].content.url+'?vframe/jpg/offset/1'}}" style="width:100%;height:392rpx;"></image>
+                <u-icon bind:__l="__l" bind:click="__e" class="u-abso" color="#ffffff" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ ['videoShowClick'] ] ] ]}}" name="bofang" size="120" vueId="{{'db0aa944-2-'+index}}"></u-icon>
+            </view>
+            <dk-video autoplay="{{true}}" bind:__l="__l" borderRadius="0" class="u-margin-top-20" duration="{{undefined}}" height="392rpx" poster="{{item[$orig].content.url+'?vframe/jpg/offset/1'}}" src="{{item[$orig].content.url}}" vueId="{{'db0aa944-3-'+index}}" width="100%" wx:else></dk-video>
+        </view>
+        <view class="small-img-box u-flex u-m-b-10" style="width:686rpx;flex-wrap:wrap;margin-top:5rpx;" wx:if="{{item[$orig].type===6}}">
+            <view style="{{'margin-right:'+( (smalImgIndex+1)%3==0?'0':'40rpx' )+';'}}" wx:for="{{item.l0}}" wx:for-index="smalImgIndex" wx:for-item="smalImg" wx:key="smalImgIndex">
+                <u-image bind:__l="__l" bind:click="__e" borderRadius="16" data-event-opts="{{[ [ '^click',[ [ 'previewImage',['$0'],[ [ ['value','',index],['content','',smalImgIndex] ] ] ] ] ] ]}}" height="200rpx" lazyLoad="{{true}}" src="{{smalImg[$orig]+(vuex_file_handling.image_thumbnail==1?smalImg.m1:'')}}" vueId="{{'db0aa944-4-'+index+'-'+smalImgIndex}}" width="200rpx"></u-image>
+            </view>
+        </view>
+        <view class="u-font-30 padding-tb-10" wx:if="{{item[$orig].type===PLACE}}">
+            <view class="place-box u-flex u-row-between">
+                <view class="w-450">
+                    <view class="place-title u-font-30 u-line-1">{{item[$orig].content.name||'门店名称'}}</view>
+                    <view class="place-info u-margin-top-10 u-font-24 u-line-2">{{''+(item[$orig].content.address+item[$orig].content.position||'门店地址')+''}}</view>
+                    <view class="place-info u-margin-top-10 u-font-24 u-line-1" wx:if="{{item[$orig].content.banking_hours}}">{{'营业时间:'+item[$orig].content.banking_hours+''}}</view>
+                </view>
+                <view>
+                    <u-icon bind:__l="__l" bind:tap="__e" class="u-margin-right-16" color="#666666" customPrefix="custom-icon" data-event-opts="{{[ [ '^tap',[ [ 'openLocation',['$0'],[ [ ['value','',index] ] ] ] ] ] ]}}" label="地址" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="{{-3}}" name="locationdingwei" size="55" vueId="{{'db0aa944-5-'+index}}"></u-icon>
+                    <u-icon bind:__l="__l" catch:tap="__e" class="u-margin-right-10 u-margin-left-10" color="#666666" customPrefix="custom-icon" data-event-opts="{{[ [ '^tap',[ [ 'callPhone',['$0'],[ [ ['value','',index,'content.phone'] ] ] ] ] ] ]}}" label="电话" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="{{-3}}" name="phone1" size="55" vueId="{{'db0aa944-6-'+index}}"></u-icon>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

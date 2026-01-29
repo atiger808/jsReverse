@@ -1,0 +1,12 @@
+<my-popup bind:__l="__l" bind:close="__e" bind:input="__e" data-event-opts="{{[ [ '^close',[ ['onCancel'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="bottom" safeAreaInsetBottom="{{true}}" value="{{show}}" vueId="3c059e58-1" vueSlots="{{['default']}}">
+    <view class="white-color-bg u-padding-30">
+        <view class="u-font-22 u-tips-color u-margin-bottom-20">注意：一行一个选项</view>
+        <view class="u-padding-20" style="background-color:#f6f8fa;">
+            <u-input bind:__l="__l" bind:input="__e" clearable="{{false}}" cursorSpacing="30" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','options','$event',[] ] ] ] ] ]}}" height="900" maxlength="{{100000}}" type="textarea" value="{{options}}" vueId="{{'3c059e58-2'+','+'3c059e58-1'}}"></u-input>
+        </view>
+        <view class="u-flex u-row-between u-margin-top-30">
+            <u-button bind:__l="__l" bind:click="__e" customStyle="{{btnStyle}}" data-event-opts="{{[ [ '^click',[ ['onCancel'] ] ] ]}}" plain="{{true}}" size="medium" type="primary" vueId="{{'3c059e58-3'+','+'3c059e58-1'}}" vueSlots="{{['default']}}">取消添加</u-button>
+            <u-button bind:__l="__l" bind:click="__e" customStyle="{{btnStyle}}" data-event-opts="{{[ [ '^click',[ ['onAdd'] ] ] ]}}" size="medium" type="primary" vueId="{{'3c059e58-4'+','+'3c059e58-1'}}" vueSlots="{{['default']}}">立即添加</u-button>
+        </view>
+    </view>
+</my-popup>

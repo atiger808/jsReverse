@@ -1,0 +1,5 @@
+<template name="646c0e75">
+    <view class="_view data-v-24729fe0 pie">
+        <view class="_view data-v-24729fe0 pie_inner" style=" {{'background:'+innerColor+';'+'transform:'+progressTransformText+';'}}"></view>
+    </view>
+</template>

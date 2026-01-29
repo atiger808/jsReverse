@@ -1,0 +1,273 @@
+<template name="0d299960">
+    <wx-scope wx:scope-data="{{bookInfoSEO:bookInfoSEO}}">
+        <view class="_view data-v-3ede062b {{[baseContainerSelector,themeSelector,deviceSelector]}}">
+            <template is="54067956" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+            <view class="_view data-v-3ede062b reader_performance_tracker" hidden="{{!(reader&&reader.chapter)}}"></view>
+            <template is="05fb2afb" data="{{...$root[$kk+'15'],$root:$root}}" wx:if="{{shouldShowEmptyView}}"></template>
+            <scroll-view bindscroll="handleProxy" bindtap="handleProxy" class="_scroll-view data-v-3ede062b reader_main" data-comkey="{{$k}}" data-eventid="{{'1_21'}}" enableBackToTop="{{true}}" scrollIntoView="{{scrollIntoViewId}}" scrollTop="{{scrollTop}}" scrollWithAnimation="{{scrollWithAnimation}}" scrollY="true" style=" {{'height:'+'calc(100vh - '+navBarHeight+'px)'+';'}}" wx:elif="{{reader&&book&&!loading}}">
+                <view class="_view data-v-3ede062b reader_empty_header" id="readerEmptyHeader"></view>
+                <view class="_view data-v-3ede062b reader_head" wx:if="{{shouldShowHeader}}">
+                    <view class="_view data-v-3ede062b {{[ 'reader_head_info',[book.isLongBookTitle?'reader_head_info_AlignItemsStart':''] ]}}">
+                        <template is="5db1e51a" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+                        <view class="_view data-v-3ede062b reader_head_info_meta">
+                            <view class="_view data-v-3ede062b reader_head_info_title">{{book.title}}</view>
+                            <view ariaLabel="查看该作者的作品列表" bindtap="handleProxy" class="_view data-v-3ede062b reader_head_info_author" data-comkey="{{$k}}" data-eventid="{{'5_0'}}" hoverClass="wr_commonActive">
+                        {{book.author}}
+                    </view>
+                            <view class="_view data-v-3ede062b reader_head_info_readers" wx:if="{{book.readingCount&&book.readingCount>0}}">
+                                <view class="_view data-v-3ede062b reader_head_info_readers_avatars_container" wx:if="{{readingFriends.length>0}}">
+                                    <template is="5fbff9fa" data="{{...$root[$kk+'2_'+index],$root:$root}}" wx:for="{{readingFriends}}" wx:for-item="user" wx:key="index"></template>
+                                    <view class="_view data-v-3ede062b reader_head_info_readers_count">
+                                等{{bookReadingCount.number}}{{bookReadingCount.unit}}人阅读
+                            </view>
+                                </view>
+                                <view class="_view data-v-3ede062b reader_head_info_readers_count_container" wx:else>
+                                    <view class="_view data-v-3ede062b reader_head_info_readers_count">
+                                {{bookReadingCount.number}}{{bookReadingCount.unit}}人在读此书
+                            </view>
+                                </view>
+                            </view>
+                            <view class="_view data-v-3ede062b reader_head_info_intro" key="bookIntroEmpty" wx:if="{{!book.intro||book.intro.length===0}}">
+                        暂无简介
+                    </view>
+                            <view ariaLabel="显示简介浮层" ariaRole="button" catchtap="handleProxy" class="_view data-v-3ede062b {{[ 'reader_head_info_intro',[book.intro.length>=30?'reader_head_info_intro_WithDisclosureIndicator':''],[!book.readingCount?'reader_head_info_intro_without_readingCount':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'5_1'}}" hoverClass="wr_commonActive" key="bookIntro" wx:else>{{book.intro}}</view>
+                            <view class="_view data-v-3ede062b reader_head_info_update" wx:if="{{shouldShowUpdateTime}}">
+                                <text class="_text data-v-3ede062b" wx:if="{{book.chapterSize}}">{{book.chapterSize}}章 · </text>
+                                <text class="_text data-v-3ede062b" wx:if="{{!book.finished&&book.updateTime}}">更新于 {{formattedUpdateTime}}</text>
+                                <text class="_text data-v-3ede062b" wx:else>已完结</text>
+                            </view>
+                        </view>
+                    </view>
+                    <template is="79fede26" data="{{...$root[$kk+'3'],$root:$root}}" wx:if="{{!isPoliticalSensitive}}"></template>
+                    <button bindtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big reader_head_bottomBtn" data-comkey="{{$k}}" data-eventid="{{'3_2'}}" hoverClass="wr_commonActive" wx:if="{{shouldShowHeaderBottomButton}}">
+                {{headerBottomDownloadButtonText}}
+            </button>
+                    <view class="_view data-v-3ede062b reader_ad" wx:if="{{shouldShowAd}}">
+                        <ad bindclose="handleProxy" binderror="handleProxy" bindload="handleProxy" class="_ad data-v-3ede062b" data-comkey="{{$k}}" data-eventid="{{'4_3'}}" unitId="adunit-7fdf7d3e3d71c479"></ad>
+                    </view>
+                </view>
+                <view class="_view data-v-3ede062b reader_paperbook_detail" wx:if="{{shouldShowHeader&&hasPaperBook&&paperBookDetailImages.length}}">
+                    <image class="_image data-v-3ede062b reader_paperbook_detail_image" key="{{imgUrl}}" mode="widthFix" src="{{imgUrl}}" wx:for="{{paperBookDetailImages}}" wx:for-item="imgUrl" wx:key="imgUrl"></image>
+                </view>
+                <template is="4d93336c" data="{{...$root[$kk+'5'],$root:$root}}" wx:if="{{shouldShowHeader&&similarBook.books.length>0&&!isPoliticalSensitive}}"></template>
+                <view class="_view data-v-3ede062b {{[true?'reader_chapter':'',shouldShowChapterContent||shouldShowReadFinishHint?'reader_chapter_insetBottom':'']}}" wx:if="{{supportedBook&&reader.chapter}}">
+                    <view ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b reader_chapter_prevChapterBtn" data-comkey="{{$k}}" data-eventid="{{'3_5'}}" hoverClass="wr_commonActive" wx:if="{{prevChapter&&isTrialRead&&!isTrialChapter&&lastFreeChapter}}">
+                        <text class="_text data-v-3ede062b">上一章</text>
+                    </view>
+                    <view class="_view data-v-3ede062b reader_chapter_main_content" wx:if="{{shouldShowChapterContent}}">
+                        <view class="_view data-v-3ede062b reader_chapter_reminder reader_chapter_reminder_Top reader_chapter_reminder_Gold" wx:if="{{shouldShowFreeInfiniteReminder}}">
+                            <view class="_view data-v-3ede062b reader_chapter_reminder_icon reader_chapter_reminder_icon_Infinite"></view>
+                            <view class="_view data-v-3ede062b reader_chapter_reminder_cnt">
+                                <view class="_view data-v-3ede062b reader_chapter_reminder_title">
+                            你正在使用无限卡免费阅读本书
+                        </view>
+                                <view class="_view data-v-3ede062b reader_chapter_reminder_desc" wx:if="{{infiniteRemainingDays>=0&&infiniteLabelText}}">
+                            {{infiniteLabelText}}
+                        </view>
+                            </view>
+                        </view>
+                        <view ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b reader_chapter_prevChapterBtn" data-comkey="{{$k}}" data-eventid="{{'4_6'}}" hoverClass="wr_commonActive" wx:if="{{prevChapter||!prevChapter&&bookEPubData&&bookEPubData.sectionIndex>0}}">
+                            <text class="_text data-v-3ede062b" wx:if="{{bookEPubData.sectionIndex>0}}">上一页</text>
+                            <text class="_text data-v-3ede062b" wx:else>上一章</text>
+                        </view>
+                        <view class="_view data-v-3ede062b reader_chapter_index" id="chapterTitle" style=" {{indexStyleObj}}" wx:if="{{book.format!=='epub'}}">
+                    第{{reader.chapter.chapterIdx}}章
+                </view>
+                        <view class="_view data-v-3ede062b reader_chapter_title" key="chapterTitle" style=" {{titleStyleObj}}" wx:if="{{!isEPubMode||needsPurchase}}">
+                    {{reader.chapter.title}}
+                </view>
+                        <template is="0f358f0f" data="{{...$root[$kk+'8'],$root:$root}}" wx:if="{{isEPubMode&&!clearChapterContent}}"></template>
+                        <view bindlongpress="handleProxy" class="_view data-v-3ede062b reader_chapter_content" data-comkey="{{$k}}" data-eventid="{{'4_7'}}" key="chapterContent" style=" {{contentStyleObj}}" wx:elif="{{bookContent&&bookContent.length>0&&!clearChapterContent}}">
+                            <block wx:for="{{bookContentWithAd}}" wx:for-item="paragraphWithAd">
+                                <view class="_view data-v-3ede062b {{[ 'reader_chapter_content_paragraph',[index===playingParagraphIndex?'reader_chapter_content_paragraph_Highlight':''] ]}}" id="{{'p_'+index}}" key="{{index}}">
+                                    <text class="_text data-v-3ede062b reader_chapter_content_paragraph_text">{{paragraphWithAd.paragraph}}</text>
+                                </view>
+                                <template is="e79563e4" data="{{...$root[$kk+'6_'+index],$root:$root}}" wx:if="{{paragraphWithAd.adUnitId&&showInlineAd}}"></template>
+                            </block>
+                        </view>
+                        <form reportSubmit bindsubmit="handleProxy" class="_form data-v-3ede062b reader_chapter_actions" data-comkey="{{$k}}" data-eventid="{{'4_16'}}" id="promForm">
+                            <block wx:if="{{needsPurchase}}">
+                                <view class="_view data-v-3ede062b reader_chapter_actions_previewMask"></view>
+                                <block wx:if="{{shouldShowReaderUnlock}}">
+                                    <view class="_view data-v-3ede062b reader_chapter_actions_unlock_group">
+                                        <view ariaRole="button" catchtap="handleProxy" class="_view data-v-3ede062b wr_btn wr_btn_Big wr_btn_Gray reader_chapter_actions_adWatch" data-comkey="{{$k}}" data-eventid="{{'8_8'}}" hoverClass="wr_commonActive" wx:if="{{readerUnlockStatus.readerAdWatchRemainTimes>0&&isVideoLoaded}}">
+                                    看广告免费读 10 章
+                                </view>
+                                        <button ariaRole="button" catchtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big wr_btn_Gray reader_chapter_actions_inviteUser" data-comkey="{{$k}}" data-eventid="{{'8_9'}}" hoverClass="wr_commonActive" id="shareUnlockButton" openType="share" wx:if="{{user&&user.userActiveType!=='brown'}}">
+                                    分享今日免费读
+                                </button>
+                                    </view>
+                                    <button catchtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big reader_chapter_actions_promtBtn" data-comkey="{{$k}}" data-eventid="{{'7_10'}}" formType="submit" hoverClass="wr_commonActive" id="purchasePromt" wx:if="{{!shouldBlockedUser}}">
+                                {{chapterContentBottomPromptText}}
+                            </button>
+                                </block>
+                                <block wx:else>
+                                    <view ariaRole="button" catchtap="handleProxy" class="_view data-v-3ede062b wr_btn wr_btn_Big wr_btn_Gray reader_chapter_actions_purchaseBtn_Book" data-comkey="{{$k}}" data-eventid="{{'7_12'}}" hoverClass="wr_commonActive" id="buyBook" key="purchaseButton" wx:if="{{isBookPurchase&&showPurchase}}">
+                                购买本书 {{book.price.toFixed(2)}}
+                            </view>
+                                    <view ariaRole="button" catchtap="handleProxy" class="_view data-v-3ede062b wr_btn wr_btn_Big wr_btn_Gray reader_chapter_actions_purchaseBtn_Chapter" data-comkey="{{$k}}" data-eventid="{{'7_11'}}" hoverClass="wr_commonActive" id="buyChapter" key="purchaseButtonChapter" wx:elif="{{showPurchase}}">
+                                购买本章 {{reader.chapter.price}}
+                            </view>
+                                    <view class="_view data-v-3ede062b reader_chapter_actions_tip" wx:else>
+                                由于相关规范，购买功能暂不可用
+                            </view>
+                                </block>
+                            </block>
+                            <block wx:else>
+                                <button ariaRole="wr_commonActive" bindgetuserinfo="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big wr_btn_Gray reader_chapter_actions_goNext_GetInfo {{[isSwitchingChapter?'wr_btn_Disabled':'']}}" data-comkey="{{$k}}" data-eventid="{{'6_14'}}" formType="submit" openType="getUserInfo" wx:if="{{nextChapter&&needAuthorized||needAuthorized&&!nextChapter&&bookEPubData.hasMore}}">
+                                    <text class="_text data-v-3ede062b" wx:if="{{bookEPubData.hasMore}}">下一页</text>
+                                    <text class="_text data-v-3ede062b" wx:else>下一章</text>
+                                </button>
+                                <button ariaRole="button" catchtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big wr_btn_Gray reader_chapter_actions_goNext {{[isSwitchingChapter?'wr_btn_Disabled':'']}}" data-comkey="{{$k}}" data-eventid="{{'6_13'}}" formType="submit" hoverClass="wr_commonActive" wx:elif="{{nextChapter||!nextChapter&&bookEPubData.hasMore}}">
+                                    <text class="_text data-v-3ede062b" wx:if="{{bookEPubData.hasMore}}">下一页</text>
+                                    <text class="_text data-v-3ede062b" wx:else>下一章</text>
+                                </button>
+                            </block>
+                            <button catchtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big reader_chapter_actions_promtBtn" data-comkey="{{$k}}" data-eventid="{{'5_15'}}" formType="submit" hoverClass="wr_commonActive" id="purchasePromt" wx:if="{{shouldShowReaderPromtBtn}}">
+                        {{chapterContentBottomPromptText}}
+                    </button>
+                            <view class="_view data-v-3ede062b reader_chapter_actions_bottom"></view>
+                        </form>
+                    </view>
+                    <view class="_view data-v-3ede062b {{[ 'reader_chapter_backCover',[!shouldShowChapterContent?'reader_chapter_backCover_noContent':''] ]}}" wx:if="{{shouldShowReadFinishHint}}">
+                        <view class="_view data-v-3ede062b reader_chapter_backCover_title">{{bookFinishHint.title}}</view>
+                        <view class="_view data-v-3ede062b reader_chapter_backCover_desc" wx:if="{{book.totalReadingTime>0}}">
+                    阅读{{bookReadingTime}}
+                </view>
+                        <view class="_view data-v-3ede062b {{[ [true?'reader_chapter_subscription':''] ]}}" wx:if="{{showSubscribeBookButton&&!isChapterSubscribed&&canUseSubscribeMessage}}">
+                            <button ariaRole="button" catchtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big reader_chapter_subscription_btn" data-comkey="{{$k}}" data-eventid="{{'5_17'}}" formType="submit" hoverClass="wr_commonActive">
+                        订阅下一章更新通知
+                    </button>
+                            <view class="_view data-v-3ede062b reader_chapter_subscription_introduction">订阅后，将通知你本书章节更新信息</view>
+                        </view>
+                        <view class="_view data-v-3ede062b {{[ [true?'reader_chapter_subscription':''] ]}}" wx:else>
+                            <button ariaRole="button" catchtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big reader_chapter_subscription_btn" data-comkey="{{$k}}" data-eventid="{{'5_18'}}" formType="submit" hoverClass="wr_commonActive">
+                        {{bookFinishHint.btnText}}
+                    </button>
+                        </view>
+                        <template is="79fede26" data="{{...$root[$kk+'13'],$root:$root}}" wx:if="{{!isPoliticalSensitive}}"></template>
+                        <view class="_view data-v-3ede062b reader_chapter_related" wx:if="{{similarBook.books.length>0}}">
+                            <view class="_view data-v-3ede062b reader_chapter_related_head">
+                                <view class="_view data-v-3ede062b reader_chapter_related_head_title">继续阅读</view>
+                            </view>
+                            <view class="_view data-v-3ede062b reader_chapter_related_list">
+                                <view catchtap="handleProxy" class="_view data-v-3ede062b reader_chapter_related_item" data-comkey="{{$k}}" data-eventid="{{'6_19_'+index}}" hoverClass="wr_commonActive" key="{{index}}" wx:for="{{readFinishSimilarBook}}" wx:for-item="similarItem" wx:key="index">
+                                    <template is="5db1e51a" data="{{...$root[$kk+'14_'+index],$root:$root}}"></template>
+                                    <view class="_view data-v-3ede062b reader_chapter_related_item_title">{{similarItem.title}}</view>
+                                </view>
+                            </view>
+                            <button catchtap="handleProxy" class="_button data-v-3ede062b wr_btn wr_btn_Big wr_btn_Gray reader_chapter_related_head_more" data-comkey="{{$k}}" data-eventid="{{'5_20'}}" hoverClass="wr_commonActive" wx:if="{{similarBook.hasMore}}">
+                        换一批
+                    </button>
+                        </view>
+                    </view>
+                    <view class="_view data-v-3ede062b reader_chapter_reminder reader_chapter_reminder_Gray" wx:if="{{shouldShowAddShelfTips}}">
+                        <view class="_view data-v-3ede062b reader_chapter_reminder_cnt">
+                            <view class="_view data-v-3ede062b reader_chapter_reminder_title">你已阅读本书很久啦，喜欢的话就加入书架吧</view>
+                            <view class="_view data-v-3ede062b reader_chapter_reminder_arrow"></view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <template is="62418c4b" data="{{...$root[$kk+'16'],$root:$root}}" wx:if="{{book&&book.intro}}"></template>
+            <template is="92fc72d6" data="{{...$root[$kk+'17'],$root:$root}}" wx:if="{{supportedBook}}"></template>
+            <view class="_view data-v-3ede062b {{[ 'reader_ttsSetting',[ttsSetting.shouldShow?'reader_ttsSetting_Show':''] ]}}" wx:if="{{supportedBook}}">
+                <view class="_view data-v-3ede062b reader_ttsSetting_head">
+                    <view ariaLabel="关闭 TTS 设置浮层" ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b reader_ttsSetting_head_backBtn" data-comkey="{{$k}}" data-eventid="{{'3_24'}}" hoverClass="wr_commonActive">
+                        <view class="_view data-v-3ede062b reader_ttsSetting_head_backBtn_icon"></view>
+                    </view>
+                    <view class="_view data-v-3ede062b reader_ttsSetting_head_title">设置</view>
+                </view>
+                <view class="_view data-v-3ede062b reader_ttsSetting_cnt">
+                    <view class="_view data-v-3ede062b reader_ttsSetting_voice">
+                        <view bindtap="handleProxy" class="_view data-v-3ede062b {{[ 'reader_ttsSetting_voice_item',[ttsSetting.voiceIndex===index?'reader_ttsSetting_voice_item_Current':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'4_25_'+index}}" hoverClass="wr_itemActive" key="{{index}}" wx:for="{{ttsSetting.voiceList}}" wx:for-item="voice" wx:key="index">
+                    {{ttsSetting.voicePrefix+voice.name}}
+                </view>
+                    </view>
+                </view>
+            </view>
+            <view class="_view data-v-3ede062b {{[ 'reader_bottomBar',[tabBar.shouldShow?'reader_bottomBar_Show':''],[setting.shouldShow?'reader_bottomBar_ShowSetting':''],[tts.shouldShow?'reader_bottomBar_ShowTTS':''],[catalog.shouldShow?'reader_bottomBar_ShowCatalog':''] ]}}" wx:if="{{supportedBook&&!offshelfEmptyView&&(!isOffShelf||isTrialRead)}}">
+                <form reportSubmit bindsubmit="handleProxy" class="_form data-v-3ede062b" data-comkey="{{$k}}" data-eventid="{{'2_36'}}">
+                    <view class="_view data-v-3ede062b reader_bottomBar_setting" wx:if="{{setting.shouldShow}}">
+                        <view class="_view data-v-3ede062b reader_bottomBar_setting_top">
+                            <view class="_view data-v-3ede062b reader_bottomBar_setting_decreaseBtn"></view>
+                            <template is="7ad7cf5c" data="{{...$root[$kk+'18'],$root:$root}}"></template>
+                            <view class="_view data-v-3ede062b reader_bottomBar_setting_increaseBtn"></view>
+                        </view>
+                        <view class="_view data-v-3ede062b reader_bottomBar_setting_theme">
+                            <view ariaLabel="白色主题" ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b {{[ 'reader_bottomBar_setting_theme_item','reader_bottomBar_setting_theme_item_Light',[theme==='light'?'reader_bottomBar_setting_theme_item_Curr':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'5_27'}}"></view>
+                            <view ariaLabel="夜间模式" ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b {{[ 'reader_bottomBar_setting_theme_item','reader_bottomBar_setting_theme_item_Dark',[theme==='dark'?'reader_bottomBar_setting_theme_item_Curr':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'5_28'}}">
+                                <view class="_view data-v-3ede062b reader_bottomBar_setting_theme_item_icon"></view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-3ede062b {{[ 'reader_bottomBar_tts',[isTTSPlaying?'reader_bottomBar_tts_Playing':''] ]}}" wx:if="{{tts.shouldShow}}">
+                        <view ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b reader_bottomBar_tts_pauseBtn" data-comkey="{{$k}}" data-eventid="{{'4_30'}}" wx:if="{{isTTSPlaying}}">
+                            <view class="_view data-v-3ede062b reader_bottomBar_tts_pauseBtn_icon"></view>
+                        </view>
+                        <view ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b reader_bottomBar_tts_playBtn" data-comkey="{{$k}}" data-eventid="{{'4_29'}}" wx:else>
+                            <view class="_view data-v-3ede062b reader_bottomBar_tts_playBtn_icon"></view>
+                        </view>
+                        <view class="_view data-v-3ede062b reader_bottomBar_tts_title">
+                    {{bottomBarTTSTitle}}
+                </view>
+                        <view ariaLabel="打开 TTS 设置" ariaRole="button" bindtap="handleProxy" class="_view data-v-3ede062b reader_bottomBar_tts_preview" data-comkey="{{$k}}" data-eventid="{{'4_31'}}" hoverClass="wr_commonActive">
+                            <rich-text class="_rich-text data-v-3ede062b reader_bottomBar_tts_preview_voice" nodes="{{ttsSettingVoiceNameNodes}}"></rich-text>
+                        </view>
+                    </view>
+                    <view class="_view data-v-3ede062b reader_bottomBar_action">
+                        <view ariaRole="button" catchtap="handleProxy" class="_view data-v-3ede062b reader_bottomBar_action_item reader_bottomBar_action_item_Catalog" data-comkey="{{$k}}" data-eventid="{{'4_32'}}">
+                            <view class="_view data-v-3ede062b reader_bottomBar_action_item_icon"></view>
+                            <view class="_view data-v-3ede062b reader_bottomBar_action_item_text">目录</view>
+                        </view>
+                        <view ariaRole="button" catchtap="handleProxy" class="_view data-v-3ede062b {{[ 'reader_bottomBar_action_item','reader_bottomBar_action_item_TTS',[book.shouldHideTTS?'reader_bottomBar_action_item_Disabled':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'4_33'}}">
+                            <view class="_view data-v-3ede062b reader_bottomBar_action_item_icon"></view>
+                            <view class="_view data-v-3ede062b reader_bottomBar_action_item_text">听书</view>
+                        </view>
+                        <view ariaRole="button" catchtap="handleProxy" class="_view data-v-3ede062b reader_bottomBar_action_item reader_bottomBar_action_item_Setting" data-comkey="{{$k}}" data-eventid="{{'4_34'}}">
+                            <view class="_view data-v-3ede062b reader_bottomBar_action_item_icon"></view>
+                            <view class="_view data-v-3ede062b reader_bottomBar_action_item_text">设置</view>
+                        </view>
+                        <button catchtap="handleProxy" class="_button data-v-3ede062b {{[ 'reader_bottomBar_action_item','reader_bottomBar_action_item_Bookshelf',[book.isOnBookShelf?'reader_bottomBar_action_item_BookshelfAdded':'',!book.isOnBookShelf?'reader_bottomBar_action_item_BookshelfAdd':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'4_35'}}" formType="submit" hoverClass="wr_active">
+                            <view class="_view data-v-3ede062b reader_bottomBar_action_item_inner">
+                                <view class="_view data-v-3ede062b reader_bottomBar_action_item_icon"></view>
+                                <view class="_view data-v-3ede062b reader_bottomBar_action_item_text">{{book.isOnBookShelf?'已加入书架':'加入书架'}}</view>
+                            </view>
+                        </button>
+                    </view>
+                </form>
+            </view>
+            <template is="72e46b1e" data="{{...$root[$kk+'20'],$root:$root}}" wx:if="{{reader}}"></template>
+            <template is="6e2406d5" data="{{...$root[$kk+'21'],$root:$root}}"></template>
+            <template is="f210dfbc" data="{{...$root[$kk+'23'],$root:$root,$for:{default:'data-v-3ede062b-default-23'},$slotdefault:'data-v-3ede062b-default-23'}}" wx:if="{{reader&&reader.chapter&&profile&&supportedBook}}"></template>
+            <template is="f210dfbc" data="{{...$root[$kk+'25'],$root:$root,$for:{default:'data-v-3ede062b-default-25'},$slotdefault:'data-v-3ede062b-default-25'}}" wx:if="{{reader&&reader.chapter&&profile&&supportedBook}}"></template>
+            <template is="f210dfbc" data="{{...$root[$kk+'26'],$root:$root}}" wx:if="{{supportedBook}}"></template>
+            <template is="f210dfbc" data="{{...$root[$kk+'27'],$root:$root}}" wx:if="{{supportedBook}}"></template>
+            <template is="0d52de0d" data="{{...$root[$kk+'28'],$root:$root}}"></template>
+            <template is="0d52de0d" data="{{...$root[$kk+'29'],$root:$root}}"></template>
+            <template is="4d6c7370" data="{{...$root[$kk+'30'],$root:$root}}"></template>
+            <template is="38f077ba" data="{{...$root[$kk+'31'],$root:$root}}" wx:if="{{reader&&supportedBook}}"></template>
+            <template is="a94c21b2" data="{{...$root[$kk+'32'],$root:$root}}" wx:if="{{tabBar.shouldShow}}"></template>
+        </view>
+    </wx-scope>
+</template>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatings.vue.wxml"></import>
+<import src="/pages/reader/components/BookRecommend.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/wxParse.vue.wxml"></import>
+<import src="/pages/reader/components/ReaderCustomAd.vue.wxml"></import>
+<import src="/components/IntroModal.vue.wxml"></import>
+<import src="/components/Mask/Mask.vue.wxml"></import>
+<import src="/components/CustomSlider.vue.wxml"></import>
+<import src="/components/PinTips/PinTips.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/BuyBook/BuyBook.vue.wxml"></import>
+<import src="/components/RechargeView/RechargeView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/reader/components/SubscribeBookPrompt.vue.wxml"></import>
+<import src="/pages/reader/components/CatalogSidebar.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>

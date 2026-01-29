@@ -1,0 +1,16 @@
+<template name="62418c4b">
+    <view class="_view data-v-2f690790 {{[customSelector]}}">
+        <template is="92fc72d6" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view bindanimationend="handleProxy" catchtap="handleProxy" class="_view data-v-2f690790 {{[ [true?'wr_modal':'',true?'wr_modal_ForBtn':'',showing?'wr_modal_Show':'',hiding?'wr_modal_Hide':'',true?'wr_introModal':''],animationSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'1_2'}}">
+            <view class="_view data-v-2f690790 wr_introModal_cnt">
+                <view bindtap="handleProxy" class="_view data-v-2f690790 wr_introModal_title" data-comkey="{{$k}}" data-eventid="{{'3_1'}}">
+                {{title}}
+            </view>
+                <scroll-view class="_scroll-view data-v-2f690790 wr_introModal_text" scrollY="true" wx:if="{{content}}">
+                    <view class="_view data-v-2f690790 wr_introModal_text_value">{{content}}</view>
+                </scroll-view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/Mask/Mask.vue.wxml"></import>

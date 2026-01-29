@@ -1,0 +1,47 @@
+<template name="19cee07e">
+    <view catchtouchmove="preventTouchMove" class="_view data-v-b9acfbce xw_auth_container" wx:if="{{showView}}">
+        <view class="_view data-v-b9acfbce xw_auth_icons">
+            <view class="_view data-v-b9acfbce xw_auth_icon_xw">
+                <view class="_view data-v-b9acfbce xw_auth_icon_xwicon"></view>
+                <view class="_view data-v-b9acfbce xw_auth_icon_xwtext">腾讯小微</view>
+            </view>
+            <view class="_view data-v-b9acfbce xw_auth_icon_exchange"></view>
+            <view class="_view data-v-b9acfbce xw_auth_icon_wehear">
+                <view class="_view data-v-b9acfbce xw_auth_icon_wehearicon"></view>
+                <view class="_view data-v-b9acfbce xw_auth_icon_weheartext">微信听书</view>
+            </view>
+        </view>
+        <view class="_view data-v-b9acfbce xw_auth_title" wx:if="{{isMp}}">同意登录后，腾讯小微小程序将获得以下权限：</view>
+        <view class="_view data-v-b9acfbce xw_auth_title" wx:else>同意登录后，腾讯小微将获得以下权限：</view>
+        <view class="_view data-v-b9acfbce xw_auth_subtitle">
+        1、你的账号信息（昵称、头像）
+    </view>
+        <view class="_view data-v-b9acfbce xw_auth_subtitle">
+        2、你在微信听书上的个人信息（会员权益、订阅专辑、收听记录等）
+    </view>
+        <view class="_view data-v-b9acfbce xw_auth_button" wx:if="{{isMp}}">
+            <button bindtap="handleProxy" class="_button data-v-b9acfbce xw_auth_agree" data-comkey="{{$k}}" data-eventid="{{'2_0'}}">
+            同意
+        </button>
+            <button bindtap="handleProxy" class="_button data-v-b9acfbce xw_auth_cancel" data-comkey="{{$k}}" data-eventid="{{'2_1'}}">
+            取消
+        </button>
+        </view>
+        <view class="_view data-v-b9acfbce xw_auth_button" wx:elif="{{!isMp&&shouldAuth}}">
+            <button appParameter="result=0" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-b9acfbce xw_auth_agree" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" openType="launchApp">
+            同意
+        </button>
+            <button appParameter="result=-1" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-b9acfbce xw_auth_cancel" data-comkey="{{$k}}" data-eventid="{{'2_3'}}" openType="launchApp">
+            取消
+        </button>
+        </view>
+        <view class="_view data-v-b9acfbce xw_auth_button" wx:else>
+            <button appParameter="result=-2" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-b9acfbce xw_auth_agree" data-comkey="{{$k}}" data-eventid="{{'2_4'}}" openType="launchApp">
+            同意
+        </button>
+            <button appParameter="result=-2" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-b9acfbce xw_auth_cancel" data-comkey="{{$k}}" data-eventid="{{'2_5'}}" openType="launchApp">
+            取消
+        </button>
+        </view>
+    </view>
+</template>

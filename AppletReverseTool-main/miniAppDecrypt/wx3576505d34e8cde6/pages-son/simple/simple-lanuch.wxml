@@ -1,0 +1,100 @@
+<view>
+    <dk-loading bind:__l="__l" loading="{{dkLoading}}" vueId="63bb8f5a-1"></dk-loading>
+    <yy-privacy-loading bind:__l="__l" vueId="63bb8f5a-2"></yy-privacy-loading>
+    <sponsor bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','sponsor','$event',[] ],['form'] ] ] ] ]}}" value="{{form.sponsor}}" vueId="63bb8f5a-3"></sponsor>
+    <u-form bind:__l="__l" borderBottom="{{false}}" class="vue-ref" data-ref="uForm" errorType="{{['toast']}}" labelWidth="auto" model="{{form}}" rules="{{rules}}" vueId="63bb8f5a-4" vueSlots="{{['default']}}">
+        <view class="padding-rl-30 u-margin-top-20" style="{{'padding-bottom:'+'165rpx'+';'}}">
+            <view class="u-margin-bottom-20 u-rela" wx:if="{{$root.g0}}">
+                <u-image bind:__l="__l" lazyLoad="{{true}}" mode="widthFix" src="{{form.cover_image[0]}}" vueId="{{'63bb8f5a-5'+','+'63bb8f5a-4'}}"></u-image>
+                <view bindtap="__e" class="u-abso" data-event-opts="{{[ [ 'tap',[ [ 'onRemove',['$event'] ] ] ] ]}}" style="top:20rpx;right:20rpx;">
+                    <u-icon bind:__l="__l" color="#000000" name="close" size="22" style="box-shadow:0 0 1px 5rpx #000000;border-radius:50%;padding:10rpx;" vueId="{{'63bb8f5a-6'+','+'63bb8f5a-4'}}"></u-icon>
+                </view>
+            </view>
+            <view class="u-flex u-row-between padding-tb-10">
+                <view class="u-content-color">基础信息</view>
+                <u-icon bind:__l="__l" bind:click="__e" color="#679EF8" data-event-opts="{{[ [ '^click',[ ['onCover'] ] ] ]}}" label="添加封面" labelColor="#679EF8" name="photo" size="32" vueId="{{'63bb8f5a-7'+','+'63bb8f5a-4'}}" wx:if="{{!$root.g1}}"></u-icon>
+            </view>
+            <view class="form-item-box padding-rl-24">
+                <u-form-item bind:__l="__l" class="custom-required" label="投票标题" labelStyle="{{$root.a0}}" prop="title" required="{{true}}" vueId="{{'63bb8f5a-8'+','+'63bb8f5a-4'}}" vueSlots="{{['default']}}">
+                    <u-input bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','title','$event',[] ],['form'] ] ] ] ]}}" inputAlign="right" maxlength="50" placeholder="请输入活动标题" value="{{form.title}}" vueId="{{'63bb8f5a-9'+','+'63bb8f5a-8'}}"></u-input>
+                </u-form-item>
+                <u-form-item bind:__l="__l" borderBottom="{{false}}" prop="rich_text" vueId="{{'63bb8f5a-10'+','+'63bb8f5a-4'}}" vueSlots="{{['default']}}">
+                    <dk-editor bind:__l="__l" bind:input="__e" class="vue-ref" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','rich_text','$event',[] ],['form'] ] ] ] ]}}" data-ref="dkEditor" themeColor="#999999" value="{{form.rich_text}}" vueId="{{'63bb8f5a-11'+','+'63bb8f5a-10'}}"></dk-editor>
+                </u-form-item>
+            </view>
+            <simple-options bind:__l="__l" bind:input="__e" bind:onChangeMediaType="__e" class="vue-ref" create="{{true}}" data-event-opts="{{[ [ '^onChangeMediaType',[ ['onChangeMediaType'] ] ],[ '^input',[ [ '__set_model',[ '','join','$event',[] ] ] ] ] ]}}" data-ref="simpleOptions" mediaType="{{form.type}}" value="{{join}}" vueId="{{'63bb8f5a-12'+','+'63bb8f5a-4'}}" wx:if="{{!form.id}}"></simple-options>
+            <view class="u-flex u-row-between padding-tb-10 u-content-color">投票规则设置</view>
+            <view class="form-item-box">
+                <dk-time-range bind:__l="__l" bind:updateEndTime="__e" bind:updateStartTime="__e" bottom="{{true}}" data-event-opts="{{[ [ '^updateStartTime',[ [ '__set_sync',['$0','start_time','$event'],['form'] ] ] ],[ '^updateStartTime',[ [ '__set_sync',['$0','start_time','$event'],['form'] ] ] ],[ '^updateEndTime',[ [ '__set_sync',['$0','end_time','$event'],['form'] ] ] ],[ '^updateEndTime',[ [ '__set_sync',['$0','end_time','$event'],['form'] ] ] ] ]}}" endText="投票结束时间" endTime="{{form.end_time}}" startText="投票开始时间" startTime="{{form.start_time}}" vueId="{{'63bb8f5a-13'+','+'63bb8f5a-4'}}"></dk-time-range>
+                <u-cell-group bind:__l="__l" border="{{false}}" vueId="{{'63bb8f5a-14'+','+'63bb8f5a-4'}}" vueSlots="{{['default']}}">
+                    <vote-times bind:__l="__l" bind:handleShowNotice="__e" bind:updateVoteNum="__e" bind:updateVoteType="__e" data-event-opts="{{[ [ '^handleShowNotice',[ ['handleShowNotice'] ] ],[ '^updateVoteType',[ [ '__set_sync',['$0','type','$event'],['form.day_votes'] ] ] ],[ '^updateVoteType',[ [ '__set_sync',['$0','type','$event'],['form.day_votes'] ] ] ],[ '^updateVoteNum',[ [ '__set_sync',['$0','num','$event'],['form.day_votes'] ] ] ],[ '^updateVoteNum',[ [ '__set_sync',['$0','num','$event'],['form.day_votes'] ] ] ] ]}}" voteNum="{{form.day_votes.num}}" voteType="{{form.day_votes.type}}" vueId="{{'63bb8f5a-15'+','+'63bb8f5a-14'}}"></vote-times>
+                    <select-muilt bind:__l="__l" bind:handleShowNotice="__e" bind:updateMax="__e" bind:updateMin="__e" data-event-opts="{{[ [ '^handleShowNotice',[ ['handleShowNotice'] ] ],[ '^updateMin',[ [ '__set_sync',['$0','min','$event'],['form.vote_option'] ] ] ],[ '^updateMax',[ [ '__set_sync',['$0','max','$event'],['form.vote_option'] ] ] ] ]}}" max="{{form.vote_option.max}}" min="{{form.vote_option.min}}" vueId="{{'63bb8f5a-16'+','+'63bb8f5a-14'}}"></select-muilt>
+                    <u-cell-item arrow="{{false}}" bind:__l="__l" hoverClass="none" vueId="{{'63bb8f5a-17'+','+'63bb8f5a-14'}}" vueSlots="{{['title','right-icon']}}">
+                        <u-icon bind:__l="__l" catch:click="__e" customStyle="{{$root.a1}}" data-event-opts="{{[ [ '^click',[ [ 'handleShowNotice',['vote-repeat'] ] ] ] ]}}" label="是否可以重复投票" labelColor="#333333" labelPos="left" labelSize="30" name="question-circle" size="26" slot="title" vueId="{{'63bb8f5a-18'+','+'63bb8f5a-17'}}"></u-icon>
+                        <dk-switch bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','is_repeat','$event',[] ],['form'] ] ] ] ]}}" slot="right-icon" value="{{form.is_repeat}}" vueId="{{'63bb8f5a-19'+','+'63bb8f5a-17'}}"></dk-switch>
+                    </u-cell-item>
+                    <u-collapse bind:__l="__l" headStyle="{{collaspeHeadStyle}}" itemStyle="{{collaspeItemStyle}}" vueId="{{'63bb8f5a-20'+','+'63bb8f5a-14'}}" vueSlots="{{['default']}}">
+                        <u-collapse-item bind:__l="__l" vueId="{{'63bb8f5a-21'+','+'63bb8f5a-20'}}" vueSlots="{{['default','title']}}">
+                            <view class="u-flex" slot="title">
+                                <text class="bold u-margin-left-14">更多设置</text>
+                            </view>
+                            <select-score bind:__l="__l" bind:handleShowNotice="__e" bind:updateMax="__e" bind:updateMin="__e" data-event-opts="{{[ [ '^handleShowNotice',[ ['handleShowNotice'] ] ],[ '^updateMin',[ [ '__set_sync',['$0','min','$event'],['form.scoring'] ] ] ],[ '^updateMax',[ [ '__set_sync',['$0','max','$event'],['form.scoring'] ] ] ] ]}}" max="{{form.scoring.max}}" min="{{form.scoring.min}}" vueId="{{'63bb8f5a-22'+','+'63bb8f5a-21'}}"></select-score>
+                            <u-cell-item arrow="{{false}}" bind:__l="__l" hoverClass="none" vueId="{{'63bb8f5a-23'+','+'63bb8f5a-21'}}" vueSlots="{{['default','title']}}">
+                                <u-icon bind:__l="__l" customStyle="{{$root.a2}}" label="活动规则布局" labelColor="#333333" labelPos="left" labelSize="30" name="question-circle" size="26" slot="title" vueId="{{'63bb8f5a-24'+','+'63bb8f5a-23'}}"></u-icon>
+                                <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'changeRuleLocation',['$event'] ] ] ] ]}}" range="{{SIMPLE_RULE_LOCATION}}" rangeKey="name" value="{{ruleLocation_value}}">
+                                    <u-icon bind:__l="__l" label="{{ruleLocation_label}}" labelPos="left" name="arrow-right" slot="right-icon" vueId="{{'63bb8f5a-25'+','+'63bb8f5a-23'}}"></u-icon>
+                                </picker>
+                            </u-cell-item>
+                        </u-collapse-item>
+                    </u-collapse>
+                </u-cell-group>
+            </view>
+            <view class="u-flex u-row-between padding-tb-10 u-content-color">高级设置</view>
+            <view class="form-item-box">
+                <u-cell-group bind:__l="__l" border="{{false}}" vueId="{{'63bb8f5a-26'+','+'63bb8f5a-4'}}" vueSlots="{{['default']}}">
+                    <u-cell-item arrow="{{false}}" bind:__l="__l" title="票数隐藏" titleStyle="{{cellItemTit}}" vueId="{{'63bb8f5a-27'+','+'63bb8f5a-26'}}" vueSlots="{{['right-icon']}}">
+                        <dk-switch bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','is_vote_num','$event',[] ],['form'] ] ] ] ]}}" slot="right-icon" value="{{form.is_vote_num}}" vueId="{{'63bb8f5a-28'+','+'63bb8f5a-27'}}"></dk-switch>
+                    </u-cell-item>
+                    <u-cell-item arrow="{{false}}" bind:__l="__l" title="排行榜隐藏" titleStyle="{{cellItemTit}}" vueId="{{'63bb8f5a-29'+','+'63bb8f5a-26'}}" vueSlots="{{['right-icon']}}">
+                        <dk-switch bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','is_ranking','$event',[] ],['form'] ] ] ] ]}}" slot="right-icon" value="{{form.is_ranking}}" vueId="{{'63bb8f5a-30'+','+'63bb8f5a-29'}}"></dk-switch>
+                    </u-cell-item>
+                    <u-cell-item arrow="{{false}}" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['permissions'] ] ] ]}}" title="分享权限-群内投票" titleStyle="{{cellItemTit}}" vueId="{{'63bb8f5a-31'+','+'63bb8f5a-26'}}" vueSlots="{{['default']}}">
+                        <view class="u-text-right">
+                            <text>{{shareText[form.is_share-1].title}}</text>
+                            <u-icon bind:__l="__l" name="arrow-right" vueId="{{'63bb8f5a-32'+','+'63bb8f5a-31'}}"></u-icon>
+                        </view>
+                    </u-cell-item>
+                    <u-cell-item arrow="{{false}}" bind:__l="__l" title="匿名投票" titleStyle="{{cellItemTit}}" vueId="{{'63bb8f5a-33'+','+'63bb8f5a-26'}}" vueSlots="{{['default']}}">
+                        <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'onBindIsHead',['$event'] ] ] ] ]}}" range="{{IS_HEAD_ARY}}" rangeKey="name" value="{{is_head_value}}">
+                            <view class="u-text-right">
+                                <text>{{isHeadDesc}}</text>
+                                <u-icon bind:__l="__l" name="arrow-right" vueId="{{'63bb8f5a-34'+','+'63bb8f5a-33'}}"></u-icon>
+                            </view>
+                        </picker>
+                    </u-cell-item>
+                    <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'handleCell',['questionnaire'] ] ] ] ]}}" hoverClass="none" value="{{form.voting_form?'已开启':'未开启'}}" valueStyle="{{$root.a3}}" vueId="{{'63bb8f5a-35'+','+'63bb8f5a-26'}}" vueSlots="{{['title']}}">
+                        <u-icon bind:__l="__l" catch:tap="__e" customStyle="{{cellItemTit}}" data-event-opts="{{[ [ '^tap',[ [ 'handleShowNotice',['voting_form'] ] ] ] ]}}" label="填问卷后投票" labelColor="#333333" labelPos="left" name="question-circle" slot="title" vueId="{{'63bb8f5a-36'+','+'63bb8f5a-35'}}"></u-icon>
+                    </u-cell-item>
+                </u-cell-group>
+            </view>
+            <view class="form-item-box u-margin-top-20">
+                <u-cell-group bind:__l="__l" border="{{false}}" vueId="{{'63bb8f5a-37'+','+'63bb8f5a-4'}}" vueSlots="{{['default']}}">
+                    <u-cell-item arrow="{{false}}" bind:__l="__l" borderBottom="{{false}}" vueId="{{'63bb8f5a-38'+','+'63bb8f5a-37'}}" vueSlots="{{['title','right-icon']}}">
+                        <u-icon bind:__l="__l" customStyle="{{$root.a4}}" label="免费本地曝光" labelColor="#333333" labelPos="left" labelSize="28" name="question-circle" size="26" slot="title" vueId="{{'63bb8f5a-39'+','+'63bb8f5a-38'}}"></u-icon>
+                        <dk-switch bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','is_first','$event',[] ],['form'] ] ] ] ]}}" slot="right-icon" value="{{form.is_first}}" vueId="{{'63bb8f5a-40'+','+'63bb8f5a-38'}}"></dk-switch>
+                    </u-cell-item>
+                </u-cell-group>
+            </view>
+            <dk-copyright bind:__l="__l" vueId="{{'63bb8f5a-41'+','+'63bb8f5a-4'}}"></dk-copyright>
+        </view>
+    </u-form>
+    <view class="submit-box safe-area-inset-bottom">
+        <u-button bind:__l="__l" catch:click="__e" class="btn_box" customStyle="{{submitStyle}}" data-event-opts="{{[ [ '^click',[ [ 'submit',['$event'] ] ] ] ]}}" hoverClass="btn-box-hover" shape="circle" type="primary" vueId="63bb8f5a-42" vueSlots="{{['default']}}" wx:if="{{vuex_other.auth_phone.simple_create==2||vuex_user.phone}}">{{''+(form.id?'保存修改':'立即创建')+''}}</u-button>
+        <u-button bind:__l="__l" bind:getphonenumber="__e" class="btn_box" customStyle="{{submitStyle}}" data-event-opts="{{[ [ '^getphonenumber',[ ['getPhoneNumber'] ] ] ]}}" hoverClass="btn-box-hover" openType="getPhoneNumber" shape="circle" type="primary" vueId="63bb8f5a-43" vueSlots="{{['default']}}" wx:else>{{''+(form.id?'保存修改':'立即创建')+''}}</u-button>
+    </view>
+    <dk-avatar bind:__l="__l" bind:upload="__e" class="vue-ref" data-event-opts="{{[ [ '^upload',[ ['myUpload'] ] ] ]}}" data-ref="avatar" vueId="63bb8f5a-44"></dk-avatar>
+    <dk-pop-notice bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show_notice','$event',[] ] ] ] ] ]}}" keyName="{{notice_key}}" value="{{show_notice}}" vueId="63bb8f5a-45"></dk-pop-notice>
+    <dk-user-info bind:__l="__l" class="vue-ref" data-ref="userinfo" vueId="63bb8f5a-46"></dk-user-info>
+    <dk-compress bind:__l="__l" class="vue-ref" data-ref="compress" vueId="63bb8f5a-47"></dk-compress>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="63bb8f5a-48"></yy-privacy-popup>
+</view>

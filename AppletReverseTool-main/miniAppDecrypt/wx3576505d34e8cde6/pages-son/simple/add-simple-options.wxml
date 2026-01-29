@@ -1,0 +1,5 @@
+<view class="u-padding-30" style="padding-bottom:165rpx !important;">
+    <simple-options bind:__l="__l" bind:input="__e" class="vue-ref" create="{{false}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','create_join','$event',[] ] ] ] ] ]}}" data-ref="simpleOptions" mediaType="{{media_type}}" value="{{create_join}}" vueId="754295fe-1"></simple-options>
+    <dk-submit-btn bind:__l="__l" bind:submit="__e" data-event-opts="{{[ [ '^submit',[ ['submit'] ] ] ]}}" vueId="754295fe-2" vueSlots="{{['default']}}">保存</dk-submit-btn>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="754295fe-3"></yy-privacy-popup>
+</view>

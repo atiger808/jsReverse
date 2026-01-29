@@ -1,0 +1,45 @@
+<u-popup bind:__l="__l" bind:close="__e" bind:input="__e" borderRadius="16" closeable="{{isCheck}}" data-event-opts="{{[ [ '^close',[ ['e0'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" duration="100" mode="bottom" safeAreaInsetBottom="{{true}}" value="{{show}}" vueId="3275f582-1" vueSlots="{{['default']}}" wx:if="{{show}}">
+    <view hidden="{{!!isCheck}}">
+        <view class="manage-box">
+            <view class="u-margin-bottom-20">
+                <uni-notice-bar single backgroundColor="#1977ff" bind:__l="__l" color="#ffffff" text="{{'24小时全年无休客服电话：'+vuex_other.kf_wx}}" vueId="{{'3275f582-2'+','+'3275f582-1'}}"></uni-notice-bar>
+            </view>
+            <view class="export-box u-margin-bottom-20">
+                <view class="u-font-28 bold u-flex u-row-between">
+                    <view>导出数据</view>
+                    <u-button bind:__l="__l" bind:click="__e" customStyle="{{manageBtn}}" data-event-opts="{{[ [ '^click',[ [ 'handleExport',['$0'],['activity_id'] ] ] ] ]}}" type="primary" vueId="{{'3275f582-3'+','+'3275f582-1'}}" vueSlots="{{['default']}}">复制后台链接</u-button>
+                </view>
+                <view class="u-font-24 u-tips-color padding-tb-20 u-border-bottom">可点击右上方按钮在浏览器打开</view>
+            </view>
+            <view class="vote-config" wx:if="{{activity_type===ACTIVITY_VOTE}}">
+                <view class="u-font-28 bold u-padding-bottom-28 u-border-bottom">投票设置</view>
+                <view class="u-flex u-row-around u-wrap u-margin-top-46">
+                    <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['manage'] ] ] ] ]}}" label="员工管理" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="yuangongguanli" size="54" vueId="{{'3275f582-4'+','+'3275f582-1'}}"></u-icon>
+                    <u-icon bind:__l="__l" bind:click="__e" color="#FFA08A" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['notice'] ] ] ] ]}}" label="活动公告" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="gonggao" size="54" vueId="{{'3275f582-5'+','+'3275f582-1'}}"></u-icon>
+                    <u-icon bind:__l="__l" bind:click="__e" color="#2BC9A2" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['group'] ] ] ] ]}}" label="分组管理" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="fenzuguanli" size="54" vueId="{{'3275f582-6'+','+'3275f582-1'}}"></u-icon>
+                    <u-icon bind:__l="__l" bind:click="__e" color="#FFCF8A" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['more-setting'] ] ] ] ]}}" label="更多设置" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="gengduoshezhi" size="54" vueId="{{'3275f582-7'+','+'3275f582-1'}}"></u-icon>
+                </view>
+            </view>
+            <view class="activity-manage" style="margin-bottom:24rpx;">
+                <view>
+                    <view class="u-font-28 bold u-padding-bottom-28 u-border-bottom">数据管理</view>
+                    <view class="u-flex u-margin-top-40">
+                        <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['data-statistics'] ] ] ] ]}}" label="数据统计" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="shujutongji" size="45" vueId="{{'3275f582-8'+','+'3275f582-1'}}"></u-icon>
+                        <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['name'] ] ] ] ]}}" label="预设名单" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="fuzhi" size="45" style="margin-left:42rpx;" vueId="{{'3275f582-9'+','+'3275f582-1'}}"></u-icon>
+                    </view>
+                </view>
+            </view>
+            <view class="activity-manage">
+                <view class="u-font-28 bold u-padding-bottom-28 u-border-bottom">活动管理</view>
+                <view class="u-flex u-row-around u-margin-top-40">
+                    <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['edit'] ] ] ] ]}}" label="编辑" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="bianji" size="45" vueId="{{'3275f582-10'+','+'3275f582-1'}}"></u-icon>
+                    <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['copy'] ] ] ] ]}}" label="复制" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="fuzhi" size="45" vueId="{{'3275f582-11'+','+'3275f582-1'}}"></u-icon>
+                    <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['clear'] ] ] ] ]}}" label="{{vote_type===0?'清除表单':'清除票数'}}" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="qingchushuju" size="45" vueId="{{'3275f582-12'+','+'3275f582-1'}}"></u-icon>
+                    <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['del'] ] ] ] ]}}" label="删除" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="28" name="shanchu" size="45" vueId="{{'3275f582-13'+','+'3275f582-1'}}"></u-icon>
+                </view>
+            </view>
+        </view>
+        <view bindtap="__e" class="cancel-box u-border-bottom" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}">取消</view>
+    </view>
+    <dk-copy activity="{{id:activity_id,sid:sid,type:activity_type}}" bind:__l="__l" isCheck="{{isCheck}}" vueId="{{'3275f582-14'+','+'3275f582-1'}}"></dk-copy>
+</u-popup>

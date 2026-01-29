@@ -1,0 +1,187 @@
+{
+  "permission": {
+    "scope.userFuzzyLocation": {
+      "desc": "由于部分投票活动设置了区域限制，需申请用户地理位置信息。"
+    },
+    "scope.userLocation": {
+      "desc": "由于部分投票活动设置了区域限制，需申请用户地理位置信息。"
+    }
+  },
+  "networkTimeout": {
+    "request": 60000,
+    "connectSocket": 60000,
+    "uploadFile": 600000,
+    "downloadFile": 600000
+  },
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pages-son/common",
+        "pages-son/vote",
+        "pages-son/one",
+        "pages-son/simple",
+        "pages-son/solitaire"
+      ]
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "requiredPrivateInfos": [
+    "getFuzzyLocation",
+    "chooseLocation"
+  ],
+  "__usePrivacyCheck__": true,
+  "componentFramework": "exparser",
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#5794F8",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "模板案例",
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home-select.png"
+      },
+      {
+        "pagePath": "pages/vote/index",
+        "text": "创建投票",
+        "iconPath": "static/icon/plus.png",
+        "selectedIconPath": "static/icon/plus-select.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "个人中心",
+        "iconPath": "static/icon/center.png",
+        "selectedIconPath": "static/icon/center-select.png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "pages-son/vote/",
+      "pages": [
+        "player",
+        "large-screen",
+        "big-screen",
+        "vote-activity",
+        "manage",
+        "add-manage",
+        "creat-card-share",
+        "notice",
+        "report"
+      ]
+    },
+    {
+      "root": "pages-son/common/",
+      "pages": [
+        "go-out",
+        "html"
+      ]
+    },
+    {
+      "root": "pages-son/one/",
+      "pages": [
+        "index/group-manage",
+        "index/simple-activity",
+        "index/cropper",
+        "index/near-vote-user",
+        "index/receive-prize",
+        "index/sign-up",
+        "index/vote-result",
+        "index/vote-result-200",
+        "my/my-vote",
+        "my/player-add",
+        "my/players",
+        "my/sign-up",
+        "my/question-manage",
+        "vote/launch",
+        "vote/more-setting",
+        "vote/specify-user",
+        "vote/preset-list",
+        "vote/vote-rule",
+        "vote/sign-info",
+        "vote/shop",
+        "vote/music-setting",
+        "vote/questionnaire",
+        "vote/questionnaire-200",
+        "vote/vote-template",
+        "index/fill-prize-info",
+        "index/to-store",
+        "index/to-store-message",
+        "index/gift-user",
+        "index/check-store",
+        "vote/fans",
+        "vote/authorization",
+        "vote/authorization-apply",
+        "index/answer-question",
+        "index/answer-question-200",
+        "index/official-account-desc",
+        "index/h5",
+        "vote-blend/vote-blend",
+        "vote-public-lists/vote-public-lists"
+      ]
+    },
+    {
+      "root": "pages-son/simple/",
+      "pages": [
+        "simple-lanuch",
+        "simple-activity",
+        "add-simple-options",
+        "edit-simple-options",
+        "statistics",
+        "vote-detail",
+        "activity-detail"
+      ]
+    },
+    {
+      "root": "pages-son/multiple/",
+      "pages": [
+        "multiple-create",
+        "multiple-question",
+        "owner-home-other/owner-home-other"
+      ]
+    },
+    {
+      "root": "pages-son/solitaire/",
+      "pages": [
+        "question-template",
+        "question-manage",
+        "create-questionnaire",
+        "comments",
+        "particition-record",
+        "batch-create",
+        "completion",
+        "choice",
+        "image-ques",
+        "phone-ques",
+        "statistics",
+        "data-statistics",
+        "edit-form",
+        "signature",
+        "signature-details",
+        "signature-main",
+        "manage-setting-200",
+        "quota-setting",
+        "edit-form-200",
+        "data-statistics-200",
+        "batch-create-200/batch-create-200",
+        "batch-create-200/batch-create-search"
+      ]
+    }
+  ],
+  "window": {
+    "navigationStyle": "default",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/vote/index",
+    "pages/my/index",
+    "pages/index/vote-activity"
+  ]
+}

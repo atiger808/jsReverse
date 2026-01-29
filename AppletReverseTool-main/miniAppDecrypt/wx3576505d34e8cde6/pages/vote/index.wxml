@@ -1,0 +1,71 @@
+<view class="padding-rl-30">
+    <view class="u-flex-col">
+        <view class="u-margin-top-25 white-color-bg" style="padding:28rpx 20rpx 20rpx 19rpx;border-radius:20rpx;">
+            <view class="u-font-32 bold u-padding-bottom-26 u-border-bottom u-flex u-row-between">
+                <text>创建投票</text>
+                <view class="u-flex">
+                    <text bindtap="__e" class="iconfont" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}" style="font-size:22rpx;color:#5FCF80;">联系客服 </text>
+                </view>
+            </view>
+            <view class="u-flex u-row-between" style="margin-top:28rpx;">
+                <view bindtap="__e" class="normal-box" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/one/vote/vote-template'] ] ] ] ]}}" style="{{'background-image:'+'url('+NORMAL_BOX_BG+')'+';'}}">
+                    <view class="u-font-32 bold" style="color:#1976FA;margin:29rpx 0 0 25rpx;">发起通用投票</view>
+                    <view class="u-font-22 u-margin-top-10" style="color:#3589FF;margin:10rpx 0 0 27rpx;">可视频投票,音频投票</view>
+                    <view class="u-font-22 u-margin-top-10" style="color:#3589FF;margin:10rpx 0 0 27rpx;">公众号投票,答题投票</view>
+                    <view class="u-font-22 u-margin-top-24 u-text-center custom" style="margin:10rpx 0 0 26rpx;">可免费定制专属模版</view>
+                </view>
+                <view class="u-flex-col u-row-between" style="height:342rpx;">
+                    <view bindtap="__e" class="jielong-box u-padding-top-20 u-padding-left-22" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/simple/simple-lanuch'] ] ] ] ]}}" style="{{'background-image:'+'url('+SIMPLE_BOX_BG+')'+';'}}">
+                        <view class="u-font-30 bold" style="color:#FF9519;">简易投票</view>
+                        <view class="u-font-22 u-margin-top-10" style="color:#FF9519;">群内投票/纯文字投票</view>
+                        <view class="u-font-22" style="color:#FF9519;">图文投票/支持批量导入</view>
+                    </view>
+                    <view bindtap="__e" class="jielong-box u-padding-top-20 u-padding-left-22" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/one/vote/vote-template'] ] ] ] ]}}" style="{{'background-image:'+'url('+JELONG_BOX_BG+')'+';'}}">
+                        <view class="u-font-30 bold" style="color:#14B26F;">视频投票/音频投票</view>
+                        <view class="u-font-22 u-margin-top-10" style="color:#36D290;">不限流</view>
+                        <view class="u-font-22" style="color:#36D290;">不限量</view>
+                    </view>
+                </view>
+            </view>
+            <view class="u-flex u-row-between" style="margin-top:17rpx;">
+                <view bindtap="__e" class="jielong-box2 jielong-box3 u-padding-top-20 u-padding-left-22" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/one/vote/vote-template'] ] ] ] ]}}" style="{{'background-image:'+'url('+CREATE_BOTTOM_BG+')'+';'}}">
+                    <view class="u-font-30 bold" style="color:#3D76A1;">公众号投票</view>
+                    <view class="u-font-22 u-margin-top-10" style="color:#73ACD6;">粉丝专属投票</view>
+                </view>
+                <view bindtap="__e" class="jielong-box2 u-padding-top-20 u-padding-left-22" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/simple/simple-lanuch'] ] ] ] ]}}" style="{{'background-image:'+'url('+CREATE_BOTTOM_BG+')'+';'}}">
+                    <view class="u-font-30 bold" style="color:#3D76A1;">群内投票</view>
+                    <view class="u-font-22 u-margin-top-10" style="color:#73ACD6;">仅群内粉丝参与</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{['','u-margin-top-25','','white-color-bg',vuex_other.type!==APP_TYPE_VOTING?'order-first':'']}}" style="padding:0 15rpx 27rpx 18rpx;border-radius:20rpx;">
+            <view class="u-font-32 bold u-border-bottom u-flex" style="height:80rpx;">
+                <text>创建其他类型投票</text>
+            </view>
+            <view class="u-flex u-row-between u-flex-wrap" style="margin-top:20rpx;">
+                <view bindtap="__e" class="jielong-item jielong-item2 overflow" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/solitaire/question-template',2] ] ] ] ]}}" style="{{'background-image:'+'url('+JIELONG_ITEM_TWO+')'+';'}}">
+                    <view class="u-font-30 bold" style="color:#589AFB;">多项多选投票·新版</view>
+                    <view class="u-font-20 u-margin-top-16" style="color:#67A8FF;line-height:18rpx;">支持业主投票/打分投票</view>
+                    <view class="u-font-20" style="color:#67A8FF;line-height:18rpx;margin-top:8rpx;">评优评选/报名登记</view>
+                </view>
+                <view bindtap="__e" class="jielong-item jielong-item2 overflow" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/solitaire/question-template',1] ] ] ] ]}}" style="{{'background-image:'+'url('+JIELONG_ITEM_ONE+')'+';'}}">
+                    <view class="u-font-30 bold" style="color:#14B26F;">问卷填表·老版</view>
+                    <view class="u-font-20 u-margin-top-16" style="color:#36D290;line-height:18rpx;">免费举办问卷填表</view>
+                    <view class="u-font-20" style="color:#36D290;line-height:18rpx;margin-top:8rpx;">不限次数，不限量</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <dk-copyright bind:__l="__l" kfwx="{{true}}" vueId="39f661a0-1"></dk-copyright>
+    <view class="h-50"></view>
+    <block wx:for="{{hotAry}}" wx:for-index="__i0__">
+        <view class="u-margin-bottom-20 u-font-32 bold">{{item.name}}</view>
+        <view class="u-flex u-flex-wrap u-row-between">
+            <view bindtap="__e" class="item-hot white-color-bg br-16 overflow h-88 u-margin-bottom-20 u-rela u-flex u-padding-left-26" data-event-opts="{{[ [ 'tap',[ [ 'toActivity',['$0'],[ [ ['hotAry','',__i0__],['activity','id',activity.id] ] ] ] ] ] ]}}" wx:for="{{item.activity}}" wx:for-item="activity" wx:key="id">
+                <view class="hot-abso u-font-12">{{activity.label}}</view>
+                <view class="u-line-1" style="width:220rpx;">{{activity.title}}</view>
+            </view>
+        </view>
+    </block>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="39f661a0-2"></yy-privacy-popup>
+</view>

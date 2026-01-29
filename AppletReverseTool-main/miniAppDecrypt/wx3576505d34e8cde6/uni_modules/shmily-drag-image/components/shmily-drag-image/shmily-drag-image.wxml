@@ -1,0 +1,19 @@
+<view class="con data-v-152fcc0d">
+    <movable-area bindmouseenter="__e" bindmouseleave="__e" class="area data-v-152fcc0d" data-event-opts="{{[ [ 'mouseenter',[ [ 'mouseenter',['$event'] ] ] ],[ 'mouseleave',[ [ 'mouseleave',['$event'] ] ] ] ]}}" style="{{'height:'+areaHeight+';'}}" wx:if="{{viewWidth}}">
+        <movable-view bindchange="__e" bindmousedown="__e" bindmouseup="__e" bindtouchend="__e" bindtouchstart="__e" class="view data-v-152fcc0d" damping="{{40}}" data-event-opts="{{[ [ 'change',[ [ 'onChange',['$event','$0'],[ [ ['imageList','id',item.id] ] ] ] ] ],[ 'touchstart',[ [ 'touchstart',['$0'],[ [ ['imageList','id',item.id] ] ] ] ] ],[ 'mousedown',[ [ 'touchstart',['$0'],[ [ ['imageList','id',item.id] ] ] ] ] ],[ 'touchend',[ [ 'touchend',['$0'],[ [ ['imageList','id',item.id] ] ] ] ] ],[ 'mouseup',[ [ 'touchend',['$0'],[ [ ['imageList','id',item.id] ] ] ] ] ] ]}}" direction="all" disabled="{{item.disable}}" style="{{'width:'+viewWidth+'px'+';'+'height:'+viewWidth+'px'+';'+'z-index:'+item.zIndex+';'+'opacity:'+item.opacity+';'}}" x="{{item.x}}" y="{{item.y}}" wx:for="{{imageList}}" wx:key="id">
+            <view class="area-con data-v-152fcc0d" style="{{'width:'+childWidth+';'+'height:'+childWidth+';'+'border-radius:'+borderRadius+'rpx'+';'+'transform:'+'scale('+item.scale+')'+';'}}">
+                <u-lazy-load bind:__l="__l" class="pre-image data-v-152fcc0d" height="{{childWidth}}" image="{{item.src}}" imgMode="scaleToFill" lazyLoad="{{true}}" vueId="{{'03290829-1-'+index}}"></u-lazy-load>
+                <view bindtap="__e" catchmousedown="__e" catchmouseup="__e" catchtouchend="__e" catchtouchstart="__e" class="del-con data-v-152fcc0d" data-event-opts="{{[ [ 'tap',[ [ 'delImages',['$0',index],[ [ ['imageList','id',item.id] ] ] ] ] ],[ 'touchstart',[ [ 'delImageMp',['$0',index],[ [ ['imageList','id',item.id] ] ] ] ] ],[ 'touchend',[ ['nothing'] ] ],[ 'mousedown',[ ['nothing'] ] ],[ 'mouseup',[ ['nothing'] ] ] ]}}" wx:if="{{remove}}">
+                    <view class="del-wrap data-v-152fcc0d">
+                        <image class="del-image data-v-152fcc0d" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAhdEVYdENyZWF0aW9uIFRpbWUAMjAyMDowNzoyNSAyMTo1NDoyOU4TkJAAAADcSURBVFhH7ZfRCoMwDEXLvkjwwVf/bH/emmAyN6glTW9WBjsgwm28OeCLpj81Sil7zvlJ90UiONS/yY5VogsO6XrBg3IEQ5a/s8vRSWUAKmLqp2w5jz5BiNQEGMo3GbloDLtFXJ1IkaEuhAiiY6gEIqB4yqACSk9piIBiKQ8VUFpLviKg3C2rESKgWERCBZSWiEfgIfffYvrrsAgoISJ3Apy3zuTxcSxLQkV6ykNEPKVQkZEyiAiiZKgDIaC4upACSlcn5fM/+WuDCAHF1E/Z/N9AhkMZnPNDPI+UDjPIXgAQIGjNAAAAAElFTkSuQmCC"></image>
+                    </view>
+                </view>
+            </view>
+        </movable-view>
+        <view bindtap="__e" class="add data-v-152fcc0d" data-event-opts="{{[ [ 'tap',[ [ 'addImages',['$event'] ] ] ] ]}}" style="{{'top:'+add.y+';'+'left:'+add.x+';'+'width:'+viewWidth+'px'+';'+'height:'+viewWidth+'px'+';'}}" wx:if="{{$root.g0<number}}">
+            <view class="add-wrap data-v-152fcc0d" style="{{'width:'+childWidth+';'+'height:'+childWidth+';'+'border-radius:'+borderRadius+'rpx'+';'}}">
+                <image class="data-v-152fcc0d" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAYAAACMRWrdAAABIUlEQVRoQ+2a2w2DMAxFeQzWrsMUbadAsEw3S1CqVgppKwLX8BEOP4iHTXx8uUgWdVXoVhdaV0VhSmf7vr/H8V3XzY6V3P9iD+nYOI5P7/01LMI596AwoZV0TIBXIUWFXhKLFBWYSFGhhxQN6SFFQ5i4ogITKSr0cEVDekjRECauqMBEigq9U7piOk2yAti27SUe5ljlTfPEQ6KZecTvwl4P3ytvOv06R2HDMNzes7+6aRrvnHvtf50L13Lp50rx88zcvNlS3JpwKQ67XyK04nq2nFbk/LqVjin0TvmBNgQ2S4UUDcliHgpMpKjQwxUN6SFFQ5i4ogITKSr0cEVDekjRECauqMAsVoph+hVPtYr5+03p9tbYQ96xrYtT4ootbAJGVxxVTapVswAAAABJRU5ErkJggg==" style="width:54rpx;height:54rpx;"></image>
+            </view>
+        </view>
+    </movable-area>
+</view>

@@ -1,0 +1,7 @@
+<u-popup bind:__l="__l" bind:close="__e" bind:input="__e" borderRadius="16" class="data-v-9fdd0436" data-event-opts="{{[ [ '^close',[ ['cancel'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="center" value="{{show}}" vueId="4ecf0368-1" vueSlots="{{['default']}}">
+    <view class="customer-box u-padding-40 data-v-9fdd0436">
+        <view class="u-font-36 bold u-main-color u-text-center data-v-9fdd0436">{{notice_obj[keyName].title}}</view>
+        <view class="u-content-color padding-tb-30 u-font-30 data-v-9fdd0436">{{notice_obj[keyName].content}}</view>
+        <u-button bind:__l="__l" bind:click="__e" class="data-v-9fdd0436" customStyle="{{width:'100%'}}" data-event-opts="{{[ [ '^click',[ ['cancel'] ] ] ]}}" shape="circle" type="primary" vueId="{{'4ecf0368-2'+','+'4ecf0368-1'}}" vueSlots="{{['default']}}">我知道了</u-button>
+    </view>
+</u-popup>

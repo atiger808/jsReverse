@@ -1,0 +1,14 @@
+<u-popup bind:__l="__l" bind:close="__e" bind:input="__e" borderRadius="16" class="data-v-0667e27c" data-event-opts="{{[ [ '^close',[ ['cancel'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="center" value="{{show}}" vueId="110c9510-1" vueSlots="{{['default']}}">
+    <view class="customer-box u-padding-40 u-flex-col u-row-between data-v-0667e27c">
+        <view class="u-font-36 bold u-main-color u-text-center data-v-0667e27c">联系商务</view>
+        <view class="data-v-0667e27c">1.上首页请备注『我要上首页』</view>
+        <view class="data-v-0667e27c">2.小程序广告投放请备注『小程序投放』</view>
+        <view class="data-v-0667e27c">3.其它合作请注明『具体合作事项』</view>
+        <view class="data-v-0667e27c">{{'4.商务微信号:'+(vuex_other.kf_wx||'zzz-02521')}}</view>
+        <view class="u-tips-color data-v-0667e27c">注：服务时间（10：00-21：00）</view>
+        <view class="u-flex u-row-between data-v-0667e27c">
+            <u-button bind:__l="__l" bind:click="__e" class="data-v-0667e27c" data-event-opts="{{[ [ '^click',[ ['cancel'] ] ] ]}}" shape="circle" size="medium" vueId="{{'110c9510-2'+','+'110c9510-1'}}" vueSlots="{{['default']}}">取消</u-button>
+            <u-button bind:__l="__l" bind:click="__e" class="data-v-0667e27c" data-event-opts="{{[ [ '^click',[ ['copy'] ] ] ]}}" shape="circle" size="medium" type="primary" vueId="{{'110c9510-3'+','+'110c9510-1'}}" vueSlots="{{['default']}}">一键复制微信号</u-button>
+        </view>
+    </view>
+</u-popup>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2025 Rotating Sphere</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // 设置 Canvas 大小
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 定义球体参数
+    const radius = 200; // 球体半径
+    const numPoints = 500; // 球体上的点数
+    const text = 'Dayue@2025'; // 显示的文本
+    const fontSize = 20; // 字体大小
+    const fontColor = '#00ff00'; // 字体颜色（代码雨绿色）
+
+    // 定义旋转角度
+    let angleX = 0;
+    let angleY = 0;
+
+    // 生成球体上的点
+    function generatePoints() {
+      const points = [];
+      for (let i = 0; i < numPoints; i++) {
+        const phi = Math.acos(-1 + (2 * i) / numPoints); // 极角
+        const theta = Math.sqrt(numPoints * Math.PI) * phi; // 方位角
+        const x = Math.cos(theta) * Math.sin(phi);
+        const y = Math.sin(theta) * Math.sin(phi);
+        const z = Math.cos(phi);
+        points.push({ x, y, z });
+      }
+      return points;
+    }
+
+    // 绘制球体
+    function drawSphere(points) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = fontColor;
+      ctx.font = `${fontSize}px monospace`;
+
+      points.forEach((point, index) => {
+        // 旋转点
+        const rotateX = point.x * Math.cos(angleY) - point.z * Math.sin(angleY);
+        const rotateZ = point.z * Math.cos(angleY) + point.x * Math.sin(angleY);
+        const rotateY = point.y * Math.cos(angleX) - rotateZ * Math.sin(angleX);
+        const finalZ = rotateZ * Math.cos(angleX) + point.y * Math.sin(angleX);
+
+        // 透视投影
+        const scale = 200 / (200 + finalZ); // 透视缩放
+        const px = canvas.width / 2 + rotateX * radius * scale;
+        const py = canvas.height / 2 + rotateY * radius * scale;
+
+        // 绘制文本
+        const char = text[index % text.length]; // 循环使用 "2025"
+        ctx.fillText(char, px, py);
+      });
+
+      // 更新旋转角度
+      angleX += 0.005;
+      angleY += 0.005;
+    }
+
+    // 初始化
+    const points = generatePoints();
+
+    // 动画循环
+    function animate() {
+      drawSphere(points);
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    // 窗口大小变化时调整 Canvas 大小
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<view>
+    <view class="basic-info u-padding-bottom-50 u-flex u-col-bottom" style="{{'background-image:'+'url('+MY_BG+')'+';'}}">
+        <view class="u-flex u-flex-1 u-padding-left-30">
+            <u-avatar bind:__l="__l" size="140" src="{{vuex_user.avatar_url}}" vueId="4a180d5e-1"></u-avatar>
+            <view class="u-flex-1 u-padding-left-38">
+                <view class="u-font-32 bold u-margin-bottom-30">{{vuex_user.nickname||'微信用户'}}</view>
+                <view class="u-font-24 u-content-color" wx:if="{{vuex_token}}">
+                    <text>UID:</text>
+                    <text class="u-margin-left-10">{{vuex_user.invite_code}}</text>
+                </view>
+            </view>
+            <view bindtap="__e" class="refresh-box" data-event-opts="{{[ [ 'tap',[ [ 'updateInfo',['$event'] ] ] ] ]}}">
+                <u-icon bind:__l="__l" color="#ffffff" label="更新资料" labelColor="#ffffff" labelSize="24" name="reload" size="24" vueId="4a180d5e-2"></u-icon>
+            </view>
+            <view bindtap="__e" class="refresh-box2" data-event-opts="{{[ [ 'tap',[ [ 'handleCell',['home'] ] ] ] ]}}" wx:if="{{vuex_other.app_id=='wx39946010d58bb363'}}">
+                <u-icon bind:__l="__l" color="#ffffff" customPrefix="custom-icon" label="我的房屋" labelColor="#ffffff" labelSize="24" name="mobananli" size="24" slot="icon" vueId="4a180d5e-3"></u-icon>
+            </view>
+        </view>
+    </view>
+    <view class="u-margin-top-30">
+        <u-cell-group bind:__l="__l" border="{{false}}" vueId="4a180d5e-4" vueSlots="{{['default']}}">
+            <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'nav',[1] ] ] ] ]}}" hoverClass="none" vueId="{{'4a180d5e-5'+','+'4a180d5e-4'}}" vueSlots="{{['icon']}}">
+                <u-icon bind:__l="__l" color="#4C7FF3" customPrefix="custom-icon" label="我相关的投票活动" labelColor="#333333" labelSize="30" name="toupiao" size="42" slot="icon" vueId="{{'4a180d5e-6'+','+'4a180d5e-5'}}"></u-icon>
+            </u-cell-item>
+            <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'nav',[2] ] ] ] ]}}" hoverClass="none" vueId="{{'4a180d5e-7'+','+'4a180d5e-4'}}" vueSlots="{{['icon']}}">
+                <u-icon bind:__l="__l" color="#2FCEA1" customPrefix="custom-icon" label="我相关的问卷填表" labelColor="#333333" labelSize="30" name="dangan" size="42" slot="icon" vueId="{{'4a180d5e-8'+','+'4a180d5e-7'}}"></u-icon>
+            </u-cell-item>
+            <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'nav',[3] ] ] ] ]}}" hoverClass="none" vueId="{{'4a180d5e-9'+','+'4a180d5e-4'}}" vueSlots="{{['icon']}}">
+                <u-icon bind:__l="__l" color="#12ce89" label="我相关的多项多选投票(新版)" labelColor="#333333" labelSize="30" name="list-dot" size="42" slot="icon" vueId="{{'4a180d5e-10'+','+'4a180d5e-9'}}"></u-icon>
+            </u-cell-item>
+        </u-cell-group>
+    </view>
+    <view>
+        <u-cell-group bind:__l="__l" border="{{false}}" vueId="4a180d5e-11" vueSlots="{{['default']}}">
+            <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'handleCell',['customer'] ] ] ] ]}}" hoverClass="none" vueId="{{'4a180d5e-12'+','+'4a180d5e-11'}}" vueSlots="{{['icon']}}">
+                <u-icon bind:__l="__l" color="#9C81FF" customPrefix="custom-icon" label="联系客服" labelColor="#333333" labelSize="30" name="kefu2" size="42" slot="icon" vueId="{{'4a180d5e-13'+','+'4a180d5e-12'}}"></u-icon>
+            </u-cell-item>
+        </u-cell-group>
+    </view>
+    <view wx:if="{{vuex_user.id===46924682||vuex_user.id===1}}">
+        <u-cell-group bind:__l="__l" border="{{false}}" vueId="4a180d5e-14" vueSlots="{{['default']}}">
+            <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['goto'] ] ] ]}}" hoverClass="none" vueId="{{'4a180d5e-15'+','+'4a180d5e-14'}}" vueSlots="{{['icon']}}">
+                <u-icon bind:__l="__l" color="#9C81FF" customPrefix="custom-icon" label="活动聚合页" labelColor="#333333" labelSize="30" name="guanyu" size="42" slot="icon" vueId="{{'4a180d5e-16'+','+'4a180d5e-15'}}"></u-icon>
+            </u-cell-item>
+        </u-cell-group>
+    </view>
+    <view>
+        <u-cell-group bind:__l="__l" border="{{false}}" vueId="4a180d5e-17" vueSlots="{{['default']}}">
+            <u-cell-item bind:__l="__l" bind:click="__e" borderBottom="{{false}}" data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}" hoverClass="none" value="{{version}}" vueId="{{'4a180d5e-18'+','+'4a180d5e-17'}}" vueSlots="{{['icon']}}">
+                <u-icon bind:__l="__l" color="#9C81FF" customPrefix="custom-icon" label="当前版本" labelColor="#333333" labelSize="30" name="guanyu" size="42" slot="icon" vueId="{{'4a180d5e-19'+','+'4a180d5e-18'}}"></u-icon>
+            </u-cell-item>
+        </u-cell-group>
+    </view>
+    <dk-copyright bind:__l="__l" vueId="4a180d5e-20"></dk-copyright>
+    <dk-customer bind:__l="__l" bind:cancel="__e" bind:input="__e" bind:success="__e" data-event-opts="{{[ [ '^cancel',[ ['e1'] ] ],[ '^success',[ ['e2'] ] ],[ '^input',[ [ '__set_model',[ '','showCustomer','$event',[] ] ] ] ] ]}}" value="{{showCustomer}}" vueId="4a180d5e-21"></dk-customer>
+    <dk-user-info bind:__l="__l" class="vue-ref" data-ref="userinfo" vueId="4a180d5e-22"></dk-user-info>
+    <u-popup bind:__l="__l" bind:input="__e" borderRadius="16" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="center" value="{{show}}" vueId="4a180d5e-23" vueSlots="{{['default']}}">
+        <view style="padding:0 30rpx;box-sizing:border-box;line-height:55rpx;width:650rpx;">
+            <view class="bold-min-4" style="line-height:77rpx;text-align:center;font-size:32rpx;">版本信息</view>
+            <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'qrCode',['$event'] ] ] ] ]}}">{{'1.当前版本号：'+version}}</view>
+            <view>{{'2.当前场景值：'+vuex_scene}}</view>
+            <view>3.当前操作设备：<view style="text-indent:1em;">{{'设备类型：'+(stemInfo.deviceType||'---')+''}}</view>
+                <view style="text-indent:1em;">{{'设备品牌：'+(stemInfo.deviceBrand||'---')+''}}</view>
+                <view style="text-indent:1em;">{{'设备型号：'+(stemInfo.deviceModel||'---')+''}}</view>
+                <view style="text-indent:1em;">{{'操作系统：'+(stemInfo.osName||'--')+'+'+(stemInfo.osVersion||'--')+''}}</view>
+                <view style="text-indent:1em;">{{'网络类型：'+(stemInfo.networkType||'---')+''}}</view>
+            </view>
+            <view class="u-flex u-row-center" style="padding:24rpx;">
+                <u-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['e3'] ] ] ]}}" size="medium" type="primary" vueId="{{'4a180d5e-24'+','+'4a180d5e-23'}}" vueSlots="{{['default']}}">关闭</u-button>
+            </view>
+        </view>
+    </u-popup>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="4a180d5e-25"></yy-privacy-popup>
+</view>

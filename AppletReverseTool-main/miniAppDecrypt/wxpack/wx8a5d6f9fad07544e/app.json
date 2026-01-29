@@ -1,0 +1,416 @@
+{
+  "plugins": {
+    "sendCoupon2": {
+      "version": "1.4.9",
+      "provider": "wxf3f436ba9bd4be77",
+      "subpackage": "/pages/businessCoupon/"
+    },
+    "captcha2": {
+      "version": "1.0.0",
+      "provider": "wxb302e0fc8ab232b5",
+      "subpackage": "/pages/chopper/"
+    }
+  },
+  "preloadRule": {
+    "pages/index/main": {
+      "network": "all",
+      "packages": [
+        "pages/top100",
+        "pages/profile",
+        "pages/bookshelf",
+        "pages/categories",
+        "pages/category",
+        "pages/top200",
+        "pages/customerServiceGuide"
+      ]
+    },
+    "pages/profile/main": {
+      "network": "all",
+      "packages": [
+        "pages/profileShelf"
+      ]
+    },
+    "pages/reader/main": {
+      "network": "all",
+      "packages": [
+        "pages/profile",
+        "pages/rateBook",
+        "pages/bookReviews"
+      ]
+    },
+    "pages/categories/main": {
+      "network": "all",
+      "packages": [
+        "pages/category"
+      ]
+    },
+    "pages/bookReviews/main": {
+      "network": "all",
+      "packages": [
+        "pages/review"
+      ]
+    },
+    "pages/giftCollection/main": {
+      "network": "all",
+      "packages": [
+        "pages/invitation"
+      ]
+    }
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wx5a03f3b857f7bf84"
+  ],
+  "supportedMaterials": [
+    {
+      "materialType": "text/plain",
+      "name": "上传到${nickname}",
+      "desc": "导入微信读书阅读、划线、做笔记",
+      "path": "pages/bookshelf/main"
+    },
+    {
+      "materialType": "application/msword",
+      "name": "上传到${nickname}",
+      "desc": "导入微信读书阅读、划线、做笔记",
+      "path": "pages/bookshelf/main"
+    },
+    {
+      "materialType": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "name": "上传到${nickname}",
+      "desc": "导入微信读书阅读、划线、做笔记",
+      "path": "pages/bookshelf/main"
+    }
+  ],
+  "componentFramework": "exparser",
+  "subPackages": [
+    {
+      "root": "pages/governmentAffairsReadingBookList/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/businessCoupon/",
+      "plugins": {
+        "sendCoupon": {
+          "version": "1.4.9",
+          "provider": "wxf3f436ba9bd4be7b",
+          "subpackage": "/pages/businessCoupon/"
+        }
+      },
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/search/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/webview/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/giftCollection/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/infiniteLotteryHistory/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/infiniteLottery/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/giveOneGetOneHistory/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/giveOneGetOne/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/flipCardGameV2/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/flipCardGame/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/infiniteDay/",
+      "pages": [
+        "index/main",
+        "campaign/main",
+        "xiaomi/main",
+        "tcl/main",
+        "vivo/main",
+        "costa/main"
+      ]
+    },
+    {
+      "root": "pages/chat/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/kitchen/",
+      "pages": [
+        "main",
+        "feedbackSubscribe/main"
+      ]
+    },
+    {
+      "root": "pages/top100/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/top200/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/mcGame/",
+      "pages": [
+        "game/main",
+        "rank/main",
+        "kitchen/main"
+      ]
+    },
+    {
+      "root": "pages/raceGame/",
+      "pages": [
+        "raceGame/main",
+        "game/main",
+        "rank/main",
+        "kitchen/main",
+        "revert/main"
+      ]
+    },
+    {
+      "root": "pages/battleGame/",
+      "pages": [
+        "game/main",
+        "kitchen/main",
+        "rank/main",
+        "order/main",
+        "market/main",
+        "lottery/main"
+      ]
+    },
+    {
+      "root": "pages/game/",
+      "pages": [
+        "profile/main",
+        "wrongAnswer/main"
+      ]
+    },
+    {
+      "root": "pages/profile/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/profileShelf/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/profileWorks/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/bookshelf/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/bookList/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/rateBook/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/bookReviews/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/categories/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/category/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/review/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/invitation/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/collaboration/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/freeLibrary/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/freeLibraryV2/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/trendWeekly/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/trendWeeklyV2/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/videoShare/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/videoFeedDetail/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/readingGroup/",
+      "pages": [
+        "index/main",
+        "rules/main",
+        "admin/main",
+        "tasks/main"
+      ]
+    },
+    {
+      "root": "pages/roundtable/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/education/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/featuredBooks/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/lecture/",
+      "pages": [
+        "player/main"
+      ]
+    },
+    {
+      "root": "pages/chopper/",
+      "plugins": {
+        "captcha": {
+          "version": "1.0.0",
+          "provider": "wxb302e0fc8ab232b4",
+          "subpackage": "/pages/chopper/"
+        }
+      },
+      "pages": [
+        "index/main"
+      ]
+    },
+    {
+      "root": "pages/customerServiceGuide/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/setting/",
+      "pages": [
+        "main"
+      ]
+    },
+    {
+      "root": "pages/store/",
+      "pages": [
+        "main"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "black"
+  },
+  "pages": [
+    "pages/index/main",
+    "pages/reader/main",
+    "pages/incompatible/main"
+  ]
+}

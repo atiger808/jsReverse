@@ -1,0 +1,5 @@
+<template name="e79563e4">
+    <view class="_view data-v-3635b52e {{['wr_reader_custom_ad',customSelector]}}" wx:if="{{isAdLoaded&&unitId}}">
+        <ad-custom bindclose="handleProxy" binderror="handleProxy" class="_ad-custom data-v-3635b52e" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" style=" {{'border-radius:'+8+';'+'overflow:'+'hidden'+';'}}" unitId="{{unitId}}"></ad-custom>
+    </view>
+</template>

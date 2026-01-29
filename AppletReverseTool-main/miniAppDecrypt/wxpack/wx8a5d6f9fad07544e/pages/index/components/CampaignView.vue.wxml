@@ -1,0 +1,26 @@
+<template name="f0032592">
+    <view class="_view data-v-69164bbc">
+        <template is="78ad2475" data="{{...$root[$kk+'0'],$root:$root}}" wx:if="{{campaignName==='infiniteLottery'&&sceneAllow}}"></template>
+        <template is="60c54815" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{campaignName==='giveOneGetOne'}}"></template>
+        <template is="0dcc3f29" data="{{...$root[$kk+'2'],$root:$root}}" wx:if="{{campaignName==='flipCardGame'}}"></template>
+        <template is="d1667166" data="{{...$root[$kk+'3'],$root:$root}}" wx:if="{{campaignName==='flipCardGameV2'}}"></template>
+        <template is="83dcd662" data="{{...$root[$kk+'4'],$root:$root}}" wx:if="{{campaignName==='infiniteTrial'}}"></template>
+        <template is="215cb6c7" data="{{...$root[$kk+'5'],$root:$root}}" wx:if="{{campaignName==='trendWeekly'}}"></template>
+        <template is="787329e9" data="{{...$root[$kk+'6'],$root:$root}}" wx:if="{{campaignName==='invitation'}}"></template>
+        <template is="5f2c54a9" data="{{...$root[$kk+'7'],$root:$root}}" wx:if="{{campaignName==='freeLibrary'}}"></template>
+        <template is="546da705" data="{{...$root[$kk+'8'],$root:$root}}" wx:if="{{campaignName==='freeLibraryV2'}}"></template>
+        <template is="63b89089" data="{{...$root[$kk+'9'],$root:$root}}" wx:if="{{campaignName==='unlock'}}"></template>
+        <template is="4e6e5d6a" data="{{...$root[$kk+'10'],$root:$root}}" wx:if="{{campaignName==='debut'}}"></template>
+    </view>
+</template>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLottery.vue.wxml"></import>
+<import src="/components/Campaigns/GiveOneGetOne/GiveOneGetOne.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGame.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGameV2/FlipCardGame.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteTrial/InfiniteTrial.vue.wxml"></import>
+<import src="/components/Campaigns/TrendWeekly/TrendWeekly.vue.wxml"></import>
+<import src="/components/Campaigns/Invitation/Invitation.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibrary/FreeLibrary.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibraryV2/FreeLibrary.vue.wxml"></import>
+<import src="/components/Campaigns/Unlock/Unlock.vue.wxml"></import>
+<import src="/components/Campaigns/Debut/Debut.vue.wxml"></import>

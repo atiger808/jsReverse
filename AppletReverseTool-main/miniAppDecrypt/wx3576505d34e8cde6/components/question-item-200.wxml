@@ -1,0 +1,229 @@
+<view class="u-margin-top-20 data-v-d2cdef40" wx:if="{{$root.g0}}">
+    <block wx:for="{{$root.l2}}" wx:key="index">
+        <view class="question-item data-v-d2cdef40" wx:if="{{item[$orig].type=='text'||item[$orig].type=='textarea'}}">
+            <view class="card data-v-d2cdef40" style="padding:18rpx 30rpx 20rpx 30rpx;">
+                <view class="u-m-b-12 data-v-d2cdef40">
+                    <text class="bold-min-4 u-font-34 data-v-d2cdef40">{{index+1+'.'+item[$orig].title}}</text>
+                    <u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-1-'+index}}" wx:if="{{item[$orig].is_required===1}}"></u-icon>
+                </view>
+                <my-is-fold bind:__l="__l" class="data-v-d2cdef40 vue-ref-in-for" color="#07c15e" data-ref="myIsFold" height="{{75}}" vueId="{{'17d220b2-2-'+index}}" vueSlots="{{['default']}}">
+                    <multiple-select-item-vue bind:__l="__l" bind:input="__e" bind:preview="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^preview',[ ['previewImage'] ] ],[ '^input',[ [ '__set_model',[ '$0','tip','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" value="{{item[$orig].tip}}" vueId="{{'17d220b2-3-'+index+','+'17d220b2-2-'+index}}"></multiple-select-item-vue>
+                </my-is-fold>
+                <view class="u-flex border data-v-d2cdef40" style="position:relative;width:688rpx;border-radius:8rpx;justify-content:center;background-color:#ffffff;">
+                    <u-input bind:__l="__l" bind:input="__e" class="data-v-d2cdef40" cursorSpacing="30" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" maxlength="-1" placeholder="请输入" style="width:648rpx;box-sizing:border-box;min-height:80rpx;" type="{{item[$orig].type=='textarea'?'textarea':'text'}}" value="{{item[$orig].value}}" vueId="{{'17d220b2-4-'+index}}"></u-input>
+                </view>
+            </view>
+        </view>
+        <view class="u-margin-bottom-20 data-v-d2cdef40" style="background-color:#ffffff;padding:18rpx 30rpx 18rpx 30rpx;box-sizing:border-box;" wx:if="{{item[$orig].type=='radio'||item[$orig].type=='checkbox'}}">
+            <view class="u-flex-col data-v-d2cdef40" style="min-height:48rpx;justify-content:space-between;">
+                <view class="u-m-b-12 data-v-d2cdef40">
+                    <text class="bold-min-4 u-font-34 data-v-d2cdef40">{{index+1+'.'+item[$orig].title}}</text>
+                    <u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-5-'+index}}" wx:if="{{item[$orig].is_required===1}}"></u-icon>
+                </view>
+                <view class="data-v-d2cdef40">
+                    <view class="u-m-l-10 data-v-d2cdef40" style="font-size:26rpx;color:#888888;margin-top:-6rpx;margin-bottom:12rpx;" wx:if="{{item[$orig].limit_checkbox}}">{{''+'最少'+item[$orig].limit_checkbox.min+'项，最多'+item[$orig].limit_checkbox.max+'项。'+''}}</view>
+                    <my-is-fold bind:__l="__l" class="data-v-d2cdef40 vue-ref-in-for" color="#07c15e" data-ref="myIsFold" height="{{75}}" vueId="{{'17d220b2-6-'+index}}" vueSlots="{{['default']}}">
+                        <multiple-select-item-vue bind:__l="__l" bind:input="__e" bind:preview="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^preview',[ ['previewImage'] ] ],[ '^input',[ [ '__set_model',[ '$0','tip','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" value="{{item[$orig].tip}}" vueId="{{'17d220b2-7-'+index+','+'17d220b2-6-'+index}}"></multiple-select-item-vue>
+                    </my-is-fold>
+                </view>
+            </view>
+            <view class="data-v-d2cdef40" style="min-height:100rpx;" wx:if="{{item[$orig].style_list==1}}">
+                <view class="{{['u-flex','u-flex-col','u-row-between','border','data-v-d2cdef40',child[$orig].checkbox?'childActive':'',child[$orig].limit_num&&child[$orig].limit_num<=child[$orig].vote_num?'childActive2':'']}}" style="width:690rpx;min-height:98rpx;border-radius:10rpx;box-sizing:border-box;margin-bottom:16rpx;position:relative;padding:10rpx 20rpx 10rpx 10rpx;align-items:center;justify-content:center;overflow:hidden;" wx:for="{{item.l0}}" wx:for-index="j" wx:for-item="child" wx:key="j">
+                    <view class="u-flex data-v-d2cdef40" style="justify-content:space-between;width:100%;height:100%;">
+                        <view class="u-flex data-v-d2cdef40" style="width:100%;justify-content:space-between;flex:1;">
+                            <u-lazy-load bind:__l="__l" catch:click="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^click',[ [ 'previewImage',['$0'],[ [ ['option','',index],['option','',j,'image'] ] ] ] ] ] ]}}" image="{{child[$orig].image+(vuex_file_handling.image_thumbnail==1?child.m0:'')}}" imgMode="widthFix" style="{{'width:70rpx;height:70rpx;border-radius:10rpx;overflow:hidden;'+'width:'+70*item[$orig].image_size+'rpx'+';'+'height:'+70*item[$orig].image_size+'rpx'+';'}}" vueId="{{'17d220b2-8-'+index+'-'+j}}" wx:if="{{child[$orig].image}}"></u-lazy-load>
+                            <view catchtap="__e" class="u-font-30 data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectClick',[index,j] ] ] ] ]}}" style="color:#1B1B1B;min-height:88rpx;flex:1;flex-wrap:wrap;width:100%;">
+                                <view class="data-v-d2cdef40" style="display:inline-block;min-height:68rpx;">
+                                    <view class="u-flex data-v-d2cdef40" style="padding:10rpx 0 0 10rpx;box-sizing:border-box;min-height:68rpx;">
+                                        <text class="data-v-d2cdef40" style="margin-bottom:-10rpx;">{{child[$orig].text}}</text>
+                                    </view>
+                                </view>
+                                <view catchtap="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectClick',[index,j] ] ] ] ]}}" style="justify-content:space-between;float:right;margin-top:20rpx;padding-bottom:10rpx;">
+                                    <view class="u-flex data-v-d2cdef40" style="margin-top:10rpx;">
+                                        <text class="u-font-26 data-v-d2cdef40" style="color:#313131;" wx:if="{{vuex_is_show_select&&child[$orig].image_size!=1}}">{{child[$orig].vote_num+'票'}}</text>
+                                        <view class="data-v-d2cdef40" wx:if="{{item[$orig].type=='checkbox'}}">
+                                            <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;justify-content:center;align-items:center;background-color:#5FCF80;margin-left:16rpx;border-radius:6rpx;" wx:if="{{child[$orig].checkbox}}">
+                                                <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#ffffff" name="checkmark" size="20rpx" vueId="{{'17d220b2-9-'+index+'-'+j}}"></u-icon>
+                                            </view>
+                                            <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;justify-content:center;align-items:center;margin-left:16rpx;border:1px solid #999999;box-sizing:border-box;border-radius:6rpx;" wx:else></view>
+                                        </view>
+                                        <view class="data-v-d2cdef40" wx:else>
+                                            <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;border-radius:50%;justify-content:center;align-items:center;background-color:#5FCF80;margin-left:16rpx;" wx:if="{{child[$orig].checkbox}}">
+                                                <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#ffffff" name="checkmark" size="20rpx" vueId="{{'17d220b2-10-'+index+'-'+j}}"></u-icon>
+                                            </view>
+                                            <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;border-radius:50%;justify-content:center;align-items:center;margin-left:16rpx;border:1px solid #999999;box-sizing:border-box;" wx:else></view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="data-v-d2cdef40" style="position:relative;padding-bottom:12rpx;margin-top:-12rpx;" wx:if="{{child[$orig].is_other==1&&child[$orig].checkbox}}">
+                        <input bindinput="__e" class="border data-v-d2cdef40" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['option','',index],['option','',j] ] ] ] ] ] ]}}" maxlength="30" style="width:646rpx;border-radius:10rpx;box-sizing:border-box;height:62rpx;line-height:62rpx;margin:0 25rpx;padding:0 30rpx;background-color:#ffffff;overflow:hidden;" type="text" value="{{child[$orig].value}}"></input>
+                    </view>
+                    <view class="{{['data-v-d2cdef40',child[$orig].checkbox?'lineActive':'']}}" style="{{'min-width:15rpx;height:4rpx;background-color:#DCDCDC;border-radius:2rpx;position:absolute;bottom:0;left:0;'+'width:'+child[$orig].progress_bar/100*690+'rpx'+';'}}" wx:if="{{vuex_is_show_select}}"></view>
+                </view>
+            </view>
+            <block wx:else>
+                <view class="u-flex data-v-d2cdef40" style="min-height:60rpx;flex-wrap:wrap;" wx:if="{{item[$orig].style_list==2}}">
+                    <view class="{{['u-flex','data-v-d2cdef40',child.limit_num&&child.limit_num<=child.vote_num?'childActive2':'']}}" style="min-width:33.3%;min-height:40rpx;border-radius:10rpx;box-sizing:border-box;margin-bottom:16rpx;position:relative;padding:0 20rpx 0 15rpx;align-items:center;justify-content:center;" wx:for="{{item[$orig].option}}" wx:for-index="j" wx:for-item="child" wx:key="j">
+                        <view class="u-flex data-v-d2cdef40" style="width:100%;height:100%;">
+                            <view catchtap="__e" class="u-flex data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectClick',[index,j] ] ] ] ]}}" style="min-height:40rpx;justify-content:flex-end;">
+                                <view class="data-v-d2cdef40" wx:if="{{item[$orig].type=='checkbox'}}">
+                                    <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;justify-content:center;align-items:center;background-color:#5FCF80;border-radius:6rpx;" wx:if="{{child.checkbox}}">
+                                        <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#ffffff" name="checkmark" size="20rpx" vueId="{{'17d220b2-11-'+index+'-'+j}}"></u-icon>
+                                    </view>
+                                    <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;justify-content:center;align-items:center;border:1px solid #999999;box-sizing:border-box;border-radius:6rpx;" wx:else></view>
+                                </view>
+                                <view class="data-v-d2cdef40" wx:else>
+                                    <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;border-radius:50%;justify-content:center;align-items:center;background-color:#5FCF80;" wx:if="{{child.checkbox}}">
+                                        <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#ffffff" name="checkmark" size="20rpx" vueId="{{'17d220b2-12-'+index+'-'+j}}"></u-icon>
+                                    </view>
+                                    <view class="u-flex data-v-d2cdef40" style="width:36rpx;height:36rpx;border-radius:50%;justify-content:center;align-items:center;border:1px solid #999999;box-sizing:border-box;" wx:else></view>
+                                </view>
+                            </view>
+                            <view class="u-flex data-v-d2cdef40" style="margin-left:12rpx;">
+                                <view catchtap="__e" class="u-font-30 data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectClick',[index,j] ] ] ] ]}}" style="color:#1B1B1B;">{{''+child.text+''}}<u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-13-'+index+'-'+j}}" wx:if="{{child.is_other==1&&child.checkbox}}"></u-icon>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="data-v-d2cdef40" style="position:relative;padding-bottom:12rpx;margin-top:-12rpx;" wx:if="{{child.is_other==1&&child.checkbox}}">
+                            <input bindinput="__e" class="border data-v-d2cdef40" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['option','',index],['option','',j] ] ] ] ] ] ]}}" maxlength="30" style="width:646rpx;border-radius:10rpx;box-sizing:border-box;height:62rpx;line-height:62rpx;margin:0 25rpx;padding:0 30rpx;background-color:#ffffff;overflow:hidden;" type="text" value="{{child.value}}"></input>
+                        </view>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="u-margin-bottom-20 data-v-d2cdef40" style="background-color:#ffffff;padding:18rpx 30rpx 20rpx 30rpx;box-sizing:border-box;" wx:if="{{item[$orig].type=='scoring'}}">
+            <view class="u-flex-col data-v-d2cdef40" style="min-height:48rpx;justify-content:space-between;">
+                <view class="u-m-b-12 data-v-d2cdef40">
+                    <text class="bold-min-4 u-font-34 data-v-d2cdef40">{{index+1+'.'+item[$orig].title}}</text>
+                    <u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-14-'+index}}" wx:if="{{item[$orig].is_required===1}}"></u-icon>
+                </view>
+                <view class="data-v-d2cdef40">
+                    <view class="u-m-l-10 data-v-d2cdef40" style="font-size:26rpx;color:#999999;margin-top:-6rpx;margin-bottom:-4rpx;" wx:if="{{item[$orig].limit_checkbox}}">{{''+'最少'+item[$orig].limit_checkbox.min+'项，最多'+item[$orig].limit_checkbox.max+'项'+''}}</view>
+                    <my-is-fold bind:__l="__l" class="data-v-d2cdef40 vue-ref-in-for" color="#07c15e" data-ref="myIsFold" height="{{75}}" vueId="{{'17d220b2-15-'+index}}" vueSlots="{{['default']}}">
+                        <multiple-select-item-vue bind:__l="__l" bind:input="__e" bind:preview="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^preview',[ ['previewImage'] ] ],[ '^input',[ [ '__set_model',[ '$0','tip','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" value="{{item[$orig].tip}}" vueId="{{'17d220b2-16-'+index+','+'17d220b2-15-'+index}}"></multiple-select-item-vue>
+                    </my-is-fold>
+                </view>
+            </view>
+            <view class="data-v-d2cdef40" style="min-height:100rpx;">
+                <view class="{{['u-flex','u-flex-col','u-row-between','border','data-v-d2cdef40',child[$orig].num*1?'childActive':'']}}" style="width:690rpx;min-height:98rpx;border-radius:10rpx;box-sizing:border-box;margin-top:16rpx;position:relative;padding:10rpx 20rpx 10rpx 10rpx;align-items:center;justify-content:center;overflow:hidden;" wx:for="{{item.l1}}" wx:for-index="j" wx:for-item="child" wx:key="j">
+                    <view class="data-v-d2cdef40" style="justify-content:space-between;width:100%;height:100%;">
+                        <view class="u-flex u-row-between data-v-d2cdef40" style="width:100%;box-sizing:border-box;">
+                            <u-lazy-load bind:__l="__l" catch:click="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^click',[ [ 'previewImage',['$0'],[ [ ['option','',index],['option','',j,'image'] ] ] ] ] ] ]}}" image="{{child[$orig].image+(vuex_file_handling.image_thumbnail==1?child.m1:'')}}" imgMode="widthFix" style="{{'width:70rpx;height:70rpx;border-radius:10rpx;overflow:hidden;float:left;'+'width:'+70*item[$orig].image_size+'rpx'+';'+'height:'+70*item[$orig].image_size+'rpx'+';'}}" vueId="{{'17d220b2-17-'+index+'-'+j}}" wx:if="{{child[$orig].image}}"></u-lazy-load>
+                            <view class="data-v-d2cdef40" style="flex:1;padding:0 0 0 10rpx;box-sizing:border-box;flex-wrap:wrap;justify-content:space-between;">
+                                <view class="data-v-d2cdef40" style="display:inline-block;min-height:68rpx;">
+                                    <view class="u-flex data-v-d2cdef40" style="box-sizing:border-box;min-height:68rpx;">
+                                        <text class="data-v-d2cdef40">{{child[$orig].text}}</text>
+                                    </view>
+                                </view>
+                                <view class="data-v-d2cdef40" style="float:right;margin-top:10rpx;" wx:if="{{child[$orig].limit_num<6||item[$orig].style_list==3}}">
+                                    <view class="u-flex u-row-between data-v-d2cdef40" wx:if="{{item[$orig].style_list==1}}">
+                                        <text catchtap="__e" class="custom-icon u-m-l-8 data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectScoring',[index,j,l] ] ] ] ]}}" style="{{'font-size:44rpx;'+'color:'+(child[$orig].num<l+1?'#c2c2c2':'#FFC845')+';'}}" wx:for="{{child[$orig].limit_num*1}}" wx:for-index="l" wx:for-item="y" wx:key="l"></text>
+                                    </view>
+                                    <view class="u-flex u-row-between data-v-d2cdef40" wx:if="{{item[$orig].style_list==2}}">
+                                        <text catchtap="__e" class="{{['u-m-l-8','data-v-d2cdef40',i+1==child[$orig].num?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectScoring',[index,j,i] ] ] ] ]}}" style="line-height:52rpx;width:50rpx;border-radius:8rpx;background-color:#eeeeee;color:#626262;text-align:center;" wx:for="{{child[$orig].limit_num*1}}" wx:for-index="i" wx:for-item="v" wx:key="i">{{i+1}}</text>
+                                    </view>
+                                    <view class="u-flex u-m-l-8 data-v-d2cdef40" style="height:100%;" wx:if="{{item[$orig].style_list==3}}">
+                                        <view bindtap="__e" class="u-flex u-row-center scoring-input data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectScoringAdd',[index,j,child[$orig].num-1] ] ] ] ]}}">
+                                            <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#888888" name="minus" size="28" vueId="{{'17d220b2-18-'+index+'-'+j}}"></u-icon>
+                                        </view>
+                                        <view class="scoring-input data-v-d2cdef40">
+                                            <input bindblur="__e" bindinput="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ 'blur',[ [ 'selectScoringAdd',[index,j,'$0'],[ [ ['option','',index],['option','',j,'num'] ] ] ] ] ],[ 'input',[ [ '__set_model',[ '$0','num','$event',[] ],[ [ ['option','',index],['option','',j] ] ] ] ] ] ]}}" type="number" value="{{child[$orig].num}}"></input>
+                                        </view>
+                                        <view bindtap="__e" class="u-flex u-row-center scoring-input data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectScoringAdd',[index,j,child[$orig].num+1] ] ] ] ]}}">
+                                            <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#888888" name="plus" size="28" vueId="{{'17d220b2-19-'+index+'-'+j}}"></u-icon>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="data-v-d2cdef40" style="width:100%;display:flex;justify-content:flex-end;padding-bottom:10rpx;" wx:if="{{child[$orig].limit_num>5&&item[$orig].style_list!=3}}">
+                            <view class="u-flex u-row-between data-v-d2cdef40" wx:if="{{item[$orig].style_list==1}}">
+                                <text catchtap="__e" class="custom-icon u-m-l-8 data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'selectScoring',[index,j,l] ] ] ] ]}}" style="{{'font-size:44rpx;'+'color:'+(child[$orig].num<l+1?'#c2c2c2':'#FFC845')+';'}}" wx:for="{{child[$orig].limit_num*1}}" wx:for-index="l" wx:for-item="y" wx:key="l"></text>
+                            </view>
+                            <view class="u-flex u-row-between data-v-d2cdef40" wx:if="{{item[$orig].style_list==2}}">
+                                <text catchtap="__e" class="{{['u-m-l-8','data-v-d2cdef40',i+1==child[$orig].num?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'selectScoring',[index,j,i] ] ] ] ]}}" style="line-height:52rpx;width:50rpx;border-radius:8rpx;background-color:#eeeeee;color:#626262;text-align:center;" wx:for="{{child[$orig].limit_num*1}}" wx:for-index="i" wx:for-item="v" wx:key="i">{{i+1}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="u-flex border data-v-d2cdef40" style="position:relative;width:655rpx;border-radius:8rpx;justify-content:center;margin-top:15rpx;background-color:#ffffff;" wx:if="{{child[$orig].is_other==1}}">
+                        <input bindinput="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['option','',index],['option','',j] ] ] ] ] ] ]}}" maxlength="30" placeholder="请输入" style="width:610rpx;height:80rpx;line-height:80rpx;box-sizing:border-box;border:0px solid;" type="text" value="{{child[$orig].value}}"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="question-item data-v-d2cdef40" wx:if="{{item[$orig].type=='img'}}">
+            <view class="card data-v-d2cdef40" style="padding:18rpx 30rpx 10rpx 30rpx;">
+                <view class="data-v-d2cdef40">
+                    <text class="bold-min-4 u-font-34 data-v-d2cdef40">{{index+1+'.'+item[$orig].title}}</text>
+                    <u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-20-'+index}}" wx:if="{{item[$orig].is_required===1}}"></u-icon>
+                </view>
+                <my-is-fold bind:__l="__l" class="data-v-d2cdef40 vue-ref-in-for" color="#07c15e" data-ref="myIsFold" height="{{75}}" vueId="{{'17d220b2-21-'+index}}" vueSlots="{{['default']}}">
+                    <multiple-select-item-vue bind:__l="__l" bind:input="__e" bind:preview="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^preview',[ ['previewImage'] ] ],[ '^input',[ [ '__set_model',[ '$0','tip','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" value="{{item[$orig].tip}}" vueId="{{'17d220b2-22-'+index+','+'17d220b2-21-'+index}}"></multiple-select-item-vue>
+                </my-is-fold>
+                <view class="u-margin-top-12 data-v-d2cdef40">
+                    <dk-upload bind:__l="__l" bind:imgDelete="__e" bind:input="__e" bind:uploadSuccess="__e" chooseNum="{{item[$orig].limit_num.max}}" class="data-v-d2cdef40" data-event-opts="{{[ [ '^uploadSuccess',[ ['e0'] ] ],[ '^imgDelete',[ ['e1'] ] ],[ '^input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" data-event-params="{{index:index,index:index}}" dirName="multiple" is_hd="{{is_hd}}" max="{{item[$orig].limit_num.max}}" value="{{item[$orig].value}}" vueId="{{'17d220b2-23-'+index}}"></dk-upload>
+                </view>
+            </view>
+        </view>
+        <view class="question-item data-v-d2cdef40" wx:if="{{item[$orig].type==='phone'}}">
+            <view class="card data-v-d2cdef40" style="padding:18rpx 30rpx 18rpx 30rpx;">
+                <view class="u-m-b-12 data-v-d2cdef40">
+                    <text class="bold-min-4 u-font-34 data-v-d2cdef40">{{index+1+'.'+item[$orig].title}}</text>
+                    <u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-24-'+index}}" wx:if="{{item[$orig].is_required===1}}"></u-icon>
+                </view>
+                <my-is-fold bind:__l="__l" class="data-v-d2cdef40 vue-ref-in-for" color="#07c15e" data-ref="myIsFold" height="{{75}}" vueId="{{'17d220b2-25-'+index}}" vueSlots="{{['default']}}">
+                    <multiple-select-item-vue bind:__l="__l" bind:input="__e" bind:preview="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^preview',[ ['previewImage'] ] ],[ '^input',[ [ '__set_model',[ '$0','tip','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" value="{{item[$orig].tip}}" vueId="{{'17d220b2-26-'+index+','+'17d220b2-25-'+index}}"></multiple-select-item-vue>
+                </my-is-fold>
+                <view class="h-80 u-flex overflow border data-v-d2cdef40" style="border-radius:10rpx;position:relative;">
+                    <u-field bind:__l="__l" bind:input="__e" borderBottom="{{false}}" class="data-v-d2cdef40" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" disabled="{{item[$orig].is_nimble===1?true:false}}" labelWidth="0" placeholder="{{item[$orig].is_nimble===1?'请授权手机号':'请输入手机号'}}" style="width:686rpx;" value="{{item[$orig].value}}" vueId="{{'17d220b2-27-'+index}}" vueSlots="{{['default']}}">
+                        <u-button bind:__l="__l" bind:getphonenumber="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^getphonenumber',[ ['e2'] ] ] ]}}" data-event-params="{{index:index}}" openType="getPhoneNumber" size="mini" slot="right" style="margin-right:-10rpx;" type="success" vueId="{{'17d220b2-28-'+index+','+'17d220b2-27-'+index}}" vueSlots="{{['default']}}" wx:if="{{item[$orig].is_nimble===1}}">快速授权</u-button>
+                    </u-field>
+                </view>
+            </view>
+        </view>
+        <view class="question-item data-v-d2cdef40" wx:if="{{item[$orig].type=='region'}}">
+            <view class="card data-v-d2cdef40" style="padding:18rpx 30rpx 20rpx 30rpx;">
+                <view class="u-m-b-12 data-v-d2cdef40">
+                    <text class="bold-min-4 u-font-34 data-v-d2cdef40">{{index+1+'.'+item[$orig].title}}</text>
+                    <u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-29-'+index}}" wx:if="{{item[$orig].is_required===1}}"></u-icon>
+                </view>
+                <my-is-fold bind:__l="__l" class="data-v-d2cdef40 vue-ref-in-for" color="#07c15e" data-ref="myIsFold" height="{{75}}" vueId="{{'17d220b2-30-'+index}}" vueSlots="{{['default']}}">
+                    <multiple-select-item-vue bind:__l="__l" bind:input="__e" bind:preview="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^preview',[ ['previewImage'] ] ],[ '^input',[ [ '__set_model',[ '$0','tip','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" value="{{item[$orig].tip}}" vueId="{{'17d220b2-31-'+index+','+'17d220b2-30-'+index}}"></multiple-select-item-vue>
+                </my-is-fold>
+                <view class="u-flex border data-v-d2cdef40" style="position:relative;width:688rpx;border-radius:8rpx;height:80rpx;margin-bottom:16rpx;">
+                    <picker bindchange="__e" class="data-v-d2cdef40" customItem="{{item[$orig].format!=1&&item[$orig].format!=2?'全部':''}}" data-event-opts="{{[ [ 'change',[ [ 'addressPopupClick',[index,'$event'] ] ] ] ]}}" mode="region" value="">
+                        <view class="u-rela u-flex u-row-between data-v-d2cdef40" style="width:690rpx;padding:0 24rpx;box-sizing:border-box;">
+                            <view class="bold-min-4 u-font-26 data-v-d2cdef40" style="{{'color:'+(item.g1>1?'#333333':'#999999')+';'}}">{{''+item.g2+''}}</view>
+                            <view class="bold data-v-d2cdef40">
+                                <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#999999" name="arrow-right" size="28" vueId="{{'17d220b2-32-'+index}}"></u-icon>
+                            </view>
+                        </view>
+                    </picker>
+                </view>
+                <view class="u-flex border data-v-d2cdef40" style="position:relative;width:688rpx;border-radius:8rpx;justify-content:center;background-color:#ffffff;" wx:if="{{!item[$orig].format||item[$orig].format==1}}">
+                    <u-input bind:__l="__l" bind:input="__e" class="data-v-d2cdef40" cursorSpacing="30" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','value','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" maxlength="-1" placeholder="请输入详细地址" style="width:648rpx;box-sizing:border-box;min-height:80rpx;" type="{{item[$orig].type=='textarea'?'textarea':'text'}}" value="{{item[$orig].value}}" vueId="{{'17d220b2-33-'+index}}"></u-input>
+                </view>
+            </view>
+        </view>
+        <view class="question-item data-v-d2cdef40" wx:if="{{item[$orig].type=='autograph'}}">
+            <view class="card data-v-d2cdef40" style="padding:18rpx 30rpx 14rpx 30rpx;">
+                <view class="u-m-b-12 data-v-d2cdef40">
+                    <text class="bold-min-4 u-font-34 data-v-d2cdef40">{{index+1+'.'+item[$orig].title}}</text>
+                    <u-icon bind:__l="__l" class="data-v-d2cdef40" color="red" customPrefix="custom-icon" name="bitian" vueId="{{'17d220b2-34-'+index}}" wx:if="{{item[$orig].is_required===1}}"></u-icon>
+                </view>
+                <my-is-fold bind:__l="__l" class="data-v-d2cdef40 vue-ref-in-for" color="#07c15e" data-ref="myIsFold" height="{{75}}" vueId="{{'17d220b2-35-'+index}}" vueSlots="{{['default']}}">
+                    <multiple-select-item-vue bind:__l="__l" bind:input="__e" bind:preview="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ '^preview',[ ['previewImage'] ] ],[ '^input',[ [ '__set_model',[ '$0','tip','$event',[] ],[ [ ['option','',index] ] ] ] ] ] ]}}" value="{{item[$orig].tip}}" vueId="{{'17d220b2-36-'+index+','+'17d220b2-35-'+index}}"></multiple-select-item-vue>
+                </my-is-fold>
+                <view class="data-v-d2cdef40" style="position:relative;">
+                    <view class="data-v-d2cdef40" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);" wx:if="{{!item.g3}}">
+                        <u-icon bind:__l="__l" class="data-v-d2cdef40" color="#888888" label="点击签名" labelColor="#888888" labelSize="30" name="edit-pen" size="37" vueId="{{'17d220b2-37-'+index}}"></u-icon>
+                    </view>
+                    <image bindtap="__e" class="data-v-d2cdef40" data-event-opts="{{[ [ 'tap',[ [ 'toSignature',[index] ] ] ] ]}}" image="{{item[$orig].value[0]+(vuex_file_handling.image_thumbnail==1?item.m2:'')}}" imgMode="aspectFill" mode="widthFix" style="width:100%;height:250rpx;margin:0 auto;border-radius:8rpx;border:1px dashed #cccccc;"></image>
+                </view>
+            </view>
+        </view>
+    </block>
+</view>

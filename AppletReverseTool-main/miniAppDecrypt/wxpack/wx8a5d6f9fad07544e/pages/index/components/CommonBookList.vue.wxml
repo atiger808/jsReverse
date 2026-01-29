@@ -1,0 +1,25 @@
+<template name="6f4b4ad8">
+    <view class="_view data-v-7a16a84e index_commonBookList">
+        <view catchtap="handleProxy" class="_view data-v-7a16a84e index_commonBookItem" data-comkey="{{$k}}" data-eventid="{{'1_0_'+i}}" hoverClass="index_commonBookItem_Active" key="{{i}}" wx:for="{{displayBooks}}" wx:for-index="i" wx:for-item="book" wx:key="i">
+            <view class="_view data-v-7a16a84e index_commonBookItem_index">{{i+1}}</view>
+            <template is="5db1e51a" data="{{...$root[$kk+'0_'+i],$root:$root}}"></template>
+            <view class="_view data-v-7a16a84e index_commonBookItem_meta">
+                <view class="_view data-v-7a16a84e index_commonBookItem_title">{{book.bookInfo.title}}</view>
+                <view class="_view data-v-7a16a84e index_commonBookItem_author">{{book.bookInfo.author}}</view>
+                <view class="_view data-v-7a16a84e index_commonBookItem_rating" wx:if="{{book.bookInfo&&book.bookInfo.percentageNewRating}}">
+                    <view class="_view data-v-7a16a84e index_commonBookItem_rating_value">
+                    推荐值 
+                    <view class="_view data-v-7a16a84e index_commonBookItem_rating_value_number">
+                        {{book.bookInfo.percentageNewRating}}%
+                    </view>
+                    </view>
+                    <template is="d34fb46a" data="{{...$root[$kk+'1_'+i],$root:$root}}" wx:if="{{book.bookInfo.newRatingDetail&&book.bookInfo.newRatingDetail.title}}"></template>
+                </view>
+            </view>
+            <template is="3c2e30f5" data="{{...$root[$kk+'2_'+i],$root:$root}}"></template>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/ReadingCount/ReadingCount.vue.wxml"></import>

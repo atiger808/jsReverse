@@ -1,0 +1,6 @@
+<u-cell-item arrow="{{false}}" bind:__l="__l" hoverClass="none" vueId="12ada3f3-1" vueSlots="{{['default','title']}}">
+    <u-icon bind:__l="__l" bind:click="__e" customStyle="{{$root.a0}}" data-event-opts="{{[ [ '^click',[ [ 'handleShowNotice',['vote-mutiple'] ] ] ] ]}}" label="投票次数" labelColor="#333333" labelPos="left" labelSize="30" name="question-circle" size="26" slot="title" vueId="{{'12ada3f3-2'+','+'12ada3f3-1'}}"></u-icon>
+    <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'votePickerChange',['$event'] ] ] ] ]}}" mode="multiSelector" range="{{voteRange}}" rangeKey="label" value="{{day_votes_value}}">
+        <u-icon bind:__l="__l" label="{{day_votes_label}}" labelPos="left" name="arrow-right" slot="right-icon" vueId="{{'12ada3f3-3'+','+'12ada3f3-1'}}"></u-icon>
+    </picker>
+</u-cell-item>

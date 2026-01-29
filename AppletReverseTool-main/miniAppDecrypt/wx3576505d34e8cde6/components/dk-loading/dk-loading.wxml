@@ -1,0 +1,18 @@
+<view catchtouchmove="__e" class="loading-page animation u-flex u-row-center u-col-center show data-v-166cd98a" data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" wx:if="{{fullScreen&&loading}}">
+    <view class="container loading5 data-v-166cd98a">
+        <view class="shape shape1 data-v-166cd98a"></view>
+        <view class="shape shape2 data-v-166cd98a"></view>
+        <view class="shape shape3 data-v-166cd98a"></view>
+        <view class="shape shape4 data-v-166cd98a"></view>
+    </view>
+</view>
+<block wx:else>
+    <view class="local-screen u-flex u-row-center u-col-center animation show data-v-166cd98a" wx:if="{{!fullScreen&&loading}}">
+        <view class="container loading5 data-v-166cd98a">
+            <view class="shape shape1 data-v-166cd98a"></view>
+            <view class="shape shape2 data-v-166cd98a"></view>
+            <view class="shape shape3 data-v-166cd98a"></view>
+            <view class="shape shape4 data-v-166cd98a"></view>
+        </view>
+    </view>
+</block>

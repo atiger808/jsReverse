@@ -1,0 +1,8 @@
+<view class="ad-box" wx:if="{{ad_id}}">
+    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$0'],['current'] ] ] ] ]}}" hidden="{{!current}}" mode="scaleToFill" src="{{current.image}}" style="{{'width:'+'100%'+';'+'height:'+height+';'}}"></image>
+    <swiper circular="{{true}}" class="swiper" duration="{{500}}" hidden="{{!(!current&&is_custom)}}" indicatorDots="{{true}}" style="{{'width:'+'100%'+';'+'height:'+height+';'}}">
+        <swiper-item wx:if="{{ad_id}}" wx:for="{{4}}" wx:for-index="__i0__" wx:key="*this">
+            <dk-ad bind:__l="__l" is_custom="{{false}}" style="width:100%;" unitAd="{{ad_id}}" vueId="{{'99eb47bc-1-'+__i0__}}"></dk-ad>
+        </swiper-item>
+    </swiper>
+</view>

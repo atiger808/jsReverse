@@ -1,0 +1,6 @@
+<template name="1e172bd5">
+    <view class="_div data-v-0a2e9870 {{['wr_ratingLevelBar',newRatingIconSelector]}}">
+        <view class="_div data-v-0a2e9870 wr_ratingLevelBar_icon"></view>
+        <view class="_div data-v-0a2e9870 wr_ratingLevelBar_text">{{newRatingLevelToText}}</view>
+    </view>
+</template>

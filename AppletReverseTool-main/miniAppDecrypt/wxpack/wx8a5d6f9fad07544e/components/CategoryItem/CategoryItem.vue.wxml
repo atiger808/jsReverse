@@ -1,0 +1,15 @@
+<template name="20c71fb5">
+    <view ariaLabel="{{category.title}}" ariaRole="button" catchtap="handleProxy" class="_view data-v-62ab11d0 wr_category" data-comkey="{{$k}}" data-eventid="{{'0_0'}}" hoverClass="wr_commonActive">
+        <view class="_view data-v-62ab11d0 wr_category_wrap">
+            <view class="_view data-v-62ab11d0 wr_category_wrap_meta">
+                <view class="_view data-v-62ab11d0 wr_category_title">{{category.title}}</view>
+                <view class="_view data-v-62ab11d0 wr_category_subtitle">{{category.totalCount}}本书</view>
+            </view>
+            <view class="_view data-v-62ab11d0 wr_category_bookCovers">
+                <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+                <template is="5db1e51a" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

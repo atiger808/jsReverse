@@ -1,0 +1,32 @@
+<template name="2953344e">
+    <view class="_view data-v-eee1e698 wr_flipCardGameCard wr_flipCardGameCard_Black {{[ customSelector,[size==='small'?'wr_flipCardGameCard_Small':'',card.status==3||card.status==1?'wr_flipCardGameCard_Open':'',card.status==3?'wr_flipCardGameCard_Received':''] ]}}" wx:if="{{sceneType==='normal'}}">
+        <form reportSubmit bindsubmit="handleProxy" class="_form data-v-eee1e698" data-comkey="{{$k}}" data-eventid="{{'1_1'}}">
+            <button appParameter="{{clickCardAppScheme}}" ariaRole="button" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-eee1e698 wr_flipCardGameCard_invisibleShareBtn" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" formType="submit" openType="{{flipCardButtonType}}" wx:if="{{!forceHideShareButton}}"></button>
+            <view class="_view data-v-eee1e698 wr_flipCardGameCard_back"></view>
+            <view class="_view data-v-eee1e698 wr_flipCardGameCard_front">
+                <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}" wx:if="{{card.cardType==='book'}}"></template>
+                <template is="5db1e51a" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{card.cardType==='lecture'}}"></template>
+                <view class="_view data-v-eee1e698 wr_flipCardGameCard_prize_icon wr_flipCardGameCard_prize_icon_Infinite" wx:elif="{{card.cardType==='infinite'}}"></view>
+                <view class="_view data-v-eee1e698 wr_flipCardGameCard_prize_icon wr_flipCardGameCard_prize_icon_Coin" wx:elif="{{card.cardType==='money'}}"></view>
+                <view class="_view data-v-eee1e698 wr_flipCardGameCard_prize_icon wr_flipCardGameCard_prize_icon_Blank" wx:elif="{{card.cardType==='blank'}}"></view>
+            </view>
+            <view class="_view data-v-eee1e698 wr_flipCardGameCard_receivedIcon" wx:if="{{card.status==3}}"></view>
+        </form>
+    </view>
+    <view class="_view data-v-eee1e698 wr_flipCardGameCard wr_flipCardGameCard_Gold {{[customSelector,[size==='small'?'wr_flipCardGameCard_Small':'',card.status==3||card.status==1?'wr_flipCardGameCard_Open':'',card.status==3?'wr_flipCardGameCard_Received':''],superLocked?'wr_flipCardGameCard_Super_Locked':superFlipped?card.status===2?'wr_flipCardGameCard_Super_Disabled':'':card.status===0?'':'wr_flipCardGameCard_Super_Share']}}" wx:elif="{{sceneType==='super'}}">
+        <form reportSubmit bindsubmit="handleProxy" class="_form data-v-eee1e698" data-comkey="{{$k}}" data-eventid="{{'1_3'}}">
+            <button ariaRole="button" class="_button data-v-eee1e698 wr_flipCardGameCard_invisibleShareBtn" formType="submit" id="shareFlipCardGameButton" openType="share" wx:if="{{!superLocked&&!superFlipped&&card.status===2&&!forceHideShareButton}}"></button>
+            <button appParameter="{{clickCardAppScheme}}" ariaRole="button" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-eee1e698 wr_flipCardGameCard_invisibleShareBtn" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" formType="submit" openType="{{flipCardButtonType}}" wx:elif="{{!forceHideShareButton}}"></button>
+            <view class="_view data-v-eee1e698 wr_flipCardGameCard_back"></view>
+            <view class="_view data-v-eee1e698 wr_flipCardGameCard_front">
+                <template is="5db1e51a" data="{{...$root[$kk+'2'],$root:$root}}" wx:if="{{card.cardType==='book'}}"></template>
+                <template is="5db1e51a" data="{{...$root[$kk+'3'],$root:$root}}" wx:if="{{card.cardType==='lecture'}}"></template>
+                <view class="_view data-v-eee1e698 wr_flipCardGameCard_prize_icon wr_flipCardGameCard_prize_icon_Infinite wr_flipCardGameCard_prize_icon_Infinite_Gold" wx:elif="{{card.cardType==='infinite'}}"></view>
+                <view class="_view data-v-eee1e698 wr_flipCardGameCard_prize_icon wr_flipCardGameCard_prize_icon_Coin wr_flipCardGameCard_prize_icon_Coin_Gold" wx:elif="{{card.cardType==='money'}}"></view>
+                <view class="_view data-v-eee1e698 wr_flipCardGameCard_prize_icon wr_flipCardGameCard_prize_icon_Blank" wx:elif="{{card.cardType==='blank'}}"></view>
+            </view>
+            <view class="_view data-v-eee1e698 wr_flipCardGameCard_receivedIcon" wx:if="{{card.status==3}}"></view>
+        </form>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

@@ -1,0 +1,8 @@
+<template name="07b9e1f5">
+    <view catchtap="handleProxy" class="_view data-v-8cedcce0 {{[ [true?'wr_paperCover':''],customSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'0_3'}}" hoverClass="wr_commonActive" style=" {{sizeStyleObj}}" wx:if="{{clickable}}">
+        <image ariaLabel="{{alt}}" binderror="handleProxy" class="_img data-v-8cedcce0 wr_paperCover_img" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" lazyLoad="{{true}}" mode="scaleToFill" src="{{targetURL}}"></image>
+    </view>
+    <view bindtap="handleProxy" class="_view data-v-8cedcce0 {{[ [true?'wr_paperCover':''],customSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'0_2'}}" style=" {{sizeStyleObj}}" wx:else>
+        <image ariaLabel="{{alt}}" binderror="handleProxy" class="_img data-v-8cedcce0 wr_paperCover_img" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" lazyLoad="{{true}}" mode="scaleToFill" src="{{targetURL}}"></image>
+    </view>
+</template>

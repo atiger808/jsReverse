@@ -1,0 +1,16 @@
+<u-popup bind:__l="__l" bind:close="__e" bind:input="__e" borderRadius="{{30}}" class="privacy data-v-687b9676" data-event-opts="{{[ [ '^close',[ ['exitMiniProgram'] ] ],[ '^input',[ [ '__set_model',[ '','showPrivacy','$event',[] ] ] ] ] ]}}" mode="bottom" value="{{showPrivacy}}" vueId="152ac57c-1" vueSlots="{{['default']}}">
+    <view class="content data-v-687b9676">
+        <view class="title u-font-34 data-v-687b9676">用户隐私保护提示</view>
+        <view class="des u-font-28 data-v-687b9676">
+            <view class="data-v-687b9676">感谢你使用本小程序，你使用本小程序前应当阅读并同意</view>
+            <view bindtap="__e" class="link u-font-30 u-margin-top-20 u-margin-bottom-20 data-v-687b9676" data-event-opts="{{[ [ 'tap',[ [ 'openPrivacyContract',['$event'] ] ] ] ]}}">{{''+privacyContractName+''}}</view>
+            <view class="data-v-687b9676">当你点击同意并开始使用产品服务时，即表示你已理解并同意该条款内容，该条款将对你产生法律约束力。如你拒绝，将无法正常使用小程序。</view>
+        </view>
+        <view class="btns data-v-687b9676">
+            <dk-btn backgroundColor="#f4f4f5" bind:__l="__l" bind:click="__e" class="but-css data-v-687b9676" color="#909399" data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}" lineHeight="85" radius="{{16}}" vueId="{{'152ac57c-2'+','+'152ac57c-1'}}" vueSlots="{{['default']}}" width="{{290}}">拒绝</dk-btn>
+            <button bindagreeprivacyauthorization="__e" class="u-reset-button but-css data-v-687b9676" data-event-opts="{{[ [ 'agreeprivacyauthorization',[ [ 'handleAgreePrivacyAuthorization',['$event'] ] ] ] ]}}" id="agree-btn" openType="agreePrivacyAuthorization">
+                <dk-btn backgroundColor="#07C160" bind:__l="__l" class="data-v-687b9676" color="#fff" lineHeight="85" radius="{{16}}" vueId="{{'152ac57c-3'+','+'152ac57c-1'}}" vueSlots="{{['default']}}" width="{{290}}">同意</dk-btn>
+            </button>
+        </view>
+    </view>
+</u-popup>

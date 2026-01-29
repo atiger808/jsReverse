@@ -1,0 +1,30 @@
+<template name="3cb67a02">
+    <block wx:if="{{node.node=='element'}}">
+        <button class="_button data-v-053b424c" size="mini" type="default" wx:if="{{node.tag=='button'}}">
+            <template is="3c9a4b00" data="{{...$root[$kk+'0_'+index],$root:$root}}" wx:for="{{node.nodes}}" wx:for-item="node" wx:key="index"></template>
+        </button>
+        <view class="_view data-v-053b424c {{node.classStr}}" style=" {{node.styleStr}}" wx:elif="{{node.tag=='li'}}">
+            <template is="3c9a4b00" data="{{...$root[$kk+'1_'+index],$root:$root}}" wx:for="{{node.nodes}}" wx:for-item="node" wx:key="index"></template>
+        </view>
+        <template is="7bfb665f" data="{{...$root[$kk+'2'],$root:$root}}" wx:elif="{{node.tag=='video'}}"></template>
+        <template is="37bfc83a" data="{{...$root[$kk+'3'],$root:$root}}" wx:elif="{{node.tag=='audio'}}"></template>
+        <template is="a31e6eb2" data="{{...$root[$kk+'4'],$root:$root}}" wx:elif="{{node.tag=='img'&&node.attr.src}}"></template>
+        <view catchtap="handleProxy" class="_view data-v-053b424c {{node.classStr}}" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" data-href="{{node.attr.href}}" data-note="{{node.attr['data-wr-footernote']}}" id="{{node.attr['data-wr-footernote']?'ePub_note_'+loopIndex:node.attr.id}}" style=" {{node.styleStr}}" wx:elif="{{node.tag=='a'}}">
+            <template is="3c9a4b00" data="{{...$root[$kk+'5_'+index],$root:$root}}" wx:for="{{node.nodes}}" wx:for-item="node" wx:key="index"></template>
+        </view>
+        <text class="_text data-v-053b424c" wx:elif="{{node.tag=='br'}}">
+</text>
+        <view class="_view data-v-053b424c wxParse_hr" wx:elif="{{node.tag=='hr'}}"></view>
+        <view class="_view data-v-053b424c {{node.classStr}}" style=" {{node.styleStr}}" wx:elif="{{node.tag=='pre'}}">
+            <template is="3c9a4b00" data="{{...$root[$kk+'6_'+index],$root:$root}}" wx:for="{{node.nodes}}" wx:for-item="node" wx:key="index"></template>
+        </view>
+        <view class="_view data-v-053b424c {{node.classStr}}" style=" {{node.styleStr}}" wx:else>
+            <template is="3c9a4b00" data="{{...$root[$kk+'7_'+index],$root:$root}}" wx:for="{{node.nodes}}" wx:for-item="node" wx:key="index"></template>
+        </view>
+    </block>
+    <text class="_text data-v-053b424c" data-text="{{node.text}}" id="{{idPrefix+'--'+'ePub_text_'+loopIndex}}" wx:elif="{{node.node=='text'}}">{{node.text}}</text>
+</template>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate6.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseVideo.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseAudio.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseImg.vue.wxml"></import>

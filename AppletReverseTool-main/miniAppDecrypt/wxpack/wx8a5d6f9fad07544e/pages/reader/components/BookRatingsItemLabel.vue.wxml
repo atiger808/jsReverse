@@ -1,0 +1,12 @@
+<template name="d34fb46a">
+    <text class="_text data-v-cd3c6634 {{['book_rating_item_label_text',typeSelector]}}" wx:if="{{title==='待评分'}}">
+    待评分
+</text>
+    <text class="_text data-v-cd3c6634 {{['book_rating_item_label_text',typeSelector]}}" wx:elif="{{title==='评分不足'}}">
+    评分不足
+</text>
+    <view class="_view data-v-cd3c6634 {{['book_rating_item_label_number',typeSelector]}}" wx:elif="{{title===''}}">
+    {{rating}}<text class="_text data-v-cd3c6634 book_rating_item_label_number_suffix">%</text>
+    </view>
+    <image class="_image data-v-cd3c6634 {{['book_rating_item_label_number_image',typeSelector]}}" mode="heightFix" src="{{imageSvgUrl}}" wx:else></image>
+</template>

@@ -1,0 +1,25 @@
+<template name="0264a802">
+    <view class="_view data-v-7d4464dd index_rankingList">
+        <view class="_view data-v-7d4464dd {{[ 'index_rankingItem',[rankingItem.style&&rankingItem.style.view!==25?'index_rankingItem_Grid':''] ]}}" key="{{i}}" wx:for="{{dataSource}}" wx:for-index="i" wx:for-item="rankingItem" wx:key="i">
+            <view class="_view data-v-7d4464dd index_rankingItem_hd">
+                <view ariaLabel="{{rankingItem.title}}" class="_view data-v-7d4464dd index_rankingItem_title" style=" {{'background-image:'+'url('+rankingItem.ranklistCover.chart_title+')'+';'}}"></view>
+            </view>
+            <view class="_view data-v-7d4464dd index_rankingItem_bd">
+                <view bindtap="handleProxy" class="_view data-v-7d4464dd index_rankingItem_book" data-comkey="{{$k}}" data-eventid="{{'3_0_'+i+'-'+bookIndex}}" hoverClass="wr_commonActive" key="{{bookIndex}}" wx:for="{{rankingItem.lectureBooks}}" wx:for-index="bookIndex" wx:for-item="book" wx:key="bookIndex">
+                    <template is="5db1e51a" data="{{...$root[$kk+'0_'+i+'-'+bookIndex],$root:$root}}"></template>
+                    <view class="_view data-v-7d4464dd index_rankingItem_book_meta">
+                        <view class="_view data-v-7d4464dd index_rankingItem_book_rank">{{bookIndex+1}}</view>
+                        <view class="_view data-v-7d4464dd index_rankingItem_book_title">{{book.bookInfo&&book.bookInfo.title}}</view>
+                        <view class="_view data-v-7d4464dd index_rankingItem_book_author">{{book.bookInfo&&book.bookInfo.author}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="_view data-v-7d4464dd index_rankingItem_ft">
+                <button bindtap="handleProxy" class="_button data-v-7d4464dd wr_btn wr_btn_Big wr_btn_Gray index_rankingItem_more" data-comkey="{{$k}}" data-eventid="{{'3_1_'+i}}" hoverClass="wr_commonActive">
+                查看全部
+            </button>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

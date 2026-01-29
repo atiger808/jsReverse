@@ -1,0 +1,7 @@
+<template name="92fc72d6">
+    <view bindanimationend="handleProxy" bindtap="handleProxy" catchtouchmove="handleProxy" class="_view data-v-6a8b4eb0 {{['wr_mask',showAnimation?[showing?'wr_mask_Show':'',hiding?'wr_mask_Hide':'']:[showing?'wr_mask_Visible':''],customSelector]}}" data-comkey="{{$k}}" data-eventid="{{'0_1'}}" disableScroll="true">
+        <form reportSubmit bindsubmit="handleProxy" class="_form data-v-6a8b4eb0" data-comkey="{{$k}}" data-eventid="{{'1_0'}}">
+            <button ariaLabel="关闭浮层" ariaRole="button" class="_button data-v-6a8b4eb0 wr_mask_closeBtn" formType="submit" hoverClass="wr_commonActive" wx:if="{{needsCloseButton}}"></button>
+        </form>
+    </view>
+</template>

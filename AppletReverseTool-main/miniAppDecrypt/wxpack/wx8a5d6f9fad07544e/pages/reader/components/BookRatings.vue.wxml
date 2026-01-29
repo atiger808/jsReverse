@@ -1,0 +1,22 @@
+<template name="79fede26">
+    <view class="_view data-v-5b16bcab {{['book_ratings_container',[isWithoutButton?'book_ratings_container_WithoutButton':''],customSelector]}}" wx:if="{{shouldShowBookRatings}}">
+        <view ariaLabel="button" catchtap="handleProxy" class="_view data-v-5b16bcab book_ratings_header" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" hoverClass="wr_commonActive">
+        微信读书推荐值
+        <view class="_view data-v-5b16bcab book_ratings_header_number" wx:if="{{shouldShowNewRating}}">
+                <text class="_text data-v-5b16bcab">{{newRating}}<text class="_text data-v-5b16bcab book_ratings_header_number_suffix">%</text>
+                </text>
+            </view>
+        </view>
+        <template is="14b6f64e" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view class="_view data-v-5b16bcab book_ratings_tag_container" wx:if="{{showRatingsTag}}">
+            <view ariaLabel="点评分类标签" class="_view data-v-5b16bcab book_ratings_tag_item" hoverClass="wr_commonActive">
+            全部
+        </view>
+        </view>
+        <template is="089ed410" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{newRatingDetail}}"></template>
+        <template is="7afee852" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/pages/reader/components/BookRatingsItem.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsButton.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsModal.vue.wxml"></import>

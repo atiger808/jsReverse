@@ -1,0 +1,11 @@
+<template name="0f358f0f">
+    <view bindtap="handleProxy" class="_view data-v-67e5666a wxParse {{className}}" data-comkey="{{$k}}" data-eventid="{{'0_0'}}" id="wxParseView">
+        <view class="_view data-v-67e5666a wxParse_ovhFix"></view>
+        <template is="3d43650c" data="{{...$root[$kk+'0_'+index],$root:$root}}" wx:for="{{originalNodes}}" wx:for-item="node" wx:key="index"></template>
+        <view class="_view data-v-67e5666a wxParse_noteArrowView {{[!showNoteView?'wxParse_note_Hide':'']}}" id="noteArrowView" style=" {{noteArrowViewStyle}}"></view>
+        <view class="_view data-v-67e5666a wxParse_noteView {{[!showNoteView?'wxParse_note_Hide':'']}}" id="noteView" style=" {{noteViewStyle}}">
+        {{noteContent}}
+    </view>
+    </view>
+</template>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate0.vue.wxml"></import>

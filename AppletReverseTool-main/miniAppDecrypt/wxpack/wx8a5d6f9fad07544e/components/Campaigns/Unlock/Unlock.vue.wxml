@@ -1,0 +1,40 @@
+<template name="63b89089">
+    <view class="_view data-v-42cf6538 unlockCampaign" wx:if="{{finishLoadingData}}">
+        <view class="_view data-v-42cf6538 unlockCampaign_hd">
+            <view class="_view data-v-42cf6538 unlockCampaign_sender">
+                <template is="5fbff9fa" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+                <view class="_view data-v-42cf6538 unlockCampaign_sender_desc" wx:if="{{status===-1||status===0}}">我的书籍章节解锁</view>
+                <view class="_view data-v-42cf6538 unlockCampaign_sender_desc" wx:else>{{senderUser.name}}邀请你帮他免费解锁章节</view>
+            </view>
+            <view class="_view data-v-42cf6538 unlockCampaign_book">
+                <template is="5db1e51a" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+                <view class="_view data-v-42cf6538 unlockCampaign_book_meta">
+                    <view class="_view data-v-42cf6538 unlockCampaign_book_title">{{bookInfo.title}}</view>
+                    <view class="_view data-v-42cf6538 unlockCampaign_book_desc">共{{chapterInfos.length}}个章节需解锁</view>
+                </view>
+            </view>
+        </view>
+        <view class="_view data-v-42cf6538 unlockCampaign_bd">
+            <view class="_view data-v-42cf6538 unlockCampaign_unlocker">
+                <view class="_view data-v-42cf6538 unlockCampaign_unlocker_title">{{lockHint}}</view>
+                <view class="_view data-v-42cf6538 unlockCampaign_unlocker_list">
+                    <view class="_view data-v-42cf6538" key="{{index}}" wx:for="{{unlockedUsers}}" wx:for-item="locker" wx:key="index">
+                        <template is="5fbff9fa" data="{{...$root[$kk+'4_'+index],$root:$root}}" wx:if="{{locker.empty}}"></template>
+                        <template is="5fbff9fa" data="{{...$root[$kk+'2_'+index],$root:$root}}" wx:elif="{{locker.userVid}}"></template>
+                        <template is="5fbff9fa" data="{{...$root[$kk+'3_'+index],$root:$root}}" wx:else></template>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="_view data-v-42cf6538 unlockCampaign_ft">
+            <button appParameter="{{appScheme}}" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-42cf6538 wr_btn wr_btn_Big wr_btn_Campaign" data-comkey="{{$k}}" data-eventid="{{'2_3'}}" hidden="{{!(buttonHint!=null)}}" openType="{{buttonOpenType}}">
+            {{buttonHint}}
+        </button>
+        </view>
+        <button bindgetuserinfo="handleProxy" class="_button data-v-42cf6538 unlockCampaign_transparentBtn" data-comkey="{{$k}}" data-eventid="{{'1_4'}}" openType="getUserInfo" wx:if="{{needAuthorized}}"></button>
+        <template is="0d52de0d" data="{{...$root[$kk+'5'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>

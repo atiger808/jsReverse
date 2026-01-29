@@ -1,0 +1,8 @@
+<view bindtap="__e" class="{{['u-slider','data-v-cfa2a406',disabled?'u-slider--disabled':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onClick',['$event'] ] ] ] ]}}" style="{{'background-color:'+inactiveColor+';'}}">
+    <view class="u-slider__gap data-v-cfa2a406" style="{{$root.s0}}">
+        <view bindtouchcancel="__e" bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" class="u-slider__button-wrap data-v-cfa2a406" data-event-opts="{{[ [ 'touchstart',[ [ 'onTouchStart',['$event'] ] ] ],[ 'touchmove',[ [ 'onTouchMove',['$event'] ] ] ],[ 'touchend',[ [ 'onTouchEnd',['$event'] ] ] ],[ 'touchcancel',[ [ 'onTouchEnd',['$event'] ] ] ] ]}}">
+            <slot wx:if="{{$slots.default||$slots[$default]}}"></slot>
+            <view class="u-slider__button data-v-cfa2a406" style="{{$root.s1}}" wx:else></view>
+        </view>
+    </view>
+</view>

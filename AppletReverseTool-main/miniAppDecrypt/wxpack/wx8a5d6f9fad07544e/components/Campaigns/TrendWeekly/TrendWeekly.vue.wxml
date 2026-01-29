@@ -1,0 +1,25 @@
+<template name="215cb6c7">
+    <view class="_view data-v-24665de2 trendWeekly">
+        <view bindtap="handleProxy" class="_view data-v-24665de2 trendWeekly_banner" data-comkey="{{$k}}" data-eventid="{{'1_0'}}">
+            <view class="_view data-v-24665de2 trendWeekly_banner_img" style=" {{splashIconBackgroundStyle}}"></view>
+            <view class="_view data-v-24665de2 trendWeekly_banner_ft">
+                <view class="_view data-v-24665de2 trendWeekly_banner_ft_title">
+                    <block wx:if="{{infiniteInfo&&infiniteInfo.day>0}}">
+                        <text class="_text data-v-24665de2 trendWeekly_banner_ft_title_strong">{{infiniteInfo.day}}</text>天无限卡
+                </block>
+                </view>
+                <view class="_view data-v-24665de2 trendWeekly_banner_ft_icon"></view>
+            </view>
+        </view>
+        <view class="_view data-v-24665de2 trendWeekly_tip">其他用户点击你分享的链接后，你将获得无限卡奖励</view>
+        <button appParameter="weread://browse?userinfo=1&url=https%3A%2F%2Fweread.qq.com%2Fwrpage%2Fcampaign%2FshareInfinite%3Fref%3Dapp%26isAnimateNavBarBackground%3D1&style=1" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-24665de2 wr_btn wr_btn_Gold wr_btn_Big trendWeekly_actionBtn" data-comkey="{{$k}}" data-eventid="{{'1_2'}}" data-imageurl="{{splashIcon}}" hoverClass="wr_commonActive" id="shareTrendWeekly" openType="{{buttonOpenType}}" wx:if="{{infiniteInfo.received}}">
+        你已成功领取 · 分享福利给朋友
+    </button>
+        <button appParameter="weread://browse?userinfo=1&url=https%3A%2F%2Fweread.qq.com%2Fwrpage%2Fcampaign%2FshareInfinite%3Fref%3Dapp%26isAnimateNavBarBackground%3D1&style=1" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-24665de2 wr_btn wr_btn_Gold wr_btn_Big trendWeekly_actionBtn" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" data-imageurl="{{splashIcon}}" hoverClass="wr_commonActive" id="shareTrendWeekly1" openType="{{buttonOpenType}}" wx:elif="{{infiniteInfo.day&&infiniteInfo.day>0}}">
+        分享免费领 · {{infiniteInfo.day}} 天无限卡
+    </button>
+        <button disabled class="_button data-v-24665de2 wr_btn wr_btn_Gold wr_btn_Big trendWeekly_actionBtn" wx:elif="{{!finishLoadingData}}"></button>
+        <template is="0d52de0d" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>

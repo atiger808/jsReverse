@@ -1,0 +1,14 @@
+<view class="safe-area-inset-bottom" hidden="{{!isCheck}}">
+    <view class="u-padding-30">
+        <view class="u-font-32 bold u-text-center u-padding-bottom-30 u-border-bottom">选择信息</view>
+        <view bindtap="__e" class="{{[ 'check-list',[player?'check-active':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">
+            <u-checkbox activeColor="#ff9900" bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','player','$event',[] ] ] ] ] ]}}" shape="circle" value="{{player}}" vueId="f48b56ec-1"></u-checkbox>
+            <text class="u-flex-1 u-text-center">选手信息</text>
+        </view>
+        <view bindtap="__e" class="{{[ 'check-list',[group?'check-active':''] ]}}" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}">
+            <u-checkbox activeColor="#ff9900" bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','group','$event',[] ] ] ] ] ]}}" shape="circle" value="{{group}}" vueId="f48b56ec-2"></u-checkbox>
+            <text class="u-flex-1 u-text-center">分组信息</text>
+        </view>
+        <u-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['handleCopy'] ] ] ]}}" type="warning" vueId="f48b56ec-3" vueSlots="{{['default']}}">确认</u-button>
+    </view>
+</view>

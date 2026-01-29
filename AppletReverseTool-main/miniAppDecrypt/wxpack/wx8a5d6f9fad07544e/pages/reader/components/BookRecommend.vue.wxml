@@ -1,0 +1,15 @@
+<template name="4d93336c">
+    <view class="_view data-v-482d84b1 reader_book_recommend" wx:if="{{similarBook.books.length>0}}">
+        <view class="_view data-v-482d84b1 reader_book_recommend_header">书籍推荐</view>
+        <view class="_view data-v-482d84b1 {{[ 'reader_book_recommend_item_container',[displaySimilarBook.books.length<4?'reader_book_recommend_item_container_AlignLeft':''] ]}}">
+            <view catchtap="handleProxy" class="_view data-v-482d84b1 reader_book_recommend_item" data-comkey="{{$k}}" data-eventid="{{'2_0_'+index}}" hoverClass="wr_commonActive" key="{{index}}" wx:for="{{displaySimilarBook.books}}" wx:for-item="bookItem" wx:key="index">
+                <template is="5db1e51a" data="{{...$root[$kk+'0_'+index],$root:$root}}"></template>
+                <view class="_view data-v-482d84b1 reader_book_recommend_item_title">{{bookItem.title}}</view>
+            </view>
+        </view>
+        <view catchtap="handleProxy" class="_view data-v-482d84b1 reader_book_recommend_btn" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" hoverClass="wr_commonActive" wx:if="{{displaySimilarBook.hasMore}}">
+        换一批
+    </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

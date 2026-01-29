@@ -1,0 +1,10 @@
+<view class="no-item br-16 overflow u-flex-col u-row-center u-col-center data-v-002be706" style="{{'margin-top:'+marginTop+';'+'margin-bottom:'+marginBottom+';'}}">
+    <u-image bind:__l="__l" class="data-v-002be706" height="200" src="/static/icon/ch.png" vueId="583dbba2-1" width="336"></u-image>
+    <view class="u-font-22 u-margin-top-24 data-v-002be706">
+        <slot wx:if="{{$slots.default}}"></slot>
+        <block wx:else>暂无记录</block>
+    </view>
+    <view class="u-margin-top-30 data-v-002be706">
+        <slot name="btn"></slot>
+    </view>
+</view>

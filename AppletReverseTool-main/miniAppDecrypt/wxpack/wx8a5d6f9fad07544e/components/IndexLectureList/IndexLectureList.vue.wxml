@@ -1,0 +1,50 @@
+<template name="65dc0056">
+    <view class="_view data-v-5fc8b220 indexLectureList">
+        <template is="05fb2afb" data="{{...$root[$kk+'3'],$root:$root}}" wx:if="{{onLoadError}}"></template>
+        <view class="_view data-v-5fc8b220 indexLectureList_main" wx:else>
+            <template is="53e7b8f5" data="{{...$root[$kk+'0'],$root:$root}}" wx:if="{{!indexLectureListGuessBooks.length&&!indexLectureList.length}}"></template>
+            <view class="_view data-v-5fc8b220 indexLectureList_section" wx:if="{{indexLectureListGuessBooks&&indexLectureListGuessBooks.length&&!closeRecommend}}">
+                <view class="_view data-v-5fc8b220 indexLectureList_section_title">猜你喜欢</view>
+                <view class="_view data-v-5fc8b220 indexLectureList_section_list">
+                    <view bindtap="handleProxy" class="_view data-v-5fc8b220 indexLectureList_book" data-comkey="{{$k}}" data-eventid="{{'4_0_'+index0}}" hoverClass="wr_commonActive" key="{{index0}}" wx:for="{{indexLectureListGuessBooks}}" wx:for-index="index0" wx:for-item="book" wx:key="index0">
+                        <template is="5db1e51a" data="{{...$root[$kk+'1_'+index0],$root:$root}}"></template>
+                        <view class="_view data-v-5fc8b220 indexLectureList_book_meta">
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_title">{{book.title}}</view>
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_author" wx:if="{{book.lectureInfo&&book.lectureInfo.user&&book.lectureInfo.user.name}}">{{book.author}} | 讲书人：{{book.lectureInfo.user.name}}</view>
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_author" wx:else>{{book.author}} | AI语音朗读</view>
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_desc" wx:if="{{book.reason||book.listenCount||book.readingCount}}">{{book.reason||(book.listenCount||book.readingCount)+'人今日在听'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="_view data-v-5fc8b220 indexLectureList_section_action">
+                    <button bindtap="handleProxy" class="_button data-v-5fc8b220 indexLectureList_section_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_1'}}" hoverClass="wr_commonActive">
+                    换一批
+                </button>
+                </view>
+            </view>
+            <view class="_view data-v-5fc8b220 indexLectureList_section" key="{{index}}" wx:for="{{indexLectureList}}" wx:for-item="category" wx:key="index">
+                <view class="_view data-v-5fc8b220 indexLectureList_section_title" style=" {{'background-image:'+'url('+category.titleImg+')'+';'}}" wx:if="{{category.titleImg}}"></view>
+                <view class="_view data-v-5fc8b220 indexLectureList_section_title" wx:else>{{category.title}}</view>
+                <view class="_view data-v-5fc8b220 indexLectureList_section_list" wx:if="{{category.books}}">
+                    <view bindtap="handleProxy" class="_view data-v-5fc8b220 indexLectureList_book" data-comkey="{{$k}}" data-eventid="{{'4_2_'+index+'-'+index2}}" hoverClass="wr_commonActive" key="{{index2}}" wx:for="{{category.books}}" wx:for-index="index2" wx:for-item="book" wx:key="index2">
+                        <template is="5db1e51a" data="{{...$root[$kk+'2_'+index+'-'+index2],$root:$root}}"></template>
+                        <view class="_view data-v-5fc8b220 indexLectureList_book_meta">
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_title">{{book.bookInfo.title}}</view>
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_author" wx:if="{{book.lectureInfo&&book.lectureInfo.user&&book.lectureInfo.user.name}}">{{book.bookInfo.author}} | 讲书人：{{book.lectureInfo.user.name}}</view>
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_author" wx:else>{{book.bookInfo.author}} | AI语音朗读</view>
+                            <view class="_view data-v-5fc8b220 indexLectureList_book_desc" wx:if="{{book.reason||book.listenCount||book.readingCount}}">{{book.reason||(book.listenCount||book.readingCount)+'人今日在听'}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="_view data-v-5fc8b220 indexLectureList_section_action">
+                    <button bindtap="handleProxy" class="_button data-v-5fc8b220 indexLectureList_section_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_3_'+index}}" hoverClass="wr_commonActive">
+                    查看更多
+                </button>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

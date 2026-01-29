@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "发起集卡",
+  "titleNView": false,
+  "navigationStyle": "custom",
+  "disableScroll": true,
+  "__warning__": "invalid page.json [\"titleNView\"]"
+}

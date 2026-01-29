@@ -1,0 +1,23 @@
+<template name="732cdc76">
+    <view class="_view data-v-5f74736c">
+        <view bindtap="handleProxy" class="_view data-v-5f74736c freeLibrary_book" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" wx:if="{{bookInfo}}">
+            <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+            <view class="_view data-v-5f74736c freeLibrary_book_meta">
+                <view class="_view data-v-5f74736c freeLibrary_book_meta_title">
+                {{bookInfo.title}}
+            </view>
+                <view class="_view data-v-5f74736c freeLibrary_book_meta_author">
+                {{bookInfo.author}}
+            </view>
+                <view class="_view data-v-5f74736c freeLibrary_book_meta_stats" wx:if="{{bookInfo.readingOrListenCnt}}">
+                    <label class="_span data-v-5f74736c freeLibrary_book_meta_stats_count">{{bookInfo.readingOrListenCnt}}</label>
+                    <label class="_span data-v-5f74736c freeLibrary_book_meta_stats_postfix">人在听</label>
+                </view>
+            </view>
+        </view>
+        <button appParameter="{{scheme}}" binderror="handleProxy" catchtap="handleProxy" class="_button data-v-5f74736c freeLibrary_button" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" hoverClass="wr_commonActive" openType="{{freeLibraryButtonType}}" wx:if="{{bookInfo}}">
+        去免费领取听书
+    </button>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

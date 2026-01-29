@@ -1,0 +1,32 @@
+<u-popup bind:__l="__l" bind:close="__e" bind:input="__e" data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="bottom" safeAreaInsetBottom="{{true}}" value="{{show}}" vueId="73dd5346-1" vueSlots="{{['default']}}">
+    <view class="padding-tb-30 padding-rl-20 simple-manage-box">
+        <view class="u-margin-bottom-20 br-16 overflow">
+            <uni-notice-bar single backgroundColor="#1977ff" bind:__l="__l" color="#ffffff" text="{{'24小时全年无休客服电话：'+vuex_other.kf_wx}}" vueId="{{'73dd5346-2'+','+'73dd5346-1'}}"></uni-notice-bar>
+        </view>
+        <view class="export-box u-margin-bottom-20">
+            <view class="u-font-28 bold u-flex u-row-between">
+                <view>导出数据</view>
+                <u-button bind:__l="__l" bind:click="__e" customStyle="{{manageBtn}}" data-event-opts="{{[ [ '^click',[ [ 'handleExport',['$0'],['activity_id'] ] ] ] ]}}" type="primary" vueId="{{'73dd5346-3'+','+'73dd5346-1'}}" vueSlots="{{['default']}}">复制后台链接</u-button>
+            </view>
+            <view class="u-font-24 u-tips-color padding-tb-20 u-border-bottom">可点击右上方按钮在浏览器打开</view>
+        </view>
+        <view class="u-flex u-wrap u-margin-top-46 padding-tb-20 u-p-l-40" style="background-color:#fff;">
+            <u-icon bind:__l="__l" bind:click="__e" class="u-m-r-40" color="#32CD32" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['roster'] ] ] ] ]}}" label="预设名单" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="8" name="dingdan" size="54" vueId="{{'73dd5346-4'+','+'73dd5346-1'}}"></u-icon>
+            <u-icon bind:__l="__l" bind:click="__e" color="#5794F8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleVoteSetting',['clear'] ] ] ] ]}}" label="清除票数" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="8" name="qingchushuju" size="54" vueId="{{'73dd5346-5'+','+'73dd5346-1'}}"></u-icon>
+        </view>
+        <view class="white-color-bg br-8 overflow u-margin-top-20">
+            <u-cell-group bind:__l="__l" border="{{false}}" vueId="{{'73dd5346-6'+','+'73dd5346-1'}}" vueSlots="{{['default']}}">
+                <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'onEvent',['basic'] ] ] ] ]}}" title="修改基础信息" value="封面图,标题,说明" vueId="{{'73dd5346-7'+','+'73dd5346-6'}}"></u-cell-item>
+                <u-cell-item bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'onEvent',['options'] ] ] ] ]}}" title="编辑投票选项" value="添加,更新投票选项" vueId="{{'73dd5346-8'+','+'73dd5346-6'}}"></u-cell-item>
+            </u-cell-group>
+        </view>
+        <view class="u-margin-top-20">
+            <u-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ [ 'onEvent',['copy'] ] ] ] ]}}" vueId="{{'73dd5346-9'+','+'73dd5346-1'}}" vueSlots="{{['default']}}">
+                <u-icon bind:__l="__l" color="#1977ff" customPrefix="custom-icon" label="复制当前投票" labelColor="#1977ff" name="fuzhi" vueId="{{'73dd5346-10'+','+'73dd5346-9'}}"></u-icon>
+            </u-button>
+            <u-button bind:__l="__l" bind:click="__e" customStyle="{{marginTop:'20rpx'}}" data-event-opts="{{[ [ '^click',[ [ 'onEvent',['del'] ] ] ] ]}}" vueId="{{'73dd5346-11'+','+'73dd5346-1'}}" vueSlots="{{['default']}}">
+                <u-icon bind:__l="__l" color="#fa3534" customPrefix="custom-icon" label="删除当前投票" labelColor="#fa3534" name="shanchu" vueId="{{'73dd5346-12'+','+'73dd5346-11'}}"></u-icon>
+            </u-button>
+        </view>
+    </view>
+</u-popup>

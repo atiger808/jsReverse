@@ -1,0 +1,11 @@
+<template name="4d6c7370">
+    <view class="_view data-v-f1580616 wr_subscribeBookPrompt">
+        <template is="92fc72d6" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view bindtap="handleProxy" class="_view data-v-f1580616 wr_subscribeBookPrompt_stage" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" wx:if="{{shown}}">
+            <view class="_view data-v-f1580616 wr_subscribeBookPrompt_info">
+                <image class="_img data-v-f1580616 wr_subscribeBookPrompt_image" mode="aspectFit" src="https://weread-1258476243.file.myqcloud.com/miniprogram/subscribe_prompt.png"></image>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/Mask/Mask.vue.wxml"></import>

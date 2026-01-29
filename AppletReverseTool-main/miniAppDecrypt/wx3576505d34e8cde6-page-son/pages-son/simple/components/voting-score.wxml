@@ -1,0 +1,31 @@
+<u-popup bind:__l="__l" bind:input="__e" borderRadius="16" class="vue-ref" closeable="{{isCheck}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isShow','$event',[] ] ] ] ] ]}}" data-ref="popup" mode="bottom" safeAreaInsetBottom="{{true}}" value="{{isShow}}" vueId="7202f06c-1" vueSlots="{{['default']}}">
+    <view class="manage-box">
+        <view class="activity-manage">
+            <view class="u-flex u-padding-10 u-border-bottom">
+                <view class="strip"></view>
+                <view class="u-font-32 bold u-margin-left-14">
+                    <text>{{$root.g0>10?$root.g1+'...':title}}</text>
+                </view>
+                <view class="u-font-28 u-margin-left-14">
+                    <text>{{'请打分['+min+'-'+max+'分]'}}</text>
+                </view>
+            </view>
+            <scroll-view scrollY="true" style="max-height:50vh;">
+                <view class="u-border-bottom">
+                    <view class="number-box" wx:for="{{$root.l0}}" wx:key="id">
+                        <view class="itemName">
+                            <text>{{item.g2>10?item.g3+'...':item[$orig].name}}</text>
+                        </view>
+                        <view class="itemScore">
+                            <u-number-box bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','score','$event',[] ],['players.'+index+''] ] ] ] ]}}" inputWidth="{{80}}" max="{{max}}" min="{{min}}" value="{{players[index].score}}" vueId="{{'7202f06c-2-'+index+','+'7202f06c-1'}}"></u-number-box>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="button">
+                <u-button bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['getScore'] ] ] ]}}" type="primary" vueId="{{'7202f06c-3'+','+'7202f06c-1'}}" vueSlots="{{['default']}}">提交</u-button>
+            </view>
+        </view>
+    </view>
+    <view></view>
+</u-popup>

@@ -1,0 +1,90 @@
+<template name="6bf7b333">
+    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup {{[shouldShowPopup?'wr_flipCardGameCardPopup_Show':'wr_flipCardGameCardPopup_Hide']}}" style=" {{'padding-top:'+navigationBarHeight-1+'px'+';'}}">
+        <view bindtap="handleProxy" class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_mask" data-comkey="{{$k}}" data-eventid="{{'1_0'}}"></view>
+        <view bindtap="handleProxy" class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_content" data-comkey="{{$k}}" data-eventid="{{'1_14'}}">
+            <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card {{[cardForPopup.sceneType==='normal'?'wr_flipCardGameCardPopup_card_Black':'',cardForPopup.sceneType==='super'?'wr_flipCardGameCardPopup_card_Gold':'',cardForPopup.status===3?'wr_flipCardGameCardPopup_card_Received':'',cardForPopup.status===2?'wr_flipCardGameCardPopup_card_ShareReceive':'',cardForPopup.status===0?'wr_flipCardGameCardPopup_card_UnFlipped':'',cardForPopup.status===-1?'wr_flipCardGameCardPopup_card_ClickReceive':'',cardForPopup.status===1?'wr_flipCardGameCardPopup_card_ClickReceiveWithoutAnim':'']}}">
+                <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_back"></view>
+                <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_front" wx:if="{{cardForPopup.status!==2}}">
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_front_blank" wx:if="{{cardForPopup.cardType==='blank'}}"></view>
+                    <block wx:else>
+                        <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_front_hd wr_flipCardGameCardPopup_card_front_hd_Small" wx:if="{{cardForPopup.cardType==='book'}}">{{popupTitle}}</view>
+                        <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_front_hd" wx:else>{{popupTitle}}</view>
+                        <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_front_bd">
+                            <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}" wx:if="{{cardForPopup.cardType==='book'}}"></template>
+                            <template is="5db1e51a" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{cardForPopup.cardType==='lecture'}}"></template>
+                            <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_prize wr_flipCardGameCardPopup_card_prize_Infinite" wx:elif="{{cardForPopup.cardType==='infinite'}}"></view>
+                            <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_prize wr_flipCardGameCardPopup_card_prize_Coin" wx:elif="{{cardForPopup.cardType==='money'}}"></view>
+                        </view>
+                        <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_card_front_ft js_font_medium">{{cardForPopup.desc}}</view>
+                    </block>
+                </view>
+            </view>
+            <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action" wx:if="{{cardForPopup.status==3}}">
+                <view class="_view data-v-75d3e7b8" wx:if="{{cardForPopup.cardType==='book'||cardForPopup.cardType==='lecture'}}">
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_3'}}">
+                    {{cardForPopup.cardType==='lecture'?'开始听书':'开始阅读'}}
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">已放入你的书架</view>
+                </view>
+                <view class="_view data-v-75d3e7b8" wx:elif="{{cardForPopup.cardType==='infinite'}}">
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_4'}}">
+                    去微信读书无限畅读
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">已存入你的体验卡账户</view>
+                </view>
+                <view class="_view data-v-75d3e7b8" wx:elif="{{cardForPopup.cardType==='money'}}">
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_5'}}">
+                    去微信读书使用
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">已存入你的书币账户</view>
+                </view>
+                <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'3_6'}}" wx:elif="{{cardForPopup.cardType==='blank'}}">
+                继续翻一翻
+            </button>
+                <view class="_view data-v-75d3e7b8" wx:else>
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_7'}}" id="shareFlipCardGameButton1" openType="share">
+                    分享解锁4张卡片
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">朋友们点击你分享的小程序后<view class="_br data-v-75d3e7b8"></view>即可解锁剩下的4张黑卡</view>
+                </view>
+            </view>
+            <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action" wx:elif="{{cardForPopup.status==0||cardForPopup.status==1||cardForPopup.status==-1}}">
+                <view class="_view data-v-75d3e7b8" wx:if="{{cardForPopup.cardType==='book'||cardForPopup.cardType==='lecture'}}">
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_8'}}">
+                    领取赠书
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">领取后该书将放入你的书架</view>
+                </view>
+                <view class="_view data-v-75d3e7b8" wx:elif="{{cardForPopup.cardType==='infinite'}}">
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_9'}}">
+                    立即领取
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">领取后将存入你的体验卡账户</view>
+                </view>
+                <view class="_view data-v-75d3e7b8" wx:elif="{{cardForPopup.cardType==='money'}}">
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_10'}}">
+                    立即领取
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">领取后将存入你的书币账户</view>
+                </view>
+                <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'3_11'}}" wx:elif="{{cardForPopup.cardType==='blank'}}">
+                继续翻一翻
+            </button>
+                <view class="_view data-v-75d3e7b8" wx:else>
+                    <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'4_12'}}" id="shareFlipCardGameButton2" openType="share">
+                    分享解锁4张卡片
+                </button>
+                    <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">朋友们点击你分享的小程序后<view class="_br data-v-75d3e7b8"></view>即可解锁剩下的4张黑卡</view>
+                </view>
+            </view>
+            <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action" wx:elif="{{cardForPopup.status==2}}">
+                <button catchtap="handleProxy" class="_button data-v-75d3e7b8 wr_btn wr_btn_Big wr_btn_Gold wr_flipCardGameCardPopup_action_btn" data-comkey="{{$k}}" data-eventid="{{'3_13'}}" id="shareFlipCardGameButton3" openType="share">
+                分享解锁4张卡片
+            </button>
+                <view class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_action_tip">朋友们点击你分享的小程序后<view class="_br data-v-75d3e7b8"></view>即可解锁剩下的4张黑卡</view>
+            </view>
+        </view>
+        <view bindtap="handleProxy" class="_view data-v-75d3e7b8 wr_flipCardGameCardPopup_close" data-comkey="{{$k}}" data-eventid="{{'1_15'}}"></view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

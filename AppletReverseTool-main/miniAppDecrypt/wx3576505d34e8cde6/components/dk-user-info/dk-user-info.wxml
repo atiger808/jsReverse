@@ -1,0 +1,42 @@
+<view>
+    <u-popup bind:__l="__l" bind:close="__e" bind:input="__e" borderRadius="16" data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" duration="{{150}}" mode="bottom" value="{{show}}" vueId="6fe2707c-1" vueSlots="{{['default']}}" wx:if="{{show}}">
+        <view style="padding:24rpx 30rpx;box-sizing:border-box;">
+            <view class="u-font-36 bold">获取你的头像、昵称</view>
+            <view class="u-m-t-10">展示个人信息</view>
+        </view>
+        <button bindchooseavatar="__e" bindtap="__e" class="u-reset-button" data-event-opts="{{[ [ 'chooseavatar',[ [ 'chooseavatar',['$event'] ] ] ],[ 'tap',[ [ 'clickAvatar',['$event'] ] ] ] ]}}" openType="chooseAvatar">
+            <view class="u-flex u-row-between u-border-bottom u-p-b-16" style="width:100%;padding:0 30rpx;box-sizing:border-box;">
+                <view class="u-flex">
+                    <text class="u-font-30 bold">用户头像</text>
+                    <view class="y-avatar u-margin-left-20 u-text-left u-flex">
+                        <view class="defaultAvatar u-flex u-row-center" wx:if="{{!form.avatarUrl}}">
+                            <u-icon bind:__l="__l" color="#ababab" label="添加头像" labelColor="#ababab" labelPos="bottom" labelSize="20" marginTop="{{12}}" name="plus" size="30" vueId="{{'6fe2707c-2'+','+'6fe2707c-1'}}"></u-icon>
+                        </view>
+                        <image class="defaultAvatar" mode="scaleToFill" src="{{$root.m0}}" wx:else></image>
+                    </view>
+                </view>
+                <u-icon bind:__l="__l" name="arrow-right" size="20" vueId="{{'6fe2707c-3'+','+'6fe2707c-1'}}"></u-icon>
+            </view>
+        </button>
+        <view class="u-flex u-row-between" style="width:100%;padding:16rpx 30rpx;box-sizing:border-box;">
+            <view class="u-flex">
+                <text class="u-font-30 bold" style="white-space:nowrap;">用户昵称</text>
+                <input bindinput="__e" class="y-avatar u-text-left u-margin-left-20 u-font-28" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','nickName','$event',[] ],['form'] ] ] ] ]}}" name="nickName" placeholder="请输入昵称" style="color:#313131;width:500rpx;" type="nickname" value="{{form.nickName}}"></input>
+            </view>
+            <u-icon bind:__l="__l" name="arrow-right" size="20" vueId="{{'6fe2707c-4'+','+'6fe2707c-1'}}"></u-icon>
+        </view>
+        <view class="u-flex u-row-between" style="width:100%;padding:0 30rpx;box-sizing:border-box;">
+            <view>
+                <view class="u-margin-top-20 u-flex u-row-center">
+                    <dk-btn backgroundColor="#1d84ff" bind:__l="__l" bind:click="__e" color="#fff" data-event-opts="{{[ [ '^click',[ ['formSubmit'] ] ] ]}}" lineHeight="90" radius="{{45}}" vueId="{{'6fe2707c-5'+','+'6fe2707c-1'}}" vueSlots="{{['default']}}" width="{{670}}">
+                        <text class="u-font-28">保存</text>
+                    </dk-btn>
+                </view>
+                <view class="u-margin-top-20 u-margin-bottom-20 u-flex u-row-center">
+                    <dk-btn backgroundColor="none" bind:__l="__l" bind:click="__e" color="#959595" data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}" lineHeight="90" radius="{{45}}" vueId="{{'6fe2707c-6'+','+'6fe2707c-1'}}" vueSlots="{{['default']}}" width="{{220}}">取消</dk-btn>
+                </view>
+            </view>
+        </view>
+    </u-popup>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="6fe2707c-7"></yy-privacy-popup>
+</view>

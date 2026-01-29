@@ -1,0 +1,24 @@
+<template name="30c11a27">
+    <view class="_view data-v-ed1e1cfc index_recommendedList">
+        <view catchtap="handleProxy" class="_view data-v-ed1e1cfc index_recommendedItem" data-comkey="{{$k}}" data-eventid="{{'1_0_'+i}}" hoverClass="index_recommendedItem_Active" key="{{i}}" wx:for="{{dataSource}}" wx:for-index="i" wx:for-item="book" wx:key="i">
+            <template is="5db1e51a" data="{{...$root[$kk+'0_'+i],$root:$root}}"></template>
+            <view class="_view data-v-ed1e1cfc index_recommendedItem_meta">
+                <view class="_view data-v-ed1e1cfc index_recommendedItem_title">{{book.title}}</view>
+                <view class="_view data-v-ed1e1cfc index_recommendedItem_desc">
+                    <text class="_text data-v-ed1e1cfc index_recommendedItem_desc_author">{{book.author}}</text>
+                    <text class="_text data-v-ed1e1cfc index_recommendedItem_desc_separator" wx:if="{{book.percentageNewRating}}"> | </text>
+                    <view class="_view data-v-ed1e1cfc index_recommendedItem_desc_rating" wx:if="{{book.percentageNewRating}}">
+                    推荐值 
+                    <view class="_view data-v-ed1e1cfc index_recommendedItem_desc_rating_number">
+                        {{book.percentageNewRating}}%
+                    </view>
+                    </view>
+                    <template is="d34fb46a" data="{{...$root[$kk+'1_'+i],$root:$root}}" wx:if="{{book.percentageNewRating&&book.newRatingDetail&&book.newRatingDetail.title}}"></template>
+                </view>
+                <view class="_view data-v-ed1e1cfc index_recommendedItem_reason">{{book.reason}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>

@@ -1,0 +1,140 @@
+<view style="padding-bottom:200rpx;">
+    <u-navbar bind:__l="__l" borderBottom="{{false}}" immersive="{{false}}" isBack="{{false}}" title="{{form.title}}" vueId="f130c036-1" vueSlots="{{['default']}}">
+        <view class="u-flex u-padding-left-30">
+            <view bindtap="__e" class="nav-back-box u-flex u-row-center" data-event-opts="{{[ [ 'tap',[ [ 'navBack',['$event'] ] ] ] ]}}" wx:if="{{is_private}}">
+                <u-icon bind:__l="__l" color="#000000" name="arrow-left" size="32" vueId="{{'f130c036-2'+','+'f130c036-1'}}"></u-icon>
+            </view>
+        </view>
+    </u-navbar>
+    <dk-loading bind:__l="__l" loading="{{dkloading}}" vueId="f130c036-3"></dk-loading>
+    <view class="h-110 u-flex u-col-center u-row-between padding-rl-30 white-color-bg" wx:if="{{sponsor&&sponsor.is===1}}">
+        <u-icon bind:__l="__l" class="avatar-icon" label="{{sponsor.name}}" labelColor="#000000" labelSize="30" name="{{sponsor.head}}" size="72" vueId="f130c036-4"></u-icon>
+        <dk-btn backgroundColor="#488BF8" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['handleScanCode'] ] ] ]}}" lineHeight="56" vueId="f130c036-5" vueSlots="{{['default']}}" width="160">
+            <u-icon bind:__l="__l" customPrefix="custom-icon" label="去了解" labelColor="#ffffff" labelSize="26" name="exe-public-address-primary" size="30" vueId="{{'f130c036-6'+','+'f130c036-5'}}"></u-icon>
+        </dk-btn>
+    </view>
+    <image bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handlePreview',['$0'],['cover_image.__$n0'] ] ] ] ]}}" mode="widthFix" src="{{cover_image[0]+(vuex_file_handling.image_thumbnail==1?$root.m0:'')}}" style="width:100%;height:380rpx;" wx:if="{{$root.g0===1}}"></image>
+    <block wx:else>
+        <u-swiper bind:__l="__l" bind:click="__e" borderRadius="0" data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}" height="380" list="{{cover_image}}" name="image" vueId="f130c036-7" wx:if="{{$root.g1>1}}"></u-swiper>
+    </block>
+    <view class="u-padding-30" wx:if="{{title}}">
+        <view class="u-font-32 bold u-margin-bottom-30">{{title}}</view>
+        <view class="white-color-bg br-16 u-font-30 u-row-between" style="padding:0 24rpx;box-sizing:border-box;">
+            <my-is-fold bind:__l="__l" class="vue-ref" color="#2979ff" data-ref="myIsFold" height="150" vueId="f130c036-8" vueSlots="{{['default']}}" wx:if="{{rule_location!==2&&rule_location!==4}}">
+                <view>
+                    <view class="{{['u-padding-top-20','u-font-28',!activity_detail[0]?'u-padding-bottom-20':'']}}" style="line-height:36rpx;" wx:if="{{rule_location!==3}}">
+                        <view>
+                            <view>投票时间：<text class="u-font-27">{{''+$root.f0+'~'+$root.f1+''}}</text>
+                            </view>
+                        </view>
+                        <view>
+                            <view>{{'投票次数：'+dayVotesLabel+repeat_desc}}</view>
+                        </view>
+                        <view>
+                            <view>{{'投票模式：普通模式（'+(showTick?'多选'+vote_option.min+'~'+vote_option.max+'个':'单选')+'）'}}</view>
+                        </view>
+                    </view>
+                    <dk-describe bind:__l="__l" bind:input="__e" bind:preview="__e" data-event-opts="{{[ [ '^preview',[ ['handlePreview'] ] ],[ '^input',[ [ '__set_model',[ '','activity_detail','$event',[] ] ] ] ] ]}}" value="{{activity_detail}}" vueId="{{'f130c036-9'+','+'f130c036-8'}}"></dk-describe>
+                </view>
+            </my-is-fold>
+            <view wx:if="{{rule_location===2||rule_location===4}}">
+                <view class="u-padding-top-20 u-font-28" style="line-height:36rpx;" wx:if="{{rule_location===2}}">
+                    <view>
+                        <view>投票时间：<text class="u-font-27">{{''+$root.f2+'~'+$root.f3+''}}</text>
+                        </view>
+                    </view>
+                    <view wx:if="{{dayVotesLabel}}">
+                        <view>{{'投票次数：'+dayVotesLabel+repeat_desc}}</view>
+                    </view>
+                    <view>
+                        <view>{{'投票模式：普通模式（'+(showTick?'多选'+vote_option.min+'~'+vote_option.max+'个':'单选')+''}}</view>
+                    </view>
+                </view>
+                <dk-describe bind:__l="__l" bind:input="__e" bind:preview="__e" data-event-opts="{{[ [ '^preview',[ ['handlePreview'] ] ],[ '^input',[ [ '__set_model',[ '','activity_detail','$event',[] ] ] ] ] ]}}" value="{{activity_detail}}" vueId="f130c036-10" wx:if="{{activity_detail}}"></dk-describe>
+            </view>
+        </view>
+        <view class="u-flex u-row-between u-margin-top-40">
+            <u-search bgColor="#ffffff" bind:__l="__l" bind:input="__e" bind:search="__e" class="u-flex-1" clearabled="{{false}}" data-event-opts="{{[ [ '^search',[ [ 'getJoin',[true] ] ] ],[ '^input',[ [ '__set_model',[ '$0','keyword','$event',[] ],['payload'] ] ] ] ]}}" height="74" placeholder="输入选项快速查找" shape="square" showAction="{{false}}" value="{{payload.keyword}}" vueId="f130c036-11"></u-search>
+            <view bindtap="__e" class="w-88 h-74 satistics-icon br-8 overflow u-flex u-row-center u-col-center u-margin-left-20" data-event-opts="{{[ [ 'tap',[ [ 'onStatistics',['$event'] ] ] ] ]}}" wx:if="{{isCreator||rankShow}}">
+                <u-icon bind:__l="__l" color="#488BF8" customPrefix="custom-icon" label="排行榜" labelColor="#488BF8" labelPos="bottom" labelSize="24" marginTop="4" name="shujutubiao" size="33" vueId="f130c036-12"></u-icon>
+            </view>
+            <view class="w-88 h-74 satistics-icon br-8 overflow u-flex u-row-center u-col-center u-margin-left-16" wx:if="{{isShare||isCreator}}">
+                <u-icon bind:__l="__l" bind:click="__e" color="#488BF8" data-event-opts="{{[ [ '^click',[ ['share'] ] ] ]}}" label="分享" labelColor="#488BF8" labelPos="bottom" labelSize="24" marginTop="4" name="share-fill" size="33" vueId="f130c036-13"></u-icon>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{type===2}}">
+        <view bindtap="__e" class="white-color-bg u-padding-30 u-margin-bottom-20" data-event-opts="{{[ [ 'tap',[ [ 'onClick',[index,'voting_join'] ] ] ] ]}}" wx:for="{{voting_join}}" wx:key="id">
+            <view class="u-margin-bottom-32 break-word">{{item.name}}</view>
+            <view class="u-flex u-row-between">
+                <u-tag bind:__l="__l" borderColor="transparent" text="{{'共'+(voteNumShow?item.vote_num:'***')+textLabel}}" vueId="{{'f130c036-14-'+index}}"></u-tag>
+                <u-icon bind:__l="__l" color="#488BF8" customPrefix="custom-icon" name="{{item.ticked?'fangxingxuanzhongfill':'fangxingweixuanzhong'}}" size="42" vueId="{{'f130c036-15-'+index}}" wx:if="{{showTick}}"></u-icon>
+                <u-icon bind:__l="__l" color="#488BF8" customPrefix="custom-icon" name="{{item.ticked?'yuanxingxuanzhongfill':'yuanxingweixuanzhong'}}" size="42" vueId="{{'f130c036-16-'+index}}" wx:else></u-icon>
+            </view>
+        </view>
+    </view>
+    <view class="u-flex u-col-top u-row-between u-padding-30" wx:if="{{type===3}}">
+        <view>
+            <view class="item-box u-margin-bottom-30 u-padding-10" wx:for="{{leftList}}" wx:key="id">
+                <view bindtap="__e" class="u-rela" data-event-opts="{{[ [ 'tap',[ [ 'onPreview',['$0'],[ [ ['leftList','id',item.id] ] ] ] ] ] ]}}">
+                    <u-lazy-load bind:__l="__l" borderRadius="10" height="342" image="{{item.cover}}" imgMode="aspectFill" vueId="{{'f130c036-17-'+index}}" wx:if="{{item.sign_video}}"></u-lazy-load>
+                    <u-lazy-load bind:__l="__l" borderRadius="10" height="342" image="{{item.cover+'?imageView2/0/w/642/format/jpg/interlace/1/q/100!'}}" imgMode="aspectFill" vueId="{{'f130c036-18-'+index}}" wx:else></u-lazy-load>
+                    <u-icon bind:__l="__l" class="u-abso video-icon" color="#ffffff" customPrefix="custom-icon" name="bofang" size="60" vueId="{{'f130c036-19-'+index}}" wx:if="{{item.sign_video&&item.sign_video.url}}"></u-icon>
+                    <view class="number-box u-font-24 white-color bold" style="{{'background-color:'+'rgba(0,0,0,0.3)'+';'}}">{{''+item.number+'号'}}</view>
+                </view>
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'onClick',[index,'leftList'] ] ] ] ]}}">
+                    <view class="u-margin-bottom-32 u-margin-top-26 break-word">{{item.name}}</view>
+                    <view class="u-flex u-row-between u-margin-bottom-20">
+                        <u-tag bind:__l="__l" borderColor="transparent" text="{{'共'+(voteNumShow?item.vote_num:'***')+textLabel}}" vueId="{{'f130c036-20-'+index}}"></u-tag>
+                        <u-icon bind:__l="__l" color="#488BF8" customPrefix="custom-icon" name="{{item.ticked?'fangxingxuanzhongfill':'fangxingweixuanzhong'}}" size="42" vueId="{{'f130c036-21-'+index}}" wx:if="{{showTick}}"></u-icon>
+                        <u-icon bind:__l="__l" color="#488BF8" customPrefix="custom-icon" name="{{item.ticked?'yuanxingxuanzhongfill':'yuanxingweixuanzhong'}}" size="42" vueId="{{'f130c036-22-'+index}}" wx:else></u-icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view wx:if="{{$root.g2}}">
+            <view class="item-box u-margin-bottom-30 u-padding-10" wx:for="{{$root.l0}}" wx:key="id">
+                <view bindtap="__e" class="u-rela" data-event-opts="{{[ [ 'tap',[ [ 'onPreview',['$0'],[ [ ['rightList','id',item[$orig].id] ] ] ] ] ] ]}}">
+                    <u-lazy-load bind:__l="__l" borderRadius="10" height="342" image="{{item[$orig].cover}}" imgMode="aspectFill" vueId="{{'f130c036-23-'+index}}" wx:if="{{item[$orig].sign_video}}"></u-lazy-load>
+                    <u-lazy-load bind:__l="__l" borderRadius="10" height="342" image="{{item[$orig].cover+(vuex_file_handling.image_thumbnail==1?item.m1:'')}}" imgMode="aspectFill" vueId="{{'f130c036-24-'+index}}" wx:else></u-lazy-load>
+                    <u-icon bind:__l="__l" class="u-abso video-icon" color="#ffffff" customPrefix="custom-icon" name="bofang" size="60" vueId="{{'f130c036-25-'+index}}" wx:if="{{item[$orig].sign_video&&item[$orig].sign_video.url}}"></u-icon>
+                    <view class="number-box u-font-24 white-color bold" style="{{'background-color:'+'rgba(0,0,0,0.3)'+';'}}">{{''+item[$orig].number+'号'}}</view>
+                </view>
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'onClick',[index,'rightList'] ] ] ] ]}}">
+                    <view class="u-margin-bottom-32 u-margin-top-26 break-word">{{item[$orig].name}}</view>
+                    <view class="u-flex u-row-between u-margin-bottom-20">
+                        <u-tag bind:__l="__l" borderColor="transparent" text="{{'共'+(voteNumShow?item[$orig].vote_num:'***')+textLabel}}" vueId="{{'f130c036-26-'+index}}"></u-tag>
+                        <u-icon bind:__l="__l" color="#488BF8" customPrefix="custom-icon" name="{{item[$orig].ticked?'fangxingxuanzhongfill':'fangxingweixuanzhong'}}" size="42" vueId="{{'f130c036-27-'+index}}" wx:if="{{showTick}}"></u-icon>
+                        <u-icon bind:__l="__l" color="#488BF8" customPrefix="custom-icon" name="{{item[$orig].ticked?'yuanxingxuanzhongfill':'yuanxingweixuanzhong'}}" size="42" vueId="{{'f130c036-28-'+index}}" wx:else></u-icon>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <u-loadmore bind:__l="__l" marginBottom="40" status="{{loadmore_status}}" vueId="f130c036-29" wx:if="{{loadmore_status}}"></u-loadmore>
+    <yy-ad-custom act="{{2}}" bind:__l="__l" class="yy-ad vue-ref" data-ref="playerAd" field="change" isHide="{{vuex_ad_display.is_activity}}" type="simple" vueId="f130c036-30" wx:if="{{myModules}}"></yy-ad-custom>
+    <view class="fixed fixed-bg white-color-bg">
+        <view class="u-padding-bottom-20">
+            <view class="u-flex u-row-around">
+                <u-icon bind:__l="__l" bind:click="__e" color="#488BF8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ ['manageVisibleShow'] ] ] ]}}" label="管理" labelColor="#488BF8" labelPos="bottom" name="tiaojie" size="46" vueId="f130c036-31" wx:if="{{isCreator}}"></u-icon>
+                <dk-btn backgroundColor="#488BF8" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['beforeHandleVete'] ] ] ]}}" lineHeight="82" radius="16" vueId="f130c036-32" vueSlots="{{['default']}}" width="530">{{butLabel+''}}</dk-btn>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{myModules}}">
+        <media-pop bind:__l="__l" class="vue-ref" data-ref="offical" vueId="f130c036-33"></media-pop>
+        <simple-manage activity_id="{{payload.activity_id}}" bind:__l="__l" bind:close="__e" bind:event="__e" data-event-opts="{{[ [ '^event',[ ['onEvent'] ] ],[ '^close',[ ['e1'] ] ] ]}}" visible="{{manageVisible}}" vueId="f130c036-34"></simple-manage>
+        <dk-user-info bind:__l="__l" class="vue-ref" data-ref="userinfo" vueId="f130c036-35"></dk-user-info>
+        <image class="JUMPIMG" mode="widthFix" src="{{JUMPIMG}}" wx:if="{{friendShow}}"></image>
+        <voting-score bind:__l="__l" bind:getScore="__e" bind:updateShow="__e" data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','popupShow','$event'],[''] ] ] ],[ '^getScore',[ ['getScore'] ] ] ]}}" max="{{max}}" min="{{min}}" playerInfo="{{playerInfo}}" show="{{popupShow}}" title="{{title}}" vueId="f130c036-36"></voting-score>
+        <dk-share bind:__l="__l" bind:share="__e" class="vue-ref" creator="{{isCreator}}" data-event-opts="{{[ [ '^share',[ ['cardShare'] ] ] ]}}" data-ref="poster" desc="{{desc}}" headerImg="{{cover_image[0]||'https://qiniu.shandianw.cn/qiniu/default/templates/new/tpl_img_33b.png'}}" isAd="{{flow_group.ad_cover!==2}}" isCover="{{false}}" path="pages-son/simple/simple-activity" scene="{{scene}}" showOffica="{{true}}" title="{{title}}" top="{{150}}" type="{{2}}" vueId="f130c036-37"></dk-share>
+        <yy-pop-up bind:__l="__l" bind:cancel="__e" bind:confirm="__e" bind:updatePopShow="__e" data-event-opts="{{[ [ '^updatePopShow',[ [ '__set_sync',['$0','rosterPopShow','$event'],[''] ] ] ],[ '^updatePopShow',[ [ '__set_sync',['$0','rosterPopShow','$event'],[''] ] ] ],[ '^confirm',[ ['rosterConfirm'] ] ],[ '^cancel',[ ['rosterCancel'] ] ] ]}}" maskClose="{{is_roster!==1}}" popShow="{{rosterPopShow}}" title="指定用户参与" vueId="f130c036-38" vueSlots="{{['prompt']}}">
+            <view class="content-text padding-top-10 u-padding-bottom-30 u-font-32" slot="prompt">
+                <text>此投票活动需要验证用户信息后才可参与投票，请输入验证信息：</text>
+                <view style="color:red;font-size:32rpx;">{{roster_config.tip}}</view>
+            </view>
+        </yy-pop-up>
+    </view>
+    <my-get-phone activity_id="{{activity_id}}" bind:__l="__l" bind:close="__e" class="vue-ref" data-event-opts="{{[ [ '^close',[ ['getphonenumber'] ] ] ]}}" data-ref="getPhone" is_phone="{{is_phone}}" type="voting" vueId="f130c036-39"></my-get-phone>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="f130c036-40"></yy-privacy-popup>
+</view>

@@ -1,0 +1,16 @@
+<template name="53e7b8f5">
+    <view class="_view data-v-5969bb90 {{[ [true?'wr_loading':''],customSelector ]}}" wx:if="{{isLoading}}">
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+        <view class="_view data-v-5969bb90 wr_loading_blade"></view>
+    </view>
+</template>

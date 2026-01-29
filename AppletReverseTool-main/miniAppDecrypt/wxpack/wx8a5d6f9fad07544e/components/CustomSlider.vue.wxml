@@ -1,0 +1,15 @@
+<template name="default"></template>
+<template name="7ad7cf5c">
+    <view class="_view data-v-c7e4e53e {{[ [true?'wr_customSliderWrap':''],itemCountSelector,customSelector ]}}">
+        <view class="_view data-v-c7e4e53e wr_customSliderWrap_dividing">
+            <view class="_view data-v-c7e4e53e wr_customSliderWrap_dividing_inner">
+                <view class="_view data-v-c7e4e53e wr_customSliderWrap_dividing_item" key="{{i}}" wx:for="{{itemCount}}" wx:for-item="i" wx:key="i">
+                    <view class="_view data-v-c7e4e53e wr_customSliderWrap_dividing_item_hint" wx:if="{{showHint}}">{{displayHintList[i]}}</view>
+                </view>
+            </view>
+            <template is="{{$slotdefault||'default'}}" data="{{...$root[$p],...$root[$k],$root:$root}}"></template>
+        </view>
+        <slider activeColor="transparent" backgroundColor="transparent" bindchange="handleProxy" blockColor="#FFF" blockSize="18" class="_slider data-v-c7e4e53e wr_customSlider" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" max="{{max}}" min="{{min}}" value="{{currentValue}}"></slider>
+    </view>
+</template>
+<import src="/components/slots"></import>

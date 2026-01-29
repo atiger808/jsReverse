@@ -1,0 +1,148 @@
+<template name="17d6b7fb">
+    <view bindtouchend="handleProxy" class="_view data-v-4ba09dc0 index" data-comkey="{{$k}}" data-eventid="{{'0_22'}}">
+        <template is="4e0bf5d2" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view class="_view data-v-4ba09dc0 pageTabContent" hidden="{{!(currentPageTab==0)}}">
+            <template is="aad26a54" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+        </view>
+        <view class="_view data-v-4ba09dc0 pageTabContent" hidden="{{!(currentPageTab==1)}}">
+            <view class="_view data-v-4ba09dc0 index_searchPlaceholder index_scroll_anchor"></view>
+            <view class="_view data-v-4ba09dc0 index_search" style=" {{'top:'+searchBarTop+'px'+';'}}" wx:if="{{authorized}}">
+                <button bindtap="handleProxy" class="_button data-v-4ba09dc0 index_search_bar" data-comkey="{{$k}}" data-eventid="{{'3_0'}}" hoverClass="index_search_bar_Active">{{searchTips}}</button>
+                <view class="_view data-v-4ba09dc0 index_tab_bar_list search" hidden="{{!tabBarFixed}}">
+                    <view bindtap="handleProxy" class="_view data-v-4ba09dc0 {{[ 'index_tab_bar_item',[i===activeTab?'active':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'4_1_'+i}}" hoverClass="wr_commonActive" key="{{i}}" wx:for="{{tabBar}}" wx:for-index="i" wx:for-item="tab" wx:key="i">
+                    {{tab.name}}
+                </view>
+                </view>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_campaign index_scroll_anchor" wx:if="{{campaign}}">
+                <template is="f0032592" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_performance_tracker" hidden="{{!bookStoreRecommendations.length}}"></view>
+            <view bindlongpress="handleProxy" bindtap="handleProxy" class="_view data-v-4ba09dc0 index_me index_scroll_anchor" data-comkey="{{$k}}" data-eventid="{{'2_7'}}" wx:if="{{!dataError&&recentRead&&recentRead.length>0}}">
+                <view class="_view data-v-4ba09dc0 index_me_user">
+                    <template is="5fbff9fa" data="{{...$root[$kk+'3'],$root:$root}}"></template>
+                    <view catchtap="handleProxy" class="_view data-v-4ba09dc0 index_me_user_name" data-comkey="{{$k}}" data-eventid="{{'4_3'}}">{{username}}</view>
+                    <view class="_view data-v-4ba09dc0 index_me_user_label" key="wxWorkLabel" wx:if="{{isWxWork}}">
+                    企业微信用户可免费畅读
+                </view>
+                    <view class="_view data-v-4ba09dc0 index_me_user_label" key="infiniteCardLabel" wx:elif="{{infiniteLabelText}}">
+                    {{infiniteLabelText}}
+                    <view class="_view data-v-4ba09dc0 index_me_user_label_dot" wx:if="{{newInfiniteDay}}"></view>
+                    </view>
+                    <view class="_view data-v-4ba09dc0 index_me_user_space"></view>
+                    <view ariaRole="button" catchtap="handleProxy" class="_view data-v-4ba09dc0 index_me_user_feedback" data-comkey="{{$k}}" data-eventid="{{'4_4'}}" hoverClass="wr_commonActive">
+                    设置
+                </view>
+                </view>
+                <view class="_view data-v-4ba09dc0 index_me_books">
+                    <view class="_view data-v-4ba09dc0 {{[ 'index_me_books_recentReading',[recentRead.length<4?'index_me_books_recentReading_Compact':''] ]}}">
+                        <template is="5db1e51a" data="{{...$root[$kk+'4_'+i],$root:$root}}" wx:for="{{recentRead}}" wx:for-index="i" wx:for-item="book" wx:key="i"></template>
+                    </view>
+                    <view ariaRole="button" catchtap="handleProxy" class="_view data-v-4ba09dc0 index_me_books_bookshelf" data-comkey="{{$k}}" data-eventid="{{'4_6'}}" hoverClass="wr_commonActive">
+                    书架
+                </view>
+                </view>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_banner" wx:if="{{isWxWork&&wxWorkBanner}}">
+                <image bindtap="handleProxy" class="_img data-v-4ba09dc0 index_banner_image" data-comkey="{{$k}}" data-eventid="{{'3_8'}}" mode="widthFix" src="{{wxWorkBanner}}"></image>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_banner" wx:elif="{{!isWxWork&&banner&&banner.src}}">
+                <image ariaLabel="{{banner.title}}" bindtap="handleProxy" class="_img data-v-4ba09dc0 index_banner_image" data-comkey="{{$k}}" data-eventid="{{'3_9'}}" mode="widthFix" src="{{banner.src}}"></image>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_tab">
+                <view class="_view data-v-4ba09dc0 index_tab_bar scroll">
+                    <view class="_view data-v-4ba09dc0 index_tab_bar_list">
+                        <view bindtap="handleProxy" class="_view data-v-4ba09dc0 {{[ 'index_tab_bar_item',[i===activeTab?'active':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'5_10_'+i}}" hoverClass="wr_commonActive" key="{{i}}" wx:for="{{tabBar}}" wx:for-index="i" wx:for-item="tab" wx:key="i">
+                        {{tab.name}}
+                    </view>
+                    </view>
+                </view>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_main">
+                <template is="53e7b8f5" data="{{...$root[$kk+'5'],$root:$root}}"></template>
+                <swiper autoplay="{{autoSwiper}}" bindanimationfinish="handleProxy" bindchange="handleProxy" class="_swiper data-v-4ba09dc0 index_main_swiper" current="{{activeTab}}" data-comkey="{{$k}}" data-eventid="{{'3_11'}}" duration="300" easingFunction="linear" interval="3000" scrollWithAnimation="true" scrollX="true" skipHiddenItemLayout="true" style=" {{'height:'+listHeight+';'}}">
+                    <swiper-item class="_swiper-item data-v-4ba09dc0 {{['index_main_swiper_item']}}" key="{{index}}" wx:for="{{tabBar}}" wx:for-item="tab" wx:key="index">
+                        <view class="_view data-v-4ba09dc0 {{['index_main_swiper_item_category','index_main_swiper_item_category_'+index]}}">
+                            <template is="30c11a27" data="{{...$root[$kk+'9_'+index],$root:$root}}" wx:if="{{tab.categoryId===0}}"></template>
+                            <template is="07fa2c9e" data="{{...$root[$kk+'6_'+index],$root:$root}}" wx:elif="{{tab.categoryId===1}}"></template>
+                            <template is="0264a802" data="{{...$root[$kk+'7_'+index],$root:$root}}" wx:elif="{{tab.categoryId===2}}"></template>
+                            <template is="6f4b4ad8" data="{{...$root[$kk+'8_'+index],$root:$root}}" wx:else></template>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_loadMore" wx:if="{{hasMore}}">
+                <template is="53e7b8f5" data="{{...$root[$kk+'11'],$root:$root}}"></template>
+            </view>
+        </view>
+        <view class="_view data-v-4ba09dc0 pageTabContent" hidden="{{!(currentPageTab==2)}}">
+            <view class="_view data-v-4ba09dc0 index_searchPlaceholder index_scroll_anchor"></view>
+            <view class="_view data-v-4ba09dc0 index_search" style=" {{'top:'+searchBarTop+'px'+';'}}" wx:if="{{authorized}}">
+                <button bindtap="handleProxy" class="_button data-v-4ba09dc0 index_search_bar" data-comkey="{{$k}}" data-eventid="{{'3_12'}}" hoverClass="index_search_bar_Active">{{searchTips}}</button>
+            </view>
+            <view class="_view data-v-4ba09dc0 index_performance_tracker" hidden="{{!bookStoreRecommendations.length}}"></view>
+            <view bindtap="handleProxy" class="_view data-v-4ba09dc0 index_me index_scroll_anchor" data-comkey="{{$k}}" data-eventid="{{'2_17'}}" wx:if="{{!dataError&&recentRead&&recentRead.length>0}}">
+                <view class="_view data-v-4ba09dc0 index_me_user">
+                    <template is="5fbff9fa" data="{{...$root[$kk+'12'],$root:$root}}"></template>
+                    <view catchtap="handleProxy" class="_view data-v-4ba09dc0 index_me_user_name" data-comkey="{{$k}}" data-eventid="{{'4_13'}}">{{username}}</view>
+                    <view class="_view data-v-4ba09dc0 index_me_user_label" key="infiniteCardLabel" wx:if="{{infiniteLabelText}}">
+                    {{infiniteLabelText}}
+                    <view class="_view data-v-4ba09dc0 index_me_user_label_dot" wx:if="{{newInfiniteDay}}"></view>
+                    </view>
+                    <view class="_view data-v-4ba09dc0 index_me_user_space"></view>
+                    <view ariaRole="button" catchtap="handleProxy" class="_view data-v-4ba09dc0 index_me_user_feedback" data-comkey="{{$k}}" data-eventid="{{'4_14'}}" hoverClass="wr_commonActive">
+                    设置
+                </view>
+                </view>
+                <view class="_view data-v-4ba09dc0 index_me_books">
+                    <view class="_view data-v-4ba09dc0 {{[ 'index_me_books_recentReading',[recentRead.length<4?'index_me_books_recentReading_Compact':''] ]}}" wx:if="{{currentPageTab==2}}">
+                        <template is="5db1e51a" data="{{...$root[$kk+'13_'+i],$root:$root}}" wx:for="{{recentRead}}" wx:for-index="i" wx:for-item="book" wx:key="i"></template>
+                    </view>
+                    <view ariaRole="button" catchtap="handleProxy" class="_view data-v-4ba09dc0 index_me_books_bookshelf" data-comkey="{{$k}}" data-eventid="{{'4_16'}}" hoverClass="wr_commonActive">
+                    书架
+                </view>
+                </view>
+            </view>
+            <template is="65dc0056" data="{{...$root[$kk+'14'],$root:$root}}"></template>
+        </view>
+        <view class="_view data-v-4ba09dc0 pageTabBar">
+            <button bindtap="handleProxy" class="_button data-v-4ba09dc0 {{['pageTabBar_btn',currentPageTab===index?'pageTabBar_btn_Active':'']}}" data-comkey="{{$k}}" data-eventid="{{'2_18_'+index}}" hoverClass="wr_commonActive" key="{{index}}" wx:for="{{pageTabBar}}" wx:key="index">
+                <view class="_view data-v-4ba09dc0 {{[ 'pageTabBar_btn_icon',[index===0?'welfare':'',index===1?'read':'',index===2?'lecture':''] ]}}"></view>
+                <view class="_view data-v-4ba09dc0 pageTabBar_btn_text">
+                {{item}}
+            </view>
+            </button>
+        </view>
+        <view bindtap="handleProxy" class="_view data-v-4ba09dc0 index_bottomDownloadTip" data-comkey="{{$k}}" data-eventid="{{'1_19'}}" hoverClass="wr_commonActive" wx:if="{{shouldShowBottomPromt}}">
+            <view class="_view data-v-4ba09dc0 index_bottomDownloadTip_icon"></view>
+            <view class="_view data-v-4ba09dc0 index_bottomDownloadTip_text">
+            下载微信读书 app · 阅读百万好书
+        </view>
+        </view>
+        <template is="72e46b1e" data="{{...$root[$kk+'15'],$root:$root}}"></template>
+        <template is="6e2406d5" data="{{...$root[$kk+'16'],$root:$root}}"></template>
+        <template is="05fb2afb" data="{{...$root[$kk+'17'],$root:$root}}" wx:if="{{authorized&&dataError}}"></template>
+        <template is="0d52de0d" data="{{...$root[$kk+'18'],$root:$root}}"></template>
+        <template is="a94c21b2" data="{{...$root[$kk+'19'],$root:$root}}"></template>
+        <template is="19cee07e" data="{{...$root[$kk+'20'],$root:$root}}"></template>
+        <template is="fe326672" data="{{...$root[$kk+'21'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/GiftCollectionList.vue.wxml"></import>
+<import src="/pages/index/components/CampaignView.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/pages/index/components/RecommendedList.vue.wxml"></import>
+<import src="/pages/index/components/CategoryList.vue.wxml"></import>
+<import src="/pages/index/components/RankingList.vue.wxml"></import>
+<import src="/pages/index/components/CommonBookList.vue.wxml"></import>
+<import src="/components/IndexLectureList/IndexLectureList.vue.wxml"></import>
+<import src="/components/PinTips/PinTips.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>
+<import src="/pages/index/components/XiaoweiAuthorizationModal.vue.wxml"></import>
+<import src="/pages/index/components/PrivacyAgreement/index.vue.wxml"></import>

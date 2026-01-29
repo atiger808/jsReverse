@@ -1,0 +1,82 @@
+<template name="78ad2475">
+    <view class="_view data-v-ab50fee0 {{[ 'infiniteLottery',[collapsePanel?'collapse':'',teamSuccess?'no_button':''] ]}}">
+        <view class="_view data-v-ab50fee0 infiniteLottery_hd" wx:if="{{!collapsePanel}}">
+            <view class="_view data-v-ab50fee0 infiniteLottery_title">组队抽取体验卡</view>
+            <view class="_view data-v-ab50fee0 infiniteLottery_date" wx:if="{{collageDateStr}}">
+                <text class="_text data-v-ab50fee0" decode="{{true}}">{{collageDateStr}}</text>
+            </view>
+            <view class="_view data-v-ab50fee0 infiniteLottery_date" wx:else> </view>
+            <button bindtap="handleProxy" class="_button data-v-ab50fee0 infiniteLottery_goToHistory" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" wx:if="{{hasHistory}}">组队记录</button>
+            <view class="_view data-v-ab50fee0 infiniteLottery_rule">
+                <view bindtap="handleProxy" class="_view data-v-ab50fee0 infiniteLottery_rule_cnt" data-comkey="{{$k}}" data-eventid="{{'3_1'}}">奖品为2天、5天、7天、30天、365天体验卡。队伍满员后队长将额外获得一次抽奖机会。当队伍仅有你一人时，你可加入其它队伍。每期队伍成员不能与往期完全相同。</view>
+            </view>
+        </view>
+        <view class="_view data-v-ab50fee0 infiniteLottery_hd" wx:else>
+            <view class="_view data-v-ab50fee0 infiniteLottery_title">组队抽取体验卡</view>
+            <button bindtap="handleProxy" class="_button data-v-ab50fee0 infiniteLottery_goToHistory" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" wx:if="{{hasHistory}}">组队记录</button>
+        </view>
+        <view class="_view data-v-ab50fee0 infiniteLottery_bd">
+            <view class="_view data-v-ab50fee0 infiniteLottery_members">
+                <view class="_view data-v-ab50fee0 infiniteLottery_members_title" wx:if="{{collage.status===0}}">还差{{collage.lackMembers}}人组队成功</view>
+                <view class="_view data-v-ab50fee0" wx:elif="{{collage.status===1}}">
+                    <view class="_view data-v-ab50fee0 infiniteLottery_members_title" wx:if="{{isSelfCollage}}">
+                        <view class="_view data-v-ab50fee0 infiniteLottery_members_title_success"></view>组队成功</view>
+                    <view class="_view data-v-ab50fee0 infiniteLottery_members_title" wx:else>该团已满</view>
+                </view>
+                <view class="_view data-v-ab50fee0 infiniteLottery_members_title infiniteLottery_members_title_Warning" wx:elif="{{collage.status===2}}">本次抽奖已过期</view>
+                <view class="_view data-v-ab50fee0 infiniteLottery_members_title" wx:else> </view>
+                <view class="_view data-v-ab50fee0 infiniteLottery_members_list" wx:if="{{collage.members&&collage.members.length>0}}">
+                    <template is="4c9058a4" data="{{...$root[$kk+'0_'+memberIndex],$root:$root}}" wx:for="{{collageMembersArray}}" wx:for-index="memberIndex" wx:for-item="member" wx:key="memberIndex"></template>
+                </view>
+                <view class="_view data-v-ab50fee0 infiniteLottery_members_list" wx:else>
+                    <template is="4c9058a4" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+                    <template is="4c9058a4" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+                    <template is="4c9058a4" data="{{...$root[$kk+'3'],$root:$root}}"></template>
+                    <template is="4c9058a4" data="{{...$root[$kk+'4'],$root:$root}}"></template>
+                    <template is="4c9058a4" data="{{...$root[$kk+'5'],$root:$root}}"></template>
+                </view>
+            </view>
+        </view>
+        <form reportSubmit bindsubmit="handleProxy" class="_form data-v-ab50fee0" data-comkey="{{$k}}" data-eventid="{{'1_10'}}">
+            <view class="_view data-v-ab50fee0 infiniteLottery_ft" wx:if="{{!collage&&!myCollage}}">
+                <button bindtap="handleProxy" class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-comkey="{{$k}}" data-eventid="{{'3_3'}}" formType="submit" hoverClass="wr_commonActive">
+                立即组队
+            </button>
+            </view>
+            <view class="_view data-v-ab50fee0 infiniteLottery_ft" wx:elif="{{isSelfCollage}}">
+                <button class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-activity="{{activityId&&activityId!==null?1:0}}" data-collageId="{{collage?collage.collageId:null}}" formType="submit" hoverClass="wr_commonActive" id="shareLotteryCollageButton" openType="share" wx:if="{{collage.status===0}}">
+                邀请好友加入队伍
+            </button>
+                <button catchtap="handleProxy" class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-comkey="{{$k}}" data-eventid="{{'3_4'}}" formType="submit" hoverClass="wr_commonActive" wx:elif="{{collage.status===2&&myCollage.status===1}}">
+                查看我的本期队伍
+            </button>
+                <button catchtap="handleProxy" class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-comkey="{{$k}}" data-eventid="{{'3_5'}}" formType="submit" hoverClass="wr_commonActive" wx:elif="{{collage.status===2}}">
+                组建新队伍
+            </button>
+            </view>
+            <view class="_view data-v-ab50fee0" wx:else>
+                <view class="_view data-v-ab50fee0 infiniteLottery_ft" wx:if="{{myCollage.collageId}}">
+                    <button catchtap="handleProxy" class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-comkey="{{$k}}" data-eventid="{{'4_7'}}" formType="submit" hoverClass="wr_commonActive" wx:if="{{collage.status===0&&myCollage.status===0&&myCollage.members&&myCollage.members.length===1}}">
+                    立即加入队伍
+                </button>
+                    <button catchtap="handleProxy" class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-comkey="{{$k}}" data-eventid="{{'4_6'}}" formType="submit" hoverClass="wr_commonActive" wx:else>
+                    你已组队 · 查看你的队伍
+                </button>
+                </view>
+                <view class="_view data-v-ab50fee0 infiniteLottery_ft" wx:else>
+                    <button catchtap="handleProxy" class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-comkey="{{$k}}" data-eventid="{{'4_9'}}" formType="submit" hoverClass="wr_commonActive" wx:if="{{collage.status===0}}">
+                    立即加入队伍
+                </button>
+                    <button catchtap="handleProxy" class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" data-comkey="{{$k}}" data-eventid="{{'4_8'}}" formType="submit" hoverClass="wr_commonActive" wx:elif="{{collage.status===1||collage.status===2}}">
+                    组建新队伍
+                </button>
+                    <button disabled class="_button data-v-ab50fee0 wr_btn wr_btn_Big wr_btn_Gold infiniteLottery_action" wx:elif="{{!finishLoadingData}}"></button>
+                </view>
+            </view>
+        </form>
+        <button bindgetuserinfo="handleProxy" class="_button data-v-ab50fee0 infiniteLottery_transparentBtn" data-comkey="{{$k}}" data-eventid="{{'1_11'}}" openType="getUserInfo" wx:if="{{needAuthorized}}"></button>
+        <template is="5a5358fb" data="{{...$root[$kk+'6'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryAvatar.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryRuleAlert.vue.wxml"></import>

@@ -1,0 +1,53 @@
+<template name="787329e9">
+    <view class="_view data-v-873c4878 invitation">
+        <view class="_view data-v-873c4878 invitation_main">
+            <view class="_view data-v-873c4878 invitation_main_hd">Hi, {{user.longName}}</view>
+            <view class="_view data-v-873c4878" wx:if="{{inviterRecentBooks}}">
+                <view class="_view data-v-873c4878 invitation_main_bd invitation_main_bd1" wx:if="{{readingHours>0}}">
+                我是{{sender.name}}，
+                我已使用微信读书<text class="_text data-v-873c4878 invitation_main_bd_em">{{senderAccountAgeDays}}</text>天，
+                阅读了<text class="_text data-v-873c4878 invitation_main_bd_em">{{readingHours}}</text>小时，这是我最近在读的书，也推荐给你！
+            </view>
+                <view class="_view data-v-873c4878 invitation_main_bd" wx:else>
+                我开始在微信读书阅读了，这是我最近在读的书，也推荐给你！
+            </view>
+                <view class="_view data-v-873c4878 book_list_main">
+                    <view bindtap="handleProxy" class="_view data-v-873c4878" data-comkey="{{$k}}" data-eventid="{{'4_0_'+index}}" hoverClass="wr_commonActive" key="{{index}}" wx:for="{{inviterRecentBooks}}" wx:for-item="book" wx:key="index">
+                        <template is="5db1e51a" data="{{...$root[$kk+'0_'+index],$root:$root}}"></template>
+                    </view>
+                </view>
+            </view>
+            <view class="_view data-v-873c4878 invitation_main_bd" wx:elif="{{readingHours>0}}">
+                <view class="_view data-v-873c4878 invitation_main_bd_sender" wx:if="{{sender.name}}">我是 <view class="_view data-v-873c4878 invitation_main_bd_sender_name">{{sender.name}}</view>
+                </view>
+                <view class="_view data-v-873c4878">我已使用微信读书<text class="_text data-v-873c4878 invitation_main_bd_em"> {{senderAccountAgeDays}} </text>天</view>
+                <view class="_view data-v-873c4878">阅读了 <text class="_text data-v-873c4878 invitation_main_bd_em">{{readingHours}}</text> 小时</view>
+                <view class="_view data-v-873c4878">很喜欢微信读书，也推荐给你！</view>
+            </view>
+            <view class="_view data-v-873c4878 invitation_main_bd" wx:else>
+                <view class="_view data-v-873c4878"></view>
+                <view class="_view data-v-873c4878">我已经开始</view>
+                <view class="_view data-v-873c4878">在微信读书阅读了</view>
+                <view class="_view data-v-873c4878">很喜欢微信读书，也推荐给你</view>
+            </view>
+        </view>
+        <view class="_view data-v-873c4878">
+            <view class="_view data-v-873c4878 invitation_action" wx:if="{{!shouldBlockedUser}}">
+                <button bindtap="handleProxy" class="_button data-v-873c4878 wr_btn wr_btn_Big wr_btn_Gold" data-comkey="{{$k}}" data-eventid="{{'3_3'}}" wx:if="{{appRedeemableDays}}">
+                去微信读书 app 领取 {{appRedeemableDays}} 天无限卡
+            </button>
+                <button bindtap="handleProxy" class="_button data-v-873c4878 wr_btn wr_btn_Big wr_btn_Gold" data-comkey="{{$k}}" data-eventid="{{'3_1'}}" id="launchApp" wx:elif="{{type==='invitation2020'}}">
+                邀请新朋友下载 app · 得 300 书币红包
+            </button>
+                <button bindtap="handleProxy" class="_button data-v-873c4878 wr_btn wr_btn_Big wr_btn_Gold" data-comkey="{{$k}}" data-eventid="{{'3_2'}}" id="invitation" openType="{{inviteButtonOpenType}}" wx:else>
+                邀请新朋友下载 app · 获得 3 天无限卡
+            </button>
+            </view>
+            <view class="_view data-v-873c4878 invitation_tip" wx:if="{{registrationDate}}">{{user.name}}<label class="_span data-v-873c4878" wx:if="{{user.name}}">，</label>你已于{{registrationDate}}加入微信读书，欢迎回来</view>
+            <view class="_view data-v-873c4878 invitation_tip" wx:elif="{{!finishLoadingData}}"> </view>
+        </view>
+        <template is="0d52de0d" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>

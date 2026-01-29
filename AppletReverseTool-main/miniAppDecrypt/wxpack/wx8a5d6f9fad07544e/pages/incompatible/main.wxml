@@ -1,0 +1,2 @@
+<import src="/pages/incompatible/index.vue.wxml"></import>
+<template is="23a86f46" data="{{...$root['0'],$root:$root}}"></template>

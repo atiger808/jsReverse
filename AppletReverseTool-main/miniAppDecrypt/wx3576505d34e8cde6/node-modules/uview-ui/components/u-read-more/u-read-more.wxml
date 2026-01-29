@@ -1,0 +1,11 @@
+<view class="data-v-127a35d6">
+    <view class="{{['u-content','data-v-127a35d6',elId]}}" style="{{'height:'+(isLongContent&&!showMore?showHeight+'rpx':'auto')+';'+'text-indent:'+textIndent+';'}}">
+        <slot></slot>
+    </view>
+    <view bindtap="__e" class="{{['u-content__showmore-wrap','data-v-127a35d6',showMore?'u-content__show-more':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'toggleReadMore',['$event'] ] ] ] ]}}" style="{{$root.s0}}" wx:if="{{isLongContent}}">
+        <text class="u-content__showmore-wrap__readmore-btn data-v-127a35d6" style="{{'font-size:'+fontSize+'rpx'+';'+'color:'+color+';'}}">{{''+(showMore?openText:closeText)+''}}</text>
+        <view class="u-content__showmore-wrap__readmore-btn__icon u-flex data-v-127a35d6">
+            <u-icon bind:__l="__l" class="data-v-127a35d6" color="{{color}}" name="{{showMore?'arrow-up':'arrow-down'}}" size="{{fontSize}}" vueId="18d51ca3-1"></u-icon>
+        </view>
+    </view>
+</view>

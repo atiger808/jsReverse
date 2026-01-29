@@ -1,0 +1,25 @@
+<view>
+    <view class="u-flex u-row-between padding-tb-10">
+        <view class="u-content-color">{{create?'投票选项设置':'添加新选项'}}</view>
+        <u-icon bind:__l="__l" bind:click="__e" color="#679EF8" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ ['onChangeMediaType'] ] ] ]}}" label="{{mediaType===3?'文字投票':'图文投票'}}" labelColor="#679EF8" name="qiehuan" size="32" vueId="8d644dda-1" wx:if="{{create}}"></u-icon>
+    </view>
+    <view class="form-item-box">
+        <view class="options-item u-flex u-border-bottom padding-tb-26 padding-rl-30" wx:for="{{$root.l0}}" wx:key="index">
+            <u-icon bind:__l="__l" bind:click="__e" class="u-margin-right-26" color="#F96969" data-event-opts="{{[ [ '^click',[ [ 'onMinus',[index] ] ] ] ]}}" name="minus-circle" size="32" vueId="{{'8d644dda-2-'+index}}"></u-icon>
+            <u-image mode bind:__l="__l" bind:click="__e" class="u-margin-right-28" data-event-opts="{{[ [ '^click',[ [ 'onChangeMedia',[index] ] ] ] ]}}" height="120" src="/pages-son/one/static/tupian.png" vueId="{{'8d644dda-3-'+index}}" width="120" wx:if="{{mediaType===3&&item[$orig].media_type===-1}}"></u-image>
+            <block wx:else>
+                <dk-upload bind:__l="__l" bind:input="__e" bind:uploadSuccess="__e" data-event-opts="{{[ [ '^uploadSuccess',[ ['e0'] ] ],[ '^input',[ [ '__set_model',[ '$0','thumb','$event',[] ],[ [ ['join','',index] ] ] ] ] ] ]}}" data-event-params="{{index:index}}" dirName="simple" max="{{1}}" value="{{item[$orig].thumb}}" vueId="{{'8d644dda-4-'+index}}" wx:if="{{item.g0}}"></dk-upload>
+                <block wx:else>
+                    <dk-upload bind:__l="__l" bind:imgDelete="__e" bind:uploadSuccess="__e" bind:videoDetail="__e" data-event-opts="{{[ [ '^uploadSuccess',[ ['e1'] ] ],[ '^videoDetail',[ ['e2'] ] ],[ '^imgDelete',[ ['e3'] ] ] ]}}" data-event-params="{{index:index,index:index,index:index}}" dirName="simple" max="{{1}}" mediaType="video" value="{{item[$orig].sign_video?item[$orig].sign_video.url?[item[$orig].sign_video.url]:[]:[]}}" vueId="{{'8d644dda-5-'+index}}" wx:if="{{item[$orig].media_type===1||item[$orig].sign_video}}"></dk-upload>
+                </block>
+            </block>
+            <textarea autoHeight="{{true}}" bindinput="__e" cursorSpacing="{{30}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','name','$event',[] ],[ [ ['join','',index] ] ] ] ] ] ]}}" maxlength="{{60}}" placeholder="请输入选项名称" style="width:100%;" value="{{item[$orig].name}}"></textarea>
+        </view>
+        <view class="u-flex u-row-between u-border-bottom padding-tb-26 padding-rl-30">
+            <u-icon bind:__l="__l" bind:click="__e" color="#488BF8" data-event-opts="{{[ [ '^click',[ ['onAdd'] ] ] ]}}" label="{{create?'增加选项(最多2000项)':'增加选项'}}" labelColor="#488BF8" name="plus" size="32" vueId="8d644dda-6"></u-icon>
+            <u-icon bind:__l="__l" bind:click="__e" color="#488BF8" data-event-opts="{{[ [ '^click',[ ['e4'] ] ] ]}}" label="批量添加" labelColor="#488BF8" name="plus-circle" size="32" vueId="8d644dda-7"></u-icon>
+        </view>
+    </view>
+    <batch-add bind:__l="__l" bind:add="__e" bind:cancel="__e" data-event-opts="{{[ [ '^add',[ ['optionsAdd'] ] ],[ '^cancel',[ ['e5'] ] ] ]}}" visible="{{batch_add_visible}}" vueId="8d644dda-8" vueSlots="{{['default']}}">></batch-add>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="8d644dda-9"></yy-privacy-popup>
+</view>

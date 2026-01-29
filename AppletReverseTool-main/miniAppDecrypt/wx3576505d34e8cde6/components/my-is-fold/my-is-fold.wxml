@@ -1,0 +1,12 @@
+<view class="data-v-4c4480e2">
+    <view class="{{['data-v-4c4480e2',is_intro?'read-more':'']}}" id="fold-view" style="{{'position:relative;z-index:9;width:100%;box-sizing:border-box;margin-bottom:16rpx;'+'background-color:'+backgroundColor+';'+'max-height:'+(is_intro?height:'unset')+'px'+';'}}">
+        <slot></slot>
+        <view class="data-v-4c4480e2" style="height:60rpx;" wx:if="{{isFold&&foldIsHeight}}"></view>
+        <view bindtap="__e" class="u-flex u-row-center data-v-4c4480e2" data-event-opts="{{[ [ 'tap',[ [ 'arrowClick',['$event'] ] ] ] ]}}" style="width:100%;height:60rpx;position:absolute;z-index:9;bottom:0rpx;left:0rpx;" wx:if="{{isFold&&foldIsHeight}}">
+            <view class="u-flex u-row-center data-v-4c4480e2" style="{{'min-width:110rpx;height:40rpx;border-radius:20rpx;padding:0 10rpx;'+'background-image:'+backgroundImage+';'}}">
+                <text class="data-v-4c4480e2" style="{{'color:'+color+';'}}">{{is_intro?'展开全部':'收起全部'}}</text>
+                <u-icon bind:__l="__l" class="data-v-4c4480e2" color="{{color}}" name="{{is_intro?'arrow-down':'arrow-up'}}" size="24" style="margin-left:4rpx;" vueId="b0faa4bc-1"></u-icon>
+            </view>
+        </view>
+    </view>
+</view>

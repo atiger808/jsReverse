@@ -1,0 +1,14 @@
+<u-modal bind:__l="__l" bind:input="__e" borderRadius="{{20}}" class="modal-box" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isShow','$event',[] ] ] ] ] ]}}" maskCloseAble="{{maskClose}}" showConfirmButton="{{false}}" title="{{title}}" titleStyle="{{$root.a0}}" value="{{isShow}}" vueId="1d2e9690-1" vueSlots="{{['default']}}">
+    <view class="slot-content modal-content">
+        <slot name="prompt" wx:if="{{$slots.prompt}}"></slot>
+        <view class="content-text padding-top-10 u-padding-bottom-30 u-font-32" wx:else>{{''+prompt+''}}</view>
+        <slot wx:if="{{$slots.default}}"></slot>
+        <block wx:else>
+            <u-input adjustPosition="{{true}}" bind:__l="__l" bind:input="__e" customStyle="{{$root.a1}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}" type="text" value="{{value}}" vueId="{{'1d2e9690-2'+','+'1d2e9690-1'}}" wx:if="{{inputShow}}"></u-input>
+        </block>
+        <view class="but-box u-padding-top-40">
+            <dk-btn backgroundColor="#E9E9E9" bind:__l="__l" bind:click="__e" color="#333333" data-event-opts="{{[ [ '^click',[ ['cancel'] ] ] ]}}" lineHeight="88" vueId="{{'1d2e9690-3'+','+'1d2e9690-1'}}" vueSlots="{{['default']}}" width="240">取消</dk-btn>
+            <dk-btn backgroundColor="#ED5646" bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['confirm'] ] ] ]}}" lineHeight="88" vueId="{{'1d2e9690-4'+','+'1d2e9690-1'}}" vueSlots="{{['default']}}" width="240">确认</dk-btn>
+        </view>
+    </view>
+</u-modal>

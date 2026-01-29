@@ -1,0 +1,49 @@
+<view class="data-v-5c6a3d64">
+    <u-popup bind:__l="__l" bind:input="__e" class="popup-box data-v-5c6a3d64" customStyle="{{backgroundColor:'#ffffff00'}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','isShow','$event',[] ] ] ] ] ]}}" mode="bottom" value="{{isShow}}" vueId="13089f62-1" vueSlots="{{['default']}}">
+        <view class="u-flex-col u-row-center data-v-5c6a3d64" style="width:100vw;height:100vh;background-color:#1446b00;">
+            <view bindtap="__e" catchtouchmove="__e" class="warp u-flex u-row-center data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ],[ 'touchmove',[ [ '',['$event'] ] ] ] ]}}" id="content">
+                <scroll-view class="canvas-box u-flex u-row-center u-col-center u-rela data-v-5c6a3d64" scrollY="{{true}}" showScrollbar="{{false}}" style="{{'max-height:'+(flexHeight?flexHeight+'px':'85%')+';'}}">
+                    <dk-loading bind:__l="__l" class="data-v-5c6a3d64" fullScreen="{{false}}" vueId="{{'13089f62-2'+','+'13089f62-1'}}" wx:if="{{!tempFilePath}}"></dk-loading>
+                    <image class="data-v-5c6a3d64" mode="widthFix" src="{{tempFilePath}}" style="width:100%;height:100%;min-height:800rpx;"></image>
+                </scroll-view>
+            </view>
+            <scroll-view class="u-flex bj_color data-v-5c6a3d64" scrollX="{{true}}">
+                <view class="share-box u-padding-30 u-flex bj_color data-v-5c6a3d64">
+                    <view bindtap="__e" class="u-flex bj_color data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}" style="min-width:170rpx;">
+                        <button class="u-reset-button data-v-5c6a3d64" hoverClass="none" openType="share" style="background-color:transparent;" type="default">
+                            <u-icon bind:__l="__l" class="data-v-5c6a3d64" color="#28C445" customPrefix="custom-icon" label="分享到微信" labelPos="bottom" marginTop="23" name="weixin1" size="74" vueId="{{'13089f62-3'+','+'13089f62-1'}}"></u-icon>
+                        </button>
+                    </view>
+                    <view bindtap="__e" class="u-flex bj_color data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'saveImage',['$0'],['tempFilePath'] ] ] ] ]}}" style="min-width:170rpx;">
+                        <u-icon bind:__l="__l" class="data-v-5c6a3d64" color="#FFA354" customPrefix="custom-icon" label="保存到相册" labelPos="bottom" marginTop="23" name="xiazai" size="74" vueId="{{'13089f62-4'+','+'13089f62-1'}}"></u-icon>
+                    </view>
+                    <view bindtap="__e" class="u-flex bj_color data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'saveImage',['$0'],['qrcode_local'] ] ] ] ]}}" style="min-width:170rpx;">
+                        <u-icon bind:__l="__l" class="data-v-5c6a3d64" color="#A1C4FD" customPrefix="custom-icon" label="保存活动码" labelPos="bottom" marginTop="23" name="xiaochengxu" size="74" vueId="{{'13089f62-5'+','+'13089f62-1'}}"></u-icon>
+                    </view>
+                    <view bindtap="__e" class="u-flex bj_color data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'handleShare',['offical'] ] ] ] ]}}" style="min-width:170rpx;" wx:if="{{showOffica}}">
+                        <u-icon bind:__l="__l" class="data-v-5c6a3d64" color="#229AFC" customPrefix="custom-icon" label="嵌入公众号" labelPos="bottom" marginTop="23" name="gongzhonghao1" size="74" vueId="{{'13089f62-6'+','+'13089f62-1'}}"></u-icon>
+                    </view>
+                    <view bindtap="__e" class="u-flex bj_color data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'handleShare',['h5'] ] ] ] ]}}" style="min-width:170rpx;" wx:if="{{type!=4}}">
+                        <u-icon bind:__l="__l" class="data-v-5c6a3d64" color="#229AFC" customPrefix="custom-icon" label="H5链接" labelPos="bottom" marginTop="23" name="lianjie" size="74" vueId="{{'13089f62-7'+','+'13089f62-1'}}"></u-icon>
+                    </view>
+                    <view bindtap="__e" class="u-flex bj_color data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'handleShare',['web'] ] ] ] ]}}" style="min-width:170rpx;" wx:if="{{creator&&type==1||creator&&type==2}}">
+                        <u-icon bind:__l="__l" class="u-margin-right-30 data-v-5c6a3d64" color="#229AFC" customPrefix="custom-icon" label="现场投票" labelPos="bottom" marginTop="23" name="lianjie" size="74" vueId="{{'13089f62-8'+','+'13089f62-1'}}"></u-icon>
+                    </view>
+                </view>
+            </scroll-view>
+            <view class="bj_color data-v-5c6a3d64">
+                <view bindtap="__e" class="share-y w-690 u-rela data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'toShare',['$event'] ] ] ] ]}}" style="background-color:#ffffff;" wx:if="{{creator}}">
+                    <view class="u-flex u-row-between data-v-5c6a3d64" style="height:88rpx;width:100%;padding:0 16rpx;box-sizing:border-box;">
+                        <view class="bold data-v-5c6a3d64" style="color:#333333;">默认分享图设置</view>
+                        <u-icon bind:__l="__l" class="u-margin-left-10 data-v-5c6a3d64" color="#999999" label="自定义默认分享" labelPos="left" name="arrow-right" slot="right-icon" vueId="{{'13089f62-9'+','+'13089f62-1'}}"></u-icon>
+                    </view>
+                    <view class="u-abso padding-rl-10 padding-bottom-8 only data-v-5c6a3d64" style="font-size:12rpx;">仅举办方可见</view>
+                </view>
+            </view>
+            <view bindtap="__e" class="cancel-box h-90 u-text-center bj_color u-border-top safe-area-inset-bottom data-v-5c6a3d64" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}">取消分享</view>
+        </view>
+    </u-popup>
+    <view class="data-v-5c6a3d64" style="width:0;height:0;overflow:hidden;opacity:0;transform:translateX(10000%);">
+        <canvas class="data-v-5c6a3d64" id="my-canvas" style="{{'width:'+canvasW+'px'+';'+'height:'+canvasH+'px'+';'}}" type="2d"></canvas>
+    </view>
+</view>

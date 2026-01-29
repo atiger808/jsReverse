@@ -1,0 +1,6 @@
+<u-cell-item arrow="{{false}}" bind:__l="__l" hoverClass="none" vueId="59402e56-1" vueSlots="{{['default','title']}}">
+    <u-icon bind:__l="__l" bind:click="__e" customStyle="{{$root.a0}}" data-event-opts="{{[ [ '^click',[ [ 'handleShowNotice',['vote-mutiple'] ] ] ] ]}}" label="打分功能" labelColor="#333333" labelPos="left" labelSize="30" name="question-circle" size="26" slot="title" vueId="{{'59402e56-2'+','+'59402e56-1'}}"></u-icon>
+    <picker bindchange="__e" bindcolumnchange="__e" data-event-opts="{{[ [ 'columnchange',[ [ 'voteOptionColumn',['$event'] ] ] ],[ 'change',[ [ 'voteOptionChange',['$event'] ] ] ] ]}}" mode="multiSelector" range="{{voteOption}}" rangeKey="label" value="{{[form.min-1||0,form.max-1||0]}}">
+        <u-icon bind:__l="__l" label="{{voteOption_label}}" labelPos="left" name="arrow-right" slot="right-icon" vueId="{{'59402e56-3'+','+'59402e56-1'}}"></u-icon>
+    </picker>
+</u-cell-item>

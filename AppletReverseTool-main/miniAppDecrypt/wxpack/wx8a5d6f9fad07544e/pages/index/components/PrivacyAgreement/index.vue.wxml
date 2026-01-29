@@ -1,0 +1,4 @@
+<template name="fe326672">
+    <template is="3cf2dd0b" data="{{...$root[$kk+'0'],$root:$root,$for:{default:'data-v-41dbede8-default-0'},$slotdefault:'data-v-41dbede8-default-0'}}"></template>
+</template>
+<import src="/components/BottomModal/index.vue.wxml"></import>

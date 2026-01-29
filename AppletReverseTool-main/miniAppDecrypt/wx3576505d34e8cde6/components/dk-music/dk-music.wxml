@@ -1,0 +1,5 @@
+<view bindtap="__e" class="music" data-event-opts="{{[ [ 'tap',[ [ 'toggle',[false] ] ] ] ]}}" wx:if="{{value}}">
+    <view animation="{{animationData}}" class="rotate-box">
+        <u-icon bind:__l="__l" color="{{color}}" customPrefix="custom-icon" name="{{name}}" size="35" vueId="fabdaebc-1"></u-icon>
+    </view>
+</view>

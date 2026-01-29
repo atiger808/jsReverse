@@ -1,0 +1,6 @@
+<view class="countdown-box u-font-26 u-flex u-col-center u-row-center">
+    <view class="line u-m-r-10"></view>
+    <text class="u-font-26" style="{{'color:'+color+';'}}">{{describe}}</text>
+    <u-count-down bgColor="transparent" bind:__l="__l" color="{{mainColor}}" fontSize="26" hideZeroDay="{{true}}" separator="zh" separatorColor="{{color}}" separatorSize="26" timestamp="{{value}}" vueId="06ffe8b4-1"></u-count-down>
+    <view class="line u-m-l-10"></view>
+</view>

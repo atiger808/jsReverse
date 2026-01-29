@@ -1,0 +1,18 @@
+<template name="c5e7be06">
+    <view bindtap="handleProxy" class="_view data-v-662af950 battleGame_rank_modal" data-comkey="{{$k}}" data-eventid="{{'0_1'}}" wx:if="{{showModal}}">
+        <scroll-view class="_scroll-view data-v-662af950 battleGame_rank_modal_content" scrollY="true">
+            <view class="_view data-v-662af950 battleGame_rank_modal_title">
+            进阶之路
+        </view>
+            <view class="_view data-v-662af950 battleGame_rank_modal_icons">
+                <view class="_view data-v-662af950 {{[ 'battleGame_rank_modal_icon_item',[index===9?'extend':''] ]}}" key="{{index}}" wx:for="{{ranks}}" wx:for-item="rank" wx:key="index">
+                    <image class="_image data-v-662af950 {{[ 'battleGame_rank_modal_rankIcon',[index+1>selfRank?'gray':'',index===9?'extend':''] ]}}" src="{{rank.rankIcon}}"></image>
+                    <view class="_view data-v-662af950 {{[ 'battleGame_rank_modal_rankName',[index+1>selfRank?'gray':''] ]}}">
+                    {{rank.rankName}}
+                </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view bindtap="handleProxy" class="_view data-v-662af950 battleGame_rank_modal_cancel" data-comkey="{{$k}}" data-eventid="{{'1_0'}}"></view>
+    </view>
+</template>

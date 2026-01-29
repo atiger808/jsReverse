@@ -1,0 +1,49 @@
+<template name="4e0bf5d2">
+    <view class="_view data-v-1ce8b6f2 {{['wr_navBar',customSelector]}}">
+        <view bindtap="handleProxy" class="_view data-v-1ce8b6f2 wr_navBar_background" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" style=" {{'height:'+navBarHeight+'px'+';'+'background-color:'+backgroundColor+';'}}" wx:if="{{!translucent}}"></view>
+        <cover-view class="_cover-view data-v-1ce8b6f2 wr_navBar_body" style=" {{'height:'+navBarHeight+'px'+';'+'background-color:'+backgroundColor+';'}}" wx:if="{{!translucent}}">
+            <cover-view class="_cover-view data-v-1ce8b6f2 wr_navBar_body_statusBar" style=" {{'height:'+statusBarHeight+'px'+';'}}"></cover-view>
+            <cover-view class="_cover-view data-v-1ce8b6f2 wr_navBar_body_titleBar" style=" {{'height:'+titleBarHeight+'px'+';'}}">
+                <cover-view class="_cover-view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons">
+                    <button appParameter="{{backAppParameter}}" class="_button data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_item wr_navBar_body_titleBar_buttons_back wr_navBar_body_titleBar_buttons_back_overlay" openType="{{backOpenType}}" style=" {{'background-color:'+backgroundColor+';'+'padding-left:'+'8px'+';'}}" wx:if="{{showBackButton&&backAppParameter&&backOpenType}}">
+                        <cover-image class="_cover-image data-v-1ce8b6f2" src="{{backButtonUrl}}" style=" {{'width:'+backButtonWidth+'px'+';'+'height:'+buttonHeight+'px'+';'}}"></cover-image>
+                    </button>
+                    <cover-view ariaLabel="返回" ariaRole="button" bindtap="handleProxy" class="_cover-view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_item wr_navBar_body_titleBar_buttons_back" data-comkey="{{$k}}" data-eventid="{{'4_1'}}" hoverClass="wr_commonActive" wx:elif="{{showBackButton}}">
+                        <cover-image class="_cover-image data-v-1ce8b6f2" src="{{backButtonUrl}}" style=" {{'width:'+backButtonWidth+'px'+';'+'height:'+buttonHeight+'px'+';'}}"></cover-image>
+                    </cover-view>
+                    <cover-view ariaLabel="主页" ariaRole="button" bindtap="handleProxy" class="_cover-view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_item wr_navBar_body_titleBar_buttons_home" data-comkey="{{$k}}" data-eventid="{{'4_2'}}" hoverClass="wr_commonActive" wx:if="{{showHomeButton}}">
+                        <cover-image class="_cover-image data-v-1ce8b6f2" src="{{homeButtonUrl}}" style=" {{'width:'+buttonHeight+'px'+';'+'height:'+buttonHeight+'px'+';'}}"></cover-image>
+                    </cover-view>
+                    <cover-view ariaLabel="获取无限卡" ariaRole="button" bindtap="handleProxy" class="_cover-view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_item wr_navBar_body_titleBar_buttons_giftCollection" data-comkey="{{$k}}" data-eventid="{{'4_3'}}" hoverClass="wr_commonActive" wx:if="{{shouldShowGiftCollection}}">
+                        <cover-image class="_cover-image data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_giftCollection_image" src="https://rescdn.qqmail.com/weread/assets/mini_program/gift_collection_3x.png" style=" {{'width:'+menuButtonHeight+'px'+';'+'height:'+menuButtonHeight+'px'+';'}}"></cover-image>
+                        <template is="d624cdbc" data="{{...$root[$kk+'7'],$root:$root}}" wx:if="{{shouldShowGiftCollectionDot}}"></template>
+                    </cover-view>
+                </cover-view>
+                <cover-view class="_cover-view data-v-1ce8b6f2 wr_navBar_body_titleBar_title" style=" {{'color:'+titleColor+';'+'font-size:'+titleFontSize+'px'+';'}}">
+                {{title}}
+            </cover-view>
+            </cover-view>
+        </cover-view>
+        <view class="_view data-v-1ce8b6f2 wr_navBar_body" style=" {{'height:'+navBarHeight+'px'+';'+'background-color:'+backgroundColor+';'}}" wx:else>
+            <view class="_view data-v-1ce8b6f2 wr_navBar_body_statusBar" style=" {{'height:'+statusBarHeight+'px'+';'}}"></view>
+            <view class="_view data-v-1ce8b6f2 wr_navBar_body_titleBar" style=" {{'height:'+titleBarHeight+'px'+';'}}">
+                <view class="_view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons">
+                    <view ariaLabel="返回" ariaRole="button" bindtap="handleProxy" class="_view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_item wr_navBar_body_titleBar_buttons_back" data-comkey="{{$k}}" data-eventid="{{'4_4'}}" hoverClass="wr_commonActive" wx:if="{{showBackButton}}">
+                        <image class="_image data-v-1ce8b6f2" src="{{backButtonUrl}}" style=" {{'width:'+backButtonWidth+'px'+';'+'height:'+buttonHeight+'px'+';'}}"></image>
+                    </view>
+                    <view ariaLabel="主页" ariaRole="button" bindtap="handleProxy" class="_view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_item wr_navBar_body_titleBar_buttons_home" data-comkey="{{$k}}" data-eventid="{{'4_5'}}" hoverClass="wr_commonActive" wx:if="{{showHomeButton}}">
+                        <image class="_image data-v-1ce8b6f2" src="{{homeButtonUrl}}" style=" {{'width:'+buttonHeight+'px'+';'+'height:'+buttonHeight+'px'+';'}}"></image>
+                    </view>
+                    <view ariaLabel="获取无限卡" ariaRole="button" bindtap="handleProxy" class="_view data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_item wr_navBar_body_titleBar_buttons_giftCollection" data-comkey="{{$k}}" data-eventid="{{'4_6'}}" hoverClass="wr_commonActive" wx:if="{{shouldShowGiftCollection}}">
+                        <image class="_image data-v-1ce8b6f2 wr_navBar_body_titleBar_buttons_giftCollection_image" src="https://rescdn.qqmail.com/weread/assets/mini_program/gift_collection_3x.png" style=" {{'width:'+menuButtonHeight+'px'+';'+'height:'+menuButtonHeight+'px'+';'}}"></image>
+                        <template is="d624cdbc" data="{{...$root[$kk+'12'],$root:$root}}" wx:if="{{shouldShowGiftCollectionDot}}"></template>
+                    </view>
+                </view>
+                <view class="_view data-v-1ce8b6f2 wr_navBar_body_titleBar_title" style=" {{'color:'+titleColor+';'+'font-size:'+titleFontSize+'px'+';'}}">
+                {{title}}
+            </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/RedDot.vue.wxml"></import>

@@ -1,0 +1,1 @@
+.v-text-hide{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}.defaultAvatar{background-color:#f6f6f6;border-radius:10rpx;height:100rpx;overflow:hidden;width:100rpx}.y-avatar{min-height:90rpx}

@@ -1,0 +1,38 @@
+<template name="aad26a54">
+    <view class="_view data-v-3885311b">
+        <template is="05fb2afb" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{shouldShowEmptyView}}"></template>
+        <view class="_view data-v-3885311b giftCollection_main" wx:elif="{{formattedCards.length>0}}">
+            <view class="_view data-v-3885311b giftCollection_list">
+                <view bindtap="handleProxy" class="_view data-v-3885311b {{[ [true?'giftCollection_item':'',card.btnOpenType!=='share'?'giftCollection_item_Clickable':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'3_1_'+index}}" hoverClass="wr_active" id="{{card.id}}" key="{{index}}" wx:for="{{formattedCards}}" wx:for-item="card" wx:key="index">
+                    <image ariaLabel="{{card.title}}" class="_img data-v-3885311b giftCollection_item_img" mode="widthFix" src="{{card.image}}"></image>
+                    <view class="_view data-v-3885311b giftCollection_item_cnt">
+                        <view class="_view data-v-3885311b giftCollection_item_cnt_info">
+                            <view class="_view data-v-3885311b giftCollection_item_cnt_info_title image" style=" {{'background-image:'+'url('+card.titleImageUrl+')'+';'}}" wx:if="{{card.titleImageUrl}}"></view>
+                            <view class="_view data-v-3885311b giftCollection_item_cnt_info_title" style=" {{'color:'+card.titleColor+';'}}" wx:else>{{card.title}}</view>
+                            <view class="_view data-v-3885311b giftCollection_item_cnt_info_desc">
+                                <text class="_text data-v-3885311b" decode="{{true}}">{{card.subTitle}}</text>
+                            </view>
+                        </view>
+                        <button class="_button data-v-3885311b wr_btn wr_btn_PaleGold giftCollection_item_cnt_actionBtn" hoverClass="wr_commonActive" id="{{card.type}}" openType="share" wx:if="{{card.btnOpenType==='share'}}">
+                        {{card.buttonText}}
+                    </button>
+                        <view class="_view data-v-3885311b wr_btn wr_btn_PaleGold giftCollection_item_cnt_actionBtn" style=" {{'background-image:'+'linear-gradient(90deg, '+card.buttonColorStart+' 0%, '+card.buttonColorEnd+' 100%)'+';'+'color:'+'#FFF'+';'}}" wx:elif="{{card.buttonColorStart}}">
+                        {{card.buttonText}}
+                    </view>
+                        <view class="_view data-v-3885311b wr_btn wr_btn_PaleGold giftCollection_item_cnt_actionBtn" wx:else>
+                        {{card.buttonText}}
+                    </view>
+                    </view>
+                    <button bindgetuserinfo="handleProxy" class="_button data-v-3885311b giftCollection_authorization_button" data-comkey="{{$k}}" data-eventid="{{'4_0_'+index}}" openType="getUserInfo" wx:if="{{card.needAuthorize&&needAuthorized}}"></button>
+                </view>
+            </view>
+            <view class="_view data-v-3885311b giftCollection_footer" wx:if="{{shouldShowGiftCollectionMoreGift}}">
+                <view class="_view data-v-3885311b giftCollection_footer_title">你还可以通过“阅读时长积累”获得无限卡</view>
+                <rich-text class="_rich-text data-v-3885311b" nodes="{{formattedRules}}"></rich-text>
+            </view>
+        </view>
+        <template is="946845de" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>

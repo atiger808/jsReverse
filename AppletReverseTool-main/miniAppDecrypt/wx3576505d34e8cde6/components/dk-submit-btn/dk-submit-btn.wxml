@@ -1,0 +1,7 @@
+<view class="submit-box safe-area-inset-bottom data-v-567232ee">
+    <u-button bind:__l="__l" bind:getphonenumber="__e" class="data-v-567232ee" customStyle="{{submitStyle}}" data-event-opts="{{[ [ '^getphonenumber',[ ['getphonenumber'] ] ] ]}}" openType="getPhoneNumber" shape="{{shape}}" throttleTime="{{throttleTime}}" type="{{theme}}" vueId="1157f0a6-1" vueSlots="{{['default']}}" wx:if="{{needPhone}}">授权登录</u-button>
+    <u-button bind:__l="__l" catch:click="__e" class="btn_box data-v-567232ee" customStyle="{{submitStyle}}" data-event-opts="{{[ [ '^click',[ [ 'submit',['$event'] ] ] ] ]}}" hoverClass="btn-box-hover" loading="{{loading}}" openType="{{open_type}}" shape="{{shape}}" throttleTime="{{throttleTime}}" type="{{theme}}" vueId="1157f0a6-2" vueSlots="{{['default']}}" wx:else>
+        <slot wx:if="{{$slots.default}}"></slot>
+        <block wx:else>立即提交</block>
+    </u-button>
+</view>

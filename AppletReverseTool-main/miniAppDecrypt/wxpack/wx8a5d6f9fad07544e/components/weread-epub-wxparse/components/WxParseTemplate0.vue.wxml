@@ -1,0 +1,7 @@
+<template name="3d43650c">
+    <view class="_view data-v-05c82d56 wxParse_root {{node.classStr}}" style=" {{(node.styleStr||'')+';'+newStyleStr}}" wx:if="{{node.node=='element'}}">
+        <template is="3d27360a" data="{{...$root[$kk+'0_'+index],$root:$root}}" wx:for="{{outputNodes}}" wx:for-item="node" wx:key="index"></template>
+    </view>
+    <text class="_text data-v-05c82d56 {{'text_'+loopIndex==highlightParaId?'highlight':''}}" data-text="{{node.text}}" id="{{'text_'+loopIndex}}" wx:elif="{{node.node=='text'}}">{{node.text}}</text>
+</template>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate1.vue.wxml"></import>

@@ -1,0 +1,8 @@
+<image bindtap="__e" class="ball" data-event-opts="{{[ [ 'tap',[ [ 'toLuckDraw',['$event'] ] ] ] ]}}" mode="aspectFill" src="{{RED_BAG}}" style="{{'left:'+(moveX==0&x>0?x:moveX)+'px;top:'+(moveY==0&y>0?y:moveY)+'px'}}" wx:if="{{ballType==='luck-draw'}}"></image>
+<block wx:else>
+    <view class="common-fixed" wx:if="{{ballType==='video-learn'}}">
+        <view bindtap="__e" class="video-learn u-flex u-row-center u-col-center box-shadow theme-color-bg" data-event-opts="{{[ [ 'tap',[ [ 'handleLearn',['$event'] ] ] ] ]}}">
+            <u-icon bind:__l="__l" customPrefix="custom-icon" label="视频教程" labelColor="#ffffff" labelPos="bottom" labelSize="20" name="jiaocheng" size="36" vueId="59eec414-1"></u-icon>
+        </view>
+    </view>
+</block>

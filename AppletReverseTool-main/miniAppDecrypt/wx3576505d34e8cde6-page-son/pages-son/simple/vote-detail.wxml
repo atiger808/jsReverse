@@ -1,0 +1,20 @@
+<view class="u-padding-30">
+    <dk-loading bind:__l="__l" loading="{{loading}}" vueId="3978aedb-1"></dk-loading>
+    <view class="u-flex u-row-between u-margin-bottom-20">
+        <view class="u-flex">
+            <view class="theme-color">[选项]</view>
+            <view class="u-margin-left-14 u-line-1" style="width:250rpx;">{{name}}</view>
+        </view>
+        <view bindtap="__e" class="complaint h-54 white-color u-font-24 u-text-center" data-event-opts="{{[ [ 'tap',[ [ 'complaint',['$event'] ] ] ] ]}}">投诉选手</view>
+    </view>
+    <view class="top-tips h-80 u-font-26 u-margin-bottom-20 u-padding-left-20" wx:if="{{isAnony}}">当前已开启匿名投票，投票记录仅限举办方可见</view>
+    <view class="white-color-bg br-16 overflow u-flex u-row-between padding-tb-20 padding-rl-30 u-margin-bottom-20" wx:for="{{list}}" wx:key="index">
+        <view class="u-flex">
+            <u-avatar bind:__l="__l" size="mini" src="{{item.avatar_url}}" vueId="{{'3978aedb-2-'+index}}"></u-avatar>
+            <text class="u-main-color u-margin-left-14">{{item.nickname}}</text>
+        </view>
+        <view class="u-content-color">{{'1'+label}}</view>
+    </view>
+    <dk-empty bind:__l="__l" vueId="3978aedb-3" wx:if="{{!$root.g0}}"></dk-empty>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="3978aedb-4"></yy-privacy-popup>
+</view>

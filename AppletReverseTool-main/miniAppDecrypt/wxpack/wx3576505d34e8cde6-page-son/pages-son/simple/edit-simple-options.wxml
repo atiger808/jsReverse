@@ -1,0 +1,27 @@
+<view class="u-padding-30" style="padding-bottom:165rpx !important;">
+    <dk-loading bind:__l="__l" loading="{{loading}}" vueId="51a93a09-1"></dk-loading>
+    <view class="u-content-color u-margin-bottom-36">投票选项设置</view>
+    <view class="white-color-bg u-margin-bottom-16 border-radius" wx:for="{{$root.l0}}" wx:key="id">
+        <view class="u-flex u-border-bottom padding-tb-26 padding-rl-30">
+            <block wx:if="{{media_type===3}}">
+                <dk-upload bind:__l="__l" bind:input="__e" bind:uploadSuccess="__e" data-event-opts="{{[ [ '^uploadSuccess',[ ['e0'] ] ],[ '^input',[ [ '__set_model',[ '$0','thumb','$event',[] ],[ [ ['edit_join','id',item[$orig].id] ] ] ] ] ] ]}}" data-event-params="{{index:index}}" dirName="simple" disabled="{{!item[$orig].edit}}" max="{{1}}" poster="{{item.m0}}" remove="{{item[$orig].edit}}" value="{{item[$orig].thumb}}" vueId="{{'51a93a09-2-'+index}}" wx:if="{{item[$orig].media_type===0}}"></dk-upload>
+                <block wx:else>
+                    <dk-upload bind:__l="__l" bind:uploadSuccess="__e" bind:videoDetail="__e" data-event-opts="{{[ [ '^uploadSuccess',[ ['e1'] ] ],[ '^videoDetail',[ ['e2'] ] ] ]}}" data-event-params="{{index:index,index:index}}" dirName="simple" disabled="{{!item[$orig].edit}}" max="{{1}}" mediaType="video" poster="{{item.m1}}" remove="{{item[$orig].edit}}" value="{{item[$orig].sign_video?[item[$orig].sign_video.url]:[]}}" vueId="{{'51a93a09-3-'+index}}" wx:if="{{item[$orig].media_type===1}}"></dk-upload>
+                </block>
+            </block>
+            <u-input bind:__l="__l" bind:input="__e" cursorSpacing="30" customStyle="{{item.a0}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','name','$event',[] ],[ [ ['edit_join','id',item[$orig].id] ] ] ] ] ] ]}}" disabled="{{!item[$orig].edit}}" focus="{{true}}" maxlength="60" placeholder="请输入选项名称" style="width:100%;" type="textarea" value="{{item[$orig].name}}" vueId="{{'51a93a09-4-'+index}}"></u-input>
+        </view>
+        <view class="u-flex u-row-between u-padding-22">
+            <view class="u-flex">
+                <view>编号：</view>
+                <u-input bind:__l="__l" bind:input="__e" cursorSpacing="30" customStyle="{{item.a1}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','number','$event',[] ],[ [ ['edit_join','id',item[$orig].id] ] ] ] ] ] ]}}" disabled="{{!item[$orig].edit}}" height="{{50}}" maxlength="8" placeholder="请输入编号" style="width:80rpx;" type="number" value="{{item[$orig].number}}" vueId="{{'51a93a09-5-'+index}}"></u-input>
+            </view>
+            <view>
+                <u-icon bind:__l="__l" bind:click="__e" color="#F96969" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleRefuse',['$0',index],[ [ ['edit_join','id',item[$orig].id] ] ] ] ] ] ]}}" label="删除" labelColor="#F96969" labelSize="24" name="shanchu" size="27" vueId="{{'51a93a09-6-'+index}}"></u-icon>
+                <u-icon bind:__l="__l" bind:click="__e" class="u-margin-left-25" color="#999999" data-event-opts="{{[ [ '^click',[ [ 'handleEdit',['$0'],[ [ ['edit_join','id',item[$orig].id] ] ] ] ] ] ]}}" label="{{item[$orig].edit?'更新':'编辑'}}" labelColor="{{item[$orig].edit?'#488BF8':'#999999'}}" labelSize="24" name="{{item[$orig].edit?'reload':'edit-pen'}}" size="27" vueId="{{'51a93a09-7-'+index}}"></u-icon>
+            </view>
+        </view>
+    </view>
+    <dk-submit-btn bind:__l="__l" bind:submit="__e" data-event-opts="{{[ [ '^submit',[ ['submit'] ] ] ]}}" vueId="51a93a09-8" vueSlots="{{['default']}}">添加选项</dk-submit-btn>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="51a93a09-9"></yy-privacy-popup>
+</view>

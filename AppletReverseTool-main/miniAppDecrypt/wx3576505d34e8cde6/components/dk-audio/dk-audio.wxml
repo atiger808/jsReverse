@@ -1,0 +1,5 @@
+<view class="slider-box data-v-78434086">
+    <text class="mm data-v-78434086">{{timer}}</text>
+    <slider activeColor="#EE5B62" bindchange="__e" bindchanging="__e" bindtouchend="__e" bindtouchstart="__e" blockSize="16" class="audio-slider data-v-78434086" data-event-opts="{{[ [ 'change',[ [ 'sliderChange',['$event'] ] ] ],[ 'changing',[ [ 'sliderChanging',['$event'] ] ] ],[ 'touchstart',[ [ 'e0',['$event'] ] ] ],[ 'touchend',[ [ 'e1',['$event'] ] ] ] ]}}" max="{{duration}}" min="{{0}}" style="width:100%;" value="{{currentTime}}"></slider>
+    <text class="ss data-v-78434086">{{overTimer}}</text>
+</view>

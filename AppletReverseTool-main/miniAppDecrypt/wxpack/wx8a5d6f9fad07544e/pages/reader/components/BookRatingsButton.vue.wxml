@@ -1,0 +1,8 @@
+<template name="089ed410">
+    <view class="_view data-v-daf28686 {{['book_ratings_button_container',customSelector]}}">
+        <view bindtap="handleProxy" class="_view data-v-daf28686 {{[ 'book_ratings_button',[localSelectedGrade===item.grade?'book_ratings_button_Active':'','good'===item.grade?'book_ratings_button_Good':'','fair'===item.grade?'book_ratings_button_Fair':'','poor'===item.grade?'book_ratings_button_Poor':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'1_0_'+index}}" key="{{item.grade}}" wx:for="{{grades}}" wx:key="item.grade">
+            <view class="_div data-v-daf28686 book_ratings_button_icon"></view>
+            <text class="_text data-v-daf28686">{{item.buttonText}}</text>
+        </view>
+    </view>
+</template>

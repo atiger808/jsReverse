@@ -1,0 +1,5 @@
+<template name="23a86f46">
+    <view class="_view data-v-292a71e1 incompatible">
+        <view class="_p data-v-292a71e1 incompatible_label">你的微信版本过低，无法使用微信读书小程序，请更新微信到最新版本。</view>
+    </view>
+</template>

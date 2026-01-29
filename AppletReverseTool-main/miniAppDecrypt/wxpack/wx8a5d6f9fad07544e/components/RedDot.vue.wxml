@@ -1,0 +1,4 @@
+<template name="d624cdbc">
+    <cover-view class="_cover-view data-v-6e910232 wr_redDot" wx:if="{{cover}}"></cover-view>
+    <view class="_view data-v-6e910232 wr_redDot" wx:else></view>
+</template>

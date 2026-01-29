@@ -1,0 +1,12 @@
+<template name="5f6f083b">
+    <view class="_view data-v-4b6275d4 {{['wr_commentItem',customSelector]}}" wx:if="{{comment}}">
+        <template is="5fbff9fa" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view class="_div data-v-4b6275d4 wr_commentItem_date">{{formattedCreateDate}}</view>
+        <view class="_div data-v-4b6275d4 wr_commentItem_user">
+        {{comment.author.name}}
+    </view>
+        <template is="cdd17806" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/EmoticonText.vue.wxml"></import>

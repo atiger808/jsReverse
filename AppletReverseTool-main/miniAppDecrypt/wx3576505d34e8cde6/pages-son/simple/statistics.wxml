@@ -1,0 +1,27 @@
+<view style="padding-bottom:165rpx;">
+    <view class="top-tips h-80 u-font-26 u-padding-30">{{'当前访问累计'+vuex_activity_data.view_num+'次，累计投了'+vuex_activity_data.vote_num+label}}</view>
+    <view class="u-padding-30">
+        <view class="u-margin-bottom-30 u-flex u-row-between">
+            <u-icon bind:__l="__l" customStyle="{{$root.a0}}" label="排行榜" labelColor="#333333" labelPos="left" labelSize="32" name="/pages-son/one/static/jiangbei.png" size="40" vueId="4a5896ec-1"></u-icon>
+            <view class="u-font-24 u-tips-color">点击选项可查看明细</view>
+        </view>
+        <view catchtap="__e" class="h-120 white-color-bg br-16 overflow u-margin-bottom-14 u-flex u-row-around u-padding-left-12 u-padding-right-20" data-event-opts="{{[ [ 'tap',[ [ 'onClick',['$0'],[ [ ['join','id',item[$orig].id] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="id">
+            <view class="w-64 u-text-center" wx:if="{{index<3&&payload.id!=471692}}">
+                <u-icon bind:__l="__l" color="#FFD700" customPrefix="custom-icon" name="paihangbang" size="42" vueId="{{'4a5896ec-2-'+index}}" wx:if="{{index==0}}"></u-icon>
+                <u-icon bind:__l="__l" color="#C0C0C0" customPrefix="custom-icon" name="paihangbang" size="42" vueId="{{'4a5896ec-3-'+index}}" wx:if="{{index==1}}"></u-icon>
+                <u-icon bind:__l="__l" color="#B87333" customPrefix="custom-icon" name="paihangbang" size="42" vueId="{{'4a5896ec-4-'+index}}" wx:if="{{index==2}}"></u-icon>
+            </view>
+            <block wx:else>
+                <view class="w-64 u-text-center" wx:if="{{payload.id==471692}}">{{index+1}}</view>
+                <view class="w-64 u-text-center" wx:else>{{index+1}}</view>
+            </block>
+            <image catchtap="__e" class="u-m-r-10" data-event-opts="{{[ [ 'tap',[ [ 'previewImage',['$0'],[ [ ['join','id',item[$orig].id,'thumb'] ] ] ] ] ] ]}}" mode="widthFix" src="{{item[$orig].thumb+item.m0}}" style="width:70rpx;height:70rpx;border-radius:10rpx;overflow:hidden;" wx:if="{{item[$orig].thumb}}"></image>
+            <view style="width:57%;">
+                <view class="u-line-1">{{item[$orig].number+'号-'+item[$orig].name}}</view>
+                <u-line-progress activeColor="#FFA766" bind:__l="__l" height="9" percent="{{item.m1}}" showPercent="{{false}}" vueId="{{'4a5896ec-5-'+index}}"></u-line-progress>
+            </view>
+            <view class="u-font-26 u-content-color">{{''+(vuex_activity_data.voteNumShow||vuex_activity_data.isCreator?item[$orig].vote_num:'***')+label+''}}</view>
+        </view>
+    </view>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="4a5896ec-6"></yy-privacy-popup>
+</view>

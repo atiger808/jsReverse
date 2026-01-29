@@ -1,0 +1,8 @@
+<template name="9bb601ac">
+    <view class="_view data-v-13d89df6 {{['book_rating_item_bar',customSelector]}}">
+        <view class="_view data-v-13d89df6">{{label}}</view>
+        <view class="_view data-v-13d89df6 book_rating_item_bar_background">
+            <view class="_view data-v-13d89df6 book_rating_item_bar_content" style=" {{'width:'+percent+'%'+';'}}"></view>
+        </view>
+    </view>
+</template>

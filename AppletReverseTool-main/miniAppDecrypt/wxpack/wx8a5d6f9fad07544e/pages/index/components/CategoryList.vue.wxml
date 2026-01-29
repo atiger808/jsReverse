@@ -1,0 +1,24 @@
+<template name="07fa2c9e">
+    <view class="_view data-v-2ddbe9ba index_categoryList">
+        <view class="_view data-v-2ddbe9ba index_categoryItem_cnt" key="{{i}}" wx:for="{{dataSource}}" wx:for-index="i" wx:for-item="category" wx:key="i">
+            <view catchtap="handleProxy" class="_view data-v-2ddbe9ba index_categoryItem" data-comkey="{{$k}}" data-eventid="{{'2_0_'+i}}" hoverClass="wr_commonActive">
+                <view class="_view data-v-2ddbe9ba index_categoryItem_meta">
+                    <view class="_view data-v-2ddbe9ba index_categoryItem_title">{{category.title}}</view>
+                    <view class="_view data-v-2ddbe9ba index_categoryItem_list">
+                        <view class="_view data-v-2ddbe9ba index_categoryItem_list_item">
+                        1. {{category.bookTitles[0]}}
+                    </view>
+                        <view class="_view data-v-2ddbe9ba index_categoryItem_list_item">
+                        2. {{category.bookTitles[1]}}
+                    </view>
+                        <view class="_view data-v-2ddbe9ba index_categoryItem_list_item">
+                        3. {{category.bookTitles[2]}}
+                    </view>
+                    </view>
+                </view>
+                <template is="5db1e51a" data="{{...$root[$kk+'0_'+i],$root:$root}}"></template>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

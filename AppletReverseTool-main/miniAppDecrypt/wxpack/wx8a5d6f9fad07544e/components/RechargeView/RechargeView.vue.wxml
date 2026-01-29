@@ -1,0 +1,10 @@
+<template name="16ce10d6">
+    <view class="_view data-v-367ce9b0 wr_rechargeView" wx:if="{{payItems.length>0}}">
+        <view class="_view data-v-367ce9b0 wr_rechargeView_list">
+            <view bindtap="handleProxy" class="_view data-v-367ce9b0 wr_rechargeView_item" data-comkey="{{$k}}" data-eventid="{{'2_0_'+index}}" hoverClass="wr_commonActive" key="{{index}}" wx:for="{{payItems}}" wx:key="index">
+                <view class="_view data-v-367ce9b0 wr_rechargeView_item_price">{{item.originPrice}}</view>
+                <text class="_text data-v-367ce9b0 wr_rechargeView_item_payPrice">{{item.payPrice}}元</text>
+            </view>
+        </view>
+    </view>
+</template>

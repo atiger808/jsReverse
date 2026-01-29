@@ -1,0 +1,7 @@
+<view>
+    <u-popup bind:__l="__l" bind:close="__e" bind:input="__e" borderRadius="8" closeable="{{true}}" data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="center" value="{{show}}" vueId="72667d42-1" vueSlots="{{['default']}}" width="690">
+        <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$0'],['form'] ] ] ] ]}}">
+            <u-image bind:__l="__l" mode="widthFix" src="{{form.image}}" vueId="{{'72667d42-2'+','+'72667d42-1'}}" width="690"></u-image>
+        </view>
+    </u-popup>
+</view>

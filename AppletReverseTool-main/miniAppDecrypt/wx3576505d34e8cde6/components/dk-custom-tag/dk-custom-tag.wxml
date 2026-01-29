@@ -1,0 +1,5 @@
+<view class="u-margin-left-16 u-margin-bottom-20">
+    <view class="tag-box overflow" style="{{'background-color:'+bgColor+';'}}">
+        <view class="{{['padding-rl-10','','tag-text',$root.g0?'tag-text-move':'']}}" style="{{'color:'+color+';'}}">{{text}}</view>
+    </view>
+</view>

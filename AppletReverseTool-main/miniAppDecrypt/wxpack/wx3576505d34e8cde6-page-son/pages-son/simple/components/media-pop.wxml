@@ -1,0 +1,6 @@
+<u-popup bind:__l="__l" bind:input="__e" borderRadius="8" closeable="{{true}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="center" value="{{show}}" vueId="6f69793e-1" vueSlots="{{['default']}}" width="690">
+    <view class="u-padding-30">
+        <u-image bind:__l="__l" mode="widthFix" src="{{officialImg}}" vueId="{{'6f69793e-2'+','+'6f69793e-1'}}" width="630" wx:if="{{media_type==='image'}}"></u-image>
+        <video controls="{{true}}" duration="{{video.duration?video.duration:undefined}}" id="myVideo" objectFit="contain" poster="{{video.url+'?'+video.img}}" src="{{video.url}}" style="width:100%;height:392rpx;border-radius:8rpx;" wx:else></video>
+    </view>
+</u-popup>

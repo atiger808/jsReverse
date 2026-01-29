@@ -1,0 +1,7 @@
+<template name="4c9058a4">
+    <template is="5fbff9fa" data="{{...$root[$kk+'3'],$root:$root}}" wx:if="{{member.isCaptain}}"></template>
+    <template is="5fbff9fa" data="{{...$root[$kk+'0'],$root:$root}}" wx:elif="{{member.isNewUser}}"></template>
+    <template is="5fbff9fa" data="{{...$root[$kk+'1'],$root:$root}}" wx:elif="{{!member.userVid}}"></template>
+    <template is="5fbff9fa" data="{{...$root[$kk+'2'],$root:$root}}" wx:else></template>
+</template>
+<import src="/components/Avatar.vue.wxml"></import>

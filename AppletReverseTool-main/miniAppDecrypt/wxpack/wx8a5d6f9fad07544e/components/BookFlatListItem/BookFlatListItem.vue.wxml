@@ -1,0 +1,17 @@
+<template name="d8414216">
+    <view class="_view data-v-d22df3e0 {{[ [true?'wr_bookFlatItem':''],customSelector ]}}">
+        <view class="_view data-v-d22df3e0 wr_bookFlatItem_button_container">
+            <button catchtap="handleProxy" class="_button data-v-d22df3e0 {{['wr_btn','wr_bookFlatItem_button',buttonTypeSelector]}}" data-bookid="{{book.bookInfo&&book.bookInfo.bookId}}" data-comkey="{{$k}}" data-cover="{{book.bookInfo&&book.bookInfo.cover}}" data-eventid="{{'2_0'}}" data-lecture-info="{{book.lectureInfo}}" data-sn="{{book.sn}}" data-title="{{book.bookInfo&&book.bookInfo.title}}" hoverClass="wr_commonActive" openType="{{openType}}">
+            {{buttonLabel}}
+        </button>
+        </view>
+        <view catchtap="handleProxy" class="_view data-v-d22df3e0 wr_bookFlatItem_content" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" hoverClass="wr_itemActive">
+            <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+            <view class="_view data-v-d22df3e0 wr_bookFlatItem_content_info">
+                <view class="_view data-v-d22df3e0 wr_bookFlatItem_content_info_title">{{book.bookInfo.title}}</view>
+                <view class="_view data-v-d22df3e0 wr_bookFlatItem_content_info_author">{{book.author}}</view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

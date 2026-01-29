@@ -1,0 +1,1017 @@
+<template name="data-v-19e07ed5-default-3">
+    <template is="16ce10d6" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+</template>
+<template name="data-v-19e07ed5-default-1">
+    <view class="_view data-v-19e07ed5 raceGame_report_modal">
+        <view class="_view data-v-19e07ed5 raceGame_report_modal_title">余额不足，请到微信读书app获取书币</view>
+        <view class="_view data-v-19e07ed5 raceGame_report_modal_panel">
+            <button bindtap="handleProxy" class="_button data-v-19e07ed5 raceGame_report_modal_charge" data-comkey="{{$k}}" data-eventid="{{'4_6'}}">取消</button>
+            <button appParameter="weread://home?tab=3" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-19e07ed5 raceGame_report_modal_charge" data-comkey="{{$k}}" data-eventid="{{'4_7'}}" openType="launchApp">
+                    确定
+                </button>
+        </view>
+    </view>
+</template>
+<template name="data-v-5d522bae-default-1">
+    <view class="_view data-v-5d522bae infiniteDay_giftPanel_cnt">
+        <view class="_view data-v-5d522bae infiniteDay_giftPanel_info">
+            <view class="_view data-v-5d522bae infiniteDay_giftPanel_info_title">{{panelData.title}}</view>
+            <view class="_view data-v-5d522bae infiniteDay_giftPanel_info_desc" wx:if="{{panelData.subtitle}}">{{panelData.subtitle}}</view>
+            <view class="_view data-v-5d522bae infiniteDay_giftPanel_info_date">{{panelData.description}}</view>
+            <view class="_view data-v-5d522bae {{giftsSelector}}">
+                <template is="5db1e51a" data="{{...$root[$kk+'0_'+i],$root:$root}}" wx:for="{{redeemedBooks}}" wx:for-index="i" wx:for-item="book" wx:key="i"></template>
+                <view class="_view data-v-5d522bae infiniteDay_giftPanel_info_infinite" wx:if="{{redeemedInfiniteDays>0}}">
+                    <view class="_view data-v-5d522bae infiniteDay_giftPanel_info_infinite_desc">
+                        <text class="_text data-v-5d522bae infiniteDay_giftPanel_info_infinite_desc_number">{{redeemedInfiniteDays}}</text>天体验卡
+                    </view>
+                </view>
+            </view>
+        </view>
+        <button bindtap="handleProxy" class="_button data-v-5d522bae wr_btn wr_btn_Big infiniteDay_giftPanel_actionBtn" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive" openType="{{panelData.buttonOpenType}}">
+            {{panelData.buttonLabel}}
+        </button>
+    </view>
+</template>
+<template name="data-v-63852a57-default-1">
+    <view class="_view data-v-63852a57 lotteryHistory_permanent_title"></view>
+    <view class="_view data-v-63852a57 lotteryHistory_permanent_desc">
+        <text class="_text data-v-63852a57" decode="{{true}}">{{collage.dateDesc}}</text>
+    </view>
+    <view class="_view data-v-63852a57 lotteryHistory_permanent_members">
+        <template is="4c9058a4" data="{{...$root[$kk+'0_'+memberIndex],$root:$root}}" wx:for="{{collage.permanentList[0]}}" wx:for-index="memberIndex" wx:for-item="member" wx:key="memberIndex"></template>
+    </view>
+    <view class="_view data-v-63852a57 lotteryHistory_permanent_tip">队伍中有新人用户时<view class="_br data-v-63852a57"></view>才可抽取终身大奖</view>
+</template>
+<template name="data-v-802d2dca-default-3">
+    <template is="16ce10d6" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+</template>
+<template name="data-v-802d2dca-default-0">
+    <view class="_view data-v-802d2dca raceGame_report_modal">
+        <view class="_view data-v-802d2dca raceGame_report_modal_title">余额不足，请到微信读书app获取书币</view>
+        <view class="_view data-v-802d2dca raceGame_report_modal_panel">
+            <button bindtap="handleProxy" class="_button data-v-802d2dca raceGame_report_modal_charge" data-comkey="{{$k}}" data-eventid="{{'4_3'}}">取消</button>
+            <button appParameter="{{openAppAccountScheme}}" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-802d2dca raceGame_report_modal_charge" data-comkey="{{$k}}" data-eventid="{{'4_4'}}" openType="launchApp">
+                    确定
+                </button>
+        </view>
+    </view>
+</template>
+<template name="data-v-5066ba03-default-4">
+    <template is="16ce10d6" data="{{...$root[$kk+'3'],$root:$root}}"></template>
+</template>
+<template name="data-v-5066ba03-default-2">
+    <view class="_view data-v-5066ba03 raceGame_report_modal">
+        <view class="_view data-v-5066ba03 raceGame_report_modal_title">余额不足，请到微信读书app获取书币</view>
+        <view class="_view data-v-5066ba03 raceGame_report_modal_panel">
+            <button bindtap="handleProxy" class="_button data-v-5066ba03 raceGame_report_modal_charge" data-comkey="{{$k}}" data-eventid="{{'4_4'}}">取消</button>
+            <button appParameter="weread://home?tab=3" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-5066ba03 raceGame_report_modal_charge" data-comkey="{{$k}}" data-eventid="{{'4_5'}}" openType="launchApp">
+                    确定
+                </button>
+        </view>
+    </view>
+</template>
+<template name="data-v-3ff14e32-default-14">
+    <view class="_view data-v-3ff14e32 typoGame_report_modal">
+        <view class="_view data-v-3ff14e32 typoGame_report_modal_title">错题上报</view>
+        <view class="_view data-v-3ff14e32 typoGame_report_modal_desc">您确定这道题目有问题吗？</view>
+    </view>
+</template>
+<template name="data-v-3ff14e32-default-11">
+    <template is="b05eee7e" data="{{...$root[$kk+'10'],$root:$root}}"></template>
+</template>
+<template name="data-v-3ff14e32-default-9">
+    <template is="dacc7eba" data="{{...$root[$kk+'8'],$root:$root}}"></template>
+</template>
+<template name="data-v-3ff14e32-default-7">
+    <template is="dacc7eba" data="{{...$root[$kk+'6'],$root:$root}}"></template>
+</template>
+<template name="data-v-3ff14e32-default-5">
+    <template is="dacc7eba" data="{{...$root[$kk+'4'],$root:$root}}"></template>
+</template>
+<template name="data-v-2e95ff25-default-1">
+    <view class="_view data-v-2e95ff25 mcGame_report">
+        <view class="_view data-v-2e95ff25 mcGame_report_panel">
+            <view bindtap="handleProxy" class="_view data-v-2e95ff25 mcGame_report_panel_item" data-comkey="{{$k}}" data-eventid="{{'4_6_'+index}}" key="{{index}}" wx:for="{{reportUsers}}" wx:for-item="vid" wx:key="index">
+                    {{vid}}
+                </view>
+        </view>
+        <view bindtap="handleProxy" class="_view data-v-2e95ff25 mcGame_report_close" data-comkey="{{$k}}" data-eventid="{{'3_7'}}">关闭</view>
+    </view>
+</template>
+<template name="data-v-2f543e66-default-1">
+    <view class="_view data-v-2f543e66">
+        <view class="_view data-v-2f543e66 readingGroup_readingTasksRules_cnt">
+            <view class="_view data-v-2f543e66 readingGroup_readingTasksRules_title">任务规则</view>
+            <rich-text class="_rich-text data-v-2f543e66 readingGroup_readingTasksRules_description" nodes="{{formattedDescriptionNodes}}" space="nbsp"></rich-text>
+        </view>
+        <button appParameter="{{scheme}}" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-2f543e66 wr_btn wr_btn_Big readingGroup_readingTasksRules_button" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" openType="launchApp">
+            <label class="_span data-v-2f543e66" wx:if="{{authorVid}}">去收听</label>
+            <label class="_span data-v-2f543e66" wx:else>去阅读</label>
+        </button>
+    </view>
+</template>
+<template name="data-v-73846796-default-3">
+    <view class="_view data-v-73846796 education_contact">
+        <view class="_view data-v-73846796 education_contact_title">微信读书合作助手</view>
+        <view class="_view data-v-73846796 education_contact_list">
+            <view class="_view data-v-73846796 education_contact_list_item">
+                <view class="_view data-v-73846796 education_contact_list_item_title">微信</view>
+                <view class="_view data-v-73846796 education_contact_list_item_info">weixindushuhezuo</view>
+            </view>
+            <view class="_view data-v-73846796 education_contact_list_item">
+                <view class="_view data-v-73846796 education_contact_list_item_title">邮箱</view>
+                <view class="_view data-v-73846796 education_contact_list_item_info">weread@tencent.com</view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="data-v-f9153c68-default-1">
+    <view class="_view data-v-f9153c68 readingGroup_analysisPanel_top">
+        <view class="_view data-v-f9153c68 readingGroup_analysisPanel_top_icon"></view>
+        <view class="_view data-v-f9153c68 readingGroup_analysisPanel_top_title">队伍总积分</view>
+    </view>
+    <view class="_view data-v-f9153c68 readingGroup_analysisPanel_score">
+        <text class="_text data-v-f9153c68 readingGroup_analysisPanel_score_number">{{points}}</text>
+        <text class="_text data-v-f9153c68 readingGroup_analysisPanel_score_unit">分</text>
+    </view>
+    <view class="_view data-v-f9153c68 readingGroup_analysisPanel_list">
+        <view class="_view data-v-f9153c68 readingGroup_analysisPanel_item" key="{{index}}" wx:for="{{pointsSummary}}" wx:for-item="summary" wx:key="index">
+            <view class="_view data-v-f9153c68 readingGroup_analysisPanel_item_title">{{summary.name}} · {{summary.points}}分</view>
+            <template is="35d68743" data="{{...$root[$kk+'0_'+index],$root:$root}}"></template>
+            <view class="_view data-v-f9153c68 readingGroup_analysisPanel_item_desc">{{summary.description}}</view>
+        </view>
+    </view>
+</template>
+<template name="data-v-6ede4226-default-0">
+    <view class="_view data-v-6ede4226 readingGroup_notification_cnt">
+        <view class="_view data-v-6ede4226 readingGroup_notification_privacyAgreement">
+            <view class="_view data-v-6ede4226 readingGroup_notification_privacyAgreement_hd">
+                隐私详情
+            </view>
+            <view class="_view data-v-6ede4226 readingGroup_notification_privacyAgreement_bd">
+                当你的队伍未满员时，系统会将你的队伍推荐给你的朋友，朋友们可能看到你的队伍并选择加入。
+            </view>
+        </view>
+        <button bindtap="handleProxy" class="_button data-v-6ede4226 readingGroup_notification_btn" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive">
+            我知道了
+        </button>
+    </view>
+</template>
+<template name="data-v-019f810c-default-1">
+    <view class="_view data-v-019f810c readingGroup_levelPanel_cnt">
+        <view class="_view data-v-019f810c readingGroup_levelPanel_title">队伍等级说明</view>
+        <rich-text class="_rich-text data-v-019f810c readingGroup_levelPanel_description" nodes="{{formattedDescriptionNodes}}" space="nbsp"></rich-text>
+    </view>
+</template>
+<template name="data-v-5f0dba7a-default-0">
+    <view class="_view data-v-5f0dba7a {{[ 'readingGroup_guidePanel_cnt',[!shouldShowButtons?'readingGroup_guidePanel_cnt_NoButtons':''] ]}}">
+        <view class="_view data-v-5f0dba7a readingGroup_guidePanel_head">
+            <view class="_view data-v-5f0dba7a readingGroup_guidePanel_title">
+                你可以通过以下方式<view class="_br data-v-5f0dba7a"></view>
+                获得更多积分
+            </view>
+            <view bindtap="handleProxy" class="_view data-v-5f0dba7a readingGroup_guidePanel_rule" data-comkey="{{$k}}" data-eventid="{{'3_0'}}" hoverClass="wr_commonActive">
+                查看规则详情
+                <view class="_view data-v-5f0dba7a readingGroup_guidePanel_rule_arrow"></view>
+            </view>
+        </view>
+        <view class="_view data-v-5f0dba7a readingGroup_guidePanel_list">
+            <view class="_view data-v-5f0dba7a readingGroup_guidePanel_item" key="{{index}}" wx:for="{{guideItems}}" wx:key="index">
+                <view class="_view data-v-5f0dba7a readingGroup_guidePanel_item_text">{{item.description}}</view>
+                <button appParameter="{{item.appParameter}}" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-5f0dba7a readingGroup_guidePanel_item_btn" data-comkey="{{$k}}" data-eventid="{{'4_1_'+index}}" hoverClass="wr_commonActive" id="{{item.type}}" openType="{{item.openType}}" wx:if="{{shouldShowButtons}}">
+                    {{item.buttonText}}
+                </button>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="data-v-8fe80038-default-0">
+    <view class="_view data-v-8fe80038 readingGroup_upgradeNotice">
+        <view class="_view data-v-8fe80038 readingGroup_upgradeNotice_icon"></view>
+        <view class="_view data-v-8fe80038 readingGroup_upgradeNotice_title">
+            上期分数超过 60 分<view class="_br data-v-8fe80038"></view>
+            升级为二级小队
+        </view>
+        <view class="_view data-v-8fe80038 readingGroup_upgradeNotice_subtitle">
+            队伍人数上限提高到 6 人<view class="_br data-v-8fe80038"></view>
+            奖励更加丰厚
+        </view>
+        <button bindtap="handleProxy" class="_button data-v-8fe80038 readingGroup_upgradeNotice_button" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive" id="groupUpgradeShare" openType="share">
+            晒一晒
+        </button>
+    </view>
+</template>
+<template name="data-v-7456359a-default-2_+index+-+i">
+    <view class="_view data-v-7456359a readingGroup_teamAction_create_members_tag"></view>
+</template>
+<template name="data-v-7456359a-default-0_+index">
+    <view class="_view data-v-7456359a readingGroup_teamAction_create_members_tag" data-tag="TAG"></view>
+</template>
+<template name="data-v-3c9c4c26-default-3">
+    <view class="_view data-v-3c9c4c26 readingGroup_notification_cnt">
+        <view class="_view data-v-3c9c4c26 readingGroup_notification_info">
+            <view class="_view data-v-3c9c4c26 readingGroup_notification_info_icon" style=" {{iconStyleObj}}"></view>
+            <rich-text class="_rich-text data-v-3c9c4c26 readingGroup_notification_info_title" nodes="{{formattedTitle}}"></rich-text>
+            <rich-text class="_rich-text data-v-3c9c4c26 readingGroup_notification_info_desc" nodes="{{formattedDescription}}"></rich-text>
+            <button bindtap="handleProxy" class="_button data-v-3c9c4c26 readingGroup_notification_upper_btn" data-comkey="{{$k}}" data-eventid="{{'4_0'}}" hoverClass="wr_commonActive" wx:if="{{!redeemed&&redeemable&&satisfiesTimeRequirements}}">
+                    立即领取
+                </button>
+        </view>
+        <button bindtap="handleProxy" class="_button data-v-3c9c4c26 readingGroup_notification_btn" data-comkey="{{$k}}" data-eventid="{{'2_3'}}" hoverClass="wr_commonActive" wx:if="{{!redeemable&&(!rewardInfo||rewardInfo.ineligible!==1)}}">
+            获取积分
+        </button>
+        <button bindtap="handleProxy" class="_button data-v-3c9c4c26 readingGroup_notification_btn" data-comkey="{{$k}}" data-eventid="{{'2_1'}}" hoverClass="wr_commonActive" wx:elif="{{rewardInfo&&rewardInfo.ineligible===1||!satisfiesTimeRequirements}}">
+            我知道了
+        </button>
+        <button bindtap="handleProxy" class="_button data-v-3c9c4c26 readingGroup_notification_btn" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" hoverClass="wr_commonActive" wx:elif="{{redeemed}}">
+            接收奖励领取通知
+        </button>
+    </view>
+</template>
+<template name="data-v-558c415a-default-1">
+    <view class="_view data-v-558c415a readingGroup_rulesChangePanel_cnt">
+        <view class="_view data-v-558c415a readingGroup_rulesChangePanel_title">规则变更通知</view>
+        <rich-text class="_rich-text data-v-558c415a readingGroup_rulesChangePanel_description" nodes="{{formattedDescriptionNodes}}" space="nbsp"></rich-text>
+    </view>
+</template>
+<template name="data-v-326095cb-default-0">
+    <view class="_view data-v-326095cb wr_alert_cnt">
+        <view class="_view data-v-326095cb giveOneGetOne_voteBack_icon"></view>
+        <view class="_view data-v-326095cb giveOneGetOne_voteBack_title">点赞成功</view>
+        <view class="_view data-v-326095cb giveOneGetOne_voteBack_desc giveOneGetOne_voteBack_desc_Flex" wx:if="{{user}}">
+            <view class="_view data-v-326095cb giveOneGetOne_voteBack_desc_FlexEllipsis">{{user.name}}</view>
+            <view class="_view data-v-326095cb giveOneGetOne_voteBack_desc_FlexShrink0">回赞了你</view>
+        </view>
+        <view class="_view data-v-326095cb giveOneGetOne_voteBack_desc" wx:if="{{myVoteData}}">
+            <view class="_view data-v-326095cb" wx:if="{{justNeedLikeCount===0}}">您已获得{{myVoteData.infiniteDay}}天体验卡</view>
+            <view class="_view data-v-326095cb" wx:else>你还差{{justNeedLikeCount}}个赞即可获得 · {{myVoteData.infiniteDay}}天体验卡</view>
+        </view>
+    </view>
+    <view class="_view data-v-326095cb wr_alert_buttons">
+        <button ariaRole="button" catchtap="handleProxy" class="_button data-v-326095cb wr_alert_buttons_item" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive">
+            立即查看
+        </button>
+    </view>
+</template>
+<template name="data-v-df612980-default-0">
+    <view class="_view data-v-df612980 lotteryHistory_ruleAlert_title">组队抽奖活动规则</view>
+    <view class="_view data-v-df612980 lotteryHistory_ruleAlert_cnt">
+        1. 奖品为2天、5天、7天、30天、365天体验卡。<view class="_br data-v-df612980"></view>
+        2. 队伍满员后队长将额外获得一次抽奖机会。<view class="_br data-v-df612980"></view>
+        3. 当队伍仅有你一人时，你可加入其他队伍。<view class="_br data-v-df612980"></view>
+        4. 每期队伍成员不能与往期完全相同。
+    </view>
+</template>
+<template name="data-v-fb88d38a-default-0">
+    <view class="_view data-v-fb88d38a common_bottom_modal_title">
+        {{title}}
+    </view>
+    <view class="_view data-v-fb88d38a common_bottom_modal_main" wx:if="{{content}}">
+        <view class="_view data-v-fb88d38a common_bottom_modal_content">
+            {{content}}
+        </view>
+    </view>
+    <view class="_view data-v-fb88d38a common_bottom_modal_footer">
+        <view bindtap="handleProxy" class="_view data-v-fb88d38a common_bottom_modal_button active" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive" wx:if="{{confirmTitle}}">
+            {{confirmTitle}}
+        </view>
+        <view bindtap="handleProxy" class="_view data-v-fb88d38a common_bottom_modal_button" data-comkey="{{$k}}" data-eventid="{{'2_1'}}" hoverClass="wr_commonActive" wx:if="{{cancelTitle}}">
+            {{cancelTitle}}
+        </view>
+    </view>
+</template>
+<template name="data-v-41dbede8-default-0">
+    <view class="_view data-v-41dbede8 privacy_agreement_title">微信读书隐私政策</view>
+    <view class="_view data-v-41dbede8 privacy_agreement_main">
+        <view class="_view data-v-41dbede8 privacy_agreement_content">
+            欢迎你使用微信读书！请仔细阅读以下内容，并作出适当的选择:
+        </view>
+        <view class="_view data-v-41dbede8 privacy_agreement_section">
+            <view class="_view data-v-41dbede8 privacy_agreement_section_title">隐私政策概要</view>
+            <view class="_view data-v-41dbede8 privacy_agreement_content">
+                主要说明：我们所处理的信息种类、方式和目的；你所享有的权益；第三方插件信息等。
+            </view>
+            <view bindtap="handleProxy" class="_view data-v-41dbede8 privacy_agreement_link" data-comkey="{{$k}}" data-eventid="{{'3_0'}}" hoverClass="wr_commonActive">点击阅读《隐私政策（小程序）》完整版 ></view>
+        </view>
+    </view>
+    <view class="_view data-v-41dbede8 privacy_agreement_footer">
+        <view bindtap="handleProxy" class="_view data-v-41dbede8 privacy_agreement_button active" data-comkey="{{$k}}" data-eventid="{{'2_1'}}" hoverClass="wr_commonActive">同意并继续</view>
+        <view bindtap="handleProxy" class="_view data-v-41dbede8 privacy_agreement_button" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" hoverClass="wr_commonActive">取消</view>
+    </view>
+</template>
+<template name="data-v-5743d216-content-2">
+    <view class="_view data-v-5743d216 lecturePlayer_controlPanel_reviewControl_list">
+        <view bindtap="handleProxy" class="_view data-v-5743d216 lecturePlayer_controlPanel_reviewControl_btn" data-comkey="{{$k}}" data-eventid="{{'5_6'}}" hoverClass="lecturePlayer_controlPanel_reviewControl_btn_hover">
+                    复 制
+                    </view>
+        <view bindtap="handleProxy" class="_view data-v-5743d216 lecturePlayer_controlPanel_reviewControl_btn lecturePlayer_controlPanel_reviewControl_btn_delete" data-comkey="{{$k}}" data-eventid="{{'5_7'}}" hoverClass="lecturePlayer_controlPanel_reviewControl_btn_hover" wx:if="{{currentReview.isSelfPost}}">
+                    删 除
+                    </view>
+        <view bindtap="handleProxy" class="_view data-v-5743d216 lecturePlayer_controlPanel_reviewControl_btn" data-comkey="{{$k}}" data-eventid="{{'5_8'}}" hoverClass="lecturePlayer_controlPanel_reviewControl_btn_hover">
+                    取 消
+                    </view>
+    </view>
+</template>
+<template name="data-v-5743d216-header-2">
+    <view class="_view data-v-5743d216 lecturePlayer_controlPanel_reviewControl_header">
+        <view class="_view data-v-5743d216 lecturePlayer_controlPanel_reviewControl_subTitle">
+                        {{currentReview.author.name}}: {{currentReview.content}}
+                    </view>
+    </view>
+</template>
+<template name="data-v-5743d216-default-2"></template>
+<template name="data-v-5743d216-default-1">
+    <view bindtap="handleProxy" class="_view data-v-5743d216 lecturePlayer_reviewPanel_likeList_item" data-comkey="{{$k}}" data-eventid="{{'4_5_'+index}}" hoverClass="lecturePlayer_controlPanel_reviewControl_btn_hover" id="{{'pageRecycleView-likeRecycleView-'+index}}" key="{{index}}" wx:for="{{displayLikes}}" wx:key="index">
+        <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_placeholder" style=" {{['height:'+item.height+'px'+';']}}" wx:if="{{item.isPlaceHolder}}"></view>
+        <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_likeList_item_container" wx:else>
+            <image alt="{{item.name}}" bindtap="handleProxy" class="_image data-v-5743d216 lecturePlayer_reviewPanel_likeList_item_avatar" data-comkey="{{$k}}" data-eventid="{{'6_4_'+index}}" hoverClass="wr_commonActive" src="{{item.avatar}}"></image>
+            <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_likeList_item_name">
+                        {{item.name}}
+                    </view>
+        </view>
+    </view>
+</template>
+<template name="data-v-5743d216-default-0">
+    <view bindlongpress="handleProxy" class="_view data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item" data-comkey="{{$k}}" data-eventid="{{'4_3_'+index}}" hoverClass="lecturePlayer_reviewPanel_reviewList_item_hover" id="{{'pageRecycleView-reviewRecycleView-'+index}}" key="{{index}}" wx:for="{{displayReviews}}" wx:key="index">
+        <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_placeholder" style=" {{['height:'+item.height+'px'+';']}}" wx:if="{{item.isPlaceHolder}}"></view>
+        <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_container" wx:else>
+            <view class="_view data-v-5743d216" hoverStopPropagation="{{true}}">
+                <image alt="{{item.author.name}}" bindtap="handleProxy" class="_image data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_avatar" clickable="{{true}}" data-comkey="{{$k}}" data-eventid="{{'7_1_'+index}}" hoverClass="wr_commonActive" size="{{30}}" src="{{item.author.avatar}}"></image>
+            </view>
+            <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_main">
+                <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_info">
+                    <label class="_span data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_info_text">
+                        <label class="_span data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_info_name">{{item.author.name}}</label> · {{item.displayDate}}
+                            </label>
+                    <label class="_span data-v-5743d216 {{[ 'lecturePlayer_reviewPanel_reviewList_item_info_like',[item.isLike?'lecturePlayer_reviewPanel_reviewList_item_info_liked':''] ]}}">
+                                {{item.likesCount}}
+                                <view catchtap="handleProxy" class="_view data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_info_likeArea" data-comkey="{{$k}}" data-eventid="{{'9_2_'+index}}" hoverStopPropagation="{{true}}"></view>
+                    </label>
+                </view>
+                <view class="_view data-v-5743d216 lecturePlayer_reviewPanel_reviewList_item_content">
+                            {{item.content}}
+                        </view>
+            </view>
+        </view>
+    </view>
+</template>
+<template name="data-v-a2d00f1c-default-0">
+    <view class="_view data-v-a2d00f1c book_ratings_modal">
+        <text class="_text data-v-a2d00f1c book_ratings_modal_header">推荐值<text class="_text data-v-a2d00f1c"> = </text>好看数<text class="_text data-v-a2d00f1c"> / </text>总点评数</text>
+        <text class="_text data-v-a2d00f1c book_ratings_modal_intro">点评人数超过<text class="_text data-v-a2d00f1c">20</text>人时，显示推荐值</text>
+        <text class="_text data-v-a2d00f1c book_ratings_modal_intro">点评人数超过<text class="_text data-v-a2d00f1c">100</text>人时，将根据推荐值大小显示对应评语</text>
+        <view class="_view data-v-a2d00f1c book_ratings_modal_bar"></view>
+    </view>
+</template>
+<template name="data-v-530483ec-default-0">
+    <view class="_view data-v-530483ec wr_AuthorizationPrompt_logo"></view>
+    <view class="_view data-v-530483ec wr_AuthorizationPrompt_title">
+        登录微信读书
+    </view>
+    <view class="_view data-v-530483ec wr_AuthorizationPrompt_subtitle">
+        百万好书免费读
+    </view>
+    <form bindsubmit="handleProxy" class="_form data-v-530483ec" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" reportSubmit="true">
+        <button bindgetuserinfo="handleProxy" class="_button data-v-530483ec wr_btn wr_btn_Big wr_AuthorizationPrompt_button" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" formType="submit" hoverClass="wr_commonActive" openType="getUserInfo">
+            授权登录
+        </button>
+    </form>
+</template>
+<template name="data-v-67cf3efe-content-3">
+    <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_autoPause_list">
+        <view bindtap="handleProxy" class="_view data-v-67cf3efe {{[ 'lecturePlayer_controlPanel_autoPause_list_item',[index===currentAutoPauseOption?'lecturePlayer_controlPanel_autoPause_list_item_active':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'4_16_'+index}}" hoverClass="lecturePlayer_controlPanel_autoPause_list_item_hover" key="{{index}}" wx:for="{{autoPauseOptions}}" wx:for-item="option" wx:key="index">
+                {{option.name}}
+                </view>
+    </view>
+</template>
+<template name="data-v-67cf3efe-header-3">
+    <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_autoPause_header">
+        <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_autoPause_title">定时关闭</view>
+        <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_autoPause_subTitle">{{autoPauseHint}}</view>
+    </view>
+</template>
+<template name="data-v-67cf3efe-default-3"></template>
+<template name="data-v-67cf3efe-content-2">
+    <scroll-view bindscroll="handleProxy" bindscrolltolower="handleProxy" bindscrolltoupper="handleProxy" class="_scroll-view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list" data-comkey="{{$k}}" data-eventid="{{'3_15'}}" lowerThreshold="{{200}}" scrollIntoView="{{chapterScrollIntoView}}" scrollY="true">
+        <view class="_view data-v-67cf3efe" id="{{'chapter-'+index}}" key="{{index}}" wx:for="{{displayChapterEnd}}" wx:for-item="i" wx:key="index">
+            <view class="_view data-v-67cf3efe {{[ 'lecturePlayer_controlPanel_chapter_list_item',[index===chapterIdx?'lecturePlayer_controlPanel_chapter_list_item_active':''],[chapters[index-displayChapterBegin].disabled?'lecturePlayer_controlPanel_chapter_list_item_locked':''] ]}}" hoverClass="lecturePlayer_controlPanel_chapter_list_item_hover" wx:if="{{index>=displayChapterBegin&&index<=displayChapterEnd&&chapters[index-displayChapterBegin]}}">
+                <view bindtap="handleProxy" class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_item_text" data-comkey="{{$k}}" data-eventid="{{'6_14_'+index}}">
+                    <label class="_span data-v-67cf3efe" wx:if="{{!isEpub&&!isLecture}}">第{{index+1}}章</label> {{chapters[index-displayChapterBegin].title}}
+                        </view>
+                <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_item_divider"></view>
+            </view>
+            <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_placeholder" wx:else></view>
+        </view>
+    </scroll-view>
+</template>
+<template name="data-v-67cf3efe-header-2">
+    <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_header">
+        <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_header_info">
+            <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_title" wx:if="{{lecturer.userInfo}}">
+                <template is="5fbff9fa" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+                        {{lecturer.userInfo.name}}
+                    </view>
+            <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_subTitle">{{bookStatusHint}}</view>
+        </view>
+        <view class="_view data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_header_control">
+            <view bindtap="handleProxy" class="_div data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_navigate lecturePlayer_controlPanel_chapter_list_navigate_goBottom" data-comkey="{{$k}}" data-eventid="{{'5_12'}}" hoverClass="wr_commonActive" wx:if="{{!hasReachBottom&&chapterLength>=10}}">
+                        去底部
+                    </view>
+            <view bindtap="handleProxy" class="_div data-v-67cf3efe lecturePlayer_controlPanel_chapter_list_navigate lecturePlayer_controlPanel_chapter_list_navigate_goTop" data-comkey="{{$k}}" data-eventid="{{'5_13'}}" hoverClass="wr_commonActive" wx:if="{{hasReachBottom&&chapterLength>=10}}">
+                        去顶部
+                    </view>
+        </view>
+    </view>
+</template>
+<template name="data-v-67cf3efe-default-2"></template>
+<template name="data-v-6fc94fc4-content-5">
+    <view class="_view data-v-6fc94fc4 lecturePlayer_topBar_speed_select" scrollY="true">
+        <template is="7ad7cf5c" data="{{...$root[$kk+'4'],$root:$root}}"></template>
+    </view>
+</template>
+<template name="data-v-6fc94fc4-header-5">
+    <view class="_view data-v-6fc94fc4 lecturePlayer_controlPanel_speedSelect_header">
+        <view class="_view data-v-6fc94fc4 lecturePlayer_controlPanel_speedSelect_title">语速设置</view>
+    </view>
+</template>
+<template name="data-v-6fc94fc4-default-5"></template>
+<template name="data-v-1102af20-default-0">
+    <view class="_view data-v-1102af20 wr_InfiniteCardPrompt_title">你已获得{{displayInfiniteDays}}天无限卡</view>
+    <view class="_view data-v-1102af20 wr_InfiniteCardPrompt_title">百万好书无限畅读</view>
+    <view class="_view data-v-1102af20 wr_InfiniteCardPrompt_card">
+        <view class="_view data-v-1102af20 wr_InfiniteCardPrompt_card_denomination">
+            <text class="_text data-v-1102af20 wr_InfiniteCardPrompt_card_denomination_value">{{displayInfiniteDays}}</text>
+            <text class="_text data-v-1102af20 wr_InfiniteCardPrompt_card_denomination_unit">天无限卡</text>
+        </view>
+    </view>
+    <form bindsubmit="handleProxy" class="_form data-v-1102af20" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" reportSubmit="true">
+        <button appParameter="weread://home" binderror="handleProxy" bindtap="handleProxy" class="_button data-v-1102af20 wr_btn wr_btn_Big wr_InfiniteCardPrompt_button" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" formType="submit" hoverClass="wr_commonActive" openType="launchApp">
+            {{buttonLabel}}
+        </button>
+    </form>
+</template>
+<template name="data-v-334c7f08-default-10">
+    <view class="_view data-v-334c7f08 chopper_lotteryAward_cnt" wx:if="{{lotteryInfo&&lotteryAwardInfo}}">
+        <template is="5db1e51a" data="{{...$root[$kk+'9'],$root:$root}}" wx:if="{{lotteryAwardInfo.type==='book'}}"></template>
+        <image alt="{{lotteryInfo.award.name}}" class="_img data-v-334c7f08 chopper_lotteryAward_cnt_icon" mode="aspectFit" src="{{lotteryAwardInfo.icon}}" wx:else></image>
+        <view class="_view data-v-334c7f08 chopper_lotteryAward_cnt_title">
+                {{lotteryAwardInfo.title}}
+            </view>
+        <view class="_view data-v-334c7f08 chopper_lotteryAward_cnt_subTitle">
+                {{lotteryAwardInfo.subTitle}}
+            </view>
+    </view>
+</template>
+<template name="data-v-7dd69f68-default-1">
+    <view class="_view data-v-7dd69f68 {{[ 'wr_customerServicePrompt_stage',[colorStyle==='golden'?'wr_customerServicePrompt_golden':''] ]}}">
+        <view class="_view data-v-7dd69f68 wr_customerServicePrompt_info">
+            <view class="_view data-v-7dd69f68 wr_customerServicePrompt_info_title" wx:if="{{intent}}">
+                <view class="_view data-v-7dd69f68" wx:if="{{firstIntent}}">
+                    <view class="_view data-v-7dd69f68">{{intent}}</view>
+                    <view class="_view data-v-7dd69f68">{{header}}</view>
+                </view>
+                <view class="_view data-v-7dd69f68" wx:else>
+                    <view class="_view data-v-7dd69f68">{{header}}</view>
+                    <view class="_view data-v-7dd69f68 wr_customerServicePrompt_info_title_mainText">{{intent}}</view>
+                </view>
+            </view>
+            <view class="_view data-v-7dd69f68 wr_customerServicePrompt_info_title" wx:else>
+                <view class="_view data-v-7dd69f68">下载</view>
+                <view class="_view data-v-7dd69f68 wr_customerServicePrompt_info_title_mainText">微信读书 app</view>
+            </view>
+            <view class="_view data-v-7dd69f68 wr_customerServicePrompt_alterDivider" wx:if="{{alterDivider}}">{{alterDivider}}</view>
+            <view class="_view data-v-7dd69f68 wr_customerServicePrompt_divider" wx:else></view>
+            <rich-text class="_rich-text data-v-7dd69f68" nodes="{{detailNodes}}" space="nbsp"></rich-text>
+        </view>
+        <button bindtap="handleProxy" class="_button data-v-7dd69f68 wr_customerServicePrompt_stage_btn" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" hoverClass="wr_commonActive" wx:if="{{buttonText}}">
+            {{buttonText}}
+        </button>
+        <button bindtap="handleProxy" class="_button data-v-7dd69f68 wr_customerServicePrompt_stage_btn" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive" wx:elif="{{actionType==='service'}}">
+            立即下载
+        </button>
+        <button bindtap="handleProxy" class="_button data-v-7dd69f68 wr_customerServicePrompt_stage_btn" data-comkey="{{$k}}" data-eventid="{{'2_1'}}" hoverClass="wr_commonActive" wx:elif="{{actionType==='card'}}">
+            立即下载
+        </button>
+    </view>
+</template>
+<template name="data-v-3ede062b-default-25">
+    <template is="16ce10d6" data="{{...$root[$kk+'24'],$root:$root}}"></template>
+</template>
+<template name="data-v-3ede062b-default-23">
+    <template is="8cd12296" data="{{...$root[$kk+'22'],$root:$root}}"></template>
+</template>
+<template name="data-v-f18b290a-default-3">
+    <view class="_view data-v-f18b290a readingGroup_admin_nameEdit">
+        <form bindsubmit="handleProxy" class="_form data-v-f18b290a" data-comkey="{{$k}}" data-eventid="{{'3_5'}}">
+            <view class="_view data-v-f18b290a readingGroup_admin_nameEdit_cnt">
+                <view class="_view data-v-f18b290a readingGroup_admin_nameEdit_title">队伍名称</view>
+                <view class="_view data-v-f18b290a readingGroup_admin_nameEdit_value">
+                    <input class="_input data-v-f18b290a readingGroup_admin_nameEdit_value_input" confirmType="done" id="groupNameInput" maxlength="10" name="groupName" type="text" value="{{groupInfo.groupName}}"></input>
+                    <button ariaLabel="清空" class="_button data-v-f18b290a readingGroup_admin_nameEdit_value_clearBtn" formType="reset" hoverClass="wr_commonActive"></button>
+                </view>
+            </view>
+            <view class="_view data-v-f18b290a readingGroup_admin_nameEdit_footer">
+                <button bindtap="handleProxy" class="_button data-v-f18b290a readingGroup_admin_nameEdit_footer_btn" data-comkey="{{$k}}" data-eventid="{{'5_4'}}" hoverClass="wr_commonActive">
+                        取 消
+                    </button>
+                <button class="_button data-v-f18b290a readingGroup_admin_nameEdit_footer_btn" formType="submit" hoverClass="wr_commonActive">
+                        提 交
+                    </button>
+            </view>
+        </form>
+    </view>
+</template>
+<template name="data-v-6d49fe3a-content-9">
+    <scroll-view class="_scroll-view data-v-6d49fe3a lecturePlayer_controlPanel_lecturerSwitch_list" scrollY="true">
+        <view bindtap="handleProxy" class="_view data-v-6d49fe3a {{[ 'lecturePlayer_controlPanel_lecturerSwitch_list_item',[option.userVid===lecturer.userVid?'lecturePlayer_controlPanel_lecturerSwitch_list_item_active':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'5_5_'+index}}" key="{{index}}" wx:for="{{lecturers}}" wx:for-item="option" wx:key="index">
+            <template is="5fbff9fa" data="{{...$root[$kk+'8_'+index],$root:$root}}"></template>
+            <view class="_view data-v-6d49fe3a lecturePlayer_controlPanel_lecturerSwitch_info">
+                <view class="_view data-v-6d49fe3a lecturePlayer_controlPanel_lecturerSwitch_info_title">{{option.userInfo.name}}</view>
+                <view class="_view data-v-6d49fe3a lecturePlayer_controlPanel_lecturerSwitch_info_subTitle">共 {{option.totalCount}} 集</view>
+            </view>
+        </view>
+    </scroll-view>
+</template>
+<template name="data-v-6d49fe3a-header-9">
+    <view class="_view data-v-6d49fe3a lecturePlayer_controlPanel_lecturerSwitch_header">
+        <view class="_view data-v-6d49fe3a lecturePlayer_controlPanel_lecturerSwitch_title">换讲书人</view>
+    </view>
+</template>
+<template name="data-v-6d49fe3a-default-9"></template>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/tabs.vue.wxml"></import>
+<import src="/components/BookItem/BookItem.vue.wxml"></import>
+<import src="/components/RatingLevelBar/RatingLevelBar.vue.wxml"></import>
+<import src="/components/EmoticonText.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/ReadingCount/ReadingCount.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGameCard.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGamePopup.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/pages/chat/BubbleCell.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Campaigns/GiveOneGetOne/GiveOneGetOneAvatar.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/ReadingCount/ReadingCount.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/ReadingCount/ReadingCount.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsButton.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/pages/lecture/player/components/playerTopBar/playerTopBar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/lecture/player/components/playerControlPanel/playerControlPanel.vue.wxml"></import>
+<import src="/pages/lecture/player/components/playerReviewPanel/playerReviewPanel.vue.wxml"></import>
+<import src="/pages/lecture/player/components/sendReviewPanel/sendReviewPanel.vue.wxml"></import>
+<import src="/pages/lecture/player/components/bottomPopupPanel/bottomPopupPanel.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/CommentItem/CommentItem.vue.wxml"></import>
+<import src="/components/subscribeMessageModal.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/TSAlert/TSAlert.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/pages/battleGame/components/BattleGameToast.vue.wxml"></import>
+<import src="/pages/battleGame/components/BattleGameModal.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BattleGameRankModal.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatings.vue.wxml"></import>
+<import src="/pages/reader/components/BookRecommend.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/wxParse.vue.wxml"></import>
+<import src="/pages/reader/components/ReaderCustomAd.vue.wxml"></import>
+<import src="/components/IntroModal.vue.wxml"></import>
+<import src="/components/Mask/Mask.vue.wxml"></import>
+<import src="/components/CustomSlider.vue.wxml"></import>
+<import src="/components/PinTips/PinTips.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/BuyBook/BuyBook.vue.wxml"></import>
+<import src="/components/RechargeView/RechargeView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/reader/components/SubscribeBookPrompt.vue.wxml"></import>
+<import src="/pages/reader/components/CatalogSidebar.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/GiftCollectionList.vue.wxml"></import>
+<import src="/pages/index/components/CampaignView.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/pages/index/components/RecommendedList.vue.wxml"></import>
+<import src="/pages/index/components/CategoryList.vue.wxml"></import>
+<import src="/pages/index/components/RankingList.vue.wxml"></import>
+<import src="/pages/index/components/CommonBookList.vue.wxml"></import>
+<import src="/components/IndexLectureList/IndexLectureList.vue.wxml"></import>
+<import src="/components/PinTips/PinTips.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>
+<import src="/pages/index/components/XiaoweiAuthorizationModal.vue.wxml"></import>
+<import src="/pages/index/components/PrivacyAgreement/index.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/pages/setting/components/SettingItemAdaptor/index.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/Mask/Mask.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/Mask/Mask.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/PaperCover/PaperCover.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/chopper/components/ChopperGiftBooks/ChopperGiftBooks.vue.wxml"></import>
+<import src="/pages/chopper/components/ChopperDialog/ChopperDialog.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/chopper/components/ChopperLottery/ChopperLottery.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryAvatar.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate0.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate1.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate2.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseVideo.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseAudio.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseImg.vue.wxml"></import>
+<import src="/components/Checkbox/Checkbox.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItem.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsButton.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsModal.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/CustomMPCoverImage/CustomMPCoverImage.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/PlayerProgress.vue.wxml"></import>
+<import src="/components/RedDot.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/lecture/player/components/bottomPopupPanel/bottomPopupPanel.vue.wxml"></import>
+<import src="/components/CustomSlider.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/bookshelf/components/BookImportItem/BookImportItem.vue.wxml"></import>
+<import src="/components/BookArchiveItem/BookArchiveItem.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/CommonBottomModal/index.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate3.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseVideo.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseAudio.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseImg.vue.wxml"></import>
+<import src="/pages/reader/components/SubscribeBookPrompt.vue.wxml"></import>
+<import src="/components/TSMask/TSMask.vue.wxml"></import>
+<import src="/components/slots"></import>
+<import src="/pages/lecture/player/components/playerControlPanel/progressSlider.vue.wxml"></import>
+<import src="/pages/lecture/player/components/bottomPopupPanel/bottomPopupPanel.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/Mask/Mask.vue.wxml"></import>
+<import src="/components/slots"></import>
+<import src="/pages/lecture/player/components/pageRecycleView/pageRecycleView.vue.wxml"></import>
+<import src="/pages/lecture/player/components/bottomPopupPanel/bottomPopupPanel.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemBar.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLottery.vue.wxml"></import>
+<import src="/components/Campaigns/GiveOneGetOne/GiveOneGetOne.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGame.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGameV2/FlipCardGame.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteTrial/InfiniteTrial.vue.wxml"></import>
+<import src="/components/Campaigns/TrendWeekly/TrendWeekly.vue.wxml"></import>
+<import src="/components/Campaigns/Invitation/Invitation.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibrary/FreeLibrary.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibraryV2/FreeLibrary.vue.wxml"></import>
+<import src="/components/Campaigns/Unlock/Unlock.vue.wxml"></import>
+<import src="/components/Campaigns/Debut/Debut.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/ReadingCount/ReadingCount.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/BookUploadProgress/BookUploadProgress.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate4.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseVideo.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseAudio.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseImg.vue.wxml"></import>
+<import src="/components/BottomModal/index.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/setting/components/items/SettingItemButton/index.vue.wxml"></import>
+<import src="/pages/setting/components/items/SettingItemSwitch/index.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGameCard.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGamePopup.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/Campaigns/Debut/DebutBook.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate5.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseVideo.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseAudio.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseImg.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryAvatar.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryRuleAlert.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/Campaigns/GiveOneGetOne/GiveOneGetOneVoteBackAlert.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGameV2/FlipCardGameCard.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGameV2/FlipCardGamePopup.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/setting/components/SettingLabel.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/WxParseTemplate6.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseVideo.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseAudio.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseImg.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibraryV2/FreeLibraryLecture.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibraryV2/FreeLibraryBook.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibrary/FreeLibraryBook.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibrary/FreeLibraryLecture.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseVideo.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseAudio.vue.wxml"></import>
+<import src="/components/weread-epub-wxparse/components/wxParseImg.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/EmoticonText.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/CircularProgressBar/CircularProgressBar.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/TeamMate/TeamMate.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/GroupPreview/GroupPreview.vue.wxml"></import>
+<import src="/components/RedDot.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/Milestone/Milestone.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/CelebrityTip/CelebrityTip.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/ReadingTasks/ReadingTasks.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/TeamAction/TeamAction.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/LevelPanel/LevelPanel.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/RulesChangePanel/RulesChangePanel.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/AnalysisPanel/AnalysisPanel.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/GuidePanel/GuidePanel.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/PrivacyDisclosure/PrivacyDisclosure.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/RewardPanel/RewardPanel.vue.wxml"></import>
+<import src="/components/TSAlert/TSAlert.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/UpgradeNotice/UpgradeNotice.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/subscribeMessageModal.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/TSAlert/TSAlert.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/ProgressBar/ProgressBar.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/CategoryItem/CategoryItem.vue.wxml"></import>
+<import src="/components/TSAlert/TSAlert.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/ProgressBar/ProgressBar.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/ReadingTasksRules/ReadingTasksRules.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGameV2/FlipCardGameCard.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGameV2/FlipCardGamePopup.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/tabs.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/TSAlert/TSAlert.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/pages/battleGame/components/BattleGameModal.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookReview.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/RatingLevelBar/RatingLevelBar.vue.wxml"></import>
+<import src="/components/EmoticonText.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/readingGroup/index/components/ProgressBar/ProgressBar.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/NavigationBar.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameModal.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookFlatListItem/BookFlatListItem.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/GiftCollectionList.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GamePanel/GamePanel.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameTruce/GameTruce.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameWin/GameWin.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameWelcome/GameWelcome.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GamePropCheck/GamePropCheck.vue.wxml"></import>
+<import src="/components/subscribeMessageModal.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/SendGiftModal.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/NavigationBar.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameEntrance.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameStage.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameMap.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameModal.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/FailurePanel.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/TaskFulfilledModalView.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/LevelUpModal.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/RatingLevelBar/RatingLevelBar.vue.wxml"></import>
+<import src="/components/EmoticonText.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryAvatar.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryPermanentCollageAlert.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/InfiniteCardPrompt/InfiniteCardPrompt.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameUserInfoBar.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameCountdown.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/GameUserInfoBar.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/InfiniteBonus.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GamePropModal/GamePropModal.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameModal/GameModal.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/RechargeView/RechargeView.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/RaceGameToast.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameModal/GameModal.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/RechargeView/RechargeView.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/RaceGameToast.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/CountdownProgress.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/AuthorizationPrompt/AuthorizationPrompt.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/Campaigns/InfiniteLottery/InfiniteLotteryAvatar.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/pages/infiniteDay/index/components/GiftPanel/GiftPanel.vue.wxml"></import>
+<import src="/components/subscribeMessageModal.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/pages/roundtable/components/SectionItem/SecionItem.vue.wxml"></import>
+<import src="/components/CommentItem/CommentItem.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/mcGame/game/components/ImgifyNumber.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameOver/GameOver.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameQuestion/GameQuestion.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameResurrection/GameResurrection.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/SharingModal.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/RaceGameToast.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/SendGiftModal.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/pages/reader/components/BookRatingsItemLabel.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/Mask/Mask.vue.wxml"></import>
+<import src="/pages/top100/ShareImage.vue.wxml"></import>
+<import src="/components/MiniLecturePlayer/MiniLecturePlayer.vue.wxml"></import>
+<import src="/components/NavigationBar/NavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/BookListItem/BookListItem.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/TSAlert/TSAlert.vue.wxml"></import>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>
+<import src="/components/TSNavigationBar/TSNavigationBar.vue.wxml"></import>
+<import src="/components/EmptyView/EmptyView.vue.wxml"></import>
+<import src="/pages/battleGame/game/components/BattleGameMatch/index.vue.wxml"></import>
+<import src="/pages/battleGame/game/components/BattleGameStage/index.vue.wxml"></import>
+<import src="/pages/battleGame/game/components/BattleGameResult/index.vue.wxml"></import>
+<import src="/components/BattleGameRankModal.vue.wxml"></import>
+<import src="/pages/battleGame/components/BattleGameRuleModal.vue.wxml"></import>
+<import src="/pages/battleGame/components/BattleGameModal.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GamePropModal/GamePropModal.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/GameModal/GameModal.vue.wxml"></import>
+<import src="/components/Alert.vue.wxml"></import>
+<import src="/components/RechargeView/RechargeView.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/RaceGameToast.vue.wxml"></import>
+<import src="/pages/raceGame/raceGame/components/CountdownProgress.vue.wxml"></import>
+<import src="/components/Loader/Loader.vue.wxml"></import>
+<import src="/pages/battleGame/components/BattleGameModal.vue.wxml"></import>
+<import src="/pages/battleGame/game/components/BattleGameMessage/index.vue.wxml"></import>

@@ -1,0 +1,15 @@
+<view class="wodiu data-v-60da7214" wx:if="{{$root.g0}}">
+    <block wx:for="{{$root.l1}}" wx:key="index">
+        <view class="data-v-60da7214" wx:if="{{item[$orig].type===1}}">
+            <u-lazy-load bind:__l="__l" bind:click="__e" class="data-v-60da7214" data-event-opts="{{[ [ '^click',[ [ 'previewImage',['$0'],[ [ ['value','',index,'content'] ] ] ] ] ] ]}}" image="{{item[$orig].content+(vuex_file_handling.image_thumbnail==1?item.m0:'')}}" imgMode="widthFix" vueId="{{'0a6fa804-1-'+index}}"></u-lazy-load>
+        </view>
+        <view class="data-v-60da7214" wx:if="{{item[$orig].type===2&&item[$orig].content}}">
+            <view class="data-v-60da7214" style="width:686rpx;box-sizing:border-box;padding-left:10rpx;">{{''+item[$orig].content+''}}</view>
+        </view>
+        <view class="small-img-box u-flex u-m-b-10 data-v-60da7214" style="width:686rpx;flex-wrap:wrap;margin-top:5rpx;" wx:if="{{item[$orig].type===6}}">
+            <view class="data-v-60da7214" style="margin-right:12rpx;" wx:for="{{item.l0}}" wx:for-index="smalImgIndex" wx:for-item="smalImg" wx:key="smalImgIndex">
+                <u-lazy-load bind:__l="__l" bind:click="__e" class="data-v-60da7214" data-event-opts="{{[ [ '^click',[ [ 'previewImage',['$0'],[ [ ['value','',index],['content','',smalImgIndex] ] ] ] ] ] ]}}" height="120" image="{{item[$orig].content+(vuex_file_handling.image_thumbnail==1?smalImg.m1:'')}}" imgMode="widthFix" style="position:relative;z-index:9;" vueId="{{'0a6fa804-2-'+index+'-'+smalImgIndex}}"></u-lazy-load>
+            </view>
+        </view>
+    </block>
+</view>

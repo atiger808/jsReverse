@@ -1,0 +1,32 @@
+<view>
+    <canvas canvasId="avatar-canvas" class="my-canvas" disableScroll="false" id="avatar-canvas" style="{{'top:'+sT+';'+'height:'+csH+';'}}"></canvas>
+    <canvas bindtouchend="__e" bindtouchmove="__e" bindtouchstart="__e" canvasId="oper-canvas" class="oper-canvas" data-event-opts="{{[ [ 'touchstart',[ [ 'fStart',['$event'] ] ] ],[ 'touchmove',[ [ 'fMove',['$event'] ] ] ],[ 'touchend',[ [ 'fEnd',['$event'] ] ] ] ]}}" disableScroll="false" id="oper-canvas" style="{{'top:'+sT+';'+'height:'+csH+';'}}"></canvas>
+    <canvas bindtouchstart="__e" canvasId="prv-canvas" class="prv-canvas" data-event-opts="{{[ [ 'touchstart',[ [ 'fHideImg',['$event'] ] ] ] ]}}" disableScroll="false" id="prv-canvas" style="{{'height:'+csH+';'+'top:'+pT+';'}}"></canvas>
+    <view class="oper-wrapper" style="{{'display:'+sD+';'+'top:'+tp+';'}}">
+        <view class="oper">
+            <view class="btn-wrapper" wx:if="{{sO}}">
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'fSelect',['$event'] ] ] ] ]}}" hoverClass="hover" style="{{'width:'+bW+';'}}">
+                    <text>重选</text>
+                </view>
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'fClose',['$event'] ] ] ] ]}}" hoverClass="hover" style="{{'width:'+bW+';'}}">
+                    <text>关闭</text>
+                </view>
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'fRotate',['$event'] ] ] ] ]}}" hoverClass="hover" style="{{'width:'+bW+';'+'display:'+bD+';'}}">
+                    <text>旋转</text>
+                </view>
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'fPreview',['$event'] ] ] ] ]}}" hoverClass="hover" style="{{'width:'+bW+';'}}">
+                    <text>预览</text>
+                </view>
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'fUpload',['$event'] ] ] ] ]}}" hoverClass="hover" style="{{'width:'+bW+';'}}">
+                    <text>上传</text>
+                </view>
+            </view>
+            <view class="clr-wrapper" wx:else>
+                <slider activeColor="red" backgroundColor="green" bindchange="__e" blockColor="grey" blockSize="25" class="my-slider" data-event-opts="{{[ [ 'change',[ [ 'fColorChange',['$event'] ] ] ] ]}}" max="100" min="-100" showValue="{{true}}" value="0"></slider>
+                <view bindtap="__e" data-event-opts="{{[ [ 'tap',[ [ 'fPrvUpload',['$event'] ] ] ] ]}}" hoverClass="hover" style="{{'width:'+bW+';'}}">
+                    <text>上传</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,12 @@
+<template name="09c7acd5">
+    <view class="_view data-v-d9bb6320 {{[ [true?'wr_customMPCoverImage':''] ]}}" style=" {{styleObj}}">
+        <view class="_view data-v-d9bb6320 wr_customMPCoverImage_picture" style=" {{pictureStyleObj}}"></view>
+        <view class="_view data-v-d9bb6320 wr_customMPCoverImage_author">
+            <view class="_view data-v-d9bb6320 wr_avatar wr_customMPCoverImage_author_avatar" style=" {{avatarStyleObj}}"></view>
+        </view>
+        <view class="_view data-v-d9bb6320 wr_customMPCoverImage_title">
+        {{title}}
+    </view>
+        <canvas canvasId="{{canvasId}}" class="_canvas data-v-d9bb6320 wr_customMPCoverImage_canvas"></canvas>
+    </view>
+</template>

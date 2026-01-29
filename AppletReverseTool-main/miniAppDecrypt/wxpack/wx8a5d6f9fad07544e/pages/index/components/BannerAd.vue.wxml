@@ -1,0 +1,8 @@
+<template name="75aeec5e">
+    <view class="_view data-v-ddd31a54 {{['wr_banner_ad_cnt',customSelector]}}" wx:if="{{isAdLoaded}}">
+        <view class="_view data-v-ddd31a54 {{[ 'wr_banner_ad',[adReposition?'wr_banner_ad_Show':''] ]}}" wx:if="{{isAdLoaded}}">
+            <loader class="_loader data-v-ddd31a54" customSelector="index_main_loader" isLoading="{{true}}"></loader>
+            <ad bindclose="handleProxy" binderror="handleProxy" bindload="handleProxy" class="_ad data-v-ddd31a54" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" unitId="adunit-c31f86664fff66cc"></ad>
+        </view>
+    </view>
+</template>

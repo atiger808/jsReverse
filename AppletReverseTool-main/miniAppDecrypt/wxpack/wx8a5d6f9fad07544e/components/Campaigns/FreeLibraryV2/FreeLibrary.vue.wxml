@@ -1,0 +1,10 @@
+<template name="546da705">
+    <view class="_view data-v-88ac1940">
+        <view class="_view data-v-88ac1940 freeLibrary" wx:if="{{shouldShowFreeLibrary}}">
+            <template is="0b541fe9" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{type==='lecture'}}"></template>
+            <template is="2902ab0e" data="{{...$root[$kk+'0'],$root:$root}}" wx:elif="{{type==='book'}}"></template>
+        </view>
+    </view>
+</template>
+<import src="/components/Campaigns/FreeLibraryV2/FreeLibraryLecture.vue.wxml"></import>
+<import src="/components/Campaigns/FreeLibraryV2/FreeLibraryBook.vue.wxml"></import>

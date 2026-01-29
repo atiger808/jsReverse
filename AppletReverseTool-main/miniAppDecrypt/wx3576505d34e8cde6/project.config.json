@@ -1,0 +1,35 @@
+{
+  "miniprogramRoot": "",
+  "__compileDebugInfo__": {
+    "from": "ci",
+    "useNewCompileModule": true,
+    "devtoolsVersion": "0",
+    "compileSetting": {
+      "es6": false,
+      "minify": true,
+      "autoPrefixWXSS": false
+    },
+    "ciVersion": "1.7.17"
+  },
+  "appid": "wxd47881fec7f29454",
+  "compileType": "miniprogram",
+  "libVersion": "3.7.6",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
+  "setting": {
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "packNpmRelationList": []
+  },
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "projectArchitecture": "miniProgram"
+}

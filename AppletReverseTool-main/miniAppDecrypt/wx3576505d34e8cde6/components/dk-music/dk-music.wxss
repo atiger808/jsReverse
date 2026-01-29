@@ -1,0 +1,1 @@
+.v-text-hide{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}.music{align-items:center;background:#000;border-radius:50%;display:flex;height:68rpx;justify-content:center;left:30rpx;opacity:.5;position:fixed;top:136rpx;width:68rpx;z-index:999}

@@ -1,0 +1,6 @@
+<template name="3c2e30f5">
+    <view class="_view data-v-7e122310 {{['wr_readingCount',customSelector]}}" wx:if="{{displayCount}}">
+        <view class="_view data-v-7e122310 wr_readingCount_icon"></view>
+    {{displayCount}}
+</view>
+</template>

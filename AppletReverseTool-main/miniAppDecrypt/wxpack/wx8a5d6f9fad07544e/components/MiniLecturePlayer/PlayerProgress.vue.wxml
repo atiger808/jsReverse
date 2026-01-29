@@ -1,0 +1,7 @@
+<template name="6665d902">
+    <view class="_view data-v-06b49d04 miniPlayer_progress_container">
+        <view class="_view data-v-06b49d04 miniPlayer_progress default" style=" {{bgStyleDefault}}" wx:if="{{progress===1}}"></view>
+        <view class="_view data-v-06b49d04 miniPlayer_progress" style=" {{bgStyle}}" wx:else></view>
+        <view class="_view data-v-06b49d04 miniPlayer_background" style=" {{bgStyleBackground}}"></view>
+    </view>
+</template>

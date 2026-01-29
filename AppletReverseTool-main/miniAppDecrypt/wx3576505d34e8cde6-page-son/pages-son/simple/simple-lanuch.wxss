@@ -1,0 +1,1 @@
+.v-text-hide{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}page{background:#f7f7f7}.btn_box:active{box-shadow:0 0 10px hsla(0,0%,100%,.7);transform:scale(.98)}.btn-box-hover{box-shadow:inset 0 0 5px rgba(0,0,0,.2)}

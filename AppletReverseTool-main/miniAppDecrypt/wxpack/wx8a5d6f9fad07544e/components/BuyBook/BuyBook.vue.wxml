@@ -1,0 +1,47 @@
+<template name="8cd12296">
+    <view class="_view data-v-66a33690 wr_buyBook">
+        <view class="_view data-v-66a33690" wx:if="{{chapter.price===-1||book.price!==-1}}">
+            <view class="_view data-v-66a33690 wr_buyBook_money">{{book.price}}</view>
+            <view class="_view data-v-66a33690 {{[ 'wr_buyBook_balance',[needRecharge?'wr_buyBook_balance_NotEnough':'',isPaidBalanceOnly?'wr_buyBook_balance_paid_only':''] ]}}">充值币 {{formattedPaidBalance}}<text class="_text data-v-66a33690 {{[isPaidBalanceOnly&&!isGiftBalanceNeedRecharge?'wr_buyBook_balance_NotEnough_reset':'']}}"> | 赠币 {{formattedGiftBalance}}</text>
+            </view>
+            <view class="_view data-v-66a33690 {{['wr_buyBook_balance']}}" wx:if="{{isPaidBalanceOnly}}">本书仅支持充值币购买</view>
+            <view class="_view data-v-66a33690 wr_buyBook_info">
+                <view class="_view data-v-66a33690 wr_buyBook_info_title">书籍</view>
+                <view class="_view data-v-66a33690 wr_buyBook_info_detail">{{book.title}}</view>
+            </view>
+            <view class="_view data-v-66a33690 wr_buyBook_info">
+                <view class="_view data-v-66a33690 wr_buyBook_info_title">作者</view>
+                <view class="_view data-v-66a33690 wr_buyBook_info_detail">{{book.author}}</view>
+            </view>
+        </view>
+        <view class="_view data-v-66a33690" wx:else>
+            <view class="_view data-v-66a33690 wr_buyBook_money">{{chapter.price}}</view>
+            <view class="_view data-v-66a33690 {{[ 'wr_buyBook_balance',[needRecharge?'wr_buyBook_balance_NotEnough':'',isPaidBalanceOnly?'wr_buyBook_balance_paid_only':''] ]}}">充值币 {{formattedPaidBalance}}<text class="_text data-v-66a33690 {{[isPaidBalanceOnly&&!isGiftBalanceNeedRecharge?'wr_buyBook_balance_NotEnough_reset':'']}}"> | 赠币 {{formattedGiftBalance}}</text>
+            </view>
+            <view class="_view data-v-66a33690 {{['wr_buyBook_balance']}}" wx:if="{{isPaidBalanceOnly}}">本书仅支持充值币购买</view>
+            <view class="_view data-v-66a33690 wr_buyBook_info">
+                <view class="_view data-v-66a33690 wr_buyBook_info_title">章节</view>
+                <view class="_view data-v-66a33690 wr_buyBook_info_detail">{{book.title}} 第{{chapter.chapterIdx}}章</view>
+            </view>
+            <view class="_view data-v-66a33690 wr_buyBook_info">
+                <view class="_view data-v-66a33690 wr_buyBook_info_title">作者</view>
+                <view class="_view data-v-66a33690 wr_buyBook_info_detail">{{book.author}}</view>
+            </view>
+            <view catchtap="handleProxy" class="_view data-v-66a33690 wr_buyBook_autoBuyChapter" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive">
+                <template is="b112be16" data="{{...$root[$kk+undefined],$root:$root}}"></template>
+                <view class="_view data-v-66a33690 wr_buyBook_autoBuyChapter_title">自动购买后续章节</view>
+            </view>
+        </view>
+        <view class="_view data-v-66a33690 wr_bottomEntry wr_buyBook_action" wx:if="{{needRecharge}}">
+            <view catchtap="handleProxy" class="_view data-v-66a33690 wr_bottomEntry_link wr_bottomEntry_link_Blue" data-comkey="{{$k}}" data-eventid="{{'2_1'}}" hoverClass="wr_commonActive" title="充值">
+            充 值
+        </view>
+        </view>
+        <view class="_view data-v-66a33690 wr_bottomEntry wr_buyBook_action" wx:else>
+            <view catchtap="handleProxy" class="_view data-v-66a33690 wr_bottomEntry_link wr_bottomEntry_link_Blue" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" hoverClass="wr_commonActive" title="购 买">
+            购 买
+        </view>
+        </view>
+    </view>
+</template>
+<import src="/components/Checkbox/Checkbox.vue.wxml"></import>

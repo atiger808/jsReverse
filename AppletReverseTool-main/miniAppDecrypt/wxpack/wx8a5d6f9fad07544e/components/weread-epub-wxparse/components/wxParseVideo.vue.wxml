@@ -1,0 +1,5 @@
+<template name="7bfb665f">
+    <view class="_view data-v-2701b08c {{node.classStr}}" style=" {{node.styleStr}}">
+        <video bindtap="handleProxy" class="_video data-v-2701b08c {{node.classStr}}" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" showCenterPlayBtn="{{showCenterPlayBtn}}" showFullscreenBtn="{{showFullscreenBtn}}" src="{{node.attr.src}}" style=" {{node.styleStr}}"></video>
+    </view>
+</template>

@@ -1,0 +1,23 @@
+<view catchtouchmove="__e" class="tui-container data-v-d68cfe7c" data-event-opts="{{[ [ 'touchmove',[ [ 'stop',['$event'] ] ] ] ]}}">
+    <view bindtouchend="{{parse.cutTouchEnd}}" bindtouchmove="{{parse.cutTouchMove}}" bindtouchstart="{{parse.cutTouchStart}}" change:prop="{{parse.propsChange}}" class="tui-image-cropper data-v-d68cfe7c" data-angle="{{angle}}" data-height="{{height}}" data-imgHeight="{{imgHeight}}" data-imgLeft="{{imgLeft}}" data-imgTop="{{imgTop}}" data-imgWidth="{{imgWidth}}" data-limitMove="{{limitMove}}" data-lockHeight="{{lockHeight}}" data-lockRatio="{{lockRatio}}" data-lockWidth="{{lockWidth}}" data-maxHeight="{{maxHeight}}" data-maxWidth="{{maxWidth}}" data-minHeight="{{minHeight}}" data-minWidth="{{minWidth}}" data-width="{{width}}" data-windowHeight="{{sysInfo.windowHeight||600}}" data-windowWidth="{{sysInfo.windowWidth||400}}" prop="{{props}}">
+        <view class="tui-content data-v-d68cfe7c">
+            <view class="tui-content-top tui-bg-transparent data-v-d68cfe7c" style="{{'transition-property:'+(cutAnimation?'':'background')+';'}}"></view>
+            <view class="tui-content-middle data-v-d68cfe7c">
+                <view class="tui-bg-transparent tui-wxs-bg data-v-d68cfe7c" style="{{'transition-property:'+(cutAnimation?'':'background')+';'}}"></view>
+                <view class="tui-cropper-box data-v-d68cfe7c" style="{{'border-color:'+borderColor+';'+'transition-property:'+(cutAnimation?'':'background')+';'}}">
+                    <view class="{{[ 'tui-edge','data-v-d68cfe7c','tui-'+(index<2?'top':'bottom')+'-'+(index===0||index===2?'left':'right') ]}}" style="{{'width:'+edgeWidth+';'+'height:'+edgeWidth+';'+'border-color:'+edgeColor+';'+'border-width:'+edgeBorderWidth+';'+'left:'+(index===0||index===2?'-'+edgeOffsets:'auto')+';'+'right:'+(index===1||index===3?'-'+edgeOffsets:'auto')+';'+'top:'+(index<2?'-'+edgeOffsets:'auto')+';'+'bottom:'+(index>1?'-'+edgeOffsets:'auto')+';'}}" wx:for="{{4}}" wx:key="index"></view>
+                </view>
+                <view class="tui-flex-auto tui-bg-transparent data-v-d68cfe7c" style="{{'transition-property:'+(cutAnimation?'':'background')+';'}}"></view>
+            </view>
+            <view class="tui-flex-auto tui-bg-transparent data-v-d68cfe7c" style="{{'transition-property:'+(cutAnimation?'':'background')+';'}}"></view>
+        </view>
+        <image binderror="__e" bindload="__e" bindtouchend="{{parse.touchend}}" bindtouchmove="{{parse.touchmove}}" bindtouchstart="{{parse.touchstart}}" class="tui-cropper-image data-v-d68cfe7c" data-disableRotate="{{disableRotate}}" data-event-opts="{{[ [ 'load',[ [ 'imageLoad',['$event'] ] ] ],[ 'error',[ [ 'imageLoad',['$event'] ] ] ] ]}}" data-maxScale="{{maxScale}}" data-minScale="{{minScale}}" mode="widthFix" src="{{imageUrl}}" style="{{'width:'+(imgWidth?imgWidth+'px':'auto')+';'+'height:'+(imgHeight?imgHeight+'px':'auto')+';'+'transition-duration:'+(cutAnimation?0.3:0)+'s'+';'}}" wx:if="{{imageUrl}}"></image>
+    </view>
+    <canvas canvasId="tui-image-cropper" class="tui-cropper-canvas data-v-d68cfe7c" disableScroll="{{true}}" id="tui-image-cropper" style="{{'width:'+CROPPER_WIDTH*scaleRatio+'px'+';'+'height:'+CROPPER_HEIGHT*scaleRatio+'px'+';'}}"></canvas>
+    <view class="tui-cropper-tabbar data-v-d68cfe7c" wx:if="{{!custom}}">
+        <view catchtap="__e" class="tui-op-btn data-v-d68cfe7c" data-event-opts="{{[ [ 'tap',[ [ 'back',['$event'] ] ] ] ]}}">取消</view>
+        <image bindtap="__e" class="tui-rotate-img data-v-d68cfe7c" data-event-opts="{{[ [ 'tap',[ [ 'setAngle',['$event'] ] ] ] ]}}" src="{{rotateImg}}"></image>
+        <view catchtap="__e" class="tui-op-btn data-v-d68cfe7c" data-event-opts="{{[ [ 'tap',[ [ 'getImage',['$event'] ] ] ] ]}}">完成</view>
+    </view>
+</view>
+<wxs module="parse" src="tui-picture-cropper.wxs"/>

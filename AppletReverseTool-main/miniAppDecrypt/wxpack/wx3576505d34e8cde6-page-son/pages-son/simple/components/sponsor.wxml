@@ -1,0 +1,27 @@
+<view>
+    <view class="u-flex u-row-between u-padding-20 white-color-bg u-border-top">
+        <button bindtap="__e" class="u-reset-button" data-event-opts="{{[ [ 'tap',[ [ 'updateAvatar',['$event'] ] ] ] ]}}">
+            <view class="u-rela">
+                <u-avatar bind:__l="__l" height="84" mode="square" src="{{sponsor.head}}" vueId="5143c84c-1" width="84"></u-avatar>
+                <view class="change-avatar u-font-14 white-color u-text-center">更换</view>
+            </view>
+        </button>
+        <view class="h-84 u-flex-col u-row-between u-flex-1 u-padding-left-20">
+            <u-icon bind:__l="__l" bind:click="__e" customStyle="{{$root.a0}}" data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}" label="{{$root.m0}}" labelSize="30" name="edit-pen" size="26" vueId="5143c84c-2"></u-icon>
+            <view class="u-flex">
+                <view class="br-8 overflow padding-rl-10 padding-tb-8 u-flex u-row-center to-setting u-margin-right-10">
+                    <u-icon bind:__l="__l" bind:click="__e" color="#ffffff" customStyle="{{$root.a1}}" data-event-opts="{{[ [ '^click',[ ['toSponsorSetting'] ] ] ]}}" hoverClass="music-hover" label="{{sponsor.is===1?'展示头像昵称':' 不展示头像昵称'}}" labelColor="#ffffff" labelSize="24" name="account" size="24" vueId="5143c84c-3"></u-icon>
+                </view>
+                <view class="br-8 overflow padding-rl-10 padding-tb-8 u-flex u-row-center theme-color-bg" wx:if="{{$slots.default}}">
+                    <slot></slot>
+                </view>
+            </view>
+        </view>
+        <dk-btn bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['uploadCode'] ] ] ]}}" lineHeight="56" vueId="5143c84c-4" vueSlots="{{['default']}}" width="160">
+            <u-icon bind:__l="__l" customPrefix="custom-icon" label="{{sponsor.scan_code?'已上传':'快捷扫码'}}" labelColor="#ffffff" labelSize="26" name="exe-public-address-primary" size="30" vueId="{{'5143c84c-5'+','+'5143c84c-4'}}"></u-icon>
+        </dk-btn>
+    </view>
+    <dk-avatar bind:__l="__l" bind:upload="__e" class="vue-ref" data-event-opts="{{[ [ '^upload',[ ['myUpload'] ] ] ]}}" data-ref="avatar" vueId="5143c84c-6"></dk-avatar>
+    <dk-input-modal bind:__l="__l" bind:cancel="__e" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','name','$event',[] ],['sponsor'] ],['e1'] ] ],[ '^cancel',[ ['e2'] ] ] ]}}" placeholder="请输入举办方昵称" showModal="{{showModal}}" title="更换昵称" value="{{sponsor.name}}" vueId="5143c84c-7"></dk-input-modal>
+    <dk-compress bind:__l="__l" class="vue-ref" data-ref="compress" vueId="5143c84c-8"></dk-compress>
+</view>

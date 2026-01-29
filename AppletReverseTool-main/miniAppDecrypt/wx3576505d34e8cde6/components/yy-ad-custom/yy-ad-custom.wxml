@@ -1,0 +1,10 @@
+<view class="ad-box" wx:if="{{$root.g0}}">
+    <swiper circular="{{true}}" class="swiper" duration="{{500}}" indicatorDots="{{true}}" style="{{'width:'+'100%'+';'+'height:'+height+';'}}">
+        <swiper-item wx:for="{{banner}}" wx:for-index="__i0__" wx:key="id">
+            <image bindtap="__e" class="u-margin-bottom-20" data-event-opts="{{[ [ 'tap',[ [ 'handleClick',['$0'],[ [ ['banner','id',item.id] ] ] ] ] ] ]}}" mode="widthFix" src="{{item.image}}" style="width:100%;"></image>
+        </swiper-item>
+        <swiper-item wx:if="{{vuex_activity_data.flow_group.ad_id1}}" wx:for="{{3}}" wx:for-index="__i1__" wx:key="*this">
+            <dk-ad bind:__l="__l" is_custom="{{false}}" style="width:100%;" unitAd="{{vuex_activity_data.flow_group.ad_id1}}" vueId="{{'7beb0942-1-'+__i1__}}"></dk-ad>
+        </swiper-item>
+    </swiper>
+</view>

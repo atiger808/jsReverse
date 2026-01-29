@@ -1,0 +1,8 @@
+<template name="default"></template>
+<template name="5fbff9fa">
+    <view catchtap="handleProxy" class="_view data-v-03e9e8c8 {{[ [true?'wr_avatar':''],customClass ]}}" data-comkey="{{$k}}" data-eventid="{{'0_0'}}" hoverClass="{{clickable?'wr_commonActive':''}}">
+        <image ariaLabel="{{alt}}" class="_image data-v-03e9e8c8 wr_avatar_img" lazyLoad="{{true}}" src="{{adjustedSrc}}"></image>
+        <template is="{{$slotdefault||'default'}}" data="{{...$root[$p],...$root[$k],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/slots"></import>

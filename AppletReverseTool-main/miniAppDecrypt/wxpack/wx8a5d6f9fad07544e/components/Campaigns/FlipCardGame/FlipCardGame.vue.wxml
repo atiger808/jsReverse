@@ -1,0 +1,25 @@
+<template name="0dcc3f29">
+    <view class="_view data-v-75088b84 flipCardGame">
+        <view class="_view data-v-75088b84 flipCardGame_title">翻一翻</view>
+        <view class="_view data-v-75088b84 flipCardGame_desc">点击下方卡牌 · 好书体验卡翻出来</view>
+        <view class="_view data-v-75088b84 flipCardGame_list" wx:if="{{showCardListInBanner}}">
+            <view class="_view data-v-75088b84 flipCardGame_list_main" wx:if="{{normalList.length===0}}">
+                <template is="2953344e" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+                <template is="2953344e" data="{{...$root[$kk+'1'],$root:$root}}"></template>
+                <template is="2953344e" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+            </view>
+            <view class="_view data-v-75088b84 flipCardGame_list_main" wx:else>
+                <template is="2953344e" data="{{...$root[$kk+'3_'+cardIndex],$root:$root}}" wx:for="{{showCardListInBanner}}" wx:for-index="cardIndex" wx:for-item="card" wx:key="cardIndex"></template>
+            </view>
+            <view bindtap="handleProxy" class="_view data-v-75088b84 flipCardGame_list_more" data-comkey="{{$k}}" data-eventid="{{'2_1'}}">
+                <view class="_view data-v-75088b84 flipCardGame_list_more_text">共<view class="_br data-v-75088b84"></view>9<view class="_br data-v-75088b84"></view>张</view>
+                <view class="_view data-v-75088b84 flipCardGame_list_more_icon"></view>
+            </view>
+        </view>
+        <template is="6bf7b333" data="{{...$root[$kk+'4'],$root:$root}}"></template>
+        <template is="0d52de0d" data="{{...$root[$kk+'5'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGameCard.vue.wxml"></import>
+<import src="/components/Campaigns/FlipCardGame/FlipCardGamePopup.vue.wxml"></import>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>

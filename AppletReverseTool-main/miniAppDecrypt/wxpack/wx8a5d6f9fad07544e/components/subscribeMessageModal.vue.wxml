@@ -1,0 +1,4 @@
+<template name="0e1ffa36">
+    <template is="4d6c7370" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+</template>
+<import src="/pages/reader/components/SubscribeBookPrompt.vue.wxml"></import>

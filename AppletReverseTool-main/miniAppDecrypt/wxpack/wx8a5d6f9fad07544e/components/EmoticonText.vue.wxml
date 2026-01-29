@@ -1,0 +1,8 @@
+<template name="cdd17806">
+    <view class="_view data-v-8b65fbfc {{['wr_emoticonText',customSelector]}}">
+        <rich-text bindtap="handleProxy" class="_view data-v-8b65fbfc {{[ [true?'wr_emoticonText_content':'',expandable?'wr_emoticonText_content_Expandable':'',expanded?'wr_emoticonText_content_Expanded':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" nodes="{{decodeEmoticon}}"></rich-text>
+        <view bindtap="handleProxy" class="_view data-v-8b65fbfc wr_emoticonText_expand" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" hoverClass="wr_commonActive" wx:if="{{expandable&&!expanded}}">
+        {{buttonText}}
+    </view>
+    </view>
+</template>

@@ -1,0 +1,134 @@
+<template name="60c54815">
+    <view class="_view data-v-2bc02ca0 giveOneGetOne {{[collapse?'giveOneGetOne_Collapse':'']}}" style=" {{bgStyle}}" wx:if="{{getLikeDesign&&myData&&getLikeData&&getLikeUser}}">
+        <button class="_button data-v-2bc02ca0 giveOneGetOne_bg" wx:if="{{!collapse}}"></button>
+        <form reportSubmit bindsubmit="handleProxy" class="_form data-v-2bc02ca0" data-comkey="{{$k}}" data-eventid="{{'1_6'}}">
+            <block wx:if="{{isMyVote===1||isMyVote===2}}">
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_tip giveOneGetOne_tip_Flex">
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_tip_shrink0">每期活动一人仅可点赞一次 · 你已为</view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_tip_ellipsis">{{getLikeUser.name}}</view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_tip_shrink0">{{isMyVote===2?'':'的其他联名卡'}}点赞</view>
+                </view>
+                <button ariaRole="button" catchtap="handleProxy" class="_button data-v-2bc02ca0 giveOneGetOne_entry" data-comkey="{{$k}}" data-eventid="{{'3_0'}}" formType="submit" hoverClass="wr_commonActive">
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_main" wx:if="{{hasReceiveActiveInfinite}}">
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_img">
+                            <image class="_image data-v-2bc02ca0" src="{{myData.genericImageURL}}"></image>
+                        </view>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta">
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_emphasize">{{getLikeUser.name}}送你{{activeInfiniteDay}}天体验卡</view>
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_desc">微信读书体验卡百万好书免费读</view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_main" wx:else>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_img">
+                            <image class="_image data-v-2bc02ca0" src="{{myData.genericImageURL}}"></image>
+                        </view>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta">
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_desc">我的联名体验卡</view>
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_emphasize">
+                                <view class="_view data-v-2bc02ca0" wx:if="{{myData.voter.length>=myData.needVoteCount}}">已集齐 · 获得{{myData.infiniteDay}}天体验卡</view>
+                                <view class="_view data-v-2bc02ca0" wx:else>邀请朋友点赞可得12天体验卡</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_btn">{{receiveButtonTxt}}</view>
+                </button>
+            </block>
+            <block wx:elif="{{isExpired}}">
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_tip">联名体验卡点赞已过期</view>
+                <button ariaRole="button" catchtap="handleProxy" class="_button data-v-2bc02ca0 giveOneGetOne_entry" data-comkey="{{$k}}" data-eventid="{{'3_1'}}" formType="submit" hoverClass="wr_commonActive">
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_main">
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_img">
+                            <image class="_image data-v-2bc02ca0" src="{{myData.genericImageURL}}"></image>
+                        </view>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta">
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_desc">查看最新一期联名卡</view>
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_emphasize">邀请朋友点赞可得12天体验卡</view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_btn">{{receiveButtonTxt}}</view>
+                </button>
+            </block>
+            <block wx:elif="{{!isMySelfCard&&getLikeDesign.voter&&getLikeDesign.voter.length>=getLikeDesign.needVoteCount}}">
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_tip">{{getLikeUser.name}}集赞成功 · 已获得{{getLikeData.infiniteDay}}天体验卡</view>
+                <button ariaRole="button" catchtap="handleProxy" class="_button data-v-2bc02ca0 giveOneGetOne_entry" data-comkey="{{$k}}" data-eventid="{{'3_2'}}" formType="submit" hoverClass="wr_commonActive">
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_main" wx:if="{{hasReceiveActiveInfinite}}">
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_img">
+                            <image class="_image data-v-2bc02ca0" src="{{myData.genericImageURL}}"></image>
+                        </view>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta">
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_emphasize">{{getLikeUser.name}}送你{{activeInfiniteDay}}天体验卡</view>
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_desc">微信读书体验卡百万好书免费读</view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_main" wx:else>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_img">
+                            <image class="_image data-v-2bc02ca0" src="{{myData.genericImageURL}}"></image>
+                        </view>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta">
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_desc">我的联名体验卡</view>
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_emphasize">
+                                <view class="_view data-v-2bc02ca0" wx:if="{{myData.voter.length>=myData.needVoteCount}}">已集齐 · 获得{{myData.infiniteDay}}天体验卡</view>
+                                <view class="_view data-v-2bc02ca0" wx:else>邀请朋友点赞可得12天体验卡</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_btn">{{receiveButtonTxt}}</view>
+                </button>
+            </block>
+            <button ariaRole="button" catchtap="handleProxy" class="_button data-v-2bc02ca0 giveOneGetOne_action" data-comkey="{{$k}}" data-designid="{{currentDesignId}}" data-eventid="{{'3_3'}}" data-imageurl="{{getLikeDesign?getLikeDesign.mpShareIconURL||getLikeDesign.shareIconURL:''}}" formType="submit" hoverClass="wr_commonActive" id="shareGiveOneGetOneButton" openType="{{inviteButtonOpenType}}" wx:elif="{{isMySelfCard}}">
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_action_main">
+                    <view class="_view data-v-2bc02ca0" wx:if="{{myData.voter.length>=myData.needVoteCount}}">去获取更多联名无限卡</view>
+                    <view class="_view data-v-2bc02ca0" wx:else>邀请朋友来点赞</view>
+                </view>
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_action_sub">
+                    <view class="_view data-v-2bc02ca0" wx:if="{{myData.voter.length>=myData.needVoteCount}}">你已集赞成功 · 获得{{myData.infiniteDay}}天无限卡</view>
+                    <view class="_view data-v-2bc02ca0" wx:else>你还差{{myData.needVoteCount-myData.voter.length}}个赞即可获得 · {{myData.infiniteDay}}天无限卡</view>
+                </view>
+            </button>
+            <block wx:elif="{{myData.hasVote}}">
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_tip">每期活动一人仅可点赞一次 · 本期已为其他朋友点赞</view>
+                <button ariaRole="button" catchtap="handleProxy" class="_button data-v-2bc02ca0 giveOneGetOne_entry" data-comkey="{{$k}}" data-eventid="{{'3_4'}}" formType="submit" hoverClass="wr_commonActive">
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_main" wx:if="{{hasReceiveActiveInfinite}}">
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_img">
+                            <image class="_image data-v-2bc02ca0" src="{{myData.genericImageURL}}"></image>
+                        </view>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta">
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_emphasize">{{getLikeUser.name}}送你{{activeInfiniteDay}}天无限卡</view>
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_desc">微信读书无限卡百万好书免费读</view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_main" wx:else>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_img">
+                            <image class="_image data-v-2bc02ca0" src="{{myData.genericImageURL}}"></image>
+                        </view>
+                        <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta">
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_desc">我的联名无限卡</view>
+                            <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_meta_emphasize">
+                                <view class="_view data-v-2bc02ca0" wx:if="{{myData.voter.length>=myData.needVoteCount}}">已集齐 · 获得{{myData.infiniteDay}}天体验卡</view>
+                                <view class="_view data-v-2bc02ca0" wx:else>邀请朋友点赞可得12天无限卡</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="_view data-v-2bc02ca0 giveOneGetOne_entry_btn">{{receiveButtonTxt}}</view>
+                </button>
+            </block>
+            <block wx:elif="{{getLikeDesign.voter&&getLikeData.voter.length<getLikeData.needVoteCount&&!myData.hasVote&&isMyVote===0}}">
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_tip">{{getLikeUser.name}}还差{{getLikeDesign.needVoteCount-getLikeDesign.voter.length}}个点赞即可获得 · {{getLikeData.infiniteDay}}天无限卡</view>
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_tip" wx:if="{{hasReceiveActiveInfinite}}">
+                点赞即送你{{activeInfiniteDay}}天无限卡
+            </view>
+                <view class="_view data-v-2bc02ca0 giveOneGetOne_tip" wx:else>
+                为{{getLikeUser.gender===2?'她':'他'}}点赞，你也将获得{{getLikeUser.gender===2?'她':'他'}}的回赞
+            </view>
+                <button ariaRole="button" catchtap="handleProxy" class="_button data-v-2bc02ca0 giveOneGetOne_like" data-comkey="{{$k}}" data-eventid="{{'3_5'}}" formType="submit" hoverClass="wr_commonActive">
+                赞
+            </button>
+            </block>
+        </form>
+        <template is="0d52de0d" data="{{...$root[$kk+'6'],$root:$root}}"></template>
+        <button bindgetuserinfo="handleProxy" class="_button data-v-2bc02ca0 giveOneGetOne_transparentBtn" data-comkey="{{$k}}" data-eventid="{{'1_7'}}" openType="getUserInfo" wx:if="{{needAuthorized}}"></button>
+        <template is="0736f8f4" data="{{...$root[$kk+'7'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>
+<import src="/components/Campaigns/GiveOneGetOne/GiveOneGetOneVoteBackAlert.vue.wxml"></import>

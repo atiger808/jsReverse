@@ -1,0 +1,10 @@
+<template name="72e46b1e">
+    <view class="_view data-v-7399924c {{['wr_pinTip',customSelector]}}" style=" {{pinTipStyleObj}}" wx:if="{{shouldShowPinTips}}">
+        <view class="_view data-v-7399924c wr_pinTip_arrow" style=" {{pinTipArrowStyleObj}}"></view>
+        <view class="_view data-v-7399924c wr_pinTip_info">
+            <view class="_view data-v-7399924c wr_pinTip_info_title">添加到我的小程序</view>
+            <view class="_view data-v-7399924c wr_pinTip_info_desc">百万好书随时阅读</view>
+        </view>
+        <view ariaLabel="关闭添加小程序提示" ariaRole="button" bindtap="handleProxy" class="_view data-v-7399924c wr_pinTip_closeBtn" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" hoverClass="wr_commonActive"></view>
+    </view>
+</template>

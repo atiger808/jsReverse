@@ -1,0 +1,36 @@
+<view>
+    <u-popup bind:__l="__l" bind:close="__e" bind:input="__e" borderRadius="16" data-event-opts="{{[ [ '^close',[ ['close'] ] ],[ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}" mode="bottom" value="{{show}}" vueId="3d6ee042-1" vueSlots="{{['default']}}">
+        <u-cell-group bind:__l="__l" vueId="{{'3d6ee042-2'+','+'3d6ee042-1'}}" vueSlots="{{['default']}}">
+            <u-cell-item arrow="{{false}}" bind:__l="__l" vueId="{{'3d6ee042-3'+','+'3d6ee042-2'}}" vueSlots="{{['title','label']}}">
+                <view slot="title">
+                    <u-icon bind:__l="__l" color="#07C160" customPrefix="custom-icon" name="yinsi" size="34" vueId="{{'3d6ee042-4'+','+'3d6ee042-3'}}"></u-icon>
+                    <text class="u-margin-left-10 u-font-34 bold">申请手机号验证</text>
+                </view>
+                <view class="u-font-14" slot="label">{{''+prompt+''}}</view>
+            </u-cell-item>
+            <button bindgetphonenumber="__e" class="u-reset-button" data-event-opts="{{[ [ 'getphonenumber',[ [ 'getphonenumber',['$event'] ] ] ] ]}}" openType="getPhoneNumber">
+                <u-cell-item arrow="{{false}}" bind:__l="__l" vueId="{{'3d6ee042-5'+','+'3d6ee042-2'}}" vueSlots="{{['default','title']}}">
+                    <text class="u-font-30 bold" slot="title">手机号</text>
+                    <view class="y-avatar u-margin-left-20">
+                        <u-field bind:__l="__l" bind:input="__e" borderBottom="{{false}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','phone','$event',[] ],['vuex_user'] ] ] ] ]}}" disabled="{{true}}" labelWidth="0" placeholder="请授权微信认证的手机号" value="{{vuex_user.phone}}" vueId="{{'3d6ee042-6'+','+'3d6ee042-5'}}" vueSlots="{{['right']}}">
+                            <u-button bind:__l="__l" bind:getphonenumber="__e" customStyle="{{height:'70rpx',width:'180rpx'}}" data-event-opts="{{[ [ '^getphonenumber',[ ['getphonenumber'] ] ] ]}}" openType="getPhoneNumber" slot="right" type="success" vueId="{{'3d6ee042-7'+','+'3d6ee042-6'}}" vueSlots="{{['default']}}">快速授权</u-button>
+                        </u-field>
+                    </view>
+                </u-cell-item>
+            </button>
+            <u-cell-item arrow="{{false}}" bind:__l="__l" vueId="{{'3d6ee042-8'+','+'3d6ee042-2'}}" vueSlots="{{['default']}}">
+                <view class="but-box">
+                    <view class="u-margin-top-20 u-flex u-row-center">
+                        <dk-btn backgroundColor="#1d84ff" bind:__l="__l" bind:click="__e" color="#fff" data-event-opts="{{[ [ '^click',[ ['formSubmit'] ] ] ]}}" lineHeight="90" radius="{{45}}" vueId="{{'3d6ee042-9'+','+'3d6ee042-8'}}" vueSlots="{{['default']}}" width="{{670}}">
+                            <text class="u-font-28">确认</text>
+                        </dk-btn>
+                    </view>
+                    <view class="u-margin-top-20 u-margin-bottom-20 u-flex u-row-center">
+                        <dk-btn backgroundColor="none" bind:__l="__l" bind:click="__e" color="#959595" data-event-opts="{{[ [ '^click',[ ['e0'] ] ] ]}}" lineHeight="90" radius="{{45}}" vueId="{{'3d6ee042-10'+','+'3d6ee042-8'}}" vueSlots="{{['default']}}" width="{{220}}">取消</dk-btn>
+                    </view>
+                </view>
+            </u-cell-item>
+        </u-cell-group>
+    </u-popup>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="3d6ee042-11"></yy-privacy-popup>
+</view>

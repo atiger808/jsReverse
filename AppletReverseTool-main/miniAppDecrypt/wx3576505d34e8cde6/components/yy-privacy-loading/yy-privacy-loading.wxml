@@ -1,0 +1,4 @@
+<view class="data-v-be9f20f2" wx:if="{{vuex_privacy}}">
+    <view catchtap="__e" class="local-screen loading-page animation u-flex u-row-center u-col-center data-v-be9f20f2" data-event-opts="{{[ [ 'tap',[ [ 'show',['$event'] ] ] ] ]}}"></view>
+    <yy-privacy-popup bind:__l="__l" class="privacy data-v-be9f20f2 vue-ref" data-ref="privacy" vueId="45b09f02-1"></yy-privacy-popup>
+</view>

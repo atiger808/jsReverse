@@ -1,0 +1,6 @@
+<view class="{{['u-wrap','data-v-74051a5a','u-lazy-item-'+elIndex]}}" style="{{'opacity:'+$root.m0+';'+'border-radius:'+borderRadius+'rpx'+';'+'transition:'+'opacity '+time/1000+'s ease-in-out'+';'}}">
+    <view class="{{['data-v-74051a5a','u-lazy-item-'+elIndex]}}">
+        <image binderror="__e" bindload="__e" bindtap="__e" class="u-lazy-item data-v-74051a5a" data-event-opts="{{[ [ 'load',[ [ 'imgLoaded',['$event'] ] ] ],[ 'error',[ [ 'loadError',['$event'] ] ] ],[ 'tap',[ [ 'clickImg',['$event'] ] ] ] ]}}" mode="{{imgMode}}" src="{{isShow?image:loadingImg}}" style="{{'border-radius:'+borderRadius+'rpx'+';'+'height:'+imgHeight+';'}}" wx:if="{{!isError}}"></image>
+        <image bindload="__e" bindtap="__e" class="u-lazy-item error data-v-74051a5a" data-event-opts="{{[ [ 'load',[ [ 'errorImgLoaded',['$event'] ] ] ],[ 'tap',[ [ 'clickImg',['$event'] ] ] ] ]}}" mode="{{imgMode}}" src="{{errorImg}}" style="{{'border-radius:'+borderRadius+'rpx'+';'+'height:'+imgHeight+';'}}" wx:else></image>
+    </view>
+</view>

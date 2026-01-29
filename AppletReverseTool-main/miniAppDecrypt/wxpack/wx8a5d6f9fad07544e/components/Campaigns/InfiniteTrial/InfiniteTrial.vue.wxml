@@ -1,0 +1,30 @@
+<template name="83dcd662">
+    <view class="_view data-v-476c366a">
+        <view class="_view data-v-476c366a infiniteTrial" wx:if="{{shouldShowInfiniteTrial}}">
+            <view class="_view data-v-476c366a infiniteTrial_card">
+                <view class="_view data-v-476c366a infiniteTrial_card_title">
+                Hi {{user.name}},
+            </view>
+                <view class="_view data-v-476c366a infiniteTrial_card_separator"></view>
+                <view class="_view data-v-476c366a infiniteTrial_card_subtitle" wx:if="{{infiniteTrial.redeemableInfiniteDays>0}}">
+                送你 {{infiniteTrial.redeemableInfiniteDays}} 天无限卡<view class="_br data-v-476c366a"></view>
+                百万好书免费读
+            </view>
+                <view class="_view data-v-476c366a infiniteTrial_card_subtitle" wx:else>
+                微信读书无限卡<view class="_br data-v-476c366a"></view>
+                百万好书免费读
+            </view>
+            </view>
+            <form bindsubmit="handleProxy" class="_form data-v-476c366a" data-comkey="{{$k}}" data-eventid="{{'2_2'}}" reportSubmit="true">
+                <button bindtap="handleProxy" class="_button data-v-476c366a wr_btn wr_btn_Gold infiniteTrial_button" data-comkey="{{$k}}" data-eventid="{{'3_1'}}" formType="submit" hoverClass="wr_commonActive" wx:if="{{infiniteTrial.redeemableInfiniteDays>0}}">
+                立即领取
+            </button>
+                <button bindtap="handleProxy" class="_button data-v-476c366a wr_btn wr_btn_Gold infiniteTrial_button" data-comkey="{{$k}}" data-eventid="{{'3_0'}}" formType="submit" hoverClass="wr_commonActive" wx:else>
+                {{buttonLabel}}
+            </button>
+            </form>
+        </view>
+        <template is="0d52de0d" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+    </view>
+</template>
+<import src="/components/CustomerServicePrompt/CustomerServicePrompt.vue.wxml"></import>

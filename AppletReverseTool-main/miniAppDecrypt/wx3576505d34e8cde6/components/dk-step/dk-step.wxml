@@ -1,0 +1,13 @@
+<view class="guide data-v-59018870" wx:if="{{showGuide}}">
+    <view class="guide-box data-v-59018870" style="{{guideStyle}}">
+        <view class="tips guide-step-tips data-v-59018870" style="{{tipPosition}}">
+            <view class="text data-v-59018870">{{guideInfo.tips}}</view>
+            <view class="tool-btn data-v-59018870">
+                <text bindtap="__e" class="data-v-59018870" data-event-opts="{{[ [ 'tap',[ [ 'skip',['$event'] ] ] ] ]}}">跳过</text>
+                <view bindtap="__e" class="next data-v-59018870" data-event-opts="{{[ [ 'tap',[ [ 'next',['$event'] ] ] ] ]}}">下一步</view>
+            </view>
+        </view>
+        <view class="arrow data-v-59018870" style="{{arrowTop}}"></view>
+    </view>
+    <view class="v-model data-v-59018870"></view>
+</view>

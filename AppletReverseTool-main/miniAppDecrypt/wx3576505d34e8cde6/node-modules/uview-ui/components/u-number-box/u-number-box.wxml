@@ -1,0 +1,9 @@
+<view class="u-numberbox data-v-f758062a">
+    <view catchtouchend="__e" catchtouchstart="__e" class="{{['u-icon-minus','data-v-f758062a',disabled||inputVal<=min?'u-icon-disabled':'']}}" data-event-opts="{{[ [ 'touchstart',[ [ 'btnTouchStart',['minus'] ] ] ],[ 'touchend',[ [ 'clearTimer',['$event'] ] ] ] ]}}" style="{{'background:'+bgColor+';'+'height:'+inputHeight+'rpx'+';'+'color:'+color+';'}}">
+        <u-icon bind:__l="__l" class="data-v-f758062a" name="minus" size="{{size}}" vueId="4486b0ed-1"></u-icon>
+    </view>
+    <input bindblur="__e" bindfocus="__e" bindinput="__e" class="{{['u-number-input','data-v-f758062a',disabled?'u-input-disabled':'']}}" cursorSpacing="{{getCursorSpacing}}" data-event-opts="{{[ [ 'blur',[ [ 'onBlur',['$event'] ] ] ],[ 'focus',[ [ 'onFocus',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','inputVal','$event',[] ] ] ] ] ]}}" disabled="{{disabledInput||disabled}}" style="{{'color:'+color+';'+'font-size:'+size+'rpx'+';'+'background:'+bgColor+';'+'height:'+inputHeight+'rpx'+';'+'width:'+inputWidth+'rpx'+';'}}" type="{{positiveInteger?'number':'digit'}}" value="{{inputVal}}"></input>
+    <view catchtouchend="__e" catchtouchstart="__e" class="{{['u-icon-plus','data-v-f758062a',disabled||inputVal>=max?'u-icon-disabled':'']}}" data-event-opts="{{[ [ 'touchstart',[ [ 'btnTouchStart',['plus'] ] ] ],[ 'touchend',[ [ 'clearTimer',['$event'] ] ] ] ]}}" style="{{'background:'+bgColor+';'+'height:'+inputHeight+'rpx'+';'+'color:'+color+';'}}">
+        <u-icon bind:__l="__l" class="data-v-f758062a" name="plus" size="{{size}}" vueId="4486b0ed-2"></u-icon>
+    </view>
+</view>

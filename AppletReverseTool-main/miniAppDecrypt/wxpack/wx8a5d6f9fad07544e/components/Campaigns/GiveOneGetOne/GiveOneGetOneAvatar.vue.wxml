@@ -1,0 +1,5 @@
+<template name="4c628164">
+    <template is="5fbff9fa" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{voter&&voter.userVid}}"></template>
+    <template is="5fbff9fa" data="{{...$root[$kk+'0'],$root:$root}}" wx:else></template>
+</template>
+<import src="/components/Avatar.vue.wxml"></import>

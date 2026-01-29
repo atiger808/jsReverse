@@ -1,0 +1,134 @@
+<view>
+    <u-swiper bind:__l="__l" bind:click="__e" borderRadius="0" data-event-opts="{{[ [ '^click',[ ['bannerClick'] ] ] ]}}" height="479" list="{{banner}}" name="image" vueId="8dd740cc-1"></u-swiper>
+    <view class="wrap">
+        <view wx:if="{{vuex_other.type===type}}">
+            <view class="u-flex padding-rl-30" style="width:100vw;background-color:#ffffff;min-height:173rpx;flex-wrap:wrap;padding-bottom:30rpx;">
+                <view bindtap="__e" class="{{['u-flex-col','u-flex',selectKey==key?'active':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['$0','$1',key],[ [ ['titleDetailsList','',key,'path'] ],'undefined' ] ] ] ] ]}}" style="width:20%;justify-content:center;padding-top:39rpx;" wx:for="{{titleDetailsList}}" wx:for-index="key" wx:key="key">
+                    <u-icon bind:__l="__l" customPrefix="custom-icon" labelColor="#333333" labelSize="30" name="{{item.icon}}" size="60" slot="icon" vueId="{{'8dd740cc-2-'+key}}"></u-icon>
+                    <text style="font-size:28rpx;color:#1B1B1B;margin-top:14rpx;">{{item.title}}</text>
+                </view>
+            </view>
+            <view class="u-flex padding-rl-30 u-row-between" style="background-color:#ffffff;width:100vw;padding-bottom:30rpx;">
+                <view bindtap="__e" class="normal-box u-padding-left-18 u-padding-top-20" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/one/vote/vote-template'] ] ] ] ]}}" style="{{'background-image:'+'url('+NORMAL_BOX_BG+')'+';'}}">
+                    <view class="u-font-32 bold" style="color:#1976FA;">发起通用投票</view>
+                    <view class="u-font-24 u-margin-top-10" style="color:#3589FF;">可视频投票,音频投票</view>
+                    <view class="u-font-24 u-margin-top-10" style="color:#3589FF;">公众号投票,答题投票</view>
+                    <view class="u-font-22 u-margin-top-24 u-text-center custom">可免费定制专属模版</view>
+                </view>
+                <view>
+                    <view bindtap="__e" class="jielong-box u-padding-top-20 u-padding-left-26" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/simple/simple-lanuch'] ] ] ] ]}}" style="{{'background-image:'+'url('+SIMPLE_BOX_BG+')'+';'}}">
+                        <view class="u-font-32 bold" style="color:#FF9519;">简易投票</view>
+                        <view class="u-margin-top-10 u-font-24" style="color:#FCB055;">群内投票/纯文字投票</view>
+                        <view class="u-font-24" style="color:#FCB055;">图文投票/支持批量导入</view>
+                    </view>
+                    <view class="u-flex u-row-between u-margin-top-20">
+                        <view bindtap="__e" class="jielong-box u-padding-top-20 u-padding-left-26" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['/pages-son/one/vote/vote-template'] ] ] ] ]}}" style="{{'background-image:'+'url('+JELONG_BOX_BG+')'+';'}}">
+                            <view class="u-font-32 bold" style="color:#14B26F;">视频投票/音频投票</view>
+                            <view class="u-margin-top-10 u-font-24" style="color:#36D290;">不限大小，不限数量</view>
+                            <view class="u-font-24" style="color:#36D290;">最大可传两个G</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="u-margin-top-25 u-flex u-row-between padding-rl-30">
+                <view class="u-margin-left-14 u-font-34 bold">投票模板</view>
+                <u-icon bind:__l="__l" bind:click="__e" data-event-opts="{{[ [ '^click',[ ['toTemplate'] ] ] ]}}" label="更多" labelPos="left" labelSize="24" name="arrow-right" size="18" vueId="8dd740cc-3"></u-icon>
+            </view>
+            <view class="overflow scroll-box-x u-margin-top-25 u-flex padding-rl-30">
+                <view bindtap="__e" class="template-list-item" data-event-opts="{{[ [ 'tap',[ [ 'toActivity',['$0'],[ [ ['tplList','',index] ] ] ] ] ] ]}}" wx:for="{{tplList}}" wx:key="index">
+                    <u-lazy-load bind:__l="__l" borderRadius="8rpx 8rpx 0 0" height="226" image="{{item.tpl_img}}" vueId="{{'8dd740cc-4-'+index}}"></u-lazy-load>
+                    <view class="u-font-24 bold u-flex-1 u-flex u-row-center u-col-center">{{item.name+''}}</view>
+                </view>
+            </view>
+            <view class="u-margin-top-25 u-flex u-row-between padding-rl-30">
+                <view class="u-rela" style="width:375rpx;">
+                    <u-tabs activeColor="#73B7FF" barHeight="8" bgColor="transparent" bind:__l="__l" bind:change="__e" current="{{current}}" data-event-opts="{{[ [ '^change',[ ['change'] ] ] ]}}" fontSize="32" isScroll="{{false}}" list="{{tabList}}" vueId="8dd740cc-5"></u-tabs>
+                    <view class="u-abso" style="top:18rpx;right:0;">
+                        <u-icon bind:__l="__l" color="#FF432A" customPrefix="custom-icon" name="huo" size="29" vueId="8dd740cc-6"></u-icon>
+                    </view>
+                </view>
+                <view class="{{[!searchFoucs?'search-box':'']}}">
+                    <u-search bgColor="#ffffff" bind:__l="__l" bind:blur="__e" bind:clear="__e" bind:focus="__e" bind:input="__e" bind:search="__e" data-event-opts="{{[ [ '^focus',[ ['e0'] ] ],[ '^blur',[ ['e1'] ] ],[ '^clear',[ [ 'hotAndClassic',[true] ] ] ],[ '^search',[ [ 'hotAndClassic',[true] ] ] ],[ '^input',[ [ '__set_model',[ '','keyword','$event',[] ] ] ] ] ]}}" height="56" maxlength="10" placeholder="搜索" shape="round" showAction="{{false}}" value="{{keyword}}" vueId="8dd740cc-7"></u-search>
+                </view>
+            </view>
+            <view class="u-margin-top-25 padding-rl-30">
+                <view bindtap="__e" class="classic-box" data-event-opts="{{[ [ 'tap',[ [ 'toClassic',['$0'],[ [ ['classic','id',item[$orig].id] ] ] ] ] ] ]}}" wx:for="{{$root.l0}}" wx:key="id">
+                    <u-lazy-load bind:__l="__l" borderRadius="16rpx 16rpx 0 0" height="381" image="{{item.m0}}" imgMode="aspectFill" vueId="{{'8dd740cc-8-'+index}}"></u-lazy-load>
+                    <view class="u-flex-1 padding-rl-30 u-flex-col u-row-around">
+                        <view class="u-flex u-row-between">
+                            <view class="u-font-30 bold u-line-1">{{item[$orig].title}}</view>
+                            <view class="ing-box">{{item[$orig].state_name}}</view>
+                        </view>
+                        <view class="u-font-20 u-flex u-row-between">
+                            <u-icon bind:__l="__l" class="avatar-icon" label="{{item.g0}}" labelColor="#666666" labelSize="24" name="{{item[$orig].sponsor.head+'?imageView2/1/w/36/h/36'}}" size="36" vueId="{{'8dd740cc-9-'+index}}"></u-icon>
+                            <view class="u-font-22" style="flex:none;">
+                                <u-icon bind:__l="__l" color="#999999" label="{{item[$orig].view_num+'浏览'}}" labelColor="#999999" labelSize="22" name="eye" size="20" vueId="{{'8dd740cc-10-'+index}}"></u-icon>
+                                <block wx:if="{{vuex_other.type===APP_TYPE_VOTING}}">
+                                    <text class="u-margin-left-40">已投</text>
+                                    <text class="theme-color">{{item[$orig].vote_num}}</text>
+                                    <text>票</text>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="u-margin-top-25 padding-rl-30">
+                <view bindtap="__e" class="classic-box" data-event-opts="{{[ [ 'tap',[ [ 'toClassic',['$0'],[ [ ['classic','id',item[$orig].id] ] ] ] ] ] ]}}" wx:for="{{$root.l1}}" wx:key="id">
+                    <u-lazy-load bind:__l="__l" borderRadius="16rpx 16rpx 0 0" height="381" image="{{item.m1}}" imgMode="aspectFill" vueId="{{'8dd740cc-11-'+index}}"></u-lazy-load>
+                    <view class="u-flex-1 padding-rl-30 u-flex-col u-row-around">
+                        <view class="u-flex u-row-between">
+                            <view class="u-font-30 bold u-line-1">{{item[$orig].title}}</view>
+                            <view class="ing-box">{{item[$orig].state_name}}</view>
+                        </view>
+                        <view class="u-font-20 u-flex u-row-between">
+                            <u-icon bind:__l="__l" class="avatar-icon" label="{{item.g1}}" labelColor="#666666" labelSize="24" name="{{item[$orig].sponsor.head+'?imageView2/1/w/36/h/36'}}" size="36" vueId="{{'8dd740cc-12-'+index}}"></u-icon>
+                            <view class="u-font-22" style="flex:none;">
+                                <u-icon bind:__l="__l" color="#999999" label="{{item[$orig].view_num+'浏览'}}" labelColor="#999999" labelSize="22" name="eye" size="20" vueId="{{'8dd740cc-13-'+index}}"></u-icon>
+                                <block wx:if="{{vuex_other.type===APP_TYPE_VOTING}}">
+                                    <text class="u-margin-left-40">已投</text>
+                                    <text class="theme-color">{{item[$orig].vote_num}}</text>
+                                    <text>票</text>
+                                </block>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <u-loadmore bind:__l="__l" marginBottom="20" status="{{loadmore_status}}" vueId="8dd740cc-14"></u-loadmore>
+            <image class="JUMPIMG" mode="widthFix" src="{{JUMPIMG}}" wx:if="{{friendShow}}"></image>
+        </view>
+        <view style="padding-bottom:44rpx;" wx:else>
+            <view class="u-flex padding-rl-30" style="width:100vw;background-color:#ffffff;min-height:173rpx;flex-wrap:wrap;padding-bottom:30rpx;">
+                <view bindtap="__e" class="u-flex-col u-flex" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['$0'],[ [ ['titleMultipleList','',key,'path'] ] ] ] ] ] ]}}" style="width:20%;justify-content:center;padding-top:39rpx;" wx:for="{{titleMultipleList}}" wx:for-index="key" wx:key="key">
+                    <u-icon bind:__l="__l" customPrefix="custom-icon" labelColor="#333333" labelSize="30" name="{{item.icon}}" size="60" slot="icon" vueId="{{'8dd740cc-15-'+key}}"></u-icon>
+                    <text style="font-size:28rpx;color:#1B1B1B;margin-top:14rpx;">{{item.title}}</text>
+                </view>
+            </view>
+            <view class="padding-rl-30 u-flex u-row-between u-padding-bottom-20" style="width:100vw;flex-wrap:wrap;padding-top:8rpx;background-color:#ffffff;">
+                <view bindtap="__e" class="select-item" data-event-opts="{{[ [ 'tap',[ [ 'onJump',['$0'],[ [ ['selectCradList','',key,'path'] ] ] ] ] ] ]}}" style="{{'width:340rpx;height:140rpx;margin-bottom:18rpx;'+'background-image:'+'url('+item.image+')'+';'}}" wx:for="{{selectCradList}}" wx:for-index="key" wx:key="key">
+                    <view class="bold" style="{{'margin:28rpx 0 0 22rpx;font-size:32rpx;'+'color:'+item.title_color+';'}}">{{item.title}}</view>
+                    <view style="{{'margin:17rpx 0 0 23rpx;font-size:24rpx;'+'color:'+item.sub_title_color+';'}}">{{item.sub_title}}</view>
+                </view>
+            </view>
+            <view style="padding-top:10rpx;" wx:for="{{$root.l2}}" wx:key="index">
+                <view class="u-flex u-row-between padding-rl-30" style="height:88rpx;width:100vw;" wx:if="{{item.g2}}">
+                    <text class="bold" style="font-size:32rpx;color:#484848;">{{item[$orig].name}}</text>
+                    <view class="u-flex" style="margin-top:-10rpx;" wx:if="{{index==0}}">
+                        <view bindtap="__e" class="iconfont" data-event-opts="{{[ [ 'tap',[ [ 'handleTeach',['$event'] ] ] ] ]}}" style="font-size:22rpx;color:#5AA9FF;margin-right:15rpx;">查看教程<text style="margin-left:4rpx;"></text>
+                        </view>
+                        <view bindtap="__e" class="iconfont" data-event-opts="{{[ [ 'tap',[ [ 'callPhone',['$event'] ] ] ] ]}}" style="font-size:22rpx;color:#5FCF80;">联系客服<text style="margin-left:4rpx;"></text>
+                        </view>
+                    </view>
+                </view>
+                <view class="u-flex u-row-between u-flex-wrap padding-rl-30" style="width:100vw;">
+                    <view bindtap="__e" class="u-flex u-rela" data-event-opts="{{[ [ 'tap',[ [ 'toMultiple',['$0'],[ [ ['multiplelList','',index],['activity','',key] ] ] ] ] ] ]}}" style="width:332rpx;height:88rpx;border-radius:8rpx;background-color:#ffffff;margin-bottom:19rpx;" wx:for="{{item[$orig].activity}}" wx:for-index="key" wx:for-item="child" wx:key="key">
+                        <text style="margin-left:34rpx;max-width:280rpx;text-overflow:ellipsis;overflow:hidden;font-size:28rpx;color:##484848;white-space:nowrap;">{{child.title}}</text>
+                        <text class="u-abso" style="color:#FB523B;right:8rpx;top:4rpx;font-size:20rpx;" wx:if="{{child.label}}">{{child.label}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="8dd740cc-16"></yy-privacy-popup>
+</view>

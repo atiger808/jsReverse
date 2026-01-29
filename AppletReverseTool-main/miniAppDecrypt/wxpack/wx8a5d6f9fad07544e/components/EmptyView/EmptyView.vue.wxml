@@ -1,0 +1,12 @@
+<template name="05fb2afb">
+    <view class="_view data-v-35d98d56 wr_emptyView" style=" {{'top:'+navBarHeight+additionalOffsetTop+'px'+';'}}">
+        <view class="_view data-v-35d98d56 wr_emptyView_cnt">
+            <view class="_view data-v-35d98d56 wr_emptyView_cnt_title" wx:if="{{title}}">
+            {{title}}
+        </view>
+            <view ariaRole="button" bindtap="handleProxy" class="_view data-v-35d98d56 wr_emptyView_cnt_btn" data-comkey="{{$k}}" data-eventid="{{'2_0'}}" hoverClass="wr_commonActive" wx:if="{{buttonLabel}}">
+            {{buttonLabel}}
+        </view>
+        </view>
+    </view>
+</template>

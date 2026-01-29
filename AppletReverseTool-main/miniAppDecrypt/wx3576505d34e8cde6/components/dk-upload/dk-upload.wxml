@@ -1,0 +1,27 @@
+<view>
+    <view class="htz-image-upload-list" wx:if="{{!is_sort}}">
+        <view bindtap="__e" class="{{['htz-image-upload-Item','htz-image-upload-Item-add','u-flex','u-row-center',mediaType==='video'&&size==='large'?'video-box':'']}}" data-event-opts="{{[ [ 'tap',[ [ 'chooseFile',['$event'] ] ] ] ]}}" style="{{'width:'+img_size+'rpx'+';'+'height:'+img_size+'rpx'+';'+'margin:'+'0 '+margin_img+'rpx 13rpx 0'+';'}}" wx:if="{{$root.g0}}">
+            <u-icon bind:__l="__l" customPrefix="custom-icon" label="{{mediaType==='image'?imgDesc:'添加视频'}}" labelColor="#999999" labelPos="bottom" labelSize="20" marginTop="4" name="{{mediaType==='image'?'zhaoxiangji':'shipin'}}" size="48" vueId="7ef159f2-1"></u-icon>
+        </view>
+        <view class="{{['htz-image-upload-Item',mediaType==='video'&&size==='large'?'video-box':'']}}" style="{{'width:'+img_size+'rpx'+';'+'height:'+img_size+'rpx'+';'+'margin:'+'0 '+margin_img+'rpx 13rpx 0'+';'}}" wx:for="{{$root.l0}}" wx:key="index">
+            <view class="htz-image-upload-Item-video" wx:if="{{!item.g1}}">
+                <video disabled="{{false}}" poster="{{poster}}" src="{{item[$orig]}}">
+                    <view bindtap="__e" class="htz-image-upload-Item-video-fixed" data-event-opts="{{[ [ 'tap',[ [ 'previewVideo',['$0'],[ [ ['uploadLists','',index] ] ] ] ] ] ]}}"></view>
+                    <view bindtap="__e" class="htz-image-upload-Item-del-cover" data-event-opts="{{[ [ 'tap',[ [ 'imgDel',[index] ] ] ] ]}}" wx:if="{{remove&&previewVideoSrc==''}}">×</view>
+                </video>
+            </view>
+            <u-lazy-load bind:__l="__l" bind:click="__e" borderRadius="10" data-event-opts="{{[ [ '^click',[ [ 'imgPreview',['$0'],[ [ ['uploadLists','',index] ] ] ] ] ] ]}}" height="{{img_size}}" image="{{item[$orig]}}" imgMode="scaleToFill" vueId="{{'7ef159f2-2-'+index}}" wx:else></u-lazy-load>
+            <view bindtap="__e" class="htz-image-upload-Item-del" data-event-opts="{{[ [ 'tap',[ [ 'imgDel',[index] ] ] ] ]}}" wx:if="{{remove}}">×</view>
+        </view>
+        <view class="preview-full" wx:if="{{previewVideoSrc!=''}}">
+            <video autoplay="{{true}}" showFullscreenBtn="{{false}}" src="{{previewVideoSrc}}">
+                <view bindtap="__e" class="preview-full-close" data-event-opts="{{[ [ 'tap',[ [ 'previewVideoClose',['$event'] ] ] ] ]}}">×</view>
+            </video>
+        </view>
+    </view>
+    <view wx:else>
+        <shmily-drag-image addImage="{{chooseFile}}" bind:__l="__l" bind:input="__e" borderRadius="{{20}}" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','uploadLists','$event',[] ] ] ] ] ]}}" delImage="{{delImage}}" number="{{max}}" remove="{{remove}}" value="{{uploadLists}}" vueId="7ef159f2-3"></shmily-drag-image>
+    </view>
+    <dk-compress bind:__l="__l" class="vue-ref" data-ref="compress" vueId="7ef159f2-4"></dk-compress>
+    <yy-privacy-popup bind:__l="__l" class="privacy vue-ref" data-ref="privacy" vueId="7ef159f2-5"></yy-privacy-popup>
+</view>

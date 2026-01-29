@@ -1,0 +1,4 @@
+<view class="{{['ad-box','u-margin-top-'+marginTop]}}">
+    <ad-custom adIntervals="30" bind:__l="__l" bind:close="__e" bind:load="__e" data-event-opts="{{[ [ '^load',[ ['onload'] ] ],[ '^close',[ ['onclose'] ] ] ]}}" style="border-radius:20rpx;overflow:hidden;" unitId="{{unitAd}}" vueId="59726aa4-1" wx:if="{{is_custom}}"></ad-custom>
+    <ad adIntervals="30" adType="{{type}}" bindclose="__e" binderror="__e" bindload="__e" data-event-opts="{{[ [ 'load',[ [ 'onload',['$event'] ] ] ],[ 'close',[ [ 'onclose',['$event'] ] ] ],[ 'error',[ [ 'onerror',['$event'] ] ] ] ]}}" style="overflow:hidden;" unitId="{{unitAd}}" wx:else></ad>
+</view>

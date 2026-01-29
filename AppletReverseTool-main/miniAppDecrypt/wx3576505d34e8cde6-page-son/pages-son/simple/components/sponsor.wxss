@@ -1,0 +1,1 @@
+.v-text-hide{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}.to-setting{background-color:rgba(0,0,0,.3)}.change-avatar{background:rgba(0,0,0,.2);border-radius:0 0 10rpx 10rpx;bottom:10rpx;height:40rpx;position:absolute;width:100%}

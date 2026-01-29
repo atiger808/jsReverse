@@ -1,0 +1,7 @@
+<template name="b61d99f0">
+    <view class="_div data-v-51d873e6 {{[ [true?'wr_tabs':''],customClass ]}}">
+        <view bindtap="handleProxy" class="_div data-v-51d873e6 {{['wr_tabs_item',index===currentIndex?'wr_tabs_item_Active':'']}}" data-comkey="{{$k}}" data-eventid="{{'1_0_'+index}}" key="{{index}}" wx:for="{{tabItemList}}" wx:key="index">
+        {{item}}
+    </view>
+    </view>
+</template>

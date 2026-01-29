@@ -1,0 +1,8 @@
+<u-cell-group bind:__l="__l" border="{{false}}" vueId="31dfa47a-1" vueSlots="{{['default']}}">
+    <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'startTimeChange',['$event'] ] ] ] ]}}" mode="multiSelector" range="{{timeRange}}" rangeKey="label" value="{{start_time_value}}">
+        <u-cell-item bind:__l="__l" title="{{startText}}" titleStyle="{{cellItemTit}}" value="{{$root.f0}}" vueId="{{'31dfa47a-2'+','+'31dfa47a-1'}}"></u-cell-item>
+    </picker>
+    <picker bindchange="__e" data-event-opts="{{[ [ 'change',[ [ 'endTimeChange',['$event'] ] ] ] ]}}" mode="multiSelector" range="{{timeRange}}" rangeKey="label" value="{{end_time_value}}">
+        <u-cell-item bind:__l="__l" borderBottom="{{bottom}}" title="{{endText}}" titleStyle="{{cellItemTit}}" value="{{$root.f1}}" vueId="{{'31dfa47a-3'+','+'31dfa47a-1'}}"></u-cell-item>
+    </picker>
+</u-cell-group>

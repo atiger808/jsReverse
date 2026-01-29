@@ -1,0 +1,25 @@
+<template name="5db1e51a">
+    <view catchtap="handleProxy" class="_view data-v-01056fce {{[ [true?'wr_bookCover':''],sizeSelector,shadowSelector,audioSelector,customSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'0_3'}}" hoverClass="wr_commonActive" wx:if="{{clickable}}">
+        <view class="_view data-v-01056fce wr_bookCover_shadow"></view>
+        <view class="_view data-v-01056fce wr_bookCover_privateTag" wx:if="{{isSecret}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_updatedTag" wx:if="{{isUpdated}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_trialTag" wx:if="{{isTrial}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_redeemedTag" wx:if="{{hasRedeemed}}"></view>
+        <template is="09c7acd5" data="{{...$root[$kk+'0'],$root:$root}}" wx:if="{{mp}}"></template>
+        <image ariaLabel="{{alt}}" binderror="handleProxy" class="_img data-v-01056fce wr_bookCover_img" data-comkey="{{$k}}" data-eventid="{{'1_0'}}" lazyLoad="{{true}}" mode="scaleToFill" src="{{adjustedSrc}}" wx:else></image>
+        <view class="_view data-v-01056fce wr_bookCover_gradientDecor" wx:if="{{needGradientDecor}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_bottomDesc" wx:if="{{description}}">{{description}}</view>
+    </view>
+    <view bindtap="handleProxy" class="_view data-v-01056fce {{[ [true?'wr_bookCover':''],sizeSelector,shadowSelector,audioSelector,customSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'0_2'}}" wx:else>
+        <view class="_view data-v-01056fce wr_bookCover_shadow"></view>
+        <view class="_view data-v-01056fce wr_bookCover_privateTag" wx:if="{{isSecret}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_updatedTag" wx:if="{{isUpdated}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_trialTag" wx:if="{{isTrial}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_redeemedTag" wx:if="{{hasRedeemed}}"></view>
+        <template is="09c7acd5" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{mp}}"></template>
+        <image ariaLabel="{{alt}}" binderror="handleProxy" class="_img data-v-01056fce wr_bookCover_img" data-comkey="{{$k}}" data-eventid="{{'1_1'}}" lazyLoad="{{true}}" mode="scaleToFill" src="{{adjustedSrc}}" wx:else></image>
+        <view class="_view data-v-01056fce wr_bookCover_gradientDecor" wx:if="{{needGradientDecor}}"></view>
+        <view class="_view data-v-01056fce wr_bookCover_bottomDesc" wx:if="{{description}}">{{description}}</view>
+    </view>
+</template>
+<import src="/components/CustomMPCoverImage/CustomMPCoverImage.vue.wxml"></import>

@@ -1,0 +1,75 @@
+<view class="luck-box data-v-4efdfe9e">
+    <view class="data-v-4efdfe9e" wx:for="{{$root.l0}}" wx:key="guid">
+        <view class="action-bar data-v-4efdfe9e" wx:if="{{notOnlyOne}}">
+            <text class="data-v-4efdfe9e">{{item[$orig].desc}}</text>
+            <view class="data-v-4efdfe9e">
+                <u-icon bind:__l="__l" bind:click="__e" class="data-v-4efdfe9e" color="{{item.m0}}" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['up',index] ] ] ] ]}}" name="shangyi" size="36" vueId="{{'e77c9dcc-1-'+index}}"></u-icon>
+                <u-icon bind:__l="__l" bind:click="__e" class="arrow-downward data-v-4efdfe9e" color="{{item.m1}}" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['down',index] ] ] ] ]}}" name="xiayi" size="36" vueId="{{'e77c9dcc-2-'+index}}"></u-icon>
+                <u-icon bind:__l="__l" bind:click="__e" class="edit-pen data-v-4efdfe9e" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['edit',index] ] ] ] ]}}" name="edit-pen" size="36" vueId="{{'e77c9dcc-3-'+index}}" wx:if="{{item[$orig].type==='code'}}"></u-icon>
+                <u-icon bind:__l="__l" bind:click="__e" class="data-v-4efdfe9e" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'handleAction',['trash',index] ] ] ] ]}}" name="shanchu" size="36" vueId="{{'e77c9dcc-4-'+index}}"></u-icon>
+            </view>
+        </view>
+        <uni-easyinput autoHeight="{{true}}" bind:__l="__l" bind:input="__e" class="data-v-4efdfe9e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','content','$event',[] ],[ [ ['content','guid',item[$orig].guid] ] ] ] ] ] ]}}" inputBorder="{{false}}" maxlength="{{5000}}" placeholder="此处可填写活动规则奖品描述等(选填)" placeholderStyle="color:#c0c4cc;font-size:29rpx;font-weight:normal;" styles="{{item.a0}}" type="textarea" value="{{item[$orig].content}}" vueId="{{'e77c9dcc-5-'+index}}" wx:if="{{item[$orig].type===WORDS}}"></uni-easyinput>
+        <block wx:else>
+            <u-image bind:__l="__l" class="data-v-4efdfe9e" mode="widthFix" src="{{item[$orig].content}}" vueId="{{'e77c9dcc-6-'+index}}" width="100%" wx:if="{{item[$orig].type===LARGE_IMG}}"></u-image>
+            <block wx:else>
+                <view class="u-flex u-col-top data-v-4efdfe9e" wx:if="{{item[$orig].type===SMALL_IMG}}">
+                    <dk-upload bind:__l="__l" bind:imgDelete="__e" bind:uploadSuccess="__e" class="data-v-4efdfe9e" data-event-opts="{{[ [ '^uploadSuccess',[ ['e0'] ] ],[ '^imgDelete',[ ['e1'] ] ] ]}}" data-event-params="{{index:index,item:item[$orig],index:index}}" dirName="vote_small" max="{{3}}" value="{{item[$orig].content}}" vueId="{{'e77c9dcc-7-'+index}}"></dk-upload>
+                </view>
+                <block wx:else>
+                    <view class="code-box data-v-4efdfe9e" wx:if="{{item[$orig].type===CODE}}">
+                        <u-icon bind:__l="__l" class="data-v-4efdfe9e" name="weixin-circle-fill" size="78" vueId="{{'e77c9dcc-8-'+index}}"></u-icon>
+                        <view class="u-flex-1 u-padding-left-20 data-v-4efdfe9e">
+                            <view class="u-font-28 data-v-4efdfe9e">123456</view>
+                            <view class="u-font-24 u-tips-color u-margin-top-20 data-v-4efdfe9e">4567</view>
+                        </view>
+                        <u-button bind:__l="__l" class="data-v-4efdfe9e" customStyle="{{customStyle}}" type="success" vueId="{{'e77c9dcc-9-'+index}}" vueSlots="{{['default']}}">点击添加</u-button>
+                    </view>
+                    <block wx:else>
+                        <view class="data-v-4efdfe9e" wx:if="{{item[$orig].type===PLACE}}">
+                            <view class="place-box u-flex u-row-between data-v-4efdfe9e">
+                                <view class="w-450 data-v-4efdfe9e">
+                                    <view class="place-title u-font-30 u-line-1 data-v-4efdfe9e">{{item[$orig].content.name||'门店名称'}}</view>
+                                    <view class="place-info u-margin-top-10 u-font-24 u-line-2 data-v-4efdfe9e">{{item[$orig].content.address+item[$orig].content.position||'门店地址'}}</view>
+                                    <view class="place-info u-margin-top-10 u-font-24 u-line-1 data-v-4efdfe9e" wx:if="{{item[$orig].content.banking_hours}}">{{'营业时间:'+item[$orig].content.banking_hours+''}}</view>
+                                </view>
+                                <view class="data-v-4efdfe9e">
+                                    <u-icon bind:__l="__l" bind:tap="__e" class="u-margin-right-16 data-v-4efdfe9e" color="#666666" customPrefix="custom-icon" data-event-opts="{{[ [ '^tap',[ ['cantClick'] ] ] ]}}" label="地址" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="{{-3}}" name="locationdingwei" size="55" vueId="{{'e77c9dcc-10-'+index}}"></u-icon>
+                                    <u-icon bind:__l="__l" bind:tap="__e" class="u-margin-right-10 u-margin-left-10 data-v-4efdfe9e" color="#666666" customPrefix="custom-icon" data-event-opts="{{[ [ '^tap',[ ['cantClick'] ] ] ]}}" label="电话" labelColor="#666666" labelPos="bottom" labelSize="24" marginTop="{{-3}}" name="phone1" size="55" vueId="{{'e77c9dcc-11-'+index}}"></u-icon>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </block>
+            </block>
+        </block>
+    </view>
+    <view class="u-margin-top-30 data-v-4efdfe9e" style="width:650rpx;" wx:if="{{true}}">
+        <scroll-view class="data-v-4efdfe9e" enhanced="{{true}}" scrollX="{{true}}" showScrollbar="{{false}}" style="width:100%;">
+            <view class="u-flex data-v-4efdfe9e" style="width:900rpx;">
+                <view bindtap="__e" class="icon-item u-flex u-row-center u-margin-right-10 data-v-4efdfe9e" data-event-opts="{{[ [ 'tap',[ [ 'addContent',['words'] ] ] ] ]}}">
+                    <u-icon bind:__l="__l" class="data-v-4efdfe9e" color="{{themeColor}}" customPrefix="custom-icon" label="添加文字" labelColor="{{themeColor}}" labelPos="right" labelSize="26" name="wenzi" size="32" vueId="e77c9dcc-12"></u-icon>
+                </view>
+                <view bindtap="__e" class="icon-item u-flex u-row-center u-margin-right-10 data-v-4efdfe9e" data-event-opts="{{[ [ 'tap',[ [ 'chooseImg',['large'] ] ] ] ]}}">
+                    <u-icon bind:__l="__l" class="data-v-4efdfe9e" color="{{themeColor}}" customPrefix="custom-icon" label="添加大图" labelColor="{{themeColor}}" labelPos="right" labelSize="26" name="tupian" size="32" vueId="e77c9dcc-13"></u-icon>
+                </view>
+                <view bindtap="__e" class="icon-item u-flex u-row-center u-margin-right-10 data-v-4efdfe9e" data-event-opts="{{[ [ 'tap',[ [ 'chooseImg',['small'] ] ] ] ]}}">
+                    <u-icon bind:__l="__l" class="data-v-4efdfe9e" color="{{themeColor}}" customPrefix="custom-icon" label="添加小图" labelColor="{{themeColor}}" labelPos="right" labelSize="26" name="iconfontzhizuobiaozhun023123" size="32" vueId="e77c9dcc-14"></u-icon>
+                </view>
+                <view bindtap="__e" class="icon-item u-flex u-row-center data-v-4efdfe9e" data-event-opts="{{[ [ 'tap',[ [ 'getLocationFun',['$event'] ] ] ] ]}}">
+                    <u-icon bind:__l="__l" class="data-v-4efdfe9e" color="{{themeColor}}" customPrefix="custom-icon" label="添加位置" labelColor="{{themeColor}}" labelPos="right" labelSize="26" name="locationdingwei" size="32" vueId="e77c9dcc-15"></u-icon>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <u-popup bind:__l="__l" bind:input="__e" borderRadius="16" class="data-v-4efdfe9e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','imgPop','$event',[] ] ] ] ] ]}}" duration="{{150}}" mode="bottom" safeAreaInsetBottom="{{true}}" value="{{imgPop}}" vueId="e77c9dcc-16" vueSlots="{{['default']}}">
+        <view class="img-change data-v-4efdfe9e">
+            <view class="u-flex u-row-around u-border-bottom padding-tb-30 data-v-4efdfe9e">
+                <u-icon bind:__l="__l" bind:click="__e" class="data-v-4efdfe9e" color="#1977ff" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'chooseImg',['large'] ] ] ] ]}}" label="添加大图" labelPos="bottom" marginTop="40" name="tupian" size="90" vueId="{{'e77c9dcc-17'+','+'e77c9dcc-16'}}"></u-icon>
+                <u-icon bind:__l="__l" bind:click="__e" class="data-v-4efdfe9e" color="#1977ff" customPrefix="custom-icon" data-event-opts="{{[ [ '^click',[ [ 'chooseImg',['small'] ] ] ] ]}}" label="添加小图" labelPos="bottom" marginTop="40" name="iconfontzhizuobiaozhun023123" size="80" vueId="{{'e77c9dcc-18'+','+'e77c9dcc-16'}}"></u-icon>
+            </view>
+            <view bindtap="__e" class="cancel data-v-4efdfe9e" data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}">取消</view>
+        </view>
+    </u-popup>
+    <dk-compress bind:__l="__l" class="data-v-4efdfe9e vue-ref" data-ref="compress" vueId="e77c9dcc-19"></dk-compress>
+</view>

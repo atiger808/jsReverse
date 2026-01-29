@@ -1,0 +1,16 @@
+<template name="503ceb56">
+    <view catchtap="handleProxy" class="_view data-v-19c57c70 {{[ [true?'wr_bookListItem':''],customSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'0_0'}}" hoverClass="wr_itemActive">
+        <template is="5db1e51a" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view class="_view data-v-19c57c70 wr_bookListItem_cnt">
+            <view class="_view data-v-19c57c70 wr_bookListItem_cnt_title">{{book.title}}</view>
+            <view class="_view data-v-19c57c70 wr_bookListItem_cnt_author">
+            {{book.author}}
+            <text class="_text data-v-19c57c70" wx:if="{{book.category}}">
+                    <text class="_text data-v-19c57c70 wr_bookListItem_cnt_author_dep">|</text> {{book.category}}
+            </text>
+            </view>
+            <view class="_view data-v-19c57c70 wr_bookListItem_cnt_intro">{{book.intro}}</view>
+        </view>
+    </view>
+</template>
+<import src="/components/BookCover/BookCover.vue.wxml"></import>

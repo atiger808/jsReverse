@@ -1,0 +1,38 @@
+<template name="0c29504b">
+    <view bindtap="handleProxy" class="_view data-v-4d5e68e0 {{[ [true?'wr_bookReview':''],customSelector ]}}" data-comkey="{{$k}}" data-eventid="{{'0_5'}}">
+        <template is="5fbff9fa" data="{{...$root[$kk+'0'],$root:$root}}"></template>
+        <view class="_view data-v-4d5e68e0 wr_bookReview_main" wx:if="{{review}}">
+            <view class="_view data-v-4d5e68e0 wr_bookReview_meta">
+                <view class="_view data-v-4d5e68e0 wr_bookReview_meta_user">
+                    <view catchtap="handleProxy" class="_view data-v-4d5e68e0 wr_bookReview_meta_user_name" data-comkey="{{$k}}" data-eventid="{{'4_1'}}">
+                    {{author.name}}
+                </view>
+                    <template is="1e172bd5" data="{{...$root[$kk+'1'],$root:$root}}" wx:if="{{review&&review.newRatingLevel}}"></template>
+                </view>
+                <view class="_view data-v-4d5e68e0 wr_bookReview_meta_friendsMark" wx:if="{{review&&review.friendsReview}}">
+                好友点评
+            </view>
+            </view>
+            <template is="cdd17806" data="{{...$root[$kk+'2'],$root:$root}}"></template>
+            <view class="_view data-v-4d5e68e0 wr_bookReview_actions" wx:if="{{false}}">
+                <button catchtap="handleProxy" class="_button data-v-4d5e68e0 wr_bookReview_actions_item wr_bookReview_actions_item_Repost" data-comkey="{{$k}}" data-eventid="{{'3_2'}}" data-review-id="{{review.reviewId}}" hoverClass="wr_commonActive" id="{{'repostButton_'+review.reviewId}}" openType="share">
+                    <view class="_view data-v-4d5e68e0 wr_bookReview_actions_item_icon"></view>
+                    <view class="_view data-v-4d5e68e0 wr_bookReview_actions_item_text">{{review.repostCount>0?review.repostCount:''}}</view>
+                </button>
+                <view catchtap="handleProxy" class="_view data-v-4d5e68e0 {{[ 'wr_bookReview_actions_item','wr_bookReview_actions_item_Like',[review.isLike?'wr_bookReview_actions_item_Selected':''] ]}}" data-comkey="{{$k}}" data-eventid="{{'3_3'}}" hoverClass="wr_commonActive">
+                    <view class="_view data-v-4d5e68e0 wr_bookReview_actions_item_icon"></view>
+                    <view class="_view data-v-4d5e68e0 wr_bookReview_actions_item_text">{{review.likesCount>0?review.likesCount:''}}</view>
+                </view>
+                <view catchtap="handleProxy" class="_view data-v-4d5e68e0 wr_bookReview_actions_item wr_bookReview_actions_item_Comment" data-comkey="{{$k}}" data-eventid="{{'3_4'}}" hoverClass="wr_commonActive">
+                    <view class="_view data-v-4d5e68e0 wr_bookReview_actions_item_icon"></view>
+                    <view class="_view data-v-4d5e68e0 wr_bookReview_actions_item_text" wx:if="{{review.commentsCount}}">
+                    {{review.commentsCount>0?review.commentsCount:''}}
+                </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>
+<import src="/components/Avatar.vue.wxml"></import>
+<import src="/components/RatingLevelBar/RatingLevelBar.vue.wxml"></import>
+<import src="/components/EmoticonText.vue.wxml"></import>

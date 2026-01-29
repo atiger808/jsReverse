@@ -1,0 +1,5 @@
+<u-modal asyncClose="{{true}}" bind:__l="__l" bind:cancel="__e" bind:confirm="__e" bind:input="__e" cancelText="{{cancelText}}" class="vue-ref" confirmText="{{confirmText}}" data-event-opts="{{[ [ '^confirm',[ ['confirm'] ] ],[ '^cancel',[ ['cancel'] ] ],[ '^input',[ [ '__set_model',[ '','visible','$event',[] ] ] ] ] ]}}" data-ref="uModal" negativeTop="200" showCancelButton="{{true}}" title="{{title}}" value="{{visible}}" vueId="5fce427c-1" vueSlots="{{['default']}}">
+    <view class="u-padding-30">
+        <u-input bind:__l="__l" bind:input="__e" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','keyword','$event',[] ] ] ] ] ]}}" focus="{{focus}}" maxlength="{{maxlength}}" placeholder="{{placeholder}}" value="{{keyword}}" vueId="{{'5fce427c-2'+','+'5fce427c-1'}}"></u-input>
+    </view>
+</u-modal>

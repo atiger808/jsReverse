@@ -1,0 +1,1 @@
+.v-text-hide{box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}.check-list{align-items:center;background-color:#eee;border-radius:8rpx;display:flex;height:84rpx;justify-content:space-around;margin:30rpx 0;padding-left:40rpx}.check-active{background-color:#fff7f4;color:#f90}
